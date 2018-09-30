@@ -3,7 +3,7 @@ package core.utils.json
 import java.time.Instant
 import java.util.UUID
 
-import core.models.{ Config, PasswordSurvey, Registration, Settings, Updates, User, NewsletterFashion, NewsletterVintage, NewsletterHomeCollection, NewsletterSubscription }
+import core.models.{ AdditionalInfo, Address, Addresses, BillingAddress, TelephoneEvening, TelephoneDay, Config, DefaultShippingAddress, PasswordSurvey, Registration, Settings, Updates, User, NewsletterFashion, NewsletterVintage, NewsletterHomeCollection, NewsletterSubscription }
 import play.api.i18n.Lang
 import play.api.libs.json._
 import reactivemongo.bson.BSONObjectID
@@ -85,6 +85,36 @@ trait Formats {
    * Converts a [[NewsletterFashion]] instance to JSON and vice versa.
    */
   implicit val newslhFormat: OFormat[NewsletterHomeCollection] = Json.format
+
+  /**
+   * Converts a [[Address]] instance to JSON and vice versa.
+   */
+  implicit val addressFormat: OFormat[Address] = Json.format
+
+  /**
+   * Converts a [[AdditionalInfo]] instance to JSON and vice versa.
+   */
+  implicit val addInfoFormat: OFormat[AdditionalInfo] = Json.format
+
+  /**
+   * Converts a [[BillingAddress]] instance to JSON and vice versa.
+   */
+  implicit val billingAddressFormat: OFormat[BillingAddress] = Json.format
+
+  /**
+   * Converts a [[DefaultShippingAddress]] instance to JSON and vice versa.
+   */
+  implicit val defShippAddressFormat: OFormat[DefaultShippingAddress] = Json.format
+
+  /**
+   * Converts a [[TelephoneDay]] instance to JSON and vice versa.
+   */
+  implicit val telDayFormat: OFormat[TelephoneDay] = Json.format
+
+  /**
+   * Converts a [[TelephoneEvening]] instance to JSON and vice versa.
+   */
+  implicit val telEvFormat: OFormat[TelephoneEvening] = Json.format
 }
 
 /**
@@ -156,6 +186,16 @@ object MongoFormats extends MongoFormats with Formats {
    * Converts a [[NewsletterSubscription]] instance to JSON.
    */
   implicit val newsletterWrites: OWrites[NewsletterSubscription] = Json.writes.transform(IDWrites("id"))
+
+  /**
+   * Converts JSON into a [[Addresses]] instance.
+   */
+  implicit val addressesReads: Reads[Addresses] = IDReads("id") andThen Json.reads
+
+  /**
+   * Converts a [[Address]] instance to JSON.
+   */
+  implicit val addressesWrites: OWrites[Addresses] = Json.writes.transform(IDWrites("id"))
 }
 
 /**
@@ -182,4 +222,9 @@ object APIFormats extends APIFormats with Formats {
    * Converts a [[NewsletterSubscription]] instance to JSON and vice versa.
    */
   implicit val newsletterFormat: OFormat[NewsletterSubscription] = Json.format
+
+  /**
+   * Converts a [[Addresses]] instance to JSON and vice versa.
+   */
+  implicit val addressesFormat: OFormat[Addresses] = Json.format
 }

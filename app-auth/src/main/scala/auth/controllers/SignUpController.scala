@@ -11,8 +11,8 @@ import com.mohiva.play.silhouette.api.services.AvatarService
 import com.mohiva.play.silhouette.api.util.PasswordHasherRegistry
 import com.mohiva.play.silhouette.impl.providers._
 import core.controllers.ApiController
-import core.models.services.{ NewsletterService, UserService }
-import core.models.{ Config, Registration, Settings, Updates, User, NewsletterFashion, NewsletterVintage, NewsletterHomeCollection, NewsletterSubscription }
+import core.models.services.{ AddressesService, NewsletterService, UserService }
+import core.models.{ Address, Addresses, Config, Registration, Settings, Updates, User, NewsletterFashion, NewsletterVintage, NewsletterHomeCollection, NewsletterSubscription }
 import core.utils.{ DefaultEnv, JSRouter }
 import core.utils.json.APIFormats._
 import javax.inject.Inject
@@ -37,6 +37,7 @@ import scala.language.postfixOps
  * @param silhouette             The Silhouette stack.
  * @param userService            The user service implementation.
  * @param newsletterService      The newsletter subscription service implementation.
+ * @param addressesService       The addresses service implementation.
  * @param authInfoRepository     The auth info repository implementation.
  * @param authTokenService       The auth token service implementation.
  * @param avatarService          The avatar service implementation.
@@ -52,6 +53,7 @@ class SignUpController @Inject() (
   silhouette: Silhouette[DefaultEnv],
   userService: UserService,
   newsletterService: NewsletterService,
+  addressesService: AddressesService,
   authInfoRepository: AuthInfoRepository,
   authTokenService: AuthTokenService,
   avatarService: AvatarService,
@@ -109,13 +111,17 @@ class SignUpController @Inject() (
           newsletterVintage = Some(NewsletterVintage(data.newsletterVintage)),
           newsletterHomeCollection = Some(NewsletterHomeCollection(data.newsletterHomeCollection))
         )
+        val addresses = Addresses(
+          id = userID,
+          addresses = None
+        )
         userService.retrieve(loginInfo).flatMap {
           case Some(customer) => {
             handleExistingUser(data, customer)
             Future.successful(Created(ApiResponse("auth.email.already.in.use", Messages("auth.email.already.in.use"))))
           }
           case None => {
-            signUpNewUser(data, loginInfo, user, newsletter)
+            signUpNewUser(data, loginInfo, user, newsletter, addresses)
           }
         }
       }
@@ -158,13 +164,15 @@ class SignUpController @Inject() (
     data: SignUpForm.Data,
     loginInfo: LoginInfo,
     user: User,
-    newsletter: NewsletterSubscription
+    newsletter: NewsletterSubscription,
+    addresses: Addresses
   )(
     implicit
     request: RequestHeader
   ): Future[Result] = {
     val authInfo = passwordHasherRegistry.current.hash(data.password)
     for {
+      addresses <- addressesService.save(addresses)
       avatar <- avatarService.retrieveURL(data.email)
       user <- userService.save(user.copy(avatarURL = avatar))
       newsl <- newsletterService.save(newsletter)
@@ -176,7 +184,7 @@ class SignUpController @Inject() (
         Ok(ApiResponse(
           "auth.signIn.successful",
           Messages("auth.signed.in"),
-          Json.toJson((user, newsl, newsl))
+          Json.toJson((user, newsl, addresses))
         ))
       )
     } yield {

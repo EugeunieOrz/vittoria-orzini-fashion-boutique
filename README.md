@@ -1,16 +1,16 @@
 Vittoria Orzini Fashion Boutique and Online Store
 ==================================================
 
-Website is divided into backend written in Scala using Play framework and MongoDB persistence layer 
+Website is divided into backend written in Scala using Play framework and MongoDB persistence layer
 and frontend written in React.js using Redux for managing state.
 
-#### Features 
+#### Features
 
 * Sign In / Sign Up functionality
 * After Sign Up you're redirected to My Account without confirming account activation.
 * Password strength meter using zxcvbn
 * Password masking (show / hide password functionality)
-* My Account functionality includes editing personal data like changing password and email
+* My Account functionality includes editing personal data, wishlist, orders, addresses, credit wallet
 * Cookie authentication
 * Dependency Injection with Guice
 * Publishing Events
@@ -23,7 +23,7 @@ and frontend written in React.js using Redux for managing state.
 * CSRF Protection
 
 
-#### Installation 
+#### Installation
 
 Install all NPM dependencies for the UI:
 
@@ -34,7 +34,7 @@ cd app-ui
 npm install
 
 
-#### Run in dev mode 
+#### Run in dev mode
 
 Start the application with the following command.
 

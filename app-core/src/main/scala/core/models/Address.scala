@@ -8,7 +8,6 @@ import reactivemongo.bson.BSONObjectID
  * @param id           The unique ID of the user.
  */
 case class Address(
-  id: BSONObjectID,
   firstName: String,
   lastName: String,
   addInf: AdditionalInfo,
@@ -18,23 +17,38 @@ case class Address(
   country: String,
   state: String,
   email: String,
-  dayTel: String,
-  eveningTel: String,
+  dayTel: TelephoneDay,
+  eveningTel: TelephoneEvening,
   mark1: DefaultShippingAddress,
   mark2: BillingAddress
 )
 
+case class TelephoneDay(
+  val name: String = "Telephone (day)",
+  telephone: String
+)
+
+case class TelephoneEvening(
+  val name: String = "Telephone (evening)",
+  telephone: String
+)
+
 case class AdditionalInfo(
-  name: String,
+  val name: String = "Additional information for delivery",
   descr: Option[String]
 )
 
 case class DefaultShippingAddress(
   checked: Option[Boolean],
-  description: String
+  val description: String = "Mark as default shipping address"
 )
 
 case class BillingAddress(
   checked: Option[Boolean],
-  description: String
+  val description: String = "Save as preferred billing address in My Account"
+)
+
+case class Addresses(
+  id: BSONObjectID,
+  addresses: Option[Seq[Address]]
 )
