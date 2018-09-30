@@ -8,6 +8,8 @@ and frontend written in React.js using Redux for managing state.
 
 * Sign In / Sign Up functionality
 * After Sign Up you're redirected to My Account without confirming account activation.
+* Password strength meter using zxcvbn
+* Password masking (show / hide password functionality)
 * My Account functionality includes editing personal data like changing password and email
 * Cookie authentication
 * Dependency Injection with Guice
