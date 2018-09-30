@@ -11,7 +11,7 @@ import com.mohiva.play.silhouette.crypto.{ JcaCrypter, JcaCrypterSettings, JcaSi
 import com.mohiva.play.silhouette.impl.authenticators._
 import com.mohiva.play.silhouette.impl.services.GravatarService
 import com.mohiva.play.silhouette.impl.util.{ DefaultFingerprintGenerator, SecureRandomIDGenerator }
-import core.models.daos.{ AddressesDAO, AddressesDAOImpl, NewsletterDAO, NewsletterDAOImpl, UserDAO, UserDAOImpl }
+import core.models.daos.{ AddressesDAO, AddressesDAOImpl, CreditCardsDAO, CreditCardsDAOImpl, NewsletterDAO, NewsletterDAOImpl, UserDAO, UserDAOImpl }
 import core.models.services._
 import core.utils.{ CustomerExecutionContext, CustomerExecutionContextImpl, CustomSecuredErrorHandler, CustomUnsecuredErrorHandler, DefaultEnv }
 import net.ceedubs.ficus.Ficus._
@@ -36,12 +36,14 @@ class BaseModule extends ScalaModule {
     bind[Silhouette[DefaultEnv]].to[SilhouetteProvider[DefaultEnv]]
     bind[UnsecuredErrorHandler].to[CustomUnsecuredErrorHandler]
     bind[SecuredErrorHandler].to[CustomSecuredErrorHandler]
+    bind[CreditCardsService].to[CreditCardsServiceImpl]
+    bind[CreditCardsDAO].to[CreditCardsDAOImpl]
     bind[NewsletterService].to[NewsletterServiceImpl]
-    bind[AddressesDAO].to[AddressesDAOImpl]
-    bind[AddressesService].to[AddressesServiceImpl]
     bind[NewsletterDAO].to[NewsletterDAOImpl]
-    bind[UserDAO].to[UserDAOImpl]
+    bind[AddressesService].to[AddressesServiceImpl]
+    bind[AddressesDAO].to[AddressesDAOImpl]
     bind[UserService].to[UserServiceImpl]
+    bind[UserDAO].to[UserDAOImpl]
     bind[IDGenerator].toInstance(new SecureRandomIDGenerator())
     bind[FingerprintGenerator].toInstance(new DefaultFingerprintGenerator(false))
     bind[EventBus].toInstance(EventBus())

@@ -3,7 +3,7 @@ package core.utils.json
 import java.time.Instant
 import java.util.UUID
 
-import core.models.{ AdditionalInfo, Address, Addresses, BillingAddress, TelephoneEvening, TelephoneDay, Config, DefaultShippingAddress, PasswordSurvey, Registration, Settings, Updates, User, NewsletterFashion, NewsletterVintage, NewsletterHomeCollection, NewsletterSubscription }
+import core.models.{ StateOrProvince, PreferredCreditCard, AdditionalInfo, Address, Addresses, BillingAddress, BillingAddressMark, Config, CreditCards, CreditCard, DefaultShippingAddressMark, PasswordSurvey, Registration, Settings, Updates, User, NewsletterFashion, NewsletterVintage, NewsletterHomeCollection, NewsletterSubscription, TelephoneEvening, TelephoneDay }
 import play.api.i18n.Lang
 import play.api.libs.json._
 import reactivemongo.bson.BSONObjectID
@@ -102,9 +102,14 @@ trait Formats {
   implicit val billingAddressFormat: OFormat[BillingAddress] = Json.format
 
   /**
-   * Converts a [[DefaultShippingAddress]] instance to JSON and vice versa.
+   * Converts a [[BillingAddressMark]] instance to JSON and vice versa.
    */
-  implicit val defShippAddressFormat: OFormat[DefaultShippingAddress] = Json.format
+  implicit val billingAddressMarkFormat: OFormat[BillingAddressMark] = Json.format
+
+  /**
+   * Converts a [[DefaultShippingAddressMark]] instance to JSON and vice versa.
+   */
+  implicit val defShippAddressMarkFormat: OFormat[DefaultShippingAddressMark] = Json.format
 
   /**
    * Converts a [[TelephoneDay]] instance to JSON and vice versa.
@@ -115,6 +120,21 @@ trait Formats {
    * Converts a [[TelephoneEvening]] instance to JSON and vice versa.
    */
   implicit val telEvFormat: OFormat[TelephoneEvening] = Json.format
+
+  /**
+   * Converts a [[StateOrProvince]] instance to JSON and vice versa.
+   */
+  implicit val stateOrProvinceFormat: OFormat[StateOrProvince] = Json.format
+
+  /**
+   * Converts a [[PreferredCreditCard]] instance to JSON and vice versa.
+   */
+  implicit val prefCCFormat: OFormat[PreferredCreditCard] = Json.format
+
+  /**
+   * Converts a [[CreditCard]] instance to JSON and vice versa.
+   */
+  implicit val ccFormat: OFormat[CreditCard] = Json.format
 }
 
 /**
@@ -196,6 +216,16 @@ object MongoFormats extends MongoFormats with Formats {
    * Converts a [[Address]] instance to JSON.
    */
   implicit val addressesWrites: OWrites[Addresses] = Json.writes.transform(IDWrites("id"))
+
+  /**
+   * Converts JSON into a [[CreditCards]] instance.
+   */
+  implicit val creditCardsReads: Reads[CreditCards] = IDReads("id") andThen Json.reads
+
+  /**
+   * Converts a [[CreditCards]] instance to JSON.
+   */
+  implicit val creditCardsWrites: OWrites[CreditCards] = Json.writes.transform(IDWrites("id"))
 }
 
 /**
@@ -227,4 +257,9 @@ object APIFormats extends APIFormats with Formats {
    * Converts a [[Addresses]] instance to JSON and vice versa.
    */
   implicit val addressesFormat: OFormat[Addresses] = Json.format
+
+  /**
+   * Converts a [[CreditCards]] instance to JSON and vice versa.
+   */
+  implicit val creditCardsFormat: OFormat[CreditCards] = Json.format
 }

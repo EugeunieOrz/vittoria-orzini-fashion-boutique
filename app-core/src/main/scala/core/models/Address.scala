@@ -19,8 +19,8 @@ case class Address(
   email: String,
   dayTel: TelephoneDay,
   eveningTel: TelephoneEvening,
-  mark1: DefaultShippingAddress,
-  mark2: BillingAddress
+  mark1: DefaultShippingAddressMark,
+  mark2: BillingAddressMark
 )
 
 case class TelephoneDay(
@@ -38,12 +38,12 @@ case class AdditionalInfo(
   descr: Option[String]
 )
 
-case class DefaultShippingAddress(
+case class DefaultShippingAddressMark(
   checked: Option[Boolean],
   val description: String = "Mark as default shipping address"
 )
 
-case class BillingAddress(
+case class BillingAddressMark(
   checked: Option[Boolean],
   val description: String = "Save as preferred billing address in My Account"
 )

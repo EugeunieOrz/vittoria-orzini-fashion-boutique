@@ -15,7 +15,7 @@ import reactivemongo.play.json.collection.JSONCollection
 import scala.concurrent.Future
 
 /**
- * Give access to the [[User]] object.
+ * Give access to the [[Addresses]] object.
  *
  * @param reactiveMongoApi The ReactiveMongo API.
  * @param ec               The execution context.
@@ -40,10 +40,10 @@ class AddressesDAOImpl @Inject() (reactiveMongoApi: ReactiveMongoApi)(
     collection.flatMap(_.find(Json.obj("_id" -> BSONObjectIDFormat.partialWrites(userID))).one[Addresses])
 
   /**
-   * Saves a list of addresses.
+   * Saves the addresses.
    *
    * @param addreses The addresses to save.
-   * @return The saved list of addresses.
+   * @return The saved addresses.
    */
   def save(addresses: Addresses): Future[Addresses] = {
     onSuccess(collection.flatMap(

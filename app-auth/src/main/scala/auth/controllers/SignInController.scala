@@ -10,8 +10,8 @@ import com.mohiva.play.silhouette.api.util.Credentials
 import com.mohiva.play.silhouette.impl.exceptions.IdentityNotFoundException
 import com.mohiva.play.silhouette.impl.providers._
 import core.controllers.ApiController
-import core.models.User
-import core.models.services.UserService
+import core.models.{ Addresses, CreditCards, NewsletterSubscription, User }
+import core.models.services.{ AddressesService, CreditCardsService, NewsletterService, UserService }
 import core.utils.DefaultEnv
 import core.utils.json.APIFormats._
 import javax.inject.Inject
@@ -31,6 +31,9 @@ import scala.concurrent.{ ExecutionContext, Future }
  * @param controllerComponents  The Play controller components.
  * @param silhouette            The Silhouette stack.
  * @param userService           The user service implementation.
+ * @param creditCardsService     The credit cards service implementation.
+ * @param newsletterService      The newsletter subscription service implementation.
+ * @param addressesService       The addresses service implementation.
  * @param credentialsProvider   The credentials provider.
  * @param configuration         The Play configuration.
  * @param clock                 The clock instance.
@@ -40,6 +43,9 @@ class SignInController @Inject() (
   val controllerComponents: ControllerComponents,
   silhouette: Silhouette[DefaultEnv],
   userService: UserService,
+  creditCardsService: CreditCardsService,
+  newsletterService: NewsletterService,
+  addressesService: AddressesService,
   credentialsProvider: CredentialsProvider,
   configuration: Configuration,
   clock: Clock
@@ -62,7 +68,27 @@ class SignInController @Inject() (
         credentialsProvider.authenticate(Credentials(data.email, data.password)).flatMap { loginInfo =>
           userService.retrieve(loginInfo).flatMap {
             case Some(user) =>
-              handleActiveUser(user, loginInfo, data.rememberMe)
+              for {
+                addresses <- addressesService.retrieve(user.id)
+                creditCards <- creditCardsService.retrieve(user.id)
+                newsletter <- newsletterService.retrieve(user.id)
+              } yield {
+                handleActiveUser(
+                  user,
+                  loginInfo,
+                  data.rememberMe,
+                  addresses.getOrElse(Addresses(id = user.id, addresses = None)),
+                  newsletter.getOrElse(NewsletterSubscription(
+                    id = user.id,
+                    loginInfo = Seq(loginInfo),
+                    updates = None,
+                    newsletterFashion = None,
+                    newsletterVintage = None,
+                    newsletterHomeCollection = None
+                  )),
+                  creditCards.getOrElse(CreditCards(id = user.id, creditCards = None))
+                )
+              }
             case None =>
               Future.failed(new IdentityNotFoundException("Couldn't find user"))
           }
@@ -78,6 +104,9 @@ class SignInController @Inject() (
    * Handles the active user.
    *
    * @param user       The active user.
+   * @param addresses  The addresses of the active user.
+   * @param newsletter The newsletter subscription data of the active user.
+   * @param creditCards The credit cards of the active user.
    * @param loginInfo  The login info for the current authentication.
    * @param rememberMe True if the cookie should be a persistent cookie, false otherwise.
    * @param request    The current request header.
@@ -86,7 +115,10 @@ class SignInController @Inject() (
   private def handleActiveUser(
     user: User,
     loginInfo: LoginInfo,
-    rememberMe: Boolean
+    rememberMe: Boolean,
+    addresses: Addresses,
+    newsletter: NewsletterSubscription,
+    creditCards: CreditCards
   )(implicit request: RequestHeader): Future[Result] = {
     silhouette.env.authenticatorService.create(loginInfo)
       .map(configureAuthenticator(rememberMe, _))
@@ -98,7 +130,7 @@ class SignInController @Inject() (
             Ok(ApiResponse(
               "auth.signIn.successful",
               Messages("auth.signed.in"),
-              Json.toJson(user)
+              Json.toJson((user, newsletter, addresses, creditCards))
             ))
           )
         }

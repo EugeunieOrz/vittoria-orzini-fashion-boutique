@@ -13,17 +13,36 @@ import play.api.mvc.BaseController
  */
 trait ApiController extends BaseController with I18nSupport {
 
-  implicit def tuple3Reads[A, B, C](implicit aReads: Reads[A], bReads: Reads[B], cReads: Reads[C]): Reads[Tuple3[A, B, C]] = Reads[Tuple3[A, B, C]] {
-    case JsArray(arr) if arr.size == 3 => for {
+  implicit def tuple4Reads[A, B, C, D](
+    implicit
+    aReads: Reads[A],
+    bReads: Reads[B],
+    cReads: Reads[C],
+    dReads: Reads[D]
+  ): Reads[Tuple4[A, B, C, D]] = Reads[Tuple4[A, B, C, D]] {
+    case JsArray(arr) if arr.size == 4 => for {
       a <- aReads.reads(arr(0))
       b <- bReads.reads(arr(1))
       c <- cReads.reads(arr(2))
-    } yield (a, b, c)
-    case _ => JsError(Seq(JsPath() -> Seq(JsonValidationError("Expected array of three elements"))))
+      d <- dReads.reads(arr(3))
+    } yield (a, b, c, d)
+    case _ => JsError(Seq(JsPath() -> Seq(JsonValidationError("Expected array of four elements"))))
   }
 
-  implicit def tuple2Writes[A, B, C](implicit aWrites: Writes[A], bWrites: Writes[B], cWrites: Writes[C]): Writes[Tuple3[A, B, C]] = new Writes[Tuple3[A, B, C]] {
-    def writes(tuple: Tuple3[A, B, C]) = JsArray(Seq(aWrites.writes(tuple._1), bWrites.writes(tuple._2), cWrites.writes(tuple._3)))
+  implicit def tuple2Writes[A, B, C, D](
+    implicit
+    aWrites: Writes[A],
+    bWrites: Writes[B],
+    cWrites: Writes[C],
+    dWrites: Writes[D]
+  ): Writes[Tuple4[A, B, C, D]] = new Writes[Tuple4[A, B, C, D]] {
+    def writes(tuple: Tuple4[A, B, C, D]) = JsArray(
+      Seq(
+        aWrites.writes(tuple._1),
+        bWrites.writes(tuple._2),
+        cWrites.writes(tuple._3),
+        dWrites.writes(tuple._4)
+      ))
   }
 
   /**

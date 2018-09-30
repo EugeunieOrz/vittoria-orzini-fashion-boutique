@@ -9,7 +9,7 @@ import reactivemongo.bson.BSONObjectID
 import scala.concurrent.Future
 
 /**
- * Handles actions to users.
+ * Handles actions to the addresses.
  *
  * @param addressesDAO The addresses DAO implementation.
  * @param ex      The execution context.

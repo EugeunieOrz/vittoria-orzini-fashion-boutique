@@ -6,7 +6,7 @@ import reactivemongo.bson.BSONObjectID
 import scala.concurrent.Future
 
 /**
- * Handles actions to users.
+ * Handles actions to the addresses.
  */
 trait AddressesService {
 
@@ -21,7 +21,7 @@ trait AddressesService {
   /**
    * Saves the addresses.
    *
-   * @param user The addresses to save.
+   * @param addresses The addresses to save.
    * @return The saved addresses.
    */
   def save(addresses: Addresses): Future[Addresses]

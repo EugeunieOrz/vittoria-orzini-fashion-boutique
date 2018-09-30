@@ -6,7 +6,7 @@ import reactivemongo.bson.BSONObjectID
 import scala.concurrent.Future
 
 /**
- * Give access to the user object.
+ * Give access to the addresses object.
  */
 trait AddressesDAO {
 

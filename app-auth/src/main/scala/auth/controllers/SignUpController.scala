@@ -11,8 +11,8 @@ import com.mohiva.play.silhouette.api.services.AvatarService
 import com.mohiva.play.silhouette.api.util.PasswordHasherRegistry
 import com.mohiva.play.silhouette.impl.providers._
 import core.controllers.ApiController
-import core.models.services.{ AddressesService, NewsletterService, UserService }
-import core.models.{ Address, Addresses, Config, Registration, Settings, Updates, User, NewsletterFashion, NewsletterVintage, NewsletterHomeCollection, NewsletterSubscription }
+import core.models.services.{ AddressesService, CreditCardsService, NewsletterService, UserService }
+import core.models.{ Address, Addresses, Config, CreditCards, Registration, Settings, Updates, User, NewsletterFashion, NewsletterVintage, NewsletterHomeCollection, NewsletterSubscription }
 import core.utils.{ DefaultEnv, JSRouter }
 import core.utils.json.APIFormats._
 import javax.inject.Inject
@@ -36,6 +36,7 @@ import scala.language.postfixOps
  * @param controllerComponents   The Play controller components.
  * @param silhouette             The Silhouette stack.
  * @param userService            The user service implementation.
+ * @param creditCardsService     The credit cards service implementation.
  * @param newsletterService      The newsletter subscription service implementation.
  * @param addressesService       The addresses service implementation.
  * @param authInfoRepository     The auth info repository implementation.
@@ -52,6 +53,7 @@ class SignUpController @Inject() (
   val controllerComponents: ControllerComponents,
   silhouette: Silhouette[DefaultEnv],
   userService: UserService,
+  creditCardsService: CreditCardsService,
   newsletterService: NewsletterService,
   addressesService: AddressesService,
   authInfoRepository: AuthInfoRepository,
@@ -115,13 +117,17 @@ class SignUpController @Inject() (
           id = userID,
           addresses = None
         )
+        val creditCards = CreditCards(
+          id = userID,
+          creditCards = None
+        )
         userService.retrieve(loginInfo).flatMap {
           case Some(customer) => {
             handleExistingUser(data, customer)
             Future.successful(Created(ApiResponse("auth.email.already.in.use", Messages("auth.email.already.in.use"))))
           }
           case None => {
-            signUpNewUser(data, loginInfo, user, newsletter, addresses)
+            signUpNewUser(data, loginInfo, user, newsletter, addresses, creditCards)
           }
         }
       }
@@ -157,6 +163,8 @@ class SignUpController @Inject() (
    * @param loginInfo  The login info.
    * @param user       The new user.
    * @param newsletter The newsletter subscription of the new user.
+   * @param addresses  The addresses of the new user.
+   * @param creditCards The credit cards of the new user.
    * @param request    The request header.
    * @return A future to wait for the computation to complete.
    */
@@ -165,7 +173,8 @@ class SignUpController @Inject() (
     loginInfo: LoginInfo,
     user: User,
     newsletter: NewsletterSubscription,
-    addresses: Addresses
+    addresses: Addresses,
+    creditCards: CreditCards
   )(
     implicit
     request: RequestHeader
@@ -174,6 +183,7 @@ class SignUpController @Inject() (
     for {
       addresses <- addressesService.save(addresses)
       avatar <- avatarService.retrieveURL(data.email)
+      creditCards <- creditCardsService.save(creditCards)
       user <- userService.save(user.copy(avatarURL = avatar))
       newsl <- newsletterService.save(newsletter)
       _ <- authInfoRepository.add(loginInfo, authInfo)
@@ -184,7 +194,7 @@ class SignUpController @Inject() (
         Ok(ApiResponse(
           "auth.signIn.successful",
           Messages("auth.signed.in"),
-          Json.toJson((user, newsl, addresses))
+          Json.toJson((user, newsl, addresses, creditCards))
         ))
       )
     } yield {
