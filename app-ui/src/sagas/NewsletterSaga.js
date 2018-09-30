@@ -12,9 +12,11 @@ import NewsletterAPI from 'apis/NewsletterAPI';
 export function* fetchNewsletterWorker(api: NewsletterAPI): Generator<*, *, *> {
   while (true) {
     const { payload } = yield take(fetchNewsletter().type);
+    console.log("while in fetchNewsletterWorker: ", payload);
     try {
       yield put(fetchNewsletterPending());
       const response = yield call([api, api.get], payload);
+      console.log("response in fetchNewsletterWorker: ", response);
       yield put(fetchNewsletterFulfilled(response.details));
     } catch (e) {
       yield put(fetchNewsletterRejected(e));

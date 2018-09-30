@@ -19,7 +19,7 @@ const mapStateToProps = (state) => {
      form: state.admin.updateNewsletter.form,
      ...state.admin.updateNewsletter.request,
      formInitial: {
-       updates: getNewsletter(state).updates.isChecked || state.admin.updateNewsletter.data.updates,
+       updates: state.admin.updateNewsletter.data.updates || getNewsletter(state).updates.isChecked,
        newsletterFashion: state.admin.updateNewsletter.data.newsletterFashion || getNewsletter(state).newsletterFashion.isChecked,
        newsletterVintage: state.admin.updateNewsletter.data.newsletterVintage || getNewsletter(state).newsletterVintage.isChecked,
        newsletterHomeCollection: state.admin.updateNewsletter.data.newsletterHomeCollection || getNewsletter(state).newsletterHomeCollection.isChecked,

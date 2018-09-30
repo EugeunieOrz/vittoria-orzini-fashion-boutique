@@ -176,7 +176,7 @@ class SignUpController @Inject() (
         Ok(ApiResponse(
           "auth.signIn.successful",
           Messages("auth.signed.in"),
-          Json.toJson(user)
+          Json.toJson((user, newsl, newsl))
         ))
       )
     } yield {
