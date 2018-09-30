@@ -1,0 +1,47 @@
+@font-face {
+ font-family:AdamCGPro;
+ src:local("ADAM-CGPRO"),url(/static/fonts/ADAM-CGPRO.woff) format("woff")
+}
+.sign-out {
+ background-color:#fff!important;
+ text-align:center;
+ border-bottom:none;
+ margin-top:50px;
+ margin-left: 300px
+}
+.sign-out-header {
+ font-family:Philosopher;
+ font-size:1.7em;
+ color: #000
+}
+.sign-out-txt {
+ font-family:Acme;
+ font-size:1.4em;
+  margin-top: 50px;
+  color: #000
+}
+.signout-linktohome a {
+ width:220px!important;
+ margin-top:70px;
+ background-color:transparent;
+ border:.15em solid #000!important;
+ color:#000!important;
+ padding:10px 44px;
+ text-align:center;
+ text-decoration:none;
+ display:inline-block;
+ font-size:1.3em!important;
+ font-weight:700!important;
+ font-family:AdamCGPro;
+ cursor:url(/static/calla-30x39.png),auto!important;
+ border-radius:0
+}
+.signout-linktohome a:hover {
+ background-color:#eb3346!important;
+ color:silver!important
+}
+@media only screen and (min-width: 992px) {
+  .sign-out {
+    margin-left: 170px;
+  }
+} 

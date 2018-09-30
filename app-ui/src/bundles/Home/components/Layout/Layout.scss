@@ -1,0 +1,9 @@
+.home-container {
+ min-height:100vh;
+ display:-ms-flexbox;
+ display:flex;
+ -ms-flex-direction:column;
+ flex-direction:column;
+ -ms-flex-positive:1;
+ flex-grow:1;
+}

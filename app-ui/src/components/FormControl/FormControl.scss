@@ -1,0 +1,15 @@
+@import '../../styles/partials/variables';
+
+.custom-form-control {
+  .optional {
+    font-size: 12px;
+  }
+
+  .help {
+    color: $gray;
+  }
+
+  .control {
+    position: relative;
+  }
+}

@@ -1,0 +1,9 @@
+@import core.models.User
+@(user: User, url: String)(implicit messages: Messages)
+
+<html>
+    <body>
+        <p>@messages("auth.email.sign.up.hello", user.name.getOrElse("user"))</p>
+        <p>@Html(messages("auth.email.sign.up.html.text", url))</p>
+    </body>
+</html>

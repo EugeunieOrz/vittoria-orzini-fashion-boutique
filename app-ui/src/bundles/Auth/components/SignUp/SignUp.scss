@@ -1,0 +1,187 @@
+.sign-up {
+ width:700px!important;
+ margin-top:10px;
+ margin-left:610px;
+ margin-bottom: 100px !important;
+}
+.signup-header {
+ background-color:#fff!important;
+ border-bottom:none;
+ padding-top:20px;
+ padding-bottom:20px;
+ font-size:1.7em!important;
+ width: 380px;
+ margin-left: -1px;
+ text-align: center
+}
+#signup-header-txt {
+  font-family: Acme
+}
+#signup-header-txt {
+ font-family:Acme
+}
+.signup-container #custom-form-control-email,.signup-container #custom-form-control-firstName,.signup-container #custom-form-control-lastName,.signup-container #custom-form-control-password {
+ margin-top:20px;
+ border-bottom: 2px solid #000;
+ border-image: linear-gradient(to right, #000, transparent);
+ border-image-slice: 1;
+ padding:7px 4px;
+ background-color:inherit;
+ font-family: Acme
+}
+.signup-container select {
+ border: none;
+ border-bottom: 2px solid #000;
+ border-image: linear-gradient(to right, #000, transparent);
+ border-image-slice: 1;
+ margin-top:20px;
+ box-shadow: none;
+ box-sizing: content-box;
+ width:380px;
+ background-color:transparent;
+ padding:4px;
+ position:relative;
+ -webkit-appearance:none;
+ -moz-appearance:none;
+ appearance:none;
+ background:url(/static/arrow.png) 100%/6% no-repeat;
+ font-size:1.2em;
+ font-family:Acme
+}
+.checkbox {
+ font-size:1.2em;
+ padding:5px;
+}
+#newsl {
+ font-family:Acme;
+ font-size:1.1em
+}
+#signup-btn {
+ width:300px!important;
+ margin-left:45px;
+ background-color:transparent!important;
+ border:.15em solid #000!important;
+ color:#000!important;
+ padding:10px 44px;
+ text-align:center;
+ text-decoration:none;
+ display:inline-block;
+ font-size:1.4em!important;
+ font-weight:700!important;
+ font-family:AdamCGPro;
+ cursor:url(/static/calla-30x39.png),auto!important;
+ border-radius:0
+}
+#signup-btn:hover {
+ background-color:#eb3346!important;
+ color:silver!important;
+}
+#signup-btn:disabled {
+ cursor:url(/static/close-30.png),auto!important
+}
+.fname-error,.title-error {
+ color:#df1331
+}
+.fname-error {
+  margin-top: -10px
+}
+.consent-error {
+ color:#df1331;
+ margin-left:25px;
+ margin-top:-10px
+}
+.signup-container {
+ width:380px
+}
+.signup-container .checkbox {
+  font-family: Acme !important;
+}
+#title-txt2 {
+ width:755px;
+ margin-left:-170px
+}
+#title-txt2,.sign-up ul li {
+ font-family:Signika;
+ font-size:1.2em
+}
+.password-container {
+ margin-left:-15px;
+ width:600px
+}
+#toggle-btn {
+ margin-top:20px;
+ border:none
+}
+.password-strength-meter {
+ margin-top:10px;
+ margin-left: -16px
+}
+.password-strength {
+ position:absolute;
+ height:4px;
+ max-width:270px;
+ height:.5em;
+ border-radius:10px;
+ margin-left:20px;
+ margin-top:8px;
+ background:transparent;
+ transition:all .3s ease-in-out
+}
+.password-strength[data-score="0"] {
+ width:0;
+ background:#df1331
+}
+.password-strength[data-score="1"] {
+ width:60px;
+ background:#df1331
+}
+.password-strength[data-score="2"] {
+ width:130px;
+ background:#dbe247
+}
+.password-strength[data-score="3"] {
+ width:200px;
+ background:#0ba864
+}
+.password-strength[data-score="4"] {
+ width:270px;
+ background:#02973b
+}
+.sign-up .password-strength-txt {
+ font-weight:700;
+ font-family:Philosopher;
+ font-size:1.1em;
+ margin-left:4px
+}
+.password-strength-txt[data-score="0"],.password-strength-txt[data-score="1"],.password-strength-txt[data-score=""] {
+ color:#df1331
+}
+.password-strength-txt[data-score="2"] {
+ color:#dbe247
+}
+.password-strength-txt[data-score="3"] {
+ color:#0ba864
+}
+.password-strength-txt[data-score="4"] {
+ color:#02973b
+}
+.has-error #custom-form-control-email,.has-error #custom-form-control-firstName,.has-error #custom-form-control-lastName,.has-error #custom-form-control-password {
+ border-bottom: 2px solid #df1331;
+ border-image: linear-gradient(to right, #df1331, transparent);
+ border-image-slice: 1;
+ box-shadow: none
+}
+.sign-up #toggle-btn {
+ margin-left:-46px;
+ margin-top:22px;
+ background-color: #ffffff;
+ width: 30px
+}
+.signup-container .password-content {
+  margin-left: -16px
+}
+@media only screen and (min-width: 992px) {
+  .sign-up {
+    margin-left: 570px
+  }
+}

@@ -1,0 +1,474 @@
+{
+  "MY ACCOUNT": {
+    "translation": "IL MIO ACCOUNT",
+    "origin": [
+      [
+        "src\\components\\Header\\Unauthenticated\\Unauthenticated.jsx",
+        24
+      ]
+    ]
+  },
+  "SEARCH": {
+    "translation": "CERCA",
+    "origin": [
+      [
+        "src\\components\\Header\\Header.jsx",
+        25
+      ]
+    ]
+  },
+  "An unexpected error occurred! Please try again later.": {
+    "translation": "Ein unerwarteter Fehler ist aufgetreten! Bitte versuchen Sie es später noch einmal.",
+    "origin": [
+      [
+        "src\\util\\Saga.js",
+        62
+      ]
+    ]
+  },
+  "Optional": {
+    "translation": "Optional",
+    "origin": [
+      [
+        "src\\components\\FormControl\\FormControl.jsx",
+        85
+      ]
+    ]
+  },
+  "Activate account": {
+    "translation": "Account aktivieren",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\ActivateAccount\\ActivateAccount.jsx",
+        19
+      ]
+    ]
+  },
+  "You can't log in yet. We previously sent an activation email to you at:": {
+    "translation": "Du kannst dich leider noch nicht einloggen. Wir haben dir eine Aktivierungs-E-Mail an folgende Adresse geschickt:",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\ActivateAccount\\ActivateAccount.jsx",
+        20
+      ]
+    ]
+  },
+  "Please follow the instructions in that email to activate your account.": {
+    "translation": "Bitte folge den Instruktionen in dieser E-Mail um deinen Account zu aktivieren.",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\ActivateAccount\\ActivateAccount.jsx",
+        22
+      ]
+    ]
+  },
+  "Click the button to send the activation email again.": {
+    "translation": "Klicke auf den folgenden Button um eine neue Aktivierungs-E-Mail zu senden.",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\ActivateAccount\\ActivateAccount.jsx",
+        23
+      ]
+    ]
+  },
+  "Send": {
+    "translation": "Senden",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\ActivateAccount\\ActivateAccount.jsx",
+        25
+      ],
+      [
+        "src\\bundles\\Auth\\components\\ActivateAccount\\ActivateAccount.jsx",
+        25
+      ]
+    ]
+  },
+  "Recover password": {
+    "translation": "Passwort wiederherstellen",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\RecoverPassword\\RecoverPassword.jsx",
+        27
+      ]
+    ]
+  },
+  "Please enter your email address and we will send you an email with further instructions to reset your password.": {
+    "translation": "Gib bitte deine E-Mail-Adresse an. Wir senden dir dann weitere Anweisungen, zum Zurücksetzen des Passwortes, per E-Mail zu.",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\RecoverPassword\\RecoverPassword.jsx",
+        29
+      ]
+    ]
+  },
+  "Email": {
+    "translation": "E-Mail",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\RecoverPassword\\RecoverPassword.jsx",
+        36
+      ],
+      [
+        "src\\bundles\\Auth\\components\\RecoverPassword\\RecoverPassword.jsx",
+        40
+      ],
+      [
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        31
+      ],
+      [
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        35
+      ],
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        44
+      ],
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        48
+      ]
+    ]
+  },
+  "Submit": {
+    "translation": "Absenden",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\RecoverPassword\\RecoverPassword.jsx",
+        49
+      ],
+      [
+        "src\\bundles\\Auth\\components\\RecoverPassword\\RecoverPassword.jsx",
+        49
+      ]
+    ]
+  },
+  "Back to Sign-In": {
+    "translation": "Zurück zum Login",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\RecoverPassword\\RecoverPassword.jsx",
+        51
+      ]
+    ]
+  },
+  "Reset password": {
+    "translation": "Passwort zurücksetzen",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\ResetPassword\\ResetPassword.jsx",
+        23
+      ]
+    ]
+  },
+  "Strong passwords include numbers, letters and special characters.": {
+    "translation": "Sichere Passwörter enthalten Zahlen, Buchstaben und Sonderzeichen.",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\ResetPassword\\ResetPassword.jsx",
+        25
+      ]
+    ]
+  },
+  "Password": {
+    "translation": "Passwort",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\ResetPassword\\ResetPassword.jsx",
+        30
+      ],
+      [
+        "src\\bundles\\Auth\\components\\ResetPassword\\ResetPassword.jsx",
+        34
+      ],
+      [
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        45
+      ],
+      [
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        49
+      ],
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        58
+      ],
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        62
+      ]
+    ]
+  },
+  "Reset": {
+    "translation": "Zurücksetzen",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\ResetPassword\\ResetPassword.jsx",
+        41
+      ],
+      [
+        "src\\bundles\\Auth\\components\\ResetPassword\\ResetPassword.jsx",
+        41
+      ]
+    ]
+  },
+  "Sign-In": {
+    "translation": "Login",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        27
+      ]
+    ]
+  },
+  "Remember my login on this computer": {
+    "translation": "Login auf diesem Gerät merken",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        59
+      ]
+    ]
+  },
+  "Sign in": {
+    "translation": "Anmelden",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        62
+      ],
+      [
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        62
+      ]
+    ]
+  },
+  "Forgot your password?": {
+    "translation": "Passwort vergessen?",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        66
+      ]
+    ]
+  },
+  "TITLE": {
+    "translation": "TITOLO",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        39
+      ],
+    ]
+  },
+  "Title": {
+    "translation": "Titolo",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        41
+      ],
+    ]
+  },
+  "Mr": {
+    "translation": "Sig.",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        42
+      ],
+    ]
+  },
+  "Mrs.": {
+    "translation": "Sig.ra",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        43
+      ],
+    ]
+  },
+  "Ms.": {
+    "translation": "Sig.ina",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        44
+      ],
+    ]
+  },
+  "FIRST NAME": {
+    "translation": "NOME",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        48
+      ],
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        52
+      ]
+    ]
+  },
+  "LAST NAME": {
+    "translation": "COGNOME",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        61
+      ],
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        65
+      ]
+    ]
+  },
+  "EMAIL": {
+    "translation": "EMAIL",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        74
+      ],
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        78
+      ]
+    ]
+  },
+  "PASSWORD": {
+    "translation": "PASSWORD",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        88
+      ],
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        92
+      ]
+    ]
+  },
+  "CONFIRM PASSWORD": {
+    "translation": "CONFERMA PASSWORD",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        100
+      ],
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        104
+      ]
+    ]
+  },
+  "By checking this box and clicking “Submit”, I confirm that I have reached, in my country of residence, the age of majority and I consent to Vittoria Orzini Fashion Boutique using the data I provide in this form to profile me and to send me marketing communications, by email or telephone, including targeted marketing communications customised to my interests and shopping habits, as detailed in the Privacy Notice. I understand that I can withdraw my consent at any time by clicking the unsubscribe link in an email.": {
+    "translation": "Spuntando questa casella e cliccando su 'Invia', confermo di aver raggiunto, nel mio paese di residenza, la maggiore età e autorizzo Vittoria Orzini Fashion Boutique all'utilizzo dei dati da me forniti in questo modulo per definire il mio profilo, come specificato nell’Informativa sulla privacy. Sono consapevole di poter revocare il consenso in qualsiasi momento cliccando sul link di cancellazione dell'iscrizione contenuto in un'email.",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        114
+      ]
+    ]
+  },
+  "NEWSLETTER PREFERENCES": {
+    "translation": "PREFERENZE NEWSLETTER",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        117
+      ]
+    ]
+  },
+  "FASHION": {
+    "translation": "FASHION",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        122
+      ]
+    ]
+  },
+  "VINTAGE": {
+    "translation": "",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        128
+      ]
+    ]
+  },
+  "HOME COLLECTION": {
+    "translation": "COLLEZIONE CASA",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        134
+      ]
+    ]
+  },
+  "I consent to the processing of my personal data by Balenciaga for customer satisfaction purposes and for customizing my user experience to my interests or my shopping habits.": {
+    "translation": "Spuntando questa casella e cliccando su 'Invia', confermo di aver raggiunto, nel mio paese di residenza, la maggiore età e autorizzo Vittoria Orzini Fashion Boutique all'utilizzo dei dati da me forniti in questo modulo per inviarmi comunicazioni di marketing, via email o telefono, compresi messaggi di marketing mirati, personalizzati in base i miei interessi e alle mie abitudini di acquisto. Sono consapevole di poter revocare il consenso in qualsiasi momento, cliccando sul link di cancellazione dell'iscrizione contenuto in un'email. ",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        141
+      ]
+    ]
+  },
+  "Register": {
+    "translation": "Registrati",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        144
+      ]
+    ]
+  },
+  "I'M A NEW CUSTOMER": {
+    "translation": "SONO UN NUOVO CLIENTE",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        31
+      ]
+    ]
+  },
+  "This field is required": {
+    "translation": "Campo obbligatorio",
+    "origin": [
+      [
+        "src\\components\\FormControl\\FormControl.jsx",
+        33
+      ]
+    ]
+  },
+  "Valid email required": {
+    "translation": "Inserisci un indirizzo email valido",
+    "origin": [
+      [
+        "src\\components\\FormControl\\FormControl.jsx",
+        34
+      ]
+    ]
+  },
+  "The Page you are looking for could not be found!": {
+    "translation": "Die Seite konnte nicht gefunden werden!",
+    "origin": [
+      [
+        "src\\components\\NotFound\\NotFound.jsx",
+        19
+      ]
+    ]
+  },
+  "Back to Home": {
+    "translation": "Zur Startseite",
+    "origin": [
+      [
+        "src\\components\\NotFound\\NotFound.jsx",
+        20
+      ]
+    ]
+  }
+}

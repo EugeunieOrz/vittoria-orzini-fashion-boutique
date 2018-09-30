@@ -1,0 +1,54 @@
+@import '../../../../styles/partials/variables';
+
+@font-face {
+ font-family:AudreyBoldOblique;
+ src:local("Audrey-BoldOblique"),url(/static/fonts/Audrey-BoldOblique.woff) format("woff")
+}
+.dashboard {
+ -ms-flex-positive:1;
+ flex-grow:1;
+ display:-ms-flexbox;
+ display:flex;
+ border:none
+}
+.dashboard .panel-body {
+  height:inherit;
+  width:100%;
+  margin-top:240px;
+  margin-left:300px;
+  margin-right:100px;
+}
+.menu-links-grid {
+  margin-top: 200px;
+  margin-left: 350px
+}
+#fashion-link,#home-collection-link,#vintage-link {
+ display:block;
+ text-decoration:none;
+ color:#000;
+ margin-top:70px;
+ font-family:AudreyBoldOblique;
+ font-weight:700;
+}
+#fashion-link,#vintage-link {
+ width:200px!important;
+ margin-left:auto;
+ margin-right:auto
+}
+#home-collection-link {
+ width:400px!important;
+ margin-left:auto;
+ margin-right:auto
+}
+.dashboard a {
+  font-size: 2.4em !important;
+}
+#fashion-link,#home-collection-link:hover,#vintage-link {
+ cursor:url(/static/calla-30x39.png),auto!important
+}
+@media only screen and (min-width: 992px) {
+  .menu-links-grid {
+    margin-top:170px;
+    margin-left:170px;
+  }
+} 

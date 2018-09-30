@@ -1,0 +1,134 @@
+@font-face {
+ font-family:AudreyNormal;
+ src:local("Audrey-Normal"),url(/static/fonts/Audrey-Normal.woff) format("woff")
+}
+@font-face {
+ font-family:AdamCGPro;
+ src:local("ADAM-CGPRO"),url(/static/fonts/ADAM-CGPRO.woff) format("woff")
+}
+.signin-register-container {
+ width:1100px;
+ margin-top:70px;
+ margin-left:-140px
+}
+.register-header,.signin-header {
+ background-color:#fff!important;
+ text-align:center;
+ border-bottom:none;
+ padding-bottom:40px;
+ font-size:1.7em!important;
+ font-family:AudreyNormal
+}
+.signin-header {
+ margin-left:-120px
+}
+#register-title,#register-txt1,#register-txt2,#register-txt3,#register-txt4 {
+ font-family:AdamCGPro;
+ font-size:1.4em
+}
+#createaccount-link {
+ width:340px!important;
+ margin-left:60px;
+ margin-top:20px;
+ background-color:transparent;
+ border:.15em solid #000!important;
+ color:#000!important;
+ padding:10px 44px;
+ text-align:center;
+ text-decoration:none;
+ display:inline-block;
+ font-size:1.4em!important;
+ font-weight:700!important;
+ font-family:AudreyNormal;
+ cursor:url(/static/calla-30x39.png),auto!important;
+ border-radius:0
+}
+#createaccount-link:hover {
+ background-color:#eb3346!important;
+ color:silver!important
+}
+.signin-container {
+ width:400px
+}
+.signin-container .password-recovery-link {
+ margin:17px 0 0;
+ text-align:center
+}
+.signin-container .password-recovery-link a {
+ color:#000!important;
+ font-family:Philosopher;
+ font-size:1.4em
+}
+.signin-container .form-control {
+ margin-top:10px;
+ box-sizing:border-box;
+ border-bottom: 2px solid #000;
+ border-image: linear-gradient(to right, #000, transparent);
+ border-image-slice: 1;
+ padding:7px 4px;
+ background-color:inherit;
+ font-family: Acme
+}
+.signin-container .checkbox {
+ font-family:Acme!important;
+ font-size:1.2em
+}
+.has-error .signin-container #custom-form-control-password, .has-error .signin-container #custom-form-control-email {
+ border-bottom: 2px solid #df1331 !important;
+ border-image: linear-gradient(to right, #df1331, transparent) !important;
+ border-image-slice: 1 !important;
+}
+.has-error .signin-container #custom-form-control-password:focus, .has-error .signin-container #custom-form-control-email:focus {
+ border-bottom: 2px solid #df1331 !important;
+ border-image: linear-gradient(to right, #df1331, transparent) !important;
+ border-image-slice: 1 !important;
+ box-shadow: none;
+}
+#sign-in-btn {
+ width:220px!important;
+ margin-left:80px;
+ background-color:transparent;
+ border:.15em solid #000!important;
+ color:#000!important;
+ padding:10px 44px;
+ text-align:center;
+ text-decoration:none;
+ display:inline-block;
+ font-size:1.4em!important;
+ font-weight:700!important;
+ font-family:AudreyNormal;
+ cursor:url(/static/calla-30x39.png),auto!important;
+ border-radius:0
+}
+#sign-in-btn:hover {
+ background-color:#eb3346!important;
+ color:silver!important
+}
+#sign-in-btn:disabled {
+ cursor:url(/static/close-30.png),auto!important
+}
+.s-alert-error {
+ background:transparent!important;
+ color:#000!important;
+ border-color:transparent!important;
+ width:300px!important
+}
+.s-alert-close {
+ background:#000!important
+}
+.s-alert-top {
+ margin-top:70px!important;
+ width:400px!important
+}
+@media only screen and (min-width: 992px) {
+  .signin-register-container {
+    width:990px;
+    margin-top:0px;
+  }
+  #register-title, #register-txt1, #register-txt2, #register-txt3, #register-txt4 {
+    font-size: 1.1em
+  }
+  #sign-in-btn, #createaccount-link {
+    font-size: 1.3em !important;
+  }
+}
