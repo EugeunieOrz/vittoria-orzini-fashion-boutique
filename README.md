@@ -19,8 +19,8 @@ and frontend written in React.js using Redux for managing state.
 * Password reset functionality with password survey afterwards
 * Email sending and auth token cleanup
 * MongoDB storage
-* [Security headers](https://www.playframework.com/documentation/2.5.x/SecurityHeaders)
-* [CSRF Protection](https://www.playframework.com/documentation/2.5.x/ScalaCsrf)
+* Security headers
+* CSRF Protection
 
 
 #### Installation 
