@@ -68,27 +68,11 @@ class SignInController @Inject() (
         credentialsProvider.authenticate(Credentials(data.email, data.password)).flatMap { loginInfo =>
           userService.retrieve(loginInfo).flatMap {
             case Some(user) =>
-              for {
-                addresses <- addressesService.retrieve(user.id)
-                creditCards <- creditCardsService.retrieve(user.id)
-                newsletter <- newsletterService.retrieve(user.id)
-              } yield {
-                handleActiveUser(
-                  user,
-                  loginInfo,
-                  data.rememberMe,
-                  addresses.getOrElse(Addresses(id = user.id, addresses = None)),
-                  newsletter.getOrElse(NewsletterSubscription(
-                    id = user.id,
-                    loginInfo = Seq(loginInfo),
-                    updates = None,
-                    newsletterFashion = None,
-                    newsletterVintage = None,
-                    newsletterHomeCollection = None
-                  )),
-                  creditCards.getOrElse(CreditCards(id = user.id, creditCards = None))
-                )
-              }
+              handleActiveUser(
+                user,
+                loginInfo,
+                data.rememberMe
+              )
             case None =>
               Future.failed(new IdentityNotFoundException("Couldn't find user"))
           }
@@ -115,26 +99,26 @@ class SignInController @Inject() (
   private def handleActiveUser(
     user: User,
     loginInfo: LoginInfo,
-    rememberMe: Boolean,
-    addresses: Addresses,
-    newsletter: NewsletterSubscription,
-    creditCards: CreditCards
+    rememberMe: Boolean
   )(implicit request: RequestHeader): Future[Result] = {
-    silhouette.env.authenticatorService.create(loginInfo)
-      .map(configureAuthenticator(rememberMe, _))
-      .flatMap { authenticator =>
-        silhouette.env.eventBus.publish(LoginEvent(user, request))
-        silhouette.env.authenticatorService.init(authenticator).flatMap { cookie =>
-          silhouette.env.authenticatorService.embed(
-            cookie,
-            Ok(ApiResponse(
-              "auth.signIn.successful",
-              Messages("auth.signed.in"),
-              Json.toJson((user, newsletter, addresses, creditCards))
-            ))
-          )
-        }
-      }
+    for {
+      addresses <- addressesService.retrieve(user.id)
+      creditCards <- creditCardsService.retrieve(user.id)
+      newsletter <- newsletterService.retrieve(user.id)
+      authenticator <- silhouette.env.authenticatorService.create(loginInfo)
+      cookie <- silhouette.env.authenticatorService.init(configureAuthenticator(rememberMe, authenticator))
+      result <- silhouette.env.authenticatorService.embed(
+        cookie,
+        Ok(ApiResponse(
+          "auth.signIn.successful",
+          Messages("auth.signed.in"),
+          Json.toJson((user, addresses, creditCards, newsletter))
+        ))
+      )
+    } yield {
+      silhouette.env.eventBus.publish(LoginEvent(user, request))
+      result
+    }
   }
 
   /**
