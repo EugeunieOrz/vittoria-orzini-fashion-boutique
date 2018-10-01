@@ -5,7 +5,7 @@ import play.api.data.Forms._
 import play.api.data.validation.Constraints._
 
 /**
- * The form which handles the sign up process.
+ * The form which handles the editing newsletter subscription information process.
  */
 object NewsletterForm {
 
@@ -25,9 +25,11 @@ object NewsletterForm {
   /**
    * The form data.
    *
-   * @param name The name of a user.
-   * @param email The email of the user.
-   * @param password The password of the user.
+   * @param consent The consent of the user to processing his information for marketing purposes.
+   * @param updates The consent of the user to newsletter subscription.
+   * @param newsletterFashion
+   * @param newsletterVintage
+   * @param newsletterHomeCollection
    */
   case class Data(
     consent: Boolean,

@@ -12,7 +12,7 @@ case class Address(
   lastName: String,
   addInf: AdditionalInfo,
   address: String,
-  zipcode: String,
+  zipCode: String,
   city: String,
   country: String,
   state: String,
@@ -30,7 +30,7 @@ case class TelephoneDay(
 
 case class TelephoneEvening(
   val name: String = "Telephone (evening)",
-  telephone: String
+  telephone: Option[String]
 )
 
 case class AdditionalInfo(

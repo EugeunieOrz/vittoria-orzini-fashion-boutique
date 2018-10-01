@@ -5,6 +5,7 @@ import updateNewsletterSagaBinding from 'bundles/Admin/sagas/UpdateNewsletterSag
 import editNameSagaBinding from 'bundles/Admin/sagas/EditNameSaga';
 import editEmailSagaBinding from 'bundles/Admin/sagas/EditEmailSaga';
 import changePasswordSagaBinding from 'bundles/Admin/sagas/ChangePasswordSaga';
+import addNewAddressSagaBinding from 'bundles/Admin/sagas/AddNewAddressSaga';
 
 export default function* adminSaga() {
   yield all(combineSagas([
@@ -13,5 +14,6 @@ export default function* adminSaga() {
     editNameSagaBinding,
     editEmailSagaBinding,
     changePasswordSagaBinding,
+    addNewAddressSagaBinding,
   ]));
 }

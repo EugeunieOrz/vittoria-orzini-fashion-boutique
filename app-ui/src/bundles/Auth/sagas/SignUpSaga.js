@@ -4,6 +4,7 @@ import { call, put, take } from 'redux-saga/effects';
 import { handleError, formErrorHandler } from 'util/Saga';
 import { history } from 'modules/LocationModule';
 import { fetchUser, fetchUserFulfilled } from 'modules/UserModule';
+import { fetchNewsletter, fetchNewsletterPending, fetchNewsletterFulfilled } from 'modules/NewsletterModule';
 import {
   modelPath,
   signUp,
@@ -29,6 +30,9 @@ export function* signUpSaga(api: AuthAPI): Generator<*, *, *> {
         yield put(signUpFulfilled(response));
         yield put(signInFulfilled(response));
         yield put(fetchUserFulfilled(response.details));
+        yield put(fetchNewsletter(response.details.id));
+        yield put(fetchNewsletterPending(response.details.id));
+        yield put(fetchNewsletterFulfilled(response.details.id));
         yield put(actions.reset(modelPath));
         yield call(history.push, config.route.admin.index);
       }

@@ -39,7 +39,16 @@ export const EditBDateComponent = ({
                     onChange={(d) => onSelectDay(d.target.value)}
     >
       {
-        (month === 'February' && (year === '2020')) ?
+        (month === 'February' && (year === '2020' || year === '2016' || year === '2012' ||
+                                  year === '2008' || year === '2004' || year === '2000' ||
+                                  year === '1996' || year === '1992' || year === '1988' ||
+                                  year === '1984' || year === '1980' || year === '1976' ||
+                                  year === '1972' || year === '1968' || year === '1964' ||
+                                  year === '1960' || year === '1956' || year === '1952' ||
+                                  year === '1948' || year === '1944' || year === '1940' ||
+                                  year === '1936' || year === '1932' || year === '1928' ||
+                                  year === '1924' || year === '1920' || year === '1916' ||
+                                  year === '1912' || year === '1908' || year === '1904')) ?
         daysFebLeap.map((day, index) => <option key={index} value={day.DAY}>{day.DAY}</option>) :
         (
           ((year !== '2020') && month === 'February') ?

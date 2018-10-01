@@ -101,8 +101,9 @@ export function* fetchUserFulfilledWorker(api: UserAPI): Generator<*, *, *> {
   while (yield take(fetchUserFulfilled().type)) {
     const response = yield call([api, api.get]);
     const user = response.details;
-    console.log("UserID in UserSaga: ", user.id);
     yield put(fetchNewsletter(user.id));
+    yield put(fetchNewsletterPending(user.id));
+    yield put(fetchNewsletterFulfilled(user.id));
     yield put(fetchConfig());
   }
 }

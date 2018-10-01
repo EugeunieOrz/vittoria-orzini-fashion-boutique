@@ -5,6 +5,7 @@ import type { EditNameForm } from 'bundles/Admin/modules/EditNameModule';
 import type { EditEmailForm } from 'bundles/Admin/modules/EditEmailModule';
 import type { ChangePasswordForm } from 'bundles/Admin/modules/ChangePasswordModule';
 import type { NewsletterForm } from 'bundles/Admin/modules/NewsletterModule';
+import type { AddNewAddressForm } from 'bundles/Admin/modules/AddNewAddressFormModule';
 
 /**
  * Executes auth calls against the backend API.
@@ -65,6 +66,17 @@ export default class AdminAPI extends API {
    */
   async updateNewsletter(userID: string, data: NewsletterForm): Promise<APIResponse> {
     const response = await this.jsonRequest(`api/admin/update-newsletter/${userID}`, data);
+    return response.json();
+  }
+
+  /**
+   * Adds a new address to the user's address book.
+   *
+   * @param data The address data.
+   * @return A resolved or rejected promise containing an API result.
+   */
+  async addNewAddress(userID: string, data: AddNewAddressForm): Promise<APIResponse> {
+    const response = await this.jsonRequest(`api/admin/add-a-new-address/${userID}`, data);
     return response.json();
   }
 }

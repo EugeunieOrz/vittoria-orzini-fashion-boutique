@@ -5,7 +5,7 @@ import play.api.data.Forms._
 import play.api.data.validation.Constraints._
 
 /**
- * The form which handles the sign up process.
+ * The form which handles the editing user's name process.
  */
 object EditNameForm {
 
@@ -23,9 +23,9 @@ object EditNameForm {
   /**
    * The form data.
    *
-   * @param name The name of a user.
-   * @param email The email of the user.
-   * @param password The password of the user.
+   * @param title      The title of a user.
+   * @param firstName The first name of the user.
+   * @param lastName The last name of the user.
    */
   case class Data(
     title: String,

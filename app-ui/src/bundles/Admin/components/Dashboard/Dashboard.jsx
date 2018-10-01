@@ -12,10 +12,12 @@ import EditNameContainer from 'bundles/Admin/containers/EditNameContainer';
 import EditBDateContainer from 'bundles/Admin/containers/EditBDateContainer';
 import ChangePasswordContainer from 'bundles/Admin/containers/ChangePasswordContainer';
 import EditNewsletterContainer from 'bundles/Admin/containers/EditNewsletterContainer';
+import AddNewAddressContainer from 'bundles/Admin/containers/AddNewAddressContainer';
 
 import './Dashboard.scss';
 
 type Props = {
+  addNewAddressIsShown: boolean,
   bdate: string,
   i18n: Object,
   isShown: boolean,
@@ -24,11 +26,14 @@ type Props = {
   editNameIsShown: boolean,
   passwordFormIsShown: boolean,
   onSignOut: () => any,
+  onToggleAddNewAddress: () => any,
   onToggleBDate: () => any,
   onToggleUpdate: () => any,
   onToggleEmail: () => any,
   onToggleName: () => any,
+  onToggleNewAddressSaved: () => any,
   onTogglePasswordForm: () => any,
+  savedNewAddressIsShown: boolean,
   section: string,
   selectID: () => any,
   userEmail: string,
@@ -37,44 +42,56 @@ type Props = {
 };
 
 export const DashboardComponent = ({
-  bdate, i18n, isShown, isShownUpdated, editNameIsShown, editEmailIsShown, onSignOut, onToggleBDate,
-  onToggleUpdate, onToggleEmail, onToggleName, onTogglePasswordForm,
-  passwordFormIsShown, section, selectID, userEmail, userFirstName, userName,
+  addNewAddressIsShown, bdate, i18n, isShown, isShownUpdated, editNameIsShown, editEmailIsShown, onSignOut,
+  onToggleAddNewAddress, onToggleBDate, onToggleEmail, onToggleName, onToggleNewAddressSaved,
+  onTogglePasswordForm, onToggleUpdate, passwordFormIsShown, savedNewAddressIsShown, section,
+  selectID, userEmail, userFirstName, userName,
 }: Props) => (
   <Grid className="admin-dashboard">
     <Row className="admin-welcome">
-      Welcome, {userFirstName}
+      {i18n.t`Welcome`}, {userFirstName}
     </Row>
+    <p>{section}</p>
     <Nav className="profile-navbar" onSelect={selectID}>
       <NavItem
-        id={( section === '' || section === 0 || section === 1) ? 'profile-section-active' : 'profile-section'}
-        eventKey={1}>Profile</NavItem>
+        id={( section === '' || section === 0 || section === 1 ||
+              section === "" || section === undefined) ? 'profile-section-active' : 'profile-section'}
+        eventKey={1}>{i18n.t`Profile`}</NavItem>
       <NavItem id={ section === 2 ? 'creditwallet-section-active' : 'creditwallet-section'}
-        eventKey={2}>Credit Wallet</NavItem>
+        eventKey={2}>{i18n.t`Credit Wallet`}</NavItem>
       <NavItem id={ section === 3 ? 'wishlist-section-active' : 'wishlist-section'}
-        eventKey={3}>Wishlist</NavItem>
+        eventKey={3}>{i18n.t`Wishlist`}</NavItem>
       <NavItem id={ section === 4 ? 'orders-section-active' : 'orders-section'}
-        eventKey={4}>Order History</NavItem>
+        eventKey={4}>{i18n.t`Order History`}</NavItem>
       <NavItem id={ section === 5 ? 'address-section-active' : 'address-section'}
-        eventKey={5}>Address Book</NavItem>
-      <NavItem id="logout-btn" onSelect={onSignOut}>LOG OUT</NavItem>
+        eventKey={5}>{i18n.t`Address Book`}</NavItem>
+      <NavItem id="logout-btn" onSelect={onSignOut}>{i18n.t`LOG OUT`}</NavItem>
     </Nav>
-    { (section === 1 || section === '0' || section === '') &&
+    { (section === 1 || section === '0' || section === '' ||
+       section === "" || section === undefined) &&
       <Grid className="personal-details">
         <Row>
           <Col md={6} mdPull={6}>
-            <p className="name">Name: {userName}</p>
-            <p className="emailaddr">Email Address: {userEmail}</p>
-            <p className="passwd">Password: XXXX</p>
+            <p className="name">{i18n.t`Name`}: {userName}</p>
+            <p className="emailaddr">{i18n.t`Email Address`}: {userEmail}</p>
+            <p className="passwd">{i18n.t`Password`}: XXXX</p>
             <p className="birthdate">
-              Date of Birth: {bdate}
+              {i18n.t`Date of Birth`}: {bdate}
             </p>
           </Col>
           <Col md={6} mdPush={6}>
-            <Button className="change-name" onClick={() => onToggleName()}>CHANGE YOUR NAME</Button>
-            <Button className="change-email" onClick={() => onToggleEmail()}>CHANGE YOUR EMAIL</Button>
-            <Button className="change-passwd" onClick={() => onTogglePasswordForm()}>CHANGE YOUR PASSWORD</Button>
-            <Button className="change-bdate" onClick={() => onToggleBDate()}>CHANGE YOUR DATE OF BIRTH</Button>
+            <Button className="change-name" onClick={() => onToggleName()}>
+              {i18n.t`CHANGE YOUR NAME`}
+            </Button>
+            <Button className="change-email" onClick={() => onToggleEmail()}>
+              {i18n.t`CHANGE YOUR EMAIL`}
+            </Button>
+            <Button className="change-passwd" onClick={() => onTogglePasswordForm()}>
+              {i18n.t`CHANGE YOUR PASSWORD`}
+            </Button>
+            <Button className="change-bdate" onClick={() => onToggleBDate()}>
+              {i18n.t`CHANGE YOUR DATE OF BIRTH`}
+            </Button>
           </Col>
         </Row>
         <Row className="newsletter-section">
@@ -83,7 +100,7 @@ export const DashboardComponent = ({
         </Row>
         <Modal className="bdate-modal" show={isShown} onHide={() => onToggleBDate()}>
           <Modal.Header closeButton>
-            <Modal.Title>Change Your Date of Birth</Modal.Title>
+            <Modal.Title>{i18n.t`CHANGE YOUR DATE OF BIRTH`}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <EditBDateContainer />
@@ -91,11 +108,11 @@ export const DashboardComponent = ({
         </Modal>
         <Modal className="details-updated" show={isShownUpdated} onHide={() => onToggleUpdate()}>
           <Modal.Header closeButton></Modal.Header>
-          <Modal.Body>Your details have been successfully updated</Modal.Body>
+          <Modal.Body>{i18n.t`Your details have been successfully updated`}</Modal.Body>
         </Modal>
         <Modal className="edit-name-modal" show={editNameIsShown} onHide={() => onToggleName()}>
           <Modal.Header closeButton>
-            <Modal.Title>CHANGE YOUR NAME</Modal.Title>
+            <Modal.Title>{i18n.t`CHANGE YOUR NAME`}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <EditNameContainer />
@@ -103,7 +120,7 @@ export const DashboardComponent = ({
         </Modal>
         <Modal className="edit-email-modal" show={editEmailIsShown} onHide={() => onToggleEmail()}>
           <Modal.Header closeButton>
-            <Modal.Title>CHANGE YOUR EMAIL</Modal.Title>
+            <Modal.Title>{i18n.t`CHANGE YOUR EMAIL`}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <EditEmailContainer />
@@ -111,7 +128,7 @@ export const DashboardComponent = ({
         </Modal>
         <Modal className="change-password-modal" show={passwordFormIsShown} onHide={() => onTogglePasswordForm()}>
           <Modal.Header closeButton>
-            <Modal.Title>CHANGE YOUR PASSWORD</Modal.Title>
+            <Modal.Title>{i18n.t`CHANGE YOUR PASSWORD`}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <ChangePasswordContainer />
@@ -122,7 +139,31 @@ export const DashboardComponent = ({
     { section === 2 && <p id="p2">You have not yet saved any credit cards</p> }
     { section === 3 && <p id="p3">You have not yet added any of your favourite items</p> }
     { section === 4 && <p id="p4">You have not previously ordered as a registered user</p> }
-    { section === 5 && <p id="p5">You have not yet saved any addresses</p> }
+    { section === 5 &&
+      <Grid className="address-book">
+        <Row className="addr-title">
+          {i18n.t`Save all your delivery details to complete the order process quickly`}
+        </Row>
+        <Row className="addr-msg">
+          {i18n.t`YOU HAVE NOT YET SAVED ANY ADDRESSES`}
+        </Row>
+        <Button className="add-new-addr-btn">
+          {i18n.t`ADD A NEW ADDRESS`}
+        </Button>
+        <Modal className="add-new-address-modal" show={addNewAddressIsShown} onHide={() => onToggleAddNewAddress()}>
+          <Modal.Header closeButton>
+            <Modal.Title>{i18n.t`ADD A NEW ADDRESS`}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <AddNewAddressContainer />
+          </Modal.Body>
+        </Modal>
+        <Modal className="new-address-saved" show={savedNewAddressIsShown} onHide={() => onToggleNewAddressSaved()}>
+          <Modal.Header closeButton></Modal.Header>
+          <Modal.Body>{i18n.t`Your address has been successfully saved`}</Modal.Body>
+        </Modal>
+      </Grid>
+    }
   </Grid>
 );
 

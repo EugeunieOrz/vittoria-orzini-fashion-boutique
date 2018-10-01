@@ -3,6 +3,8 @@ import { actions } from 'react-redux-form';
 import lifecycle from 'components/Lifecycle';
 import { toggleUpdate } from 'bundles/Admin/modules/DetailsUpdateModule';
 import { togglePasswordForm } from 'bundles/Admin/modules/PasswordFormModule';
+import { toggleAddNewAddress } from 'bundles/Admin/modules/AddNewAddressModule';
+import { toggleNewAddressSaved } from 'bundles/Admin/modules/NewAddressSavedModule';
 import { toggleBDate } from 'bundles/Admin/modules/BDateModule';
 import { toggleEmail } from 'bundles/Admin/modules/EmailModule';
 import { toggleName } from 'bundles/Admin/modules/NameModule';
@@ -24,12 +26,14 @@ import Dashboard from 'bundles/Admin/components/Dashboard';
 const mapStateToProps = (state) => {
    console.log('STATE', state);
    return {
+     addNewAddressIsShown: state.admin.toggleAddNewAddress.addNewAddressModal.isShown,
      bdate: getUserBDate(state),
-     editEmailIsShown: state.admin.toggleEmail.emailModal.editEmailIsShown,
-     editNameIsShown: state.admin.toggleName.nameModal.editNameIsShown,
+     editEmailIsShown: state.admin.toggleEmail.emailModal.isShown,
+     editNameIsShown: state.admin.toggleName.nameModal.isShown,
      isShown: state.admin.toggleBDate.bdateModal.isShown,
-     isShownUpdated: state.admin.toggleUpdate.detailsUpdateModal.isShownUpdated,
-     passwordFormIsShown: state.admin.togglePasswordForm.passwordModal.passwordFormIsShown,
+     isShownUpdated: state.admin.toggleUpdate.detailsUpdateModal.isShown,
+     passwordFormIsShown: state.admin.togglePasswordForm.passwordModal.isShown,
+     savedNewAddressIsShown: state.admin.toggleNewAddressSaved.newAddressSavedModal.isShown,
      section: state.admin.toggleSection.sectionID.section,
      userEmail: getUserEmail(state),
      userFirstName: getUserFirstName(state),
@@ -51,12 +55,14 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
   selectID: valueID => dispatch(selectID(valueID)),
   onSignOut: () => dispatch(signOutUser()),
+  onToggleAddNewAddress: () => dispatch(toggleAddNewAddress()),
   onToggleBDate: () => dispatch(toggleBDate()),
   onToggleUpdate: () => dispatch(toggleUpdate()),
   onTogglePasswordForm: () => dispatch(togglePasswordForm()),
   onToggleEmail: () => dispatch(toggleEmail()),
   onToggleName: () => dispatch(toggleName()),
   onUpdateNewsletter: data => dispatch(updateNewsletter(data)),
+  onToggleNewAddressSaved: () => dispatch(toggleNewAddressSaved()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(lifecycle(Dashboard));

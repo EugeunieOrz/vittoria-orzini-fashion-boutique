@@ -5,7 +5,7 @@ import play.api.data.Forms._
 import play.api.data.validation.Constraints._
 
 /**
- * The form which handles the sign up process.
+ * The form which handles the editing user's email process.
  */
 object EditEmailForm {
 
@@ -23,6 +23,7 @@ object EditEmailForm {
    * The form data.
    *
    * @param email The email of a user.
+   * @param password The password of a user.
    */
   case class Data(
     email: String,

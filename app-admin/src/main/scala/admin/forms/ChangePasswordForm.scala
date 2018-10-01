@@ -5,7 +5,7 @@ import play.api.data.Forms._
 import play.api.data.validation.Constraints._
 
 /**
- * The form which handles the sign up process.
+ * The form which handles the changing password process.
  */
 object ChangePasswordForm {
 
@@ -22,9 +22,8 @@ object ChangePasswordForm {
   /**
    * The form data.
    *
-   * @param name The name of a user.
-   * @param email The email of the user.
-   * @param password The password of the user.
+   * @param oldPassword The old password of a user.
+   * @param password    The password of the user.
    */
   case class Data(
     oldPassword: String,

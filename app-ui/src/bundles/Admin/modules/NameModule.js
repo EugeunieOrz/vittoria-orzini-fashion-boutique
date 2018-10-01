@@ -3,10 +3,10 @@ import { combineReducers } from 'redux';
 import { createAction, handleAction, handleActions } from 'redux-actions';
 
 export type NameState = {
-  editNameIsShown: boolean
+  isShown: boolean
 }
 
-export const nameState: NameState = { editNameIsShown: false };
+export const nameState: NameState = { isShown: false };
 
 export const toggleName = createAction('ADMIN_TOGGLE_NAME');
 
@@ -14,7 +14,7 @@ export default combineReducers({
   nameModal: handleAction(
     toggleName,
     (nameState, action) => ({
-      editNameIsShown: !nameState.editNameIsShown
+      isShown: !nameState.isShown
     }),
      nameState
   ),

@@ -112,7 +112,7 @@ class SignInController @Inject() (
         Ok(ApiResponse(
           "auth.signIn.successful",
           Messages("auth.signed.in"),
-          Json.toJson((user, addresses, creditCards, newsletter))
+          Json.toJson((user))
         ))
       )
     } yield {

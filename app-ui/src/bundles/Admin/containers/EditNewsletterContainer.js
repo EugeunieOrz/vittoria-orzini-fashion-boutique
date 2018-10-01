@@ -4,7 +4,7 @@ import lifecycle from 'components/Lifecycle';
 import { modelPath, updateNewsletter } from 'bundles/Admin/modules/NewsletterModule';
 import { getUserID } from 'selectors/UserSelector';
 import EditNewsletter from 'bundles/Admin/components/EditNewsletter';
-import { getNewsletter } from 'selectors/NewsletterSelector';
+import { getNewsletter, getNewsletterUpdates, getNewsletterFashion, getNewsletterVintage, getNewsletterHomeCollection } from 'selectors/NewsletterSelector';
 
 /**
  * Maps the state properties to the React component `props`.
@@ -19,11 +19,12 @@ const mapStateToProps = (state) => {
      form: state.admin.updateNewsletter.form,
      ...state.admin.updateNewsletter.request,
      formInitial: {
-       updates: state.admin.updateNewsletter.data.updates || getNewsletter(state).updates.isChecked,
-       newsletterFashion: state.admin.updateNewsletter.data.newsletterFashion || getNewsletter(state).newsletterFashion.isChecked,
-       newsletterVintage: state.admin.updateNewsletter.data.newsletterVintage || getNewsletter(state).newsletterVintage.isChecked,
-       newsletterHomeCollection: state.admin.updateNewsletter.data.newsletterHomeCollection || getNewsletter(state).newsletterHomeCollection.isChecked,
+       updates: getNewsletterUpdates(state),
+       newsletterFashion: getNewsletterFashion(state),
+       newsletterVintage: getNewsletterVintage(state),
+       newsletterHomeCollection: getNewsletterHomeCollection(state),
      },
+
    }
  }
 /* const mapStateToProps = state => ({
@@ -47,6 +48,7 @@ const mergeProps = (propsFromState, propsFromDispatch) => {
     onUpdateNewsletter: (userID, data) => dispatch(updateNewsletter({userID, data})),
     componentWillUnmount: () => dispatch(actions.change(modelPath, propsFromState.formInitial)),
     componentWillMount: () => dispatch(actions.merge(modelPath, propsFromState.formInitial)),
+
   };
 };
 
