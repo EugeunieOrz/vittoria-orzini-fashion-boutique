@@ -4,4 +4,3 @@
 # Home page
 GET     /health                      core.controllers.HealthController.get
 GET     /config                      core.controllers.ConfigController.get
-GET     /newsletter/:userID          core.controllers.NewsletterController.get(userID: reactivemongo.bson.BSONObjectID)

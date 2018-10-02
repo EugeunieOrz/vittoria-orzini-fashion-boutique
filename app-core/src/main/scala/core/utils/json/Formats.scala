@@ -3,7 +3,7 @@ package core.utils.json
 import java.time.Instant
 import java.util.UUID
 
-import core.models.{ StateOrProvince, PreferredCreditCard, AdditionalInfo, Address, Addresses, BillingAddress, BillingAddressMark, Config, CreditCards, CreditCard, DefaultShippingAddressMark, PasswordSurvey, Registration, Settings, Updates, User, NewsletterFashion, NewsletterVintage, NewsletterHomeCollection, NewsletterSubscription, TelephoneEvening, TelephoneDay }
+import core.models.{ StateOrProvince, PreferredCreditCard, AdditionalInfo, Address, BillingAddress, BillingAddressMark, Config, CreditCard, DefaultShippingAddressMark, PasswordSurvey, Registration, Settings, Updates, User, NewsletterFashion, NewsletterVintage, NewsletterHomeCollection, Newsletter, TelephoneEvening, TelephoneDay }
 import play.api.i18n.Lang
 import play.api.libs.json._
 import reactivemongo.bson.BSONObjectID
@@ -70,6 +70,11 @@ trait Formats {
    * Converts a [[Config]] instance to JSON and vice versa.
    */
   implicit val configFormat: OFormat[Config] = Json.format
+
+  /**
+   * Converts a [[Newsletter]] instance to JSON and vice versa.
+   */
+  implicit val newslFormat: OFormat[Newsletter] = Json.format
 
   /**
    * Converts a [[NewsletterFashion]] instance to JSON and vice versa.
@@ -183,6 +188,21 @@ object MongoFormats extends MongoFormats with Formats {
   import reactivemongo.play.json.BSONFormats._
 
   /**
+   * Converts a [[Address]] instance to JSON and vice versa.
+   */
+  implicit val address2Format: OFormat[Address] = Json.format
+
+  /**
+   * Converts a [[CreditCard]] instance to JSON and vice versa.
+   */
+  implicit val creditCard2Format: OFormat[CreditCard] = Json.format
+
+  /**
+   * Converts a [[Newsletter]] instance to JSON and vice versa.
+   */
+  implicit val newsletter2Format: OFormat[Newsletter] = Json.format
+
+  /**
    * Converts a [[Registration]] instance to JSON and vice versa.
    */
   implicit val registrationFormat: OFormat[Registration] = Json.format
@@ -197,41 +217,27 @@ object MongoFormats extends MongoFormats with Formats {
    */
   implicit val userWrites: OWrites[User] = Json.writes.transform(IDWrites("id"))
 
-  /**
-   * Converts JSON into a [[NewsletterSubscription]] instance.
-   */
-  implicit val newsletterReads: Reads[NewsletterSubscription] = IDReads("id") andThen Json.reads
-
-  /**
-   * Converts a [[NewsletterSubscription]] instance to JSON.
-   */
-  implicit val newsletterWrites: OWrites[NewsletterSubscription] = Json.writes.transform(IDWrites("id"))
-
-  /**
-   * Converts JSON into a [[Addresses]] instance.
-   */
-  implicit val addressesReads: Reads[Addresses] = IDReads("id") andThen Json.reads
-
-  /**
-   * Converts a [[Address]] instance to JSON.
-   */
-  implicit val addressesWrites: OWrites[Addresses] = Json.writes.transform(IDWrites("id"))
-
-  /**
-   * Converts JSON into a [[CreditCards]] instance.
-   */
-  implicit val creditCardsReads: Reads[CreditCards] = IDReads("id") andThen Json.reads
-
-  /**
-   * Converts a [[CreditCards]] instance to JSON.
-   */
-  implicit val creditCardsWrites: OWrites[CreditCards] = Json.writes.transform(IDWrites("id"))
 }
 
 /**
  * API centric JSON formats.
  */
 object APIFormats extends APIFormats with Formats {
+
+  /**
+   * Converts a [[Address]] instance to JSON and vice versa.
+   */
+  implicit val addrFormat: OFormat[Address] = Json.format
+
+  /**
+   * Converts a [[CreditCard]] instance to JSON and vice versa.
+   */
+  implicit val creditCardFormat: OFormat[CreditCard] = Json.format
+
+  /**
+   * Converts a [[Newsletter]] instance to JSON and vice versa.
+   */
+  implicit val newsletterFormat: OFormat[Newsletter] = Json.format
 
   /**
    * Converts a [[PasswordSurvey]] instance to JSON and vice versa.
@@ -248,18 +254,4 @@ object APIFormats extends APIFormats with Formats {
    */
   implicit val userFormat: OFormat[User] = Json.format
 
-  /**
-   * Converts a [[NewsletterSubscription]] instance to JSON and vice versa.
-   */
-  implicit val newsletterFormat: OFormat[NewsletterSubscription] = Json.format
-
-  /**
-   * Converts a [[Addresses]] instance to JSON and vice versa.
-   */
-  implicit val addressesFormat: OFormat[Addresses] = Json.format
-
-  /**
-   * Converts a [[CreditCards]] instance to JSON and vice versa.
-   */
-  implicit val creditCardsFormat: OFormat[CreditCards] = Json.format
 }

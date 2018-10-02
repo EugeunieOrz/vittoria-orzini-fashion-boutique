@@ -7,10 +7,6 @@ import reactivemongo.bson.BSONObjectID
  *
  * @param id           The unique ID of the user.
  */
-case class CreditCards(
-  id: BSONObjectID,
-  creditCards: Option[Seq[CreditCard]]
-)
 
 case class CreditCard(
   creditCardType: String,

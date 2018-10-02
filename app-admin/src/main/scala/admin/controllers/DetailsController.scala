@@ -11,8 +11,8 @@ import com.mohiva.play.silhouette.api.util.{ PasswordHasher, PasswordHasherRegis
 import com.mohiva.play.silhouette.impl.exceptions.{ IdentityNotFoundException, InvalidPasswordException }
 import com.mohiva.play.silhouette.impl.providers._
 import core.controllers.ApiController
-import core.models.{ AdditionalInfo, Address, Addresses, BillingAddressMark, DefaultShippingAddressMark, NewsletterFashion, NewsletterVintage, NewsletterHomeCollection, TelephoneDay, TelephoneEvening, Updates, User }
-import core.models.services.{ AddressesService, NewsletterService, UserService }
+import core.models.{ AdditionalInfo, Address, BillingAddressMark, DefaultShippingAddressMark, Newsletter, NewsletterFashion, NewsletterVintage, NewsletterHomeCollection, TelephoneDay, TelephoneEvening, Updates, User }
+import core.models.services.UserService
 import core.utils.DefaultEnv
 import core.utils.json.APIFormats._
 import javax.inject.Inject
@@ -33,8 +33,6 @@ import scala.concurrent.{ ExecutionContext, Future }
  * @param credentialsProvider   The credentials provider.
  * @param authInfoRepository     The auth info repository.
  * @param avatarService          The avatar service implementation.
- * @param newsletterService      The newsletter subscription service implementation.
- * @param addressesService       The addresses service implementation.
  * @param passwordHasherRegistry The password hasher registry.
  * @param silhouette            The Silhouette stack.
  * @param userService           The user service implementation.
@@ -45,8 +43,6 @@ class DetailsController @Inject() (
   credentialsProvider: CredentialsProvider,
   authInfoRepository: AuthInfoRepository,
   avatarService: AvatarService,
-  newsletterService: NewsletterService,
-  addressesService: AddressesService,
   passwordHasher: PasswordHasher,
   passwordHasherRegistry: PasswordHasherRegistry,
   silhouette: Silhouette[DefaultEnv],
@@ -230,23 +226,27 @@ class DetailsController @Inject() (
         )),
         data => userService.retrieve(userID).flatMap {
           case Some(user) if user.loginInfo.exists(_.providerID == CredentialsProvider.ID) =>
-            newsletterService.retrieve(userID).flatMap {
-              case Some(newsletter) if newsletter.loginInfo.exists(_.providerID == CredentialsProvider.ID) =>
-                val updatedNewsletter = newsletter.copy(
+            val updatedUser = user.copy(
+              newsletters = Some(Seq(Newsletter(
+                updates = Some(Updates(data.updates)),
+                newsletterFashion = Some(NewsletterFashion(data.newsletterFashion)),
+                newsletterVintage = Some(NewsletterVintage(data.newsletterVintage)),
+                newsletterHomeCollection = Some(NewsletterHomeCollection(data.newsletterHomeCollection))
+              )))
+            )
+            userService.save(updatedUser).map { usr =>
+              val updatedUser = user.copy(
+                newsletters = Some(Seq(Newsletter(
                   updates = Some(Updates(data.updates)),
                   newsletterFashion = Some(NewsletterFashion(data.newsletterFashion)),
                   newsletterVintage = Some(NewsletterVintage(data.newsletterVintage)),
                   newsletterHomeCollection = Some(NewsletterHomeCollection(data.newsletterHomeCollection))
-                )
-                newsletterService.save(updatedNewsletter).map { newsl =>
-                  Ok(ApiResponse(
-                    "admin.details.update.successful",
-                    Messages("admin.details.update"),
-                    Json.toJson(newsl)))
-                }
-              case _ => Future.successful(
-                BadRequest(ApiResponse("admin.details.invalid", Messages("admin.details.invalid")))
+                )))
               )
+              Ok(ApiResponse(
+                "admin.details.update.successful",
+                Messages("admin.details.update"),
+                Json.toJson(usr)))
             }
           case _ => Future.successful(
             BadRequest(ApiResponse("admin.details.invalid", Messages("admin.details.invalid")))
@@ -268,45 +268,39 @@ class DetailsController @Inject() (
         )),
         data => userService.retrieve(userID).flatMap {
           case Some(user) if user.loginInfo.exists(_.providerID == CredentialsProvider.ID) =>
-            addressesService.retrieve(userID).flatMap {
-              case Some(addresses) =>
-                val savedAdresses = addresses.copy(
-                  addresses = Some(Seq(Address(
-                    firstName = data.firstName,
-                    lastName = data.lastName,
-                    addInf = AdditionalInfo(
-                      descr = data.additional
-                    ),
-                    address = data.address,
-                    zipCode = data.zipCode,
-                    city = data.city,
-                    country = data.country,
-                    state = data.province,
-                    email = data.email,
-                    dayTel = TelephoneDay(
-                      telephone = data.dayTelephone
-                    ),
-                    eveningTel = TelephoneEvening(
-                      telephone = data.eveningTelephone
-                    ),
-                    mark1 = DefaultShippingAddressMark(
-                      checked = data.defShipAddr
-                    ),
-                    mark2 = BillingAddressMark(
-                      checked = data.preferBillAddr
-                    )
-                  )))
+            val updatedUser = user.copy(
+              addressBook = Some(Seq(Address(
+                firstName = data.firstName,
+                lastName = data.lastName,
+                addInf = AdditionalInfo(
+                  descr = data.additional
+                ),
+                address = data.address,
+                zipCode = data.zipCode,
+                city = data.city,
+                country = data.country,
+                state = data.province,
+                email = data.email,
+                dayTel = TelephoneDay(
+                  telephone = data.dayTelephone
+                ),
+                eveningTel = TelephoneEvening(
+                  telephone = data.eveningTelephone
+                ),
+                mark1 = DefaultShippingAddressMark(
+                  checked = data.defShipAddr
+                ),
+                mark2 = BillingAddressMark(
+                  checked = data.preferBillAddr
                 )
-                addressesService.save(savedAdresses).map { addr =>
-                  Ok(ApiResponse(
-                    "admin.addresses.saved.successful",
-                    Messages("admin.addresses.saved"),
-                    Json.toJson(addr)))
-                }
-              case _ => Future.successful(
-                BadRequest(ApiResponse("admin.details.invalid", Messages("admin.details.invalid")))
-              )
+              ))))
+            userService.save(updatedUser).map { usr =>
+              Ok(ApiResponse(
+                "admin.addresses.saved.successful",
+                Messages("admin.addresses.saved"),
+                Json.toJson(usr)))
             }
+
           case _ => Future.successful(
             BadRequest(ApiResponse("admin.details.invalid", Messages("admin.details.invalid")))
           )

@@ -8,7 +8,7 @@ export type PasswordState = {
 
 export const passwordState: PasswordState = { isHidden: true };
 
-export const toggleMask = createAction('AUTH_TOGGLE_MASK');
+export const toggleMask = createAction('ADMIN_TOGGLE_MASK');
 
 export default combineReducers({
   mask: handleAction(

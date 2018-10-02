@@ -11,8 +11,8 @@ import com.mohiva.play.silhouette.api.services.AvatarService
 import com.mohiva.play.silhouette.api.util.PasswordHasherRegistry
 import com.mohiva.play.silhouette.impl.providers._
 import core.controllers.ApiController
-import core.models.services.{ AddressesService, CreditCardsService, NewsletterService, UserService }
-import core.models.{ Address, Addresses, Config, CreditCards, Registration, Settings, Updates, User, NewsletterFashion, NewsletterVintage, NewsletterHomeCollection, NewsletterSubscription }
+import core.models.services.UserService
+import core.models.{ Address, Config, CreditCard, Registration, Settings, Updates, User, NewsletterFashion, NewsletterVintage, NewsletterHomeCollection, Newsletter }
 import core.utils.{ DefaultEnv, JSRouter }
 import core.utils.json.APIFormats._
 import javax.inject.Inject
@@ -36,9 +36,6 @@ import scala.language.postfixOps
  * @param controllerComponents   The Play controller components.
  * @param silhouette             The Silhouette stack.
  * @param userService            The user service implementation.
- * @param creditCardsService     The credit cards service implementation.
- * @param newsletterService      The newsletter subscription service implementation.
- * @param addressesService       The addresses service implementation.
  * @param authInfoRepository     The auth info repository implementation.
  * @param authTokenService       The auth token service implementation.
  * @param avatarService          The avatar service implementation.
@@ -53,9 +50,6 @@ class SignUpController @Inject() (
   val controllerComponents: ControllerComponents,
   silhouette: Silhouette[DefaultEnv],
   userService: UserService,
-  creditCardsService: CreditCardsService,
-  newsletterService: NewsletterService,
-  addressesService: AddressesService,
   authInfoRepository: AuthInfoRepository,
   authTokenService: AuthTokenService,
   avatarService: AvatarService,
@@ -103,23 +97,15 @@ class SignUpController @Inject() (
             timeZone = None
           ),
           dateOfBirth = None,
-          passwordSurvey = None
-        )
-        val newsletter = NewsletterSubscription(
-          id = userID,
-          loginInfo = Seq(loginInfo),
-          updates = Some(Updates(data.updates)),
-          newsletterFashion = Some(NewsletterFashion(data.newsletterFashion)),
-          newsletterVintage = Some(NewsletterVintage(data.newsletterVintage)),
-          newsletterHomeCollection = Some(NewsletterHomeCollection(data.newsletterHomeCollection))
-        )
-        val addresses = Addresses(
-          id = userID,
-          addresses = None
-        )
-        val creditCards = CreditCards(
-          id = userID,
-          creditCards = None
+          passwordSurvey = None,
+          addressBook = None,
+          creditWallet = None,
+          newsletters = Some(Seq(Newsletter(
+            updates = Some(Updates(data.updates)),
+            newsletterFashion = Some(NewsletterFashion(data.newsletterFashion)),
+            newsletterVintage = Some(NewsletterVintage(data.newsletterVintage)),
+            newsletterHomeCollection = Some(NewsletterHomeCollection(data.newsletterHomeCollection))
+          )))
         )
         userService.retrieve(loginInfo).flatMap {
           case Some(customer) => {
@@ -127,7 +113,7 @@ class SignUpController @Inject() (
             Future.successful(Created(ApiResponse("auth.email.already.in.use", Messages("auth.email.already.in.use"))))
           }
           case None => {
-            signUpNewUser(data, loginInfo, user, newsletter, addresses, creditCards)
+            signUpNewUser(data, loginInfo, user)
           }
         }
       }
@@ -162,30 +148,21 @@ class SignUpController @Inject() (
    * @param data       The form data.
    * @param loginInfo  The login info.
    * @param user       The new user.
-   * @param newsletter The newsletter subscription of the new user.
-   * @param addresses  The addresses of the new user.
-   * @param creditCards The credit cards of the new user.
    * @param request    The request header.
    * @return A future to wait for the computation to complete.
    */
   private def signUpNewUser(
     data: SignUpForm.Data,
     loginInfo: LoginInfo,
-    user: User,
-    newsletter: NewsletterSubscription,
-    addresses: Addresses,
-    creditCards: CreditCards
+    user: User
   )(
     implicit
     request: RequestHeader
   ): Future[Result] = {
     val authInfo = passwordHasherRegistry.current.hash(data.password)
     for {
-      addresses <- addressesService.save(addresses)
       avatar <- avatarService.retrieveURL(data.email)
-      creditCards <- creditCardsService.save(creditCards)
       user <- userService.save(user.copy(avatarURL = avatar))
-      newsl <- newsletterService.save(newsletter)
       _ <- authInfoRepository.add(loginInfo, authInfo)
       authenticator <- silhouette.env.authenticatorService.create(loginInfo)
       cookie <- silhouette.env.authenticatorService.init(configureAuthenticator(true, authenticator))

@@ -2,7 +2,6 @@ import { all } from 'redux-saga/effects';
 import { combineSagas } from 'util/Saga';
 import healthSagaBinding from 'sagas/HealthSaga';
 import configSagaBinding from 'sagas/ConfigSaga';
-import newsletterSagaBinding from 'sagas/NewsletterSaga';
 import i18nSagaBinding from 'sagas/I18nSaga';
 import userSagaBinding from 'sagas/UserSaga';
 import { sagaMiddleware } from './middleware';
@@ -13,7 +12,6 @@ export function* rootSaga() {
     configSagaBinding,
     i18nSagaBinding,
     userSagaBinding,
-    newsletterSagaBinding,
   ]));
 }
 

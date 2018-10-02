@@ -10,8 +10,8 @@ import com.mohiva.play.silhouette.api.util.Credentials
 import com.mohiva.play.silhouette.impl.exceptions.IdentityNotFoundException
 import com.mohiva.play.silhouette.impl.providers._
 import core.controllers.ApiController
-import core.models.{ Addresses, CreditCards, NewsletterSubscription, User }
-import core.models.services.{ AddressesService, CreditCardsService, NewsletterService, UserService }
+import core.models.{ Address, CreditCard, Newsletter, User }
+import core.models.services.UserService
 import core.utils.DefaultEnv
 import core.utils.json.APIFormats._
 import javax.inject.Inject
@@ -43,9 +43,6 @@ class SignInController @Inject() (
   val controllerComponents: ControllerComponents,
   silhouette: Silhouette[DefaultEnv],
   userService: UserService,
-  creditCardsService: CreditCardsService,
-  newsletterService: NewsletterService,
-  addressesService: AddressesService,
   credentialsProvider: CredentialsProvider,
   configuration: Configuration,
   clock: Clock
@@ -102,9 +99,6 @@ class SignInController @Inject() (
     rememberMe: Boolean
   )(implicit request: RequestHeader): Future[Result] = {
     for {
-      addresses <- addressesService.retrieve(user.id)
-      creditCards <- creditCardsService.retrieve(user.id)
-      newsletter <- newsletterService.retrieve(user.id)
       authenticator <- silhouette.env.authenticatorService.create(loginInfo)
       cookie <- silhouette.env.authenticatorService.init(configureAuthenticator(rememberMe, authenticator))
       result <- silhouette.env.authenticatorService.embed(

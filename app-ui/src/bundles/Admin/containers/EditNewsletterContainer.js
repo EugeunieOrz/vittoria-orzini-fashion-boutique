@@ -2,9 +2,8 @@ import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 import lifecycle from 'components/Lifecycle';
 import { modelPath, updateNewsletter } from 'bundles/Admin/modules/NewsletterModule';
-import { getUserID } from 'selectors/UserSelector';
+import { getUserID, getNewsletterUpdates, getNewsletterFashion, getNewsletterVintage, getNewsletterHomeCollection } from 'selectors/UserSelector';
 import EditNewsletter from 'bundles/Admin/components/EditNewsletter';
-import { getNewsletter, getNewsletterUpdates, getNewsletterFashion, getNewsletterVintage, getNewsletterHomeCollection } from 'selectors/NewsletterSelector';
 
 /**
  * Maps the state properties to the React component `props`.
@@ -23,7 +22,7 @@ const mapStateToProps = (state) => {
        newsletterFashion: getNewsletterFashion(state),
        newsletterVintage: getNewsletterVintage(state),
        newsletterHomeCollection: getNewsletterHomeCollection(state),
-     },
+     }
 
    }
  }
@@ -48,7 +47,6 @@ const mergeProps = (propsFromState, propsFromDispatch) => {
     onUpdateNewsletter: (userID, data) => dispatch(updateNewsletter({userID, data})),
     componentWillUnmount: () => dispatch(actions.change(modelPath, propsFromState.formInitial)),
     componentWillMount: () => dispatch(actions.merge(modelPath, propsFromState.formInitial)),
-
   };
 };
 

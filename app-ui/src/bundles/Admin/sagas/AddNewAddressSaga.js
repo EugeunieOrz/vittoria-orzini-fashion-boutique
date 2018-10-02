@@ -12,6 +12,7 @@ import {
   addNewAddressFulfilled,
   addNewAddressRejected,
 } from 'bundles/Admin/modules/AddNewAddressFormModule';
+import { toggleAddNewAddress } from 'bundles/Admin/modules/AddNewAddressModule';
 import { toggleNewAddressSaved } from 'bundles/Admin/modules/NewAddressSavedModule';
 import AdminAPI from 'bundles/Admin/apis/AdminAPI';
 import config from 'config/index';
@@ -24,9 +25,10 @@ export function* addNewAddressSaga(api: AdminAPI): Generator<*, *, *> {
       const response = yield call([api, api.addNewAddress], userID, data);
       yield put(addNewAddressFulfilled(response));
       yield put(actions.reset(modelPath));
+      yield put(toggleAddNewAddress());
       yield put(toggleNewAddressSaved());
     } catch (e) {
-      yield put(updateRejected(e));
+      yield put(addNewAddressRejected(e));
       yield call(handleError, e, {
         'admin.addnewaddress.form.invalid': formErrorHandler(modelPath),
         'admin.details.update.invalid': (error: APIError) => ([

@@ -51,7 +51,6 @@ export const DashboardComponent = ({
     <Row className="admin-welcome">
       {i18n.t`Welcome`}, {userFirstName}
     </Row>
-    <p>{section}</p>
     <Nav className="profile-navbar" onSelect={selectID}>
       <NavItem
         id={( section === '' || section === 0 || section === 1 ||
@@ -142,17 +141,17 @@ export const DashboardComponent = ({
     { section === 5 &&
       <Grid className="address-book">
         <Row className="addr-title">
+          {i18n.t`Address Book`}
+        </Row>
+        <Row className="addr-title2">
           {i18n.t`Save all your delivery details to complete the order process quickly`}
         </Row>
-        <Row className="addr-msg">
-          {i18n.t`YOU HAVE NOT YET SAVED ANY ADDRESSES`}
-        </Row>
-        <Button className="add-new-addr-btn">
+        <Button className="add-new-addr-btn" onClick={() => onToggleAddNewAddress()}>
           {i18n.t`ADD A NEW ADDRESS`}
         </Button>
         <Modal className="add-new-address-modal" show={addNewAddressIsShown} onHide={() => onToggleAddNewAddress()}>
           <Modal.Header closeButton>
-            <Modal.Title>{i18n.t`ADD A NEW ADDRESS`}</Modal.Title>
+            <Modal.Title>{i18n.t`Add a new address`}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <AddNewAddressContainer />

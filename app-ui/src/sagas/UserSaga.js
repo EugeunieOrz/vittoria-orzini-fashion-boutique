@@ -5,7 +5,6 @@ import { history } from 'modules/LocationModule';
 import { resetState } from 'modules/StateModule';
 import { initApp, setUserInitialized } from 'modules/InitModule';
 import { changeToHealthy, changeToUnhealthy } from 'modules/HealthModule';
-import { fetchNewsletter, fetchNewsletterPending, fetchNewsletterFulfilled } from 'modules/NewsletterModule';
 import {
   fetchUser,
   fetchUserPending,
@@ -101,9 +100,6 @@ export function* fetchUserFulfilledWorker(api: UserAPI): Generator<*, *, *> {
   while (yield take(fetchUserFulfilled().type)) {
     const response = yield call([api, api.get]);
     const user = response.details;
-    yield put(fetchNewsletter(user.id));
-    yield put(fetchNewsletterPending(user.id));
-    yield put(fetchNewsletterFulfilled(user.id));
     yield put(fetchConfig());
   }
 }

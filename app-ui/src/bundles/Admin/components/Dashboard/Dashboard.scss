@@ -4,6 +4,9 @@
  font-family:AudreyBold;
  src:local("Audrey-Bold"),url(/static/fonts/Audrey-Bold.woff) format("woff")
 }
+.btn:disabled:hover {
+  cursor:url(/static/close-40x39.png),auto!important
+}
 .admin-dashboard {
  margin-top:120px;
  margin-left:270px;
@@ -164,7 +167,7 @@
  font-size:1.3em;
  font-family:AdamCGPro
 }
-#change-bdate:hover,#change-email:hover,#change-name:hover, .change-password-btn:hover {
+#change-bdate:hover,#change-email:hover,#change-name:hover, .change-password-btn:hover, .add-new-address-btn:hover {
  background-color:transparent !important;
  border-radius: 0;
  border: .15em solid #000 !important;
@@ -172,10 +175,10 @@
  box-shadow: none;
  cursor:url(/static/calla-30x39.png),auto!important;
 }
-.details-updated .modal-header {
+.details-updated .modal-header, .new-address-saved .modal-header {
  border:none
 }
-.details-updated .modal-body {
+.details-updated .modal-body, .new-address-saved .modal-body {
  text-align:center;
  margin-top:160px;
  font-size:1.3em;
@@ -184,11 +187,77 @@
 .fname-error,.title-error {
  color:#df1331
 }
-.edit-name-modal .modal-content, .edit-email-modal .modal-content, .bdate-modal .modal-content, .details-updated .modal-content, .change-password-modal .modal-content {
+.new-address-saved .modal-content, .add-new-address-modal .modal-content, .edit-name-modal .modal-content, .edit-email-modal .modal-content, .bdate-modal .modal-content, .details-updated .modal-content, .change-password-modal .modal-content {
   background-color: #d4bea6;
 }
-.edit-name-modal .modal-header, .edit-email-modal .modal-header, .bdate-modal .modal-header, .change-password-modal .modal-header {
+.add-new-address-modal .modal-header, .edit-name-modal .modal-header, .edit-email-modal .modal-header, .bdate-modal .modal-header, .change-password-modal .modal-header {
   border: none;
+}
+.add-new-address-modal .form-control {
+  margin-top:15px;
+ box-sizing:border-box;
+ padding:7px 7px;
+ background-color:inherit;
+ border:2px solid #000;
+ border-image:linear-gradient(90deg,#000,transparent);
+ border-image-slice:1;
+ width: 390px;
+ font-family: Acme;
+ font-size: 1.1em;
+ box-shadow: none
+}
+.add-new-address-container .form-control::placeholder {
+  color: #544f4b
+}
+.add-new-address-container {
+  width: 90%
+}
+.add-new-address-modal .modal-body {
+  height: 800px !important;
+}
+.add-new-address-modal .modal-content {
+  height: 800px !important;
+}
+.required-fields-msg {
+  font-family: Acme;
+  margin-left: 4px;
+}
+.country-tip {
+  font-family: Acme;
+  margin-left: 4px
+}
+.add-new-address-container #custom-form-control-eveningTelephone {
+  margin-top: 129px;
+}
+.add-new-address-container .checkbox, .address-msg1, .address-msg2 {
+  font-family: Acme;
+  font-size: 1.1em
+}
+.address-msg1, .address-msg2 {
+  margin-left: 4px
+}
+.address-msg1 {
+  margin-top: 20px
+}
+.add-new-address-btn {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  color: #000 !important;
+  font-family: AdamCGPro;
+  font-size: 1.2em;
+  margin-top: 50px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.add-new-address-btn:hover {
+ background-color:transparent!important;
+ border-radius:0;
+ border:.15em solid #000!important;
+ width:200px;
+ box-shadow:none;
+ cursor:url(/static/calla-30x39.png),auto!important
 }
 .modal-backdrop {
   background-color: #334454 !important;
@@ -465,8 +534,55 @@
  border-radius:0;
  border: .15em solid #e3ad14
 }
-.newsletter-btn:active {
-  background-color: transparent
+.newsletter-btn:active, .add-new-addr-btn:active {
+ background-color:transparent;
+ box-shadow: none
+}
+.add-new-addr-btn:active, .add-new-addr-btn:enabled {
+  box-shadow: none;
+  background-color:transparent
+}
+.addr-title {
+ font-family:AudreyBold;
+ font-size:2em;
+ color: #000;
+ margin-top: 50px;
+  margin-left: -30px;
+ padding-bottom: 30px;
+ border-bottom: .1em solid #D3D3D3;
+ border-image:linear-gradient(90deg,transparent,#D3D3D3,transparent);
+ border-image-slice:1;
+}
+.addr-title2 {
+ font-family:Roboto;
+ font-size:1.2em;
+ color: #000;
+ margin-top: 40px;
+ margin-left: -30px;
+}
+.add-new-addr-btn {
+  box-shadow:none;
+ border:none;
+ font-size:1.2em;
+ font-family:AdamCGPro;
+ cursor:url(/static/calla-30x39.png),auto!important;
+ width:450px;
+ margin-top:40px;
+ color:#000;
+ border:.15em solid #000;
+ border-image:linear-gradient(90deg,transparent,#000,transparent);
+ border-image-slice:1;
+ border-radius:0;
+ margin-bottom:50px;
+ margin-left: -15px
+}
+.add-new-addr-btn:hover {
+ background-color:#e3ad14;
+ border-radius:0;
+ border:.15em solid #e3ad14
+}
+.add-new-addr-btn:active {
+ background-color:transparent
 }
 .s-alert-error {
  background:transparent!important;

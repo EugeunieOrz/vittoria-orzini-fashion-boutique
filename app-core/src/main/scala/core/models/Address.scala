@@ -47,8 +47,3 @@ case class BillingAddressMark(
   checked: Option[Boolean],
   val description: String = "Save as preferred billing address in My Account"
 )
-
-case class Addresses(
-  id: BSONObjectID,
-  addresses: Option[Seq[Address]]
-)

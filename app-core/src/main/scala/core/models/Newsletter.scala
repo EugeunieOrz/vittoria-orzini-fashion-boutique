@@ -15,9 +15,7 @@ import reactivemongo.bson.BSONObjectID
  * @param consent                     The consent data.
  */
 
-case class NewsletterSubscription(
-  id: BSONObjectID,
-  loginInfo: Seq[LoginInfo],
+case class Newsletter(
   updates: Option[Updates],
   newsletterFashion: Option[NewsletterFashion],
   newsletterVintage: Option[NewsletterVintage],

@@ -9,7 +9,7 @@ export type PasswordStrengthState = {
 
 export const passwordStrengthState: PasswordStrengthState = { score: '' };
 
-export const checkPasswordStrength = createAction('AUTH_CHECK_PASSWORD_STRENGTH');
+export const checkPasswordStrength = createAction('ADMIN_CHECK_PASSWORD_STRENGTH');
 
 export default combineReducers({
   passwordStrength: handleAction(

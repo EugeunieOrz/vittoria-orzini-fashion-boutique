@@ -107,7 +107,10 @@ class UserServiceImpl @Inject() (userDAO: UserDAO, clock: Clock)(
             timeZone = None
           ),
           dateOfBirth = None,
-          passwordSurvey = None
+          passwordSurvey = None,
+          addressBook = None,
+          creditWallet = None,
+          newsletters = None
         ))
     }
   }

@@ -31,5 +31,8 @@ case class User(
   registration: Registration,
   settings: Settings,
   dateOfBirth: Option[String],
-  passwordSurvey: Option[Seq[String]]
+  passwordSurvey: Option[Seq[String]],
+  addressBook: Option[Seq[Address]],
+  creditWallet: Option[Seq[CreditCard]],
+  newsletters: Option[Seq[Newsletter]]
 ) extends Identity
