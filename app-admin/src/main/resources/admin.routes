@@ -8,3 +8,4 @@ POST    /edit-email/:userID          admin.controllers.DetailsController.editEma
 POST    /change-password/:userID     admin.controllers.DetailsController.changePassword(userID: reactivemongo.bson.BSONObjectID)
 POST    /update-newsletter/:userID   admin.controllers.DetailsController.updateNewsletter(userID: reactivemongo.bson.BSONObjectID)
 POST    /add-a-new-address/:userID   admin.controllers.DetailsController.addNewAddress(userID: reactivemongo.bson.BSONObjectID)
+POST    /edit-address/:userID/:index       admin.controllers.DetailsController.editAddress(userID: reactivemongo.bson.BSONObjectID, index: Int)

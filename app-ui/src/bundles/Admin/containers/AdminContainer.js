@@ -4,7 +4,9 @@ import lifecycle from 'components/Lifecycle';
 import { toggleUpdate } from 'bundles/Admin/modules/DetailsUpdateModule';
 import { togglePasswordForm } from 'bundles/Admin/modules/PasswordFormModule';
 import { toggleAddNewAddress } from 'bundles/Admin/modules/AddNewAddressModule';
+import { toggleEditAddress } from 'bundles/Admin/modules/EditAddressModule';
 import { toggleNewAddressSaved } from 'bundles/Admin/modules/NewAddressSavedModule';
+import { toggleUpdatedAddress } from 'bundles/Admin/modules/AddressUpdatedModule';
 import { toggleBDate } from 'bundles/Admin/modules/BDateModule';
 import { toggleEmail } from 'bundles/Admin/modules/EmailModule';
 import { toggleName } from 'bundles/Admin/modules/NameModule';
@@ -15,6 +17,7 @@ import { getUserFirstName } from 'selectors/UserSelector';
 import { getUserName } from 'selectors/UserSelector';
 import { getUserEmail } from 'selectors/UserSelector';
 import { getUserBDate } from 'selectors/UserSelector';
+import { getUserAddresses } from 'selectors/UserSelector';
 import Dashboard from 'bundles/Admin/components/Dashboard';
 
 /**
@@ -27,11 +30,15 @@ const mapStateToProps = (state) => {
    console.log('STATE', state);
    return {
      addNewAddressIsShown: state.admin.toggleAddNewAddress.addNewAddressModal.isShown,
+     addresses: getUserAddresses(state),
      bdate: getUserBDate(state),
+     editAddressIsShown: state.admin.toggleEditAddress.isShown,
      editEmailIsShown: state.admin.toggleEmail.emailModal.isShown,
      editNameIsShown: state.admin.toggleName.nameModal.isShown,
+     index: state.admin.toggleEditAddress.index,
      isShown: state.admin.toggleBDate.bdateModal.isShown,
      isShownUpdated: state.admin.toggleUpdate.detailsUpdateModal.isShown,
+     isShownUpdatedAddress: state.admin.toggleUpdatedAddress.addressUpdateModal.isShown,
      passwordFormIsShown: state.admin.togglePasswordForm.passwordModal.isShown,
      savedNewAddressIsShown: state.admin.toggleNewAddressSaved.newAddressSavedModal.isShown,
      section: state.admin.toggleSection.sectionID.section,
@@ -56,6 +63,8 @@ const mapDispatchToProps = (dispatch) => ({
   selectID: valueID => dispatch(selectID(valueID)),
   onSignOut: () => dispatch(signOutUser()),
   onToggleAddNewAddress: () => dispatch(toggleAddNewAddress()),
+  onToggleEditAddress: index => dispatch(toggleEditAddress(index)),
+  onToggleUpdatedAddress: () => dispatch(toggleUpdatedAddress()),
   onToggleBDate: () => dispatch(toggleBDate()),
   onToggleUpdate: () => dispatch(toggleUpdate()),
   onTogglePasswordForm: () => dispatch(togglePasswordForm()),

@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Button, Checkbox, Col, Grid, Modal, Row, Nav, NavItem } from 'react-bootstrap';
+import { Button, Checkbox, Col, Grid, Image, Modal, Row, Nav, NavItem } from 'react-bootstrap';
 import { withI18n, Trans } from 'lingui-react';
 import { Form, Control, Errors } from 'react-redux-form';
 import FormControl from 'components/FormControl';
@@ -13,20 +13,29 @@ import EditBDateContainer from 'bundles/Admin/containers/EditBDateContainer';
 import ChangePasswordContainer from 'bundles/Admin/containers/ChangePasswordContainer';
 import EditNewsletterContainer from 'bundles/Admin/containers/EditNewsletterContainer';
 import AddNewAddressContainer from 'bundles/Admin/containers/AddNewAddressContainer';
+import EditAddressContainer from 'bundles/Admin/containers/EditAddressContainer';
+
+import countries from 'static/countries';
 
 import './Dashboard.scss';
 
 type Props = {
   addNewAddressIsShown: boolean,
+  addresses: Array;
   bdate: string,
   i18n: Object,
+  index: string,
   isShown: boolean,
   isShownUpdated: boolean,
+  isShownUpdatedAddress: boolean,
+  editAddressIsShown: boolean,
   editEmailIsShown: boolean,
   editNameIsShown: boolean,
   passwordFormIsShown: boolean,
   onSignOut: () => any,
   onToggleAddNewAddress: () => any,
+  onToggleEditAddress: (index: string) => any,
+  onToggleUpdatedAddress: () => any,
   onToggleBDate: () => any,
   onToggleUpdate: () => any,
   onToggleEmail: () => any,
@@ -42,10 +51,12 @@ type Props = {
 };
 
 export const DashboardComponent = ({
-  addNewAddressIsShown, bdate, i18n, isShown, isShownUpdated, editNameIsShown, editEmailIsShown, onSignOut,
-  onToggleAddNewAddress, onToggleBDate, onToggleEmail, onToggleName, onToggleNewAddressSaved,
-  onTogglePasswordForm, onToggleUpdate, passwordFormIsShown, savedNewAddressIsShown, section,
-  selectID, userEmail, userFirstName, userName,
+  addNewAddressIsShown, addresses, bdate, editNameIsShown, editEmailIsShown,
+  editAddressIsShown, i18n, index, isShown, isShownUpdated, isShownUpdatedAddress, onSignOut,
+  onToggleUpdatedAddress, onToggleAddNewAddress, onToggleBDate, onToggleEmail, onToggleName,
+  onToggleNewAddressSaved, onToggleEditAddress, onTogglePasswordForm, onToggleUpdate,
+  passwordFormIsShown, savedNewAddressIsShown, section, selectID, userEmail, userFirstName,
+  userName,
 }: Props) => (
   <Grid className="admin-dashboard">
     <Row className="admin-welcome">
@@ -146,9 +157,65 @@ export const DashboardComponent = ({
         <Row className="addr-title2">
           {i18n.t`Save all your delivery details to complete the order process quickly`}
         </Row>
+        {
+          typeof addresses !== 'undefined' && addresses.length > 0 ?
+          addresses.map((address, index) =>
+          <Row className="address-container" key={index}>
+            <Col md={6} mdPush={6}>
+              <Button className="delete-address-btn">
+                <Image src="static/close-30.png" height="15" width="15" />
+              </Button>
+              <Button className="edit-address-btn" onClick={() => onToggleEditAddress(index)}>
+                EDIT
+              </Button>
+            </Col>
+            <Col md={6} mdPull={6}>
+            {
+              address.mark1.checked === true && address.mark2.checked === true ?
+              <p>Preferred Address</p> :
+              <p></p>
+            }
+            {
+              address.mark1.checked === true &&
+              address.mark2.checked === false &&
+              <p>Preferred Shipping Address</p>
+            }
+            {
+              address.mark1.checked === false &&
+              address.mark2.checked === true &&
+              <p>Preferred Billing Address</p>
+            }
+              <div className="addresses">
+                <p className="name">{address.firstName + ' ' + address.lastName}</p>
+                <p className="address">
+                  {address.address + ' ' + address.zipCode +
+                  ', ' + address.city + ', ' + address.state +
+                  ', ' + countries[address.country]}
+                </p>
+                <p className="tel-day">{address.dayTel.telephone}</p>
+                <p className="tel-ev">{address.eveningTel.telephone}</p>
+                <p className="email">{address.email}</p>
+              </div>
+            </Col>
+          </Row>
+          )
+          :
+          <Row className="addr-txt">
+            {i18n.t`YOU HAVE NOT YET SAVED ANY ADDRESSES`}
+          </Row>
+
+        }
         <Button className="add-new-addr-btn" onClick={() => onToggleAddNewAddress()}>
           {i18n.t`ADD A NEW ADDRESS`}
         </Button>
+        <Modal className="edit-address-modal" show={editAddressIsShown} onHide={() => onToggleEditAddress(index)}>
+          <Modal.Header closeButton>
+            <Modal.Title>{i18n.t`Edit your address`}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <EditAddressContainer />
+          </Modal.Body>
+        </Modal>
         <Modal className="add-new-address-modal" show={addNewAddressIsShown} onHide={() => onToggleAddNewAddress()}>
           <Modal.Header closeButton>
             <Modal.Title>{i18n.t`Add a new address`}</Modal.Title>
@@ -160,6 +227,10 @@ export const DashboardComponent = ({
         <Modal className="new-address-saved" show={savedNewAddressIsShown} onHide={() => onToggleNewAddressSaved()}>
           <Modal.Header closeButton></Modal.Header>
           <Modal.Body>{i18n.t`Your address has been successfully saved`}</Modal.Body>
+        </Modal>
+        <Modal className="address-updated" show={isShownUpdatedAddress} onHide={() => onToggleUpdatedAddress()}>
+          <Modal.Header closeButton></Modal.Header>
+          <Modal.Body>{i18n.t`Address successfully saved`}</Modal.Body>
         </Modal>
       </Grid>
     }

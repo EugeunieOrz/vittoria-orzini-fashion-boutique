@@ -4,6 +4,10 @@
  font-family:AudreyBold;
  src:local("Audrey-Bold"),url(/static/fonts/Audrey-Bold.woff) format("woff")
 }
+@font-face {
+ font-family:AudreyMedium;
+ src:local("Audrey-Medium"),url(/static/fonts/Audrey-Medium.woff) format("woff")
+}
 .btn:disabled:hover {
   cursor:url(/static/close-40x39.png),auto!important
 }
@@ -167,7 +171,7 @@
  font-size:1.3em;
  font-family:AdamCGPro
 }
-#change-bdate:hover,#change-email:hover,#change-name:hover, .change-password-btn:hover, .add-new-address-btn:hover {
+#change-bdate:hover,#change-email:hover,#change-name:hover, .change-password-btn:hover {
  background-color:transparent !important;
  border-radius: 0;
  border: .15em solid #000 !important;
@@ -175,10 +179,10 @@
  box-shadow: none;
  cursor:url(/static/calla-30x39.png),auto!important;
 }
-.details-updated .modal-header, .new-address-saved .modal-header {
+.details-updated .modal-header, .new-address-saved .modal-header, .address-updated .modal-header {
  border:none
 }
-.details-updated .modal-body, .new-address-saved .modal-body {
+.details-updated .modal-body, .new-address-saved .modal-body, .address-updated .modal-body {
  text-align:center;
  margin-top:160px;
  font-size:1.3em;
@@ -187,13 +191,13 @@
 .fname-error,.title-error {
  color:#df1331
 }
-.new-address-saved .modal-content, .add-new-address-modal .modal-content, .edit-name-modal .modal-content, .edit-email-modal .modal-content, .bdate-modal .modal-content, .details-updated .modal-content, .change-password-modal .modal-content {
+.edit-address-modal .modal-content, .address-updated .modal-content, .new-address-saved .modal-content, .add-new-address-modal .modal-content, .edit-name-modal .modal-content, .edit-email-modal .modal-content, .bdate-modal .modal-content, .details-updated .modal-content, .change-password-modal .modal-content {
   background-color: #d4bea6;
 }
-.add-new-address-modal .modal-header, .edit-name-modal .modal-header, .edit-email-modal .modal-header, .bdate-modal .modal-header, .change-password-modal .modal-header {
+.edit-address-modal .modal-header, .add-new-address-modal .modal-header, .edit-name-modal .modal-header, .edit-email-modal .modal-header, .bdate-modal .modal-header, .change-password-modal .modal-header {
   border: none;
 }
-.add-new-address-modal .form-control {
+.add-new-address-modal .form-control, .edit-address-modal .form-control {
   margin-top:15px;
  box-sizing:border-box;
  padding:7px 7px;
@@ -206,16 +210,16 @@
  font-size: 1.1em;
  box-shadow: none
 }
-.add-new-address-container .form-control::placeholder {
+.add-new-address-container .form-control::placeholder, .edit-address-container .form-control::placeholder {
   color: #544f4b
 }
-.add-new-address-container {
+.add-new-address-container, .edit-address-container {
   width: 90%
 }
-.add-new-address-modal .modal-body {
+.add-new-address-modal .modal-body, .edit-address-modal .modal-body {
   height: 800px !important;
 }
-.add-new-address-modal .modal-content {
+.add-new-address-modal .modal-content, .edit-address-modal .modal-content {
   height: 800px !important;
 }
 .required-fields-msg {
@@ -226,10 +230,10 @@
   font-family: Acme;
   margin-left: 4px
 }
-.add-new-address-container #custom-form-control-eveningTelephone {
+.add-new-address-container #custom-form-control-eveningTelephone, .edit-address-container #custom-form-control-eveningTelephone {
   margin-top: 129px;
 }
-.add-new-address-container .checkbox, .address-msg1, .address-msg2 {
+.add-new-address-container .checkbox, .address-msg1, .address-msg2, .edit-address-container .checkbox {
   font-family: Acme;
   font-size: 1.1em
 }
@@ -239,7 +243,7 @@
 .address-msg1 {
   margin-top: 20px
 }
-.add-new-address-btn {
+.add-new-address-btn, .edit-address-button {
   background-color: transparent;
   border: none;
   box-shadow: none;
@@ -251,11 +255,18 @@
   margin-left: auto;
   margin-right: auto;
 }
-.add-new-address-btn:hover {
+.add-new-address-btn:hover, .edit-address-button:hover {
  background-color:transparent!important;
  border-radius:0;
  border:.15em solid #000!important;
  width:200px;
+ box-shadow:none;
+ cursor:url(/static/calla-30x39.png),auto!important
+}
+.add-new-address-container #custom-form-control-address, .edit-address-container #custom-form-control-address {
+  margin-top: 25px !important;
+}
+.edit-address-btn:hover {
  box-shadow:none;
  cursor:url(/static/calla-30x39.png),auto!important
 }
@@ -546,19 +557,52 @@
  font-family:AudreyBold;
  font-size:2em;
  color: #000;
- margin-top: 50px;
-  margin-left: -30px;
+ margin-top:50px;
+ margin-left:-40px;
  padding-bottom: 30px;
  border-bottom: .1em solid #D3D3D3;
  border-image:linear-gradient(90deg,transparent,#D3D3D3,transparent);
  border-image-slice:1;
 }
 .addr-title2 {
- font-family:Roboto;
- font-size:1.2em;
- color: #000;
- margin-top: 40px;
- margin-left: -30px;
+  font-family:AudreyBold;
+  font-size: 1.2em;
+  color: #000;
+  margin-left:-30px;
+  margin-top: 10px !important;
+  padding-bottom: 30px;
+  border-bottom:.15em solid #d3d3d3;
+  border-image:linear-gradient(90deg,transparent,#d3d3d3,transparent);
+  border-image-slice:1
+}
+.addr-txt {
+  font-family: AudreyMedium;
+  font-size: 1.2em;
+  color: #000;
+  margin-top: 50px
+}
+.address-container {
+ margin-top:20px;
+ text-align: left;
+ margin-left: 75px;
+ padding-bottom: 30px;
+ border-bottom:.15em solid #d3d3d3;
+ border-image:linear-gradient(90deg,transparent,#d3d3d3,transparent);
+ border-image-slice:1
+}
+.address {
+  margin-top: -10px
+}
+.tel-day {
+  margin-top: 20px
+}
+.email {
+  margin-top: -10px
+}
+.address-container p {
+  font-family: AudreyMedium;
+  font-size: 1.2em;
+  color: #000
 }
 .add-new-addr-btn {
   box-shadow:none;
@@ -567,7 +611,7 @@
  font-family:AdamCGPro;
  cursor:url(/static/calla-30x39.png),auto!important;
  width:450px;
- margin-top:40px;
+ margin-top:50px;
  color:#000;
  border:.15em solid #000;
  border-image:linear-gradient(90deg,transparent,#000,transparent);
@@ -583,6 +627,44 @@
 }
 .add-new-addr-btn:active {
  background-color:transparent
+}
+.delete-address-btn {
+  border: none;
+  box-shadow: none;
+  margin-left: 400px
+}
+.delete-address-btn:hover {
+  background-color: transparent
+}
+.delete-address-btn:enabled {
+  background-color: transparent;
+}
+.delete-address-btn:active, .delete-address-btn.active {
+  background-color: transparent !important;
+  box-shadow: none
+}
+.edit-address-btn {
+  border: none;
+  box-shadow: none;
+  font-family: AdamCGPro;
+  font-size: 1.2em;
+  border-radius: 0;
+  width: 150px;
+  margin-left: 280px;
+  margin-top: 50px;
+  border: .15em solid #000;
+}
+.edit-address-btn:hover {
+  background-color: #e3ad14 !important;
+  border: .15em solid #fff;
+  color: #544f4b
+}
+.edit-address-btn:enabled {
+  background-color: transparent;
+}
+.edit-address-btn:active, .edit-address-btn.active {
+  background-color: transparent !important;
+  box-shadow: none
 }
 .s-alert-error {
  background:transparent!important;

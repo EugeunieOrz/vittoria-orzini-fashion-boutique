@@ -23,11 +23,6 @@ module.exports = {
         'https://fonts.googleapis.com/css?family=Acme',
         'https://fonts.googleapis.com/css?family=Philosopher:700i',
         {
-          href: '/static/favicon.ico',
-          rel: 'shortcut icon',
-          type: 'image/x-icon'
-        },
-        {
           href: '/static/fonts/ScriptinaPro.woff',
           href: '/static/fonts/ADAM-CGPRO.woff',
           href: '/static/fonts/Audrey-Bold.woff',

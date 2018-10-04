@@ -268,39 +268,122 @@ class DetailsController @Inject() (
         )),
         data => userService.retrieve(userID).flatMap {
           case Some(user) if user.loginInfo.exists(_.providerID == CredentialsProvider.ID) =>
-            val updatedUser = user.copy(
-              addressBook = Some(Seq(Address(
-                firstName = data.firstName,
-                lastName = data.lastName,
-                addInf = AdditionalInfo(
-                  descr = data.additional
-                ),
-                address = data.address,
-                zipCode = data.zipCode,
-                city = data.city,
-                country = data.country,
-                state = data.province,
-                email = data.email,
-                dayTel = TelephoneDay(
-                  telephone = data.dayTelephone
-                ),
-                eveningTel = TelephoneEvening(
-                  telephone = data.eveningTelephone
-                ),
-                mark1 = DefaultShippingAddressMark(
-                  checked = data.defShipAddr
-                ),
-                mark2 = BillingAddressMark(
-                  checked = data.preferBillAddr
+            val newAddress = Address(
+              firstName = data.firstName,
+              lastName = data.lastName,
+              addInf = AdditionalInfo(
+                descr = data.additional
+              ),
+              address = data.address,
+              zipCode = data.zipCode,
+              city = data.city,
+              country = data.country,
+              state = data.province,
+              email = data.email,
+              dayTel = TelephoneDay(
+                telephone = data.dayTelephone
+              ),
+              eveningTel = TelephoneEvening(
+                telephone = data.eveningTelephone
+              ),
+              mark1 = DefaultShippingAddressMark(
+                checked = data.defShipAddr
+              ),
+              mark2 = BillingAddressMark(
+                checked = data.preferBillAddr
+              )
+            )
+            user.addressBook match {
+              case Some(addressesSeq) =>
+                val newSeqOfAddresses = newAddress +: addressesSeq
+                val updatedUser = user.copy(
+                  addressBook = Some(newSeqOfAddresses)
                 )
-              ))))
-            userService.save(updatedUser).map { usr =>
-              Ok(ApiResponse(
-                "admin.addresses.saved.successful",
-                Messages("admin.addresses.saved"),
-                Json.toJson(usr)))
+                userService.save(updatedUser).map { usr =>
+                  Ok(ApiResponse(
+                    "admin.addresses.saved.successful",
+                    Messages("admin.addresses.saved"),
+                    Json.toJson(updatedUser)))
+                }
+              case None =>
+                val updatedUser2 = user.copy(
+                  addressBook = Some(Seq(newAddress))
+                )
+                userService.save(updatedUser2).map { usr =>
+                  Ok(ApiResponse(
+                    "admin.addresses.saved.successful",
+                    Messages("admin.addresses.saved"),
+                    Json.toJson(updatedUser2)))
+                }
             }
+          case _ => Future.successful(
+            BadRequest(ApiResponse("admin.details.invalid", Messages("admin.details.invalid")))
+          )
+        }
+      )
+    }
 
+  /**
+   * Edits address to the user's address book in My Account.
+   *
+   * @return A Play result.
+   */
+  def editAddress(userID: BSONObjectID, index: Int): Action[AnyContent] =
+    silhouette.SecuredAction.async { implicit request =>
+      AddNewAddressForm.form.bindFromRequest.fold(
+        form => Future.successful(BadRequest(
+          ApiResponse("admin.addnewaddress.form.invalid", Messages("invalid.form"), form.errors)
+        )),
+        data => userService.retrieve(userID).flatMap {
+          case Some(user) if user.loginInfo.exists(_.providerID == CredentialsProvider.ID) =>
+            val newAddress = Address(
+              firstName = data.firstName,
+              lastName = data.lastName,
+              addInf = AdditionalInfo(
+                descr = data.additional
+              ),
+              address = data.address,
+              zipCode = data.zipCode,
+              city = data.city,
+              country = data.country,
+              state = data.province,
+              email = data.email,
+              dayTel = TelephoneDay(
+                telephone = data.dayTelephone
+              ),
+              eveningTel = TelephoneEvening(
+                telephone = data.eveningTelephone
+              ),
+              mark1 = DefaultShippingAddressMark(
+                checked = data.defShipAddr
+              ),
+              mark2 = BillingAddressMark(
+                checked = data.preferBillAddr
+              )
+            )
+            user.addressBook match {
+              case Some(addressesSeq) =>
+                val newSeqOfAddresses = addressesSeq.updated(index, newAddress)
+                val updatedUser = user.copy(
+                  addressBook = Some(newSeqOfAddresses)
+                )
+                userService.save(updatedUser).map { usr =>
+                  Ok(ApiResponse(
+                    "admin.addresses.saved.successful",
+                    Messages("admin.addresses.saved"),
+                    Json.toJson(updatedUser)))
+                }
+              case None =>
+                val updatedUser2 = user.copy(
+                  addressBook = Some(Seq(newAddress))
+                )
+                userService.save(updatedUser2).map { usr =>
+                  Ok(ApiResponse(
+                    "admin.addresses.saved.successful",
+                    Messages("admin.addresses.saved"),
+                    Json.toJson(updatedUser2)))
+                }
+            }
           case _ => Future.successful(
             BadRequest(ApiResponse("admin.details.invalid", Messages("admin.details.invalid")))
           )

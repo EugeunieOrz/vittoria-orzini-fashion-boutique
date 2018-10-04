@@ -2,8 +2,10 @@ import { combineReducers } from 'redux';
 import displaySectionReducer from 'bundles/Admin/modules/SectionModule';
 import togglePasswordFormReducer from 'bundles/Admin/modules/PasswordFormModule';
 import toggleUpdateReducer from 'bundles/Admin/modules/DetailsUpdateModule';
+import toggleAddressUpdateReducer from 'bundles/Admin/modules/AddressUpdatedModule';
 import toggleEmailReducer from 'bundles/Admin/modules/EmailModule';
 import toggleAddNewAddressReducer from 'bundles/Admin/modules/AddNewAddressModule';
+import toggleEditAddressReducer from 'bundles/Admin/modules/EditAddressModule';
 import toggleNewAddressSavedReducer from 'bundles/Admin/modules/NewAddressSavedModule';
 import addNewAddressReducer from 'bundles/Admin/modules/AddNewAddressFormModule';
 import toggleBDateReducer from 'bundles/Admin/modules/BDateModule';
@@ -14,6 +16,7 @@ import toggleNameReducer from 'bundles/Admin/modules/NameModule';
 import toggleDayReducer from 'bundles/Admin/modules/DayModule';
 import editEmailReducer from 'bundles/Admin/modules/EditEmailModule';
 import editNameReducer from 'bundles/Admin/modules/EditNameModule';
+import editAddressReducer from 'bundles/Admin/modules/EditAddressFormModule';
 import toggleMonthReducer from 'bundles/Admin/modules/MonthModule';
 import toggleYearReducer from 'bundles/Admin/modules/YearModule';
 import updateReducer from 'bundles/Admin/modules/UpdateModule';
@@ -25,9 +28,12 @@ export default combineReducers({
   addNewAddress: addNewAddressReducer,
   changePassword: changePasswordReducer,
   checkPasswordStrength: checkPasswordStrengthReducer,
+  editAddress: editAddressReducer,
   editEmail: editEmailReducer,
   editName: editNameReducer,
   toggleAddNewAddress: toggleAddNewAddressReducer,
+  toggleEditAddress: toggleEditAddressReducer,
+  toggleUpdatedAddress: toggleAddressUpdateReducer,
   toggleBDate: toggleBDateReducer,
   toggleUpdate: toggleUpdateReducer,
   toggleEmail: toggleEmailReducer,
