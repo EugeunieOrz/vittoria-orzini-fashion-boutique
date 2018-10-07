@@ -5,6 +5,7 @@ import { call, put, take, all } from 'redux-saga/effects';
 import { combineSagas, handleError, formErrorHandler } from 'util/Saga';
 import { APIError } from 'util/API';
 import { history } from 'modules/LocationModule';
+import { fetchUserFulfilled } from 'modules/UserModule';
 import {
   modelPath,
   addNewAddress,
@@ -25,6 +26,7 @@ export function* addNewAddressSaga(api: AdminAPI): Generator<*, *, *> {
       const response = yield call([api, api.addNewAddress], userID, data);
       yield put(addNewAddressFulfilled(response));
       yield put(actions.reset(modelPath));
+      yield put(fetchUserFulfilled(response.details));
       yield put(toggleAddNewAddress());
       yield put(toggleNewAddressSaved());
     } catch (e) {

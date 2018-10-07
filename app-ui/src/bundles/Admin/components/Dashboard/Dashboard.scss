@@ -42,6 +42,12 @@
  font-family:Acme;
  font-size:1.7em
 }
+#p2, #p3, #p4 {
+  font-family: Acme;
+  font-size: 1.2em;
+  margin-top: 100px;
+  margin-bottom: 50px
+}
 .personal-details {
  width:45%;
  margin-top:70px;
@@ -188,10 +194,35 @@
  font-size:1.3em;
  font-family:Acme;
 }
+.remove-address-container {
+  text-align: center !important;
+  width: 80%;
+  margin-top: -20px
+}
+.confirm-rm-addr-btn, .cancel-rm-addr-btn {
+  border: none;
+  background-color: transparent;
+}
+.confirm-rm-addr-btn:hover, .cancel-rm-addr-btn:hover {
+  border: .15em solid #000;
+  background-color: transparent;
+  border-radius: 0;
+  width: 100px
+}
+.cancel-rm-addr-btn:enabled,.confirm-rm-addr-btn:enabled {
+  background-color: transparent !important;
+  box-shadow: none
+}
+.cofirm-cancel-buttons {
+  margin-top: 20px;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto
+}
 .fname-error,.title-error {
  color:#df1331
 }
-.address-removed .modal-content, .edit-address-modal .modal-content, .address-updated .modal-content, .new-address-saved .modal-content, .add-new-address-modal .modal-content, .edit-name-modal .modal-content, .edit-email-modal .modal-content, .bdate-modal .modal-content, .details-updated .modal-content, .change-password-modal .modal-content {
+.remove-address .modal-content, .address-removed .modal-content, .edit-address-modal .modal-content, .address-updated .modal-content, .new-address-saved .modal-content, .add-new-address-modal .modal-content, .edit-name-modal .modal-content, .edit-email-modal .modal-content, .bdate-modal .modal-content, .details-updated .modal-content, .change-password-modal .modal-content {
   background-color: #d4bea6;
 }
 .remove-address .modal-header, .edit-address-modal .modal-header, .add-new-address-modal .modal-header, .edit-name-modal .modal-header, .edit-email-modal .modal-header, .bdate-modal .modal-header, .change-password-modal .modal-header {

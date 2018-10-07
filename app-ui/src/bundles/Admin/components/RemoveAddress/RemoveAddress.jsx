@@ -23,7 +23,7 @@ export const RemoveAddressComponent = ({
       {i18n.t`Are you sure you want to delete this address?`}
     </p>
   </Row>
-  <Row>
+  <Row className="cofirm-cancel-buttons">
     <Col md={6} mdPush={6}>
       <Button className="cancel-rm-addr-btn" onClick={() => onShowRemoveAddressModal(indexToRemoveAddress)}>
         CANCEL

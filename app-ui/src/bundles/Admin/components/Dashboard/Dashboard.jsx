@@ -164,7 +164,7 @@ export const DashboardComponent = ({
           {i18n.t`Save all your delivery details to complete the order process quickly`}
         </Row>
         {
-          typeof addresses !== 'undefined' && addresses.length > 0 ?
+          typeof addresses !== 'undefined' && addresses.length > 0 && addresses !== '' ?
           addresses.map((address, index) =>
           <Row className="address-container" key={index}>
             <Col md={6} mdPush={6}>

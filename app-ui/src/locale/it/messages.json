@@ -18,7 +18,7 @@
     ]
   },
   "An unexpected error occurred! Please try again later.": {
-    "translation": "Ein unerwarteter Fehler ist aufgetreten! Bitte versuchen Sie es später noch einmal.",
+    "translation": "È accaduto un errore non atteso! Riprova più tardi.",
     "origin": [
       [
         "src\\util\\Saga.js",
@@ -27,229 +27,109 @@
     ]
   },
   "Optional": {
-    "translation": "Optional",
+    "translation": "Opzionale",
     "origin": [
       [
         "src\\components\\FormControl\\FormControl.jsx",
-        85
-      ]
-    ]
-  },
-  "Activate account": {
-    "translation": "Account aktivieren",
-    "origin": [
-      [
-        "src\\bundles\\Auth\\components\\ActivateAccount\\ActivateAccount.jsx",
-        19
-      ]
-    ]
-  },
-  "You can't log in yet. We previously sent an activation email to you at:": {
-    "translation": "Du kannst dich leider noch nicht einloggen. Wir haben dir eine Aktivierungs-E-Mail an folgende Adresse geschickt:",
-    "origin": [
-      [
-        "src\\bundles\\Auth\\components\\ActivateAccount\\ActivateAccount.jsx",
-        20
-      ]
-    ]
-  },
-  "Please follow the instructions in that email to activate your account.": {
-    "translation": "Bitte folge den Instruktionen in dieser E-Mail um deinen Account zu aktivieren.",
-    "origin": [
-      [
-        "src\\bundles\\Auth\\components\\ActivateAccount\\ActivateAccount.jsx",
-        22
-      ]
-    ]
-  },
-  "Click the button to send the activation email again.": {
-    "translation": "Klicke auf den folgenden Button um eine neue Aktivierungs-E-Mail zu senden.",
-    "origin": [
-      [
-        "src\\bundles\\Auth\\components\\ActivateAccount\\ActivateAccount.jsx",
-        23
-      ]
-    ]
-  },
-  "Send": {
-    "translation": "Senden",
-    "origin": [
-      [
-        "src\\bundles\\Auth\\components\\ActivateAccount\\ActivateAccount.jsx",
-        25
-      ],
-      [
-        "src\\bundles\\Auth\\components\\ActivateAccount\\ActivateAccount.jsx",
-        25
+        90
       ]
     ]
   },
   "Recover password": {
-    "translation": "Passwort wiederherstellen",
+    "translation": "Recuperare la vostra password",
     "origin": [
       [
         "src\\bundles\\Auth\\components\\RecoverPassword\\RecoverPassword.jsx",
-        27
+        28
       ]
     ]
   },
   "Please enter your email address and we will send you an email with further instructions to reset your password.": {
-    "translation": "Gib bitte deine E-Mail-Adresse an. Wir senden dir dann weitere Anweisungen, zum Zurücksetzen des Passwortes, per E-Mail zu.",
+    "translation": "Inserire il proprio indirizzo email e vi manderemo una email con un link per resettare la vostra password.",
     "origin": [
       [
         "src\\bundles\\Auth\\components\\RecoverPassword\\RecoverPassword.jsx",
-        29
+        31
       ]
     ]
   },
   "Email": {
-    "translation": "E-Mail",
+    "translation": "Indirizzo email",
     "origin": [
       [
         "src\\bundles\\Auth\\components\\RecoverPassword\\RecoverPassword.jsx",
-        36
-      ],
-      [
-        "src\\bundles\\Auth\\components\\RecoverPassword\\RecoverPassword.jsx",
-        40
-      ],
-      [
-        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
-        31
-      ],
-      [
-        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
-        35
-      ],
-      [
-        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        44
-      ],
-      [
-        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        48
+        41
       ]
     ]
   },
   "Submit": {
-    "translation": "Absenden",
+    "translation": "Inviare",
     "origin": [
       [
         "src\\bundles\\Auth\\components\\RecoverPassword\\RecoverPassword.jsx",
-        49
+        50
       ],
       [
         "src\\bundles\\Auth\\components\\RecoverPassword\\RecoverPassword.jsx",
-        49
+        50
       ]
     ]
   },
   "Back to Sign-In": {
-    "translation": "Zurück zum Login",
+    "translation": "Tornare alla pagina di login",
     "origin": [
       [
         "src\\bundles\\Auth\\components\\RecoverPassword\\RecoverPassword.jsx",
-        51
+        52
       ]
     ]
   },
   "Reset password": {
-    "translation": "Passwort zurücksetzen",
+    "translation": "Resettare la password",
     "origin": [
       [
         "src\\bundles\\Auth\\components\\ResetPassword\\ResetPassword.jsx",
-        23
+        39
       ]
     ]
   },
-  "Strong passwords include numbers, letters and special characters.": {
-    "translation": "Sichere Passwörter enthalten Zahlen, Buchstaben und Sonderzeichen.",
-    "origin": [
-      [
-        "src\\bundles\\Auth\\components\\ResetPassword\\ResetPassword.jsx",
-        25
-      ]
-    ]
-  },
-  "Password": {
-    "translation": "Passwort",
-    "origin": [
-      [
-        "src\\bundles\\Auth\\components\\ResetPassword\\ResetPassword.jsx",
-        30
-      ],
-      [
-        "src\\bundles\\Auth\\components\\ResetPassword\\ResetPassword.jsx",
-        34
-      ],
-      [
-        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
-        45
-      ],
-      [
-        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
-        49
-      ],
-      [
-        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        58
-      ],
-      [
-        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        62
-      ]
-    ]
-  },
-  "Reset": {
-    "translation": "Zurücksetzen",
-    "origin": [
-      [
-        "src\\bundles\\Auth\\components\\ResetPassword\\ResetPassword.jsx",
-        41
-      ],
-      [
-        "src\\bundles\\Auth\\components\\ResetPassword\\ResetPassword.jsx",
-        41
-      ]
-    ]
-  },
-  "Sign-In": {
+  "LOGIN": {
     "translation": "Login",
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
-        27
+        30
       ]
     ]
   },
   "Remember my login on this computer": {
-    "translation": "Login auf diesem Gerät merken",
+    "translation": "Ricordare il mio login su questo computer",
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
-        59
+        62
       ]
     ]
   },
   "Sign in": {
-    "translation": "Anmelden",
+    "translation": "Login",
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
-        62
+        65
       ],
       [
         "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
-        62
+        65
       ]
     ]
   },
   "Forgot your password?": {
-    "translation": "Passwort vergessen?",
+    "translation": "Dimenticato la password?",
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
-        66
+        69
       ]
     ]
   },
@@ -258,7 +138,7 @@
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        39
+        50
       ],
     ]
   },
@@ -267,7 +147,7 @@
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        41
+        50
       ],
     ]
   },
@@ -276,7 +156,7 @@
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        42
+        51
       ],
     ]
   },
@@ -285,7 +165,7 @@
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        43
+        52
       ],
     ]
   },
@@ -294,7 +174,7 @@
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        44
+        53
       ],
     ]
   },
@@ -303,11 +183,7 @@
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        48
-      ],
-      [
-        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        52
+        65
       ]
     ]
   },
@@ -316,11 +192,7 @@
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        61
-      ],
-      [
-        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        65
+        85
       ]
     ]
   },
@@ -329,11 +201,11 @@
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        74
+        105
       ],
       [
-        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        78
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        39
       ]
     ]
   },
@@ -342,24 +214,28 @@
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        88
+        121
       ],
       [
-        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        92
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        52
+      ],
+      [
+        "src\\bundles\\Auth\\components\\ResetPassword\\ResetPassword.jsx",
+        52
       ]
     ]
   },
-  "CONFIRM PASSWORD": {
-    "translation": "CONFERMA PASSWORD",
+  "Please enter a password": {
+    "translation": "Inserisci una password",
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        100
+        134
       ],
       [
-        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        104
+        "src\\bundles\\Auth\\components\\ResetPassword\\ResetPassword.jsx",
+        64
       ]
     ]
   },
@@ -368,7 +244,7 @@
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        114
+        180
       ]
     ]
   },
@@ -377,7 +253,7 @@
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        117
+        155
       ]
     ]
   },
@@ -386,7 +262,7 @@
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        122
+        160
       ]
     ]
   },
@@ -395,7 +271,7 @@
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        128
+        166
       ]
     ]
   },
@@ -404,7 +280,7 @@
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        134
+        172
       ]
     ]
   },
@@ -417,12 +293,20 @@
       ]
     ]
   },
-  "Register": {
-    "translation": "Registrati",
+  "CREATE ACCOUNT": {
+    "translation": "CREARE UN ACCOUNT",
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        144
+        176
+      ],
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        176
+      ],
+      [
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        102
       ]
     ]
   },
@@ -431,7 +315,7 @@
     "origin": [
       [
         "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
-        31
+        45
       ]
     ]
   },
@@ -454,7 +338,7 @@
     ]
   },
   "The Page you are looking for could not be found!": {
-    "translation": "Die Seite konnte nicht gefunden werden!",
+    "translation": "La pagina che cercate non puo essere trovata",
     "origin": [
       [
         "src\\components\\NotFound\\NotFound.jsx",
@@ -463,11 +347,137 @@
     ]
   },
   "Back to Home": {
-    "translation": "Zur Startseite",
+    "translation": "Ritornare alla pagina Home",
     "origin": [
       [
         "src\\components\\NotFound\\NotFound.jsx",
         20
+      ]
+    ]
+  },
+  "Please check the Address. You can use only latin characters.": {
+    "translation": "Verifica il nome",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        75
+      ]
+    ]
+  },
+  "Please check the Last Name. You can use only latin characters.": {
+    "translation": "Verifica il cognome",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        95
+      ]
+    ]
+  },
+  "Please enter a title.": {
+    "translation": "Campo obbligatorio",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        95
+      ]
+    ]
+  },
+  "Too short": {
+    "translation": "La password è troppo corta",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        33
+      ]
+    ]
+  },
+  "Weak": {
+    "translation": "La password è debole",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        34
+      ]
+    ]
+  },
+  "Good": {
+    "translation": "La password è buona",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        35
+      ]
+    ]
+  },
+  "Strong": {
+    "translation": "La password è forte",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        36
+      ]
+    ]
+  },
+  "Very strong": {
+    "translation": "La password è molto forte",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignUp\\SignUp.jsx",
+        37
+      ]
+    ]
+  },
+  "REGISTER": {
+    "translation": "REGISTRATI",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        75
+      ]
+    ]
+  },
+  "Discover all of the exclusive services reserved for our registered customers:": {
+    "translation": "Crea un account per fare shopping sul nostro Store e avere accesso ai servizi riservati agli utenti registrati:",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        79
+      ]
+    ]
+  },
+  "Use wishlist to save all your favourite products": {
+    "translation": "Salvare i tuoi articoli preferiti‎ in una lista dei desideri",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        84
+      ]
+    ]
+  },
+  "Complete checkout more quickly": {
+    "translation": "Completare gli acquisti più velocemente‎",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        89
+      ]
+    ]
+  },
+  "Review order information and tracking": {
+    "translation": "Controllare i tuoi ordini e resi‎‎",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        94
+      ]
+    ]
+  },
+  "Save your details and preferences": {
+    "translation": "Salvare le vostri dati personali e le preferenze‎",
+    "origin": [
+      [
+        "src\\bundles\\Auth\\components\\SignIn\\SignIn.jsx",
+        99
       ]
     ]
   }

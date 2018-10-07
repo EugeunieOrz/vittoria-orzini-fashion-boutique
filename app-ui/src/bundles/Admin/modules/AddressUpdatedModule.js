@@ -14,7 +14,7 @@ export default combineReducers({
   addressUpdateModal: handleAction(
     toggleUpdatedAddress,
     (addressUpdateState, action) => ({
-      isShownUpdatedAddress: !addressUpdateState.isShown
+      isShown: !addressUpdateState.isShown
     }),
      addressUpdateState
   ),

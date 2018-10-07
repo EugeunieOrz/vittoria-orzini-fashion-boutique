@@ -16,7 +16,8 @@ export const getNewsletterVintage = (state: Object) =>
 export const getNewsletterHomeCollection = (state: Object) =>
   getUser(state).newsletters[0].newsletterHomeCollection.isChecked;
 export const getUserAddresses = (state: Object) => {
-    if(getUser(state).addressBook !== undefined) {
+    if(state !== undefined && getUser(state) !== undefined &&
+       getUser(state).addressBook !== undefined) {
       return getUser(state).addressBook;
     } else {
       return '';
