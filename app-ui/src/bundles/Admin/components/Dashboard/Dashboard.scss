@@ -179,10 +179,10 @@
  box-shadow: none;
  cursor:url(/static/calla-30x39.png),auto!important;
 }
-.details-updated .modal-header, .new-address-saved .modal-header, .address-updated .modal-header {
+.address-removed .modal-header, .details-updated .modal-header, .new-address-saved .modal-header, .address-updated .modal-header {
  border:none
 }
-.details-updated .modal-body, .new-address-saved .modal-body, .address-updated .modal-body {
+.remove-address .modal-body, .address-removed .modal-body, .details-updated .modal-body, .new-address-saved .modal-body, .address-updated .modal-body {
  text-align:center;
  margin-top:160px;
  font-size:1.3em;
@@ -191,10 +191,10 @@
 .fname-error,.title-error {
  color:#df1331
 }
-.edit-address-modal .modal-content, .address-updated .modal-content, .new-address-saved .modal-content, .add-new-address-modal .modal-content, .edit-name-modal .modal-content, .edit-email-modal .modal-content, .bdate-modal .modal-content, .details-updated .modal-content, .change-password-modal .modal-content {
+.address-removed .modal-content, .edit-address-modal .modal-content, .address-updated .modal-content, .new-address-saved .modal-content, .add-new-address-modal .modal-content, .edit-name-modal .modal-content, .edit-email-modal .modal-content, .bdate-modal .modal-content, .details-updated .modal-content, .change-password-modal .modal-content {
   background-color: #d4bea6;
 }
-.edit-address-modal .modal-header, .add-new-address-modal .modal-header, .edit-name-modal .modal-header, .edit-email-modal .modal-header, .bdate-modal .modal-header, .change-password-modal .modal-header {
+.remove-address .modal-header, .edit-address-modal .modal-header, .add-new-address-modal .modal-header, .edit-name-modal .modal-header, .edit-email-modal .modal-header, .bdate-modal .modal-header, .change-password-modal .modal-header {
   border: none;
 }
 .add-new-address-modal .form-control, .edit-address-modal .form-control {
@@ -595,6 +595,9 @@
 }
 .tel-day {
   margin-top: 20px
+}
+.tel-ev {
+  margin-top: -10px
 }
 .email {
   margin-top: -10px

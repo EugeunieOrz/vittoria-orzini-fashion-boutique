@@ -1,11 +1,8 @@
 package core.models
 
-import reactivemongo.bson.BSONObjectID
-
 /**
  * The Credit Card object.
  *
- * @param id           The unique ID of the user.
  */
 
 case class CreditCard(

@@ -91,4 +91,15 @@ export default class AdminAPI extends API {
     const response = await this.jsonRequest(`api/admin/edit-address/${userID}/${index}`, data);
     return response.json();
   }
+
+  /**
+   * Removes address from the user's address book.
+   *
+   * @param indexToRemoveAddress
+   * @return A resolved or rejected promise containing an API result.
+   */
+  async removeAddress(userID: string, indexToRemoveAddress: Number): Promise<APIResponse> {
+    const response = await this.jsonRequest(`api/admin/remove-address/${userID}/${indexToRemoveAddress}`);
+    return response.json();
+  }
 }

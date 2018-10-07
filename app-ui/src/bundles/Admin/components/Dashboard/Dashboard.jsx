@@ -14,6 +14,7 @@ import ChangePasswordContainer from 'bundles/Admin/containers/ChangePasswordCont
 import EditNewsletterContainer from 'bundles/Admin/containers/EditNewsletterContainer';
 import AddNewAddressContainer from 'bundles/Admin/containers/AddNewAddressContainer';
 import EditAddressContainer from 'bundles/Admin/containers/EditAddressContainer';
+import RemoveAddressContainer from 'bundles/Admin/containers/RemoveAddressContainer';
 
 import countries from 'static/countries';
 
@@ -24,7 +25,7 @@ type Props = {
   addresses: Array;
   bdate: string,
   i18n: Object,
-  index: string,
+  index: Number,
   isShown: boolean,
   isShownUpdated: boolean,
   isShownUpdatedAddress: boolean,
@@ -33,7 +34,10 @@ type Props = {
   editNameIsShown: boolean,
   passwordFormIsShown: boolean,
   onSignOut: () => any,
+  onShowRemoveAddressModal: (index: Number) => any,
+  isShownRemoveAddress: () => any,
   onToggleAddNewAddress: () => any,
+  onToggleAddressRemoved: () => any,
   onToggleEditAddress: (index: string) => any,
   onToggleUpdatedAddress: () => any,
   onToggleBDate: () => any,
@@ -42,6 +46,7 @@ type Props = {
   onToggleName: () => any,
   onToggleNewAddressSaved: () => any,
   onTogglePasswordForm: () => any,
+  removedAddressMsg: boolean,
   savedNewAddressIsShown: boolean,
   section: string,
   selectID: () => any,
@@ -56,7 +61,8 @@ export const DashboardComponent = ({
   onToggleUpdatedAddress, onToggleAddNewAddress, onToggleBDate, onToggleEmail, onToggleName,
   onToggleNewAddressSaved, onToggleEditAddress, onTogglePasswordForm, onToggleUpdate,
   passwordFormIsShown, savedNewAddressIsShown, section, selectID, userEmail, userFirstName,
-  userName,
+  userName, onShowRemoveAddressModal, isShownRemoveAddress,
+  removedAddressMsg, onToggleAddressRemoved,
 }: Props) => (
   <Grid className="admin-dashboard">
     <Row className="admin-welcome">
@@ -162,7 +168,8 @@ export const DashboardComponent = ({
           addresses.map((address, index) =>
           <Row className="address-container" key={index}>
             <Col md={6} mdPush={6}>
-              <Button className="delete-address-btn">
+              <Button className="delete-address-btn"
+                      onClick={() => onShowRemoveAddressModal(index)}>
                 <Image src="static/close-30.png" height="15" width="15" />
               </Button>
               <Button className="edit-address-btn" onClick={() => onToggleEditAddress(index)}>
@@ -231,6 +238,16 @@ export const DashboardComponent = ({
         <Modal className="address-updated" show={isShownUpdatedAddress} onHide={() => onToggleUpdatedAddress()}>
           <Modal.Header closeButton></Modal.Header>
           <Modal.Body>{i18n.t`Address successfully saved`}</Modal.Body>
+        </Modal>
+        <Modal className="remove-address" show={isShownRemoveAddress} onHide={() => onShowRemoveAddressModal(index)}>
+          <Modal.Header closeButton></Modal.Header>
+          <Modal.Body>
+            <RemoveAddressContainer />
+          </Modal.Body>
+        </Modal>
+        <Modal className="address-removed" show={removedAddressMsg} onHide={() => onToggleAddressRemoved()}>
+          <Modal.Header closeButton></Modal.Header>
+          <Modal.Body>{i18n.t`Address deleted`}</Modal.Body>
         </Modal>
       </Grid>
     }

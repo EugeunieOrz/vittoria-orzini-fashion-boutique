@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 import lifecycle from 'components/Lifecycle';
+import { showRemoveAddressModal } from 'bundles/Admin/modules/RemoveAddressQModule';
 import { toggleUpdate } from 'bundles/Admin/modules/DetailsUpdateModule';
 import { togglePasswordForm } from 'bundles/Admin/modules/PasswordFormModule';
 import { toggleAddNewAddress } from 'bundles/Admin/modules/AddNewAddressModule';
+import { toggleAddressRemoved } from 'bundles/Admin/modules/AddressRemovedModule';
 import { toggleEditAddress } from 'bundles/Admin/modules/EditAddressModule';
 import { toggleNewAddressSaved } from 'bundles/Admin/modules/NewAddressSavedModule';
 import { toggleUpdatedAddress } from 'bundles/Admin/modules/AddressUpdatedModule';
@@ -13,11 +15,8 @@ import { toggleName } from 'bundles/Admin/modules/NameModule';
 import { modelPath, updateNewsletter } from 'bundles/Admin/modules/NewsletterModule';
 import { selectID } from 'bundles/Admin/modules/SectionModule';
 import { signOutUser } from 'modules/UserModule';
-import { getUserFirstName } from 'selectors/UserSelector';
-import { getUserName } from 'selectors/UserSelector';
-import { getUserEmail } from 'selectors/UserSelector';
-import { getUserBDate } from 'selectors/UserSelector';
-import { getUserAddresses } from 'selectors/UserSelector';
+import { getUserFirstName, getUserName, getUserEmail } from 'selectors/UserSelector';
+import { getUserBDate, getUserAddresses } from 'selectors/UserSelector';
 import Dashboard from 'bundles/Admin/components/Dashboard';
 
 /**
@@ -37,9 +36,11 @@ const mapStateToProps = (state) => {
      editNameIsShown: state.admin.toggleName.nameModal.isShown,
      index: state.admin.toggleEditAddress.index,
      isShown: state.admin.toggleBDate.bdateModal.isShown,
+     isShownRemoveAddress: state.admin.showRemoveAddressModal.isShown,
      isShownUpdated: state.admin.toggleUpdate.detailsUpdateModal.isShown,
      isShownUpdatedAddress: state.admin.toggleUpdatedAddress.addressUpdateModal.isShown,
      passwordFormIsShown: state.admin.togglePasswordForm.passwordModal.isShown,
+     removedAddressMsg: state.admin.toggleAddressRemoved.addressRemovedModal.isShown,
      savedNewAddressIsShown: state.admin.toggleNewAddressSaved.newAddressSavedModal.isShown,
      section: state.admin.toggleSection.sectionID.section,
      userEmail: getUserEmail(state),
@@ -72,6 +73,8 @@ const mapDispatchToProps = (dispatch) => ({
   onToggleName: () => dispatch(toggleName()),
   onUpdateNewsletter: data => dispatch(updateNewsletter(data)),
   onToggleNewAddressSaved: () => dispatch(toggleNewAddressSaved()),
+  onToggleAddressRemoved: () => dispatch(toggleAddressRemoved()),
+  onShowRemoveAddressModal: index => dispatch(showRemoveAddressModal(index)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(lifecycle(Dashboard));

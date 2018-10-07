@@ -1,5 +1,8 @@
 import { combineReducers } from 'redux';
 import displaySectionReducer from 'bundles/Admin/modules/SectionModule';
+import showRemoveAddressModalReducer from 'bundles/Admin/modules/RemoveAddressQModule';
+import removeAddressReducer from 'bundles/Admin/modules/RemoveAddressQModule';
+import toggleAddressRemovedReducer from 'bundles/Admin/modules/AddressRemovedModule';
 import togglePasswordFormReducer from 'bundles/Admin/modules/PasswordFormModule';
 import toggleUpdateReducer from 'bundles/Admin/modules/DetailsUpdateModule';
 import toggleAddressUpdateReducer from 'bundles/Admin/modules/AddressUpdatedModule';
@@ -31,6 +34,9 @@ export default combineReducers({
   editAddress: editAddressReducer,
   editEmail: editEmailReducer,
   editName: editNameReducer,
+  removeAddress: removeAddressReducer,
+  showRemoveAddressModal: showRemoveAddressModalReducer,
+  toggleAddressRemoved: toggleAddressRemovedReducer,
   toggleAddNewAddress: toggleAddNewAddressReducer,
   toggleEditAddress: toggleEditAddressReducer,
   toggleUpdatedAddress: toggleAddressUpdateReducer,

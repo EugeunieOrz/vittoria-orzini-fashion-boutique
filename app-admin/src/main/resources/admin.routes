@@ -2,10 +2,11 @@
 # This file defines all module routes (Higher priority routes first)
 # ~~~~
 
-POST    /:userID                     admin.controllers.DetailsController.updateDetails(userID: reactivemongo.bson.BSONObjectID)
-POST    /edit-name/:userID           admin.controllers.DetailsController.editName(userID: reactivemongo.bson.BSONObjectID)
-POST    /edit-email/:userID          admin.controllers.DetailsController.editEmail(userID: reactivemongo.bson.BSONObjectID)
-POST    /change-password/:userID     admin.controllers.DetailsController.changePassword(userID: reactivemongo.bson.BSONObjectID)
-POST    /update-newsletter/:userID   admin.controllers.DetailsController.updateNewsletter(userID: reactivemongo.bson.BSONObjectID)
-POST    /add-a-new-address/:userID   admin.controllers.DetailsController.addNewAddress(userID: reactivemongo.bson.BSONObjectID)
-POST    /edit-address/:userID/:index       admin.controllers.DetailsController.editAddress(userID: reactivemongo.bson.BSONObjectID, index: Int)
+POST    /:userID                                            admin.controllers.DetailsController.updateDetails(userID: reactivemongo.bson.BSONObjectID)
+POST    /edit-name/:userID                                  admin.controllers.DetailsController.editName(userID: reactivemongo.bson.BSONObjectID)
+POST    /edit-email/:userID                                 admin.controllers.DetailsController.editEmail(userID: reactivemongo.bson.BSONObjectID)
+POST    /change-password/:userID                            admin.controllers.DetailsController.changePassword(userID: reactivemongo.bson.BSONObjectID)
+POST    /update-newsletter/:userID                          admin.controllers.DetailsController.updateNewsletter(userID: reactivemongo.bson.BSONObjectID)
+POST    /add-a-new-address/:userID                          admin.controllers.DetailsController.addNewAddress(userID: reactivemongo.bson.BSONObjectID)
+POST    /edit-address/:userID/:index                        admin.controllers.DetailsController.editAddress(userID: reactivemongo.bson.BSONObjectID, index: Int)
+POST    /remove-address/:userID/:indexToRemoveAddress       admin.controllers.DetailsController.removeAddress(userID: reactivemongo.bson.BSONObjectID, indexToRemoveAddress: Int)

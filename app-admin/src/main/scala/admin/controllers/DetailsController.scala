@@ -391,4 +391,47 @@ class DetailsController @Inject() (
       )
     }
 
+  /**
+   * Removes address from the user's address book.
+   *
+   * @return A Play result.
+   */
+  def removeAddress(userID: BSONObjectID, indexToRemoveAddress: Int): Action[AnyContent] =
+    silhouette.SecuredAction.async { implicit request =>
+      println(userID + " " + indexToRemoveAddress)
+      userService.retrieve(userID).flatMap {
+        case Some(user) if user.loginInfo.exists(_.providerID == CredentialsProvider.ID) =>
+          user.addressBook match {
+            case Some(addresses) =>
+              val seqUpdated = removeAddressFromSeq(addresses, indexToRemoveAddress)
+              val updatedUser = user.copy(
+                addressBook = Some(seqUpdated)
+              )
+              userService.save(updatedUser).map { usr =>
+                Ok(ApiResponse(
+                  "admin.address.deleted.successful",
+                  Messages("admin.addresses.deleted"),
+                  Json.toJson(updatedUser)))
+              }
+            case None =>
+              Future.successful(BadRequest(ApiResponse("admin.details.invalid", Messages("admin.details.invalid"))))
+          }
+        case _ => Future.successful(
+          BadRequest(ApiResponse("admin.remove.address.index.invalid", Messages("admin.remove.address.index.invalid")))
+        )
+      }
+    }
+
+  private def removeAddressFromSeq(seq: Seq[Address], index: Int): Seq[Address] = {
+    if (index < 0) {
+      seq
+    } else if (index == 0) {
+      seq.tail
+    } else {
+      // splitAt keeps the matching element in the second group
+      val (a, b) = seq.splitAt(index)
+      a ++ b.tail
+    }
+  }
+
 }
