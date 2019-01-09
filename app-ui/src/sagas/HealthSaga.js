@@ -12,7 +12,7 @@ import {
   changeToUnhealthy,
 } from 'modules/HealthModule';
 import { combineSagas } from 'util/Saga';
-import { HEALT_DURATION } from 'config/index';
+import { HEALTH_DURATION } from 'config/index';
 import HealthAPI from 'apis/HealthAPI';
 
 /**
@@ -82,7 +82,7 @@ export function* healthSaga(api: HealthAPI): Generator<*, *, *> {
   yield all(combineSagas([
     initAppWorker,
     [fetchHealthWorker, api],
-    [fetchHealthPeriodicallyWorker, HEALT_DURATION],
+    [fetchHealthPeriodicallyWorker, HEALTH_DURATION],
   ]));
 }
 

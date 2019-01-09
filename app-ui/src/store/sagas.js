@@ -4,6 +4,7 @@ import healthSagaBinding from 'sagas/HealthSaga';
 import configSagaBinding from 'sagas/ConfigSaga';
 import i18nSagaBinding from 'sagas/I18nSaga';
 import userSagaBinding from 'sagas/UserSaga';
+import geolocationSagaBinding from 'sagas/GeolocationSaga';
 import { sagaMiddleware } from './middleware';
 
 export function* rootSaga() {
@@ -12,6 +13,7 @@ export function* rootSaga() {
     configSagaBinding,
     i18nSagaBinding,
     userSagaBinding,
+    geolocationSagaBinding,
   ]));
 }
 

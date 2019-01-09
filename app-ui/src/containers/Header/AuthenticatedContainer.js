@@ -21,7 +21,6 @@ const mapStateToProps = state => ({
 /**
  * Maps the store `dispatch` function to the React component `props`.
  *
- * @param {Function} dispatch The Redux store dispatch function.
  * @returns {Object} The props passed to the react component.
  */
 const mapDispatchToProps = dispatch => ({

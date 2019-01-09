@@ -16,10 +16,11 @@ type Props = {
   isHidden: boolean,
   selectLanguage: (language: string) => void,
   onToggleMenu: () => any,
+  geolocation: [],
 };
 
 export const UnauthenticatedHeaderComponent = ({
-  route, current, selectLanguage, i18n, language, isHidden, onToggleMenu,
+  route, current, selectLanguage, i18n, language, isHidden, onToggleMenu, geolocation,
  }: Props) => (
   <Header>
     <div className="menu-title">

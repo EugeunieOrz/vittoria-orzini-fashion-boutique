@@ -3,6 +3,7 @@ import initReducer from 'modules/InitModule';
 import locationReducer from 'modules/LocationModule';
 import healthReducer from 'modules/HealthModule';
 import configReducer from 'modules/ConfigModule';
+import geolocationReducer from 'modules/GeolocationModule';
 import i18nReducer from 'modules/I18nModule';
 import stateReducer from 'modules/StateModule';
 import userReducer from 'modules/UserModule';
@@ -17,6 +18,7 @@ export const makeRootReducer = (asyncReducers) => {
     i18n: i18nReducer,
     user: userReducer,
     toggleMenu: toggleMenuReducer,
+    geolocation: geolocationReducer,
     ...asyncReducers,
   });
 

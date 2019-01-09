@@ -83,7 +83,7 @@ export const AuthenticatedHeaderComponent = ({
           className="wishlist"
           onSelect={() => route(config.route.index)}
         >
-          WISHLIST
+          WISH LIST
        </NavItem>
        <NavDropdown id="nav-dropdown" title={language.toUpperCase()} onSelect={(lang) => selectLanguage(lang)}>
          <MenuItem eventKey="en">EN</MenuItem>

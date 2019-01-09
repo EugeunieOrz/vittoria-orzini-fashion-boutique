@@ -36,6 +36,7 @@ type Props = {
   onSignOut: () => any,
   onShowRemoveAddressModal: (index: Number) => any,
   isShownRemoveAddress: () => any,
+  onFetchGeolocation: () => any,
   onToggleAddNewAddress: () => any,
   onToggleAddressRemoved: () => any,
   onToggleEditAddress: (index: string) => any,
@@ -61,7 +62,7 @@ export const DashboardComponent = ({
   onToggleUpdatedAddress, onToggleAddNewAddress, onToggleBDate, onToggleEmail, onToggleName,
   onToggleNewAddressSaved, onToggleEditAddress, onTogglePasswordForm, onToggleUpdate,
   passwordFormIsShown, savedNewAddressIsShown, section, selectID, userEmail, userFirstName,
-  userName, onShowRemoveAddressModal, isShownRemoveAddress,
+  userName, onShowRemoveAddressModal, isShownRemoveAddress, onFetchGeolocation,
   removedAddressMsg, onToggleAddressRemoved,
 }: Props) => (
   <Grid className="admin-dashboard">
@@ -80,7 +81,8 @@ export const DashboardComponent = ({
       <NavItem id={ section === 4 ? 'orders-section-active' : 'orders-section'}
         eventKey={4}>{i18n.t`Order History`}</NavItem>
       <NavItem id={ section === 5 ? 'address-section-active' : 'address-section'}
-        eventKey={5}>{i18n.t`Address Book`}</NavItem>
+        eventKey={5} onSelect={() => onFetchGeolocation()}
+        >{i18n.t`Address Book`}</NavItem>
       <NavItem id="logout-btn" onSelect={onSignOut}>{i18n.t`LOG OUT`}</NavItem>
     </Nav>
     { (section === 1 || section === '0' || section === '' ||

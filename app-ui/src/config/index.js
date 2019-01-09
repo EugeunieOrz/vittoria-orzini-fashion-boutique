@@ -3,8 +3,9 @@ import environments from 'config/environments';
 // *******************************************
 // Durations
 // *******************************************
-export const HEALT_DURATION = 10 * 1000; // Fetch the health state every 10 seconds
+export const HEALTH_DURATION = 10 * 1000; // Fetch the health state every 10 seconds
 export const USER_DURATION = 5 * 60 * 1000; // Fetch the user data every 5 minutes
+export const IP_DURATION = 1000; // Fetch the user's IP every second
 
 // *******************************************
 // Config

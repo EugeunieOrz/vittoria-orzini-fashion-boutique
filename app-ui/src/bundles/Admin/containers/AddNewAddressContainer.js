@@ -3,6 +3,7 @@ import { actions } from 'react-redux-form';
 import lifecycle from 'components/Lifecycle';
 import { modelPath, addNewAddress } from 'bundles/Admin/modules/AddNewAddressFormModule';
 import { getUserID } from 'selectors/UserSelector';
+import { getUserCountryByIP } from 'selectors/GeolocationSelector';
 import AddNewAddress from 'bundles/Admin/components/AddNewAddress';
 
 /**
@@ -17,6 +18,21 @@ const mapStateToProps = (state) => {
      userID: getUserID(state),
      form: state.admin.addNewAddress.form,
      ...state.admin.addNewAddress.request,
+     formInitial: {
+       firstName: '',
+       lastName: '',
+       additional: '',
+       address: '',
+       zipCode: '',
+       city: '',
+       country: getUserCountryByIP(state),
+       province: '',
+       email: '',
+       dayTelephone: '',
+       eveningTelephone: '',
+       defShipAddr: false,
+       preferBillAddr: false,
+     }
    }
  }
 /* const mapStateToProps = state => ({
@@ -38,6 +54,7 @@ const mergeProps = (propsFromState, propsFromDispatch) => {
   return {
     ...propsFromState,
     onAddNewAddress: (userID, data) => dispatch(addNewAddress({userID, data})),
+    componentWillMount: () => dispatch(actions.merge(modelPath, propsFromState.formInitial)),
     componentWillUnmount: () => dispatch(actions.reset(modelPath)),
   };
 };
