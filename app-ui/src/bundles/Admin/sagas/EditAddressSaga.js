@@ -20,10 +20,10 @@ import config from 'config/index';
 
 export function* editAddressSaga(api: AdminAPI): Generator<*, *, *> {
   while (true) {
-    const { payload: { userID, index, data } } = yield take(editAddress().type);
+    const { payload: { userID, index, countryByIP, data } } = yield take(editAddress().type);
     try {
       yield put(editAddressPending());
-      const response = yield call([api, api.editAddress], userID, index, data);
+      const response = yield call([api, api.editAddress], userID, index, countryByIP, data);
       yield put(editAddressFulfilled(response));
       yield put(fetchUserFulfilled(response.details));
       yield put(toggleEditAddress());

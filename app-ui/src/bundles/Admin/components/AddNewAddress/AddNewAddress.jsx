@@ -16,19 +16,20 @@ import config from 'config/index';
 import type { FormProps } from 'util/Form';
 
 type Props = {
+  countryByIP: string,
   form: {[string]: FormProps},
   isPending: boolean,
   i18n: Object,
-  onAddNewAddress: (userID: string, data: Object) => any,
+  onAddNewAddress: (userID: string, countryByIP: string, data: Object) => any,
   userID: string,
 }
 
 export const AddNewAddressComponent = ({
-  form, isPending, i18n, onAddNewAddress, userID,
+  countryByIP, form, isPending, i18n, onAddNewAddress, userID,
 }: Props) => (
   <Grid className="add-new-address-container">
     <Row className="required-fields-msg">{i18n.t`* Required fields`}</Row>
-    <Form model={modelPath} onSubmit={data => onAddNewAddress(userID, data)}
+    <Form model={modelPath} onSubmit={data => onAddNewAddress(userID, countryByIP, data)}
           autoComplete="off" hideNativeErrors>
       <Row className="address-forms">
         <Col md={6} mdPush={6}>

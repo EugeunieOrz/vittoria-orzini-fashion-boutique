@@ -76,8 +76,8 @@ export default class AdminAPI extends API {
    * @param data The address data.
    * @return A resolved or rejected promise containing an API result.
    */
-  async addNewAddress(userID: string, data: AddNewAddressForm): Promise<APIResponse> {
-    const response = await this.jsonRequest(`api/admin/add-a-new-address/${userID}`, data);
+  async addNewAddress(userID: string, countryByIP: string, data: AddNewAddressForm): Promise<APIResponse> {
+    const response = await this.jsonRequest(`api/admin/add-a-new-address/${userID}/${countryByIP}`, data);
     return response.json();
   }
 
@@ -87,8 +87,8 @@ export default class AdminAPI extends API {
    * @param data The address data.
    * @return A resolved or rejected promise containing an API result.
    */
-  async editAddress(userID: string, index: Number, data: EditAddressForm): Promise<APIResponse> {
-    const response = await this.jsonRequest(`api/admin/edit-address/${userID}/${index}`, data);
+  async editAddress(userID: string, index: Number, countryByIP: string, data: EditAddressForm): Promise<APIResponse> {
+    const response = await this.jsonRequest(`api/admin/edit-address/${userID}/${index}/${countryByIP}`, data);
     return response.json();
   }
 

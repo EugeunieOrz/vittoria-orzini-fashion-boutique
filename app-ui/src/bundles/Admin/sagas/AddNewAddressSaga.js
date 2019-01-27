@@ -20,10 +20,10 @@ import config from 'config/index';
 
 export function* addNewAddressSaga(api: AdminAPI): Generator<*, *, *> {
   while (true) {
-    const { payload: { userID, data } } = yield take(addNewAddress().type);
+    const { payload: { userID, countryByIP, data } } = yield take(addNewAddress().type);
     try {
       yield put(addNewAddressPending());
-      const response = yield call([api, api.addNewAddress], userID, data);
+      const response = yield call([api, api.addNewAddress], userID, countryByIP, data);
       yield put(addNewAddressFulfilled(response));
       yield put(actions.reset(modelPath));
       yield put(fetchUserFulfilled(response.details));

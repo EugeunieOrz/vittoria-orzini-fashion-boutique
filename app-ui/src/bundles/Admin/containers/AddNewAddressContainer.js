@@ -16,6 +16,7 @@ const mapStateToProps = (state) => {
    console.log('STATE', state);
    return {
      userID: getUserID(state),
+     countryByIP: getUserCountryByIP(state),
      form: state.admin.addNewAddress.form,
      ...state.admin.addNewAddress.request,
      formInitial: {
@@ -53,7 +54,7 @@ const mergeProps = (propsFromState, propsFromDispatch) => {
 
   return {
     ...propsFromState,
-    onAddNewAddress: (userID, data) => dispatch(addNewAddress({userID, data})),
+    onAddNewAddress: (userID, countryByIP, data) => dispatch(addNewAddress({userID, countryByIP, data})),
     componentWillMount: () => dispatch(actions.merge(modelPath, propsFromState.formInitial)),
     componentWillUnmount: () => dispatch(actions.reset(modelPath)),
   };

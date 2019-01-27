@@ -203,7 +203,7 @@ export const DashboardComponent = ({
                 </p>
                 <p className="tel-day">{address.dayTel.telephone}</p>
                 <p className="tel-ev">{address.eveningTel.telephone}</p>
-                <p className="email">{address.email}</p>
+                <p className="email">{address.email.split('@')[0] + '[at]' + address.email.split('@')[1]}</p>
               </div>
             </Col>
           </Row>

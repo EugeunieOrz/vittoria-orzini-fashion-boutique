@@ -52,7 +52,7 @@ export const ChangePasswordComponent = ({
             }}
           />
           <Button id="toggle-btn1" onClick={() => onToggleMask()}>
-            <Glyphicon glyph={isHidden2 ? 'eye-close' : 'eye-open'} />
+            <Glyphicon glyph={isHidden ? 'eye-close' : 'eye-open'} />
           </Button>
         </Row>
         <Row className="newpassword-content">

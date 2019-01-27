@@ -16,20 +16,21 @@ import config from 'config/index';
 import type { FormProps } from 'util/Form';
 
 type Props = {
+  countryByIP: string,
   form: {[string]: FormProps},
   isPending: boolean,
   i18n: Object,
   index: Number,
-  onEditAddress: (userID: string, index: Number, data: Object) => any,
+  onEditAddress: (userID: string, index: Number, countryByIP: String, data: Object) => any,
   userID: string,
 }
 
 export const EditAddressComponent = ({
-  form, isPending, i18n, index, onEditAddress, userID,
+  countryByIP, form, isPending, i18n, index, onEditAddress, userID,
 }: Props) => (
   <Grid className="edit-address-container">
     <Row className="required-fields-msg">{i18n.t`* Required fields`}</Row>
-    <Form model={modelPath} onSubmit={data => onEditAddress(userID, index, data)}
+    <Form model={modelPath} onSubmit={data => onEditAddress(userID, index, countryByIP, data)}
           autoComplete="off" hideNativeErrors>
       <Row className="address-forms">
         <Col md={6} mdPush={6}>

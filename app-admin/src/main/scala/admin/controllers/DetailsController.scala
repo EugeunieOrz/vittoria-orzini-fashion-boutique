@@ -260,7 +260,7 @@ class DetailsController @Inject() (
    *
    * @return A Play result.
    */
-  def addNewAddress(userID: BSONObjectID): Action[AnyContent] =
+  def addNewAddress(userID: BSONObjectID, countryByIP: String): Action[AnyContent] =
     silhouette.SecuredAction.async { implicit request =>
       AddNewAddressForm.form.bindFromRequest.fold(
         form => Future.successful(BadRequest(
@@ -287,10 +287,10 @@ class DetailsController @Inject() (
                 telephone = data.eveningTelephone
               ),
               mark1 = DefaultShippingAddressMark(
-                checked = data.defShipAddr
+                checked = if (data.country == countryByIP) data.defShipAddr else Some(false)
               ),
               mark2 = BillingAddressMark(
-                checked = data.preferBillAddr
+                checked = if (data.country == countryByIP) data.preferBillAddr else Some(true)
               )
             )
             user.addressBook match {
@@ -328,7 +328,7 @@ class DetailsController @Inject() (
    *
    * @return A Play result.
    */
-  def editAddress(userID: BSONObjectID, index: Int): Action[AnyContent] =
+  def editAddress(userID: BSONObjectID, index: Int, countryByIP: String): Action[AnyContent] =
     silhouette.SecuredAction.async { implicit request =>
       AddNewAddressForm.form.bindFromRequest.fold(
         form => Future.successful(BadRequest(
@@ -355,10 +355,10 @@ class DetailsController @Inject() (
                 telephone = data.eveningTelephone
               ),
               mark1 = DefaultShippingAddressMark(
-                checked = data.defShipAddr
+                checked = if (data.country == countryByIP) data.defShipAddr else Some(false)
               ),
               mark2 = BillingAddressMark(
-                checked = data.preferBillAddr
+                checked = if (data.country == countryByIP) data.preferBillAddr else Some(true)
               )
             )
             user.addressBook match {

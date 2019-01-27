@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 import lifecycle from 'components/Lifecycle';
 import { modelPath, editAddress } from 'bundles/Admin/modules/EditAddressFormModule';
+import { getUserCountryByIP } from 'selectors/GeolocationSelector';
 import { getUserID } from 'selectors/UserSelector';
 import { getUserAddressFirstName } from 'selectors/UserSelector';
 import { getUserAddressLastName } from 'selectors/UserSelector';
@@ -28,6 +29,7 @@ const mapStateToProps = (state) => {
    console.log('STATE', state);
    return {
      userID: getUserID(state),
+     countryByIP: getUserCountryByIP(state),
      form: state.admin.editAddress.form,
      ...state.admin.editAddress.request,
      index: state.admin.toggleEditAddress.index,
@@ -66,7 +68,7 @@ const mergeProps = (propsFromState, propsFromDispatch) => {
 
   return {
     ...propsFromState,
-    onEditAddress: (userID, index, data) => dispatch(editAddress({userID, index, data})),
+    onEditAddress: (userID, index, countryByIP, data) => dispatch(editAddress({userID, index, countryByIP, data})),
     componentWillUnmount: () => dispatch(actions.change(modelPath, propsFromState.formInitial)),
     componentWillMount: () => dispatch(actions.merge(modelPath, propsFromState.formInitial)),
   };
