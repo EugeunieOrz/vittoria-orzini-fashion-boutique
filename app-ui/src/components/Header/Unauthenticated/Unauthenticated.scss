@@ -16,6 +16,12 @@
  margin-top:-37px;
  margin-right:10px
 }
+.not-authenticated-logo {
+  font-family:AdamCGPro;
+ font-size:4.4em;
+ margin-top:-36px;
+ margin-left:-190px
+}
 nav a {
  color:#000!important
 }
@@ -27,12 +33,12 @@ nav a:hover {
 }
 .menu-title {
  transform:rotate(270deg);
- margin-left:-340px;
- margin-top:300px;
+ margin-left:-400px;
+ padding-top:80px;
  font-size:2.2em;
  font-family:AudreyBold;
  font-weight:700;
- position:absolute
+ position: fixed
 }
 #vo-link {
  color:#000;

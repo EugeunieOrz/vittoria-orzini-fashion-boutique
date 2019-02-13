@@ -76,12 +76,21 @@ val admin: Project = Project(id = "app-admin", base = file("app-admin"))
   .enablePlugins(PlayScala, DisablePackageSettings)
   .disablePlugins(PlayLayoutPlugin)
 
+
+////*******************************
+//// Shopping Cart module
+////*******************************
+val shopping: Project = Project(id = "app-shopping", base = file("app-shopping"))
+  .dependsOn(core % "compile->compile;test->test", test % Test)
+  .enablePlugins(PlayScala, DisablePackageSettings)
+  .disablePlugins(PlayLayoutPlugin)
+
 ////*******************************
 //// Root module
 ////*******************************
 val root: Project = Project(id = "vittoria-orzini-fashion-boutique", base = file("."))
-  .aggregate(test, core, auth, admin)
-  .dependsOn(auth, admin)
+  .aggregate(test, core, auth, admin, shopping)
+  .dependsOn(auth, admin, shopping)
   .settings(
     libraryDependencies ++= Seq(
       filters

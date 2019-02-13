@@ -9,6 +9,7 @@ import MaintenanceContainer from 'containers/MaintenanceContainer';
 import { CaptureNotFoundRoute, NotFoundRoute } from 'components/NotFound';
 import { home, secured, unsecured } from 'util/Auth';
 import * as Bundles from 'bundles';
+import config from 'config/index';
 
 type Props = {
   store: Object,
@@ -48,7 +49,8 @@ export default class App extends React.Component<Props> {
               <Router history={history}>
                 <CaptureNotFoundRoute>
                   <Switch>
-                    <Route exact path="/" component={home(Bundles.home(store))} />
+                    <Redirect exact from={config.route.index} to={config.route.home.index} />
+                    <Route path='/home' component={home(Bundles.home(store))} />
                     <Route path="/admin" component={secured(Bundles.admin(store))} />
                     <Route path="/auth" component={unsecured(Bundles.auth(store))} />
                     <NotFoundRoute />

@@ -9,6 +9,7 @@ GET         /                                controllers.ApplicationController.i
 ->          /api/core                        core.Routes
 ->          /api/auth                        auth.Routes
 ->          /api/admin                       admin.Routes
+->          /api/shopping                    shopping.Routes
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                    controllers.Assets.at(path="/public", file)

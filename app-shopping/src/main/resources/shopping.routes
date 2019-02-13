@@ -1,0 +1,4 @@
+# Routes
+# This file defines all module routes (Higher priority routes first)
+# ~~~~
+GET     /products                      shopping.controllers.ShoppingController.get

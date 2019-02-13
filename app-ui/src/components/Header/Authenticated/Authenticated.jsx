@@ -4,6 +4,7 @@ import { Button, FormControl, MenuItem, Nav, Navbar, NavDropdown, NavItem } from
 import { Link } from 'react-router-dom';
 import { withI18n, Trans } from 'lingui-react';
 import config from 'config/index';
+import MenuContainer from 'containers/MenuContainer';
 
 import Header from '../Header';
 import './Authenticated.scss';
@@ -16,10 +17,11 @@ type Props = {
   language: string,
   selectLanguage: (language: string) => void,
   onToggleMenu: () => any,
+  onSignOut: () => any,
 };
 
 export const AuthenticatedHeaderComponent = ({
-  route, current, i18n, isHidden, language, selectLanguage, onToggleMenu,
+  route, current, i18n, isHidden, language, selectLanguage, onToggleMenu, onSignOut,
 }: Props) => (
     <Header>
       <div className="menu-title">
@@ -27,49 +29,19 @@ export const AuthenticatedHeaderComponent = ({
       </div>
       {
         !isHidden &&
-        <div className="main-menu">
-          <Link id="vo-brand" onClick={() => onToggleMenu()} to={config.route.index}>Vittoria Orzini</Link>
-          <Button className="closebtn" onClick={() => onToggleMenu()}>Close</Button>
-          <div className="main-menu-content">
-            <div className="fashion-container">
-              <div className="fashion-content">
-                <p id="fashion-content-title"><Trans>FASHION</Trans></p>
-                <Link id="nav-fashion-newin" to={config.route.index}><Trans>New Arrivals</Trans></Link>
-                <Link id="nav-ready-to-wear" to={config.route.index}><Trans>Ready To Wear</Trans></Link>
-                <Link id="nav-shoes" to={config.route.index}><Trans>Shoes</Trans></Link>
-                <Link id="nav-handbags" to={config.route.index}><Trans>Handbags</Trans></Link>
-                <Link id="nav-accessories" to={config.route.index}><Trans>Accessories</Trans></Link>
-                <Link id="nav-jewelry" to={config.route.index}><Trans>Fine Jewelry</Trans></Link>
-              </div>
-            </div>
-            <div className="homecoll-container">
-              <div className="home-coll-content">
-                <p id="homecoll-content-title"><Trans>HOME COLLECTION</Trans></p>
-                <Link id="nav-homecoll-newin" to={config.route.index}><Trans>New Arrivals</Trans></Link>
-                <Link id="nav-bed-bath" to={config.route.index}><Trans>Bed & Bath</Trans></Link>
-                <Link id="nav-dining" to={config.route.index}><Trans>Dining</Trans></Link>
-                <Link id="nav-living" to={config.route.index}><Trans>Living</Trans></Link>
-              </div>
-            </div>
-            <div className="vintage-container">
-              <div className="vintage-content">
-                <p id="vintage-content-title"><Trans>VINTAGE</Trans></p>
-                <Link id="nav-vintage-newin" to={config.route.index}><Trans>New Arrivals</Trans></Link>
-                <Link id="nav-v-dresses" to={config.route.index}><Trans>Vintage Dresses</Trans></Link>
-                <Link id="nav-v-jackets" to={config.route.index}><Trans>Vintage Jackets</Trans></Link>
-                <Link id="nav-v-shoes" to={config.route.index}><Trans>Vintage Shoes</Trans></Link>
-                <Link id="nav-v-bags" to={config.route.index}><Trans>Vintage Bags</Trans></Link>
-                <Link id="nav-v-accessories" to={config.route.index}><Trans>Vintage Accessories</Trans></Link>
-                <Link id="nav-v-jewellery" to={config.route.index}><Trans>Vintage Jewellery</Trans></Link>
-              </div>
-            </div>
-          </div>
-        </div>
+        <MenuContainer />
       }
+      <Nav className="authenticated-logo">
+        <NavItem
+          className="logo-home-link"
+          onSelect={() => route(config.route.index)}
+        >V.O.
+      </NavItem>
+      </Nav>
       <Nav className="authenticated" pullRight>
         <NavItem
            className="my-account"
-           onSelect={() => route(config.route.auth.signIn)}
+           onSelect={() => route(config.route.admin.index)}
          >
            MY ACCOUNT
          </NavItem>
@@ -89,6 +61,12 @@ export const AuthenticatedHeaderComponent = ({
          <MenuItem eventKey="en">EN</MenuItem>
          <MenuItem eventKey="it">IT</MenuItem>
        </NavDropdown>
+       <NavItem
+         className="auth-sign-out"
+         onSelect={onSignOut}
+       >
+         {i18n.t`SIGN OUT`}
+      </NavItem>
     </Nav>
  </Header>
 );

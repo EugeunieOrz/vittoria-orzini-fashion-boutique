@@ -4,6 +4,7 @@ import Alert from 'react-s-alert';
 import { Switch, Route } from 'react-router-dom';
 import AuthenticatedContainer from 'containers/Header/AuthenticatedContainer';
 import UnauthenticatedContainer from 'containers/Header/UnauthenticatedContainer';
+import HomeHeaderContainer from 'containers/Header/HomeHeaderContainer';
 import { withI18n, Trans } from 'lingui-react';
 import config from 'config/index';
 
@@ -21,7 +22,8 @@ type Props = {
 export default ({ children }: Props) => (
   <div id="core-layout">
     <Switch>
-      <Route exact path="/" component={UnauthenticatedContainer} />
+      <Route exact path='/home' component={HomeHeaderContainer} />
+      <Route path='/home/new-in' component={HomeHeaderContainer} />
       <Route path="/auth" component={UnauthenticatedContainer} />
       <Route path="/admin" component={AuthenticatedContainer} />
     </Switch>

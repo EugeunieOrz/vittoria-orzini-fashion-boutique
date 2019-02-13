@@ -14,7 +14,6 @@ import { toggleEmail } from 'bundles/Admin/modules/EmailModule';
 import { toggleName } from 'bundles/Admin/modules/NameModule';
 import { modelPath, updateNewsletter } from 'bundles/Admin/modules/NewsletterModule';
 import { selectID } from 'bundles/Admin/modules/SectionModule';
-import { signOutUser } from 'modules/UserModule';
 import { fetchGeolocation } from 'modules/GeolocationModule';
 import { getUserFirstName, getUserName, getUserEmail } from 'selectors/UserSelector';
 import { getUserBDate, getUserAddresses } from 'selectors/UserSelector';

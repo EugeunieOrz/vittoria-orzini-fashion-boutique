@@ -8,6 +8,7 @@ import i18nReducer from 'modules/I18nModule';
 import stateReducer from 'modules/StateModule';
 import userReducer from 'modules/UserModule';
 import toggleMenuReducer from 'modules/MenuModule';
+import productsReducer from 'modules/ProductsModule';
 
 export const makeRootReducer = (asyncReducers) => {
   const appReducer = combineReducers({
@@ -19,6 +20,7 @@ export const makeRootReducer = (asyncReducers) => {
     user: userReducer,
     toggleMenu: toggleMenuReducer,
     geolocation: geolocationReducer,
+    products: productsReducer,
     ...asyncReducers,
   });
 

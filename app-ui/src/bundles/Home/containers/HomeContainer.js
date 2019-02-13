@@ -9,11 +9,14 @@ import Dashboard from 'bundles/Home/components/Dashboard';
  * @param {Object} state The application state.
  * @returns {Object} The props passed to the react component.
  */
- const mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
    console.log('STATE', state);
- }
-/*const mapStateToProps = state => ({
+   return {
 
+   }
+ }
+/* const mapStateToProps = state => ({
+  userName: getUserName(state),
 }); */
 
 /**
@@ -22,6 +25,8 @@ import Dashboard from 'bundles/Home/components/Dashboard';
  * @param {Function} dispatch The Redux store dispatch function.
  * @returns {Object} The props passed to the react component.
  */
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = (dispatch) => ({
+
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(lifecycle(Dashboard));

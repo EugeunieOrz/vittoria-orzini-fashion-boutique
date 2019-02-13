@@ -20,6 +20,7 @@ import net.codingwell.scalaguice.ScalaModule
 import play.api.Configuration
 import play.api.libs.ws.WSClient
 import play.api.mvc.CookieHeaderEncoding
+import reactivemongo.play.json._
 
 import scala.concurrent.ExecutionContext.Implicits.global
 

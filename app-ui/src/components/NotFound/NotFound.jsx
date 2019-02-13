@@ -17,7 +17,7 @@ const NotFound = () => (
     <div className="not-found-container">
       <p className="code">404</p>
       <p><Trans>The Page you are looking for could not be found!</Trans></p>
-      <p><Link to={config.route.index}><Trans>Back to Home</Trans></Link></p>
+      <p><Link to={config.route.home.index}><Trans>Back to Home</Trans></Link></p>
     </div>
   </CoreLayout>
 );

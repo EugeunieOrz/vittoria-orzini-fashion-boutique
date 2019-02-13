@@ -11,13 +11,10 @@ import fetch from 'cross-fetch';
 import { combineSagas, handleError } from 'util/Saga';
 
 export function* fetchGeolocationWorker() {
-  console.log("Before while");
   while (yield take(fetchGeolocation().type)) {
-    console.log("Before try");
     try {
-      console.log("In try");
       yield put(fetchGeolocationPending());
-      const response = yield fetch('https://api.ipdata.co?api-key=your-key')
+      const response = yield fetch('https://api.ipdata.co?api-key=1bf9980350f4c4fcc275b70a408b36d3e4ad2962c96762c1b2e79c6b')
                              .then(resp => resp.json(), );
                              console.log(response);
       yield put(fetchGeolocationFulfilled(response.country_name));

@@ -47,6 +47,27 @@
  background-color:#eb3346!important;
  color:silver!important
 }
+#back-to-home-link {
+ width:340px!important;
+ margin-left:520px;
+ margin-top:30px;
+ background-color:transparent;
+ border:.15em solid #000!important;
+ color:#000!important;
+ padding:10px 44px;
+ text-align:center;
+ text-decoration:none;
+ display:inline-block;
+ font-size:1.4em!important;
+ font-weight:700!important;
+ font-family:AudreyNormal;
+ cursor:url(/static/calla-30x39.png),auto!important;
+ border-radius:0
+}
+#back-to-home-link:hover {
+ background-color:#eb3346!important;
+ color:silver!important
+}
 .signin-container {
  width:400px
 }

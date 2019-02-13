@@ -15,7 +15,6 @@ import RecoverPasswordEmailSentContainer from 'bundles/Auth/containers/RecoverPa
 import PasswordSurveyContainer from 'bundles/Auth/containers/PasswordSurveyContainer';
 import ChangedPassword from 'bundles/Auth/components/ChangedPassword';
 import ErrorPage from 'bundles/Auth/components/ErrorPage';
-import { signout } from 'util/Auth';
 import config from 'config/index';
 
 import './Layout.scss';

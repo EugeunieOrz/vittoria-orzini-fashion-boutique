@@ -64,7 +64,7 @@ trait MongoSpecification extends BaseSpecification {
        * Inserts the test fixtures.
        */
       def before: Unit = {
-        import play.modules.reactivemongo.json._
+        import reactivemongo.play.json._
         Await.result(reactiveMongoAPI.database.flatMap { db =>
           Future.sequence(fixtures.flatMap {
             case (c, files) =>

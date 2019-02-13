@@ -65,5 +65,6 @@ class AuthTokenDAOImpl @Inject() (reactiveMongoApi: ReactiveMongoApi)(
    * @param id The ID for which the token should be removed.
    * @return A future to wait for the process to be completed.
    */
-  def remove(id: UUID): Future[Unit] = onSuccess(collection.flatMap(_.delete().one(Json.obj("_id" -> id), Some(1))), ())
+  def remove(id: UUID): Future[Unit] =
+    onSuccess(collection.flatMap(_.delete().one(Json.obj("_id" -> id), Some(1))), ())
 }

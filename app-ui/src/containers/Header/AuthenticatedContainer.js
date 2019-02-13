@@ -4,6 +4,7 @@ import { getLanguage } from 'selectors/I18nSelector';
 import { setLanguage } from 'modules/I18nModule';
 import { getPathname } from 'selectors/LocationSelector';
 import { toggleMenu } from 'modules/MenuModule';
+import { signOutUser } from 'modules/UserModule';
 import Authenticated from 'components/Header/Authenticated';
 
 /**
@@ -25,6 +26,7 @@ const mapStateToProps = state => ({
  */
 const mapDispatchToProps = dispatch => ({
   route: route => history.push(route),
+  onSignOut: () => dispatch(signOutUser()),
   onToggleMenu: isHidden => dispatch(toggleMenu(isHidden)),
   selectLanguage: language => dispatch(setLanguage(language)),
 });

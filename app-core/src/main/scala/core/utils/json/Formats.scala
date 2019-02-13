@@ -3,11 +3,33 @@ package core.utils.json
 import java.time.Instant
 import java.util.UUID
 
-import core.models.{ StateOrProvince, PreferredCreditCard, AdditionalInfo, Address, BillingAddress, BillingAddressMark, Config, CreditCard, DefaultShippingAddressMark, PasswordSurvey, Registration, Settings, Updates, User, NewsletterFashion, NewsletterVintage, NewsletterHomeCollection, Newsletter, TelephoneEvening, TelephoneDay }
+import core.models.{
+  StateOrProvince,
+  PreferredCreditCard,
+  AdditionalInfo,
+  Address,
+  BillingAddress,
+  BillingAddressMark,
+  Config,
+  CreditCard,
+  DefaultShippingAddressMark,
+  PasswordSurvey,
+  Registration,
+  Settings,
+  Updates,
+  User,
+  NewsletterFashion,
+  NewsletterVintage,
+  NewsletterHomeCollection,
+  Newsletter,
+  TelephoneEvening,
+  TelephoneDay,
+  Item,
+  Size
+}
 import play.api.i18n.Lang
 import play.api.libs.json._
 import reactivemongo.bson.BSONObjectID
-
 import scala.util.{ Failure, Success, Try }
 
 /**
@@ -140,6 +162,7 @@ trait Formats {
    * Converts a [[CreditCard]] instance to JSON and vice versa.
    */
   implicit val ccFormat: OFormat[CreditCard] = Json.format
+
 }
 
 /**
@@ -179,12 +202,13 @@ trait APIFormats extends Formats {
     }
     def writes(o: BSONObjectID): JsValue = JsString(o.stringify)
   }
-}
 
+}
 /**
  * Mongo centric JSON formats.
  */
 object MongoFormats extends MongoFormats with Formats {
+
   import reactivemongo.play.json.BSONFormats._
 
   /**
@@ -216,6 +240,21 @@ object MongoFormats extends MongoFormats with Formats {
    * Converts a [[User]] instance to JSON.
    */
   implicit val userWrites: OWrites[User] = Json.writes.transform(IDWrites("id"))
+
+  /**
+   * Converts a [[Size]] instance to JSON and vice versa.
+   */
+  implicit val sizeFormat: OFormat[Size] = Json.format
+
+  /**
+   * Converts JSON into a [[Item]] instance.
+   */
+  implicit val itemReads: Reads[Item] = IDReads("id") andThen Json.reads
+
+  /**
+   * Converts a [[Item]] instance to JSON.
+   */
+  implicit val itemWrites: OWrites[Item] = Json.writes.transform(IDWrites("id"))
 
 }
 
@@ -253,5 +292,15 @@ object APIFormats extends APIFormats with Formats {
    * Converts a [[User]] instance to JSON and vice versa.
    */
   implicit val userFormat: OFormat[User] = Json.format
+
+  /**
+   * Converts a [[Size]] instance to JSON and vice versa.
+   */
+  implicit val sizeFormat: OFormat[Size] = Json.format
+
+  /**
+   * Converts a [[Item]] instance to JSON and vice versa.
+   */
+  implicit val itemFormat: OFormat[Item] = Json.format
 
 }

@@ -1,10 +1,11 @@
 import { connectedRouterRedirect } from 'redux-auth-wrapper/history4/redirect';
 import { getUserID } from 'selectors/UserSelector';
+import { getProducts } from 'selectors/ProductsSelector';
 import config from 'config/index';
 
 export const home = connectedRouterRedirect({
-  authenticatedSelector: state => getUserID(state) === undefined,
-  redirectPath: config.route.index,
+  authenticatedSelector: state => getProducts(state) !== undefined,
+  redirectPath: config.route.home.index,
   wrapperDisplayName: 'home',
 });
 

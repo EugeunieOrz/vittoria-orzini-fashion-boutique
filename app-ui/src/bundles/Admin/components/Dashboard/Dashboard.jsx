@@ -33,7 +33,6 @@ type Props = {
   editEmailIsShown: boolean,
   editNameIsShown: boolean,
   passwordFormIsShown: boolean,
-  onSignOut: () => any,
   onShowRemoveAddressModal: (index: Number) => any,
   isShownRemoveAddress: () => any,
   onFetchGeolocation: () => any,
@@ -58,7 +57,7 @@ type Props = {
 
 export const DashboardComponent = ({
   addNewAddressIsShown, addresses, bdate, editNameIsShown, editEmailIsShown,
-  editAddressIsShown, i18n, index, isShown, isShownUpdated, isShownUpdatedAddress, onSignOut,
+  editAddressIsShown, i18n, index, isShown, isShownUpdated, isShownUpdatedAddress,
   onToggleUpdatedAddress, onToggleAddNewAddress, onToggleBDate, onToggleEmail, onToggleName,
   onToggleNewAddressSaved, onToggleEditAddress, onTogglePasswordForm, onToggleUpdate,
   passwordFormIsShown, savedNewAddressIsShown, section, selectID, userEmail, userFirstName,
@@ -83,7 +82,6 @@ export const DashboardComponent = ({
       <NavItem id={ section === 5 ? 'address-section-active' : 'address-section'}
         eventKey={5} onSelect={() => onFetchGeolocation()}
         >{i18n.t`Address Book`}</NavItem>
-      <NavItem id="logout-btn" onSelect={onSignOut}>{i18n.t`LOG OUT`}</NavItem>
     </Nav>
     { (section === 1 || section === '0' || section === '' ||
        section === "" || section === undefined) &&
