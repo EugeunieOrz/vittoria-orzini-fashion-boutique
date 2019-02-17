@@ -6,6 +6,7 @@ and frontend written in React.js using Redux for managing state.
 
 #### Features
 
+* IP Geolocation service: detects location based on IP address and shows user's country in address form
 * Sign In / Sign Up functionality
 * After Sign Up you're redirected to My Account without confirming account activation.
 * Password strength meter using zxcvbn
