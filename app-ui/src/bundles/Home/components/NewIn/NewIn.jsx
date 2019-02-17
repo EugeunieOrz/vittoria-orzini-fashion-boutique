@@ -17,14 +17,13 @@ type Props = {
 
 export const NewInComponent = ({ i18n, products, }: Props) => (
   <Panel className="newin">
-    <div className="grid" id="central-container">
-      <Masonry
-        updateOnEachImageLoad={true}
-      >
-        {items.map((item, index) =>
-         <Image key={index} src={"/static/fashion/" + item.item} width="290" height="430" />
-        )}
-      </Masonry>
+    <div className="grid">
+      {items.map((item, index) =>
+        <Col xs={4} md={3} key={index}>
+          <Image src={item.src} width="310" height="450" />
+          <div className="line-break"></div>
+        </Col>
+      )}
    </div>
   </Panel>
 );

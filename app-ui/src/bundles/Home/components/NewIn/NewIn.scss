@@ -9,29 +9,22 @@
  display:-ms-flexbox;
  display:flex;
  border:none;
- overflow:hidden!important
+ overflow:hidden!important;
 }
 .newin .panel-body {
  height:inherit;
  width:100%;
- margin-top:240px;
- margin-left:300px;
- margin-right:100px
+}
+.newin .grid {
+  margin-top: 120px;
+}
+.newin .line-break {
+  height: 20px
 }
 .newin a {
  font-size:1.4em!important;
  text-decoration:none;
  color:#000
-}
-.grid {
- width:990px!important;
- height:470px!important;
- margin-top:120px!important;
- margin-left:330px
-}
-#central-container {
- position:relative!important;
- padding:0;
 }
 #new-arrivals-link {
   cursor:url(/static/calla-30x39.png),auto!important;
