@@ -1,6 +1,8 @@
 Vittoria Orzini Fashion Boutique and Online Store
 ==================================================
 
+vittoria-orzini-fashion-boutique/Screenshot (18).png 
+
 Website is divided into backend written in Scala using Play framework and MongoDB persistence layer
 and frontend written in React.js using Redux for managing state.
 
