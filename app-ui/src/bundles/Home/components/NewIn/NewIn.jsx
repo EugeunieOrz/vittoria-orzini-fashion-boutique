@@ -4,27 +4,35 @@ import { Button, Col, Grid, Image, Nav, NavItem, Panel, Row } from 'react-bootst
 import { Link } from 'react-router-dom';
 import { withI18n, Trans } from 'lingui-react';
 import config from 'config/index';
-import Masonry from 'react-masonry-component';
 
 import './NewIn.scss';
 
-import items from 'static/fashion-images';
-
 type Props = {
+  arrProdNum: string,
   i18n: Object,
+  isHidden: boolean,
   products: Array<Object>,
+  onSwitchToProductView: (productID: string) => any,
 }
 
-export const NewInComponent = ({ i18n, products, }: Props) => (
+export const NewInComponent = ({ arrProdNum, i18n, isHidden, products, onSwitchToProductView, }: Props) => (
   <Panel className="newin">
-    <div className="grid">
-      {items.map((item, index) =>
+    <div className="new-arrivals">
+      <div className="new-title">
+        <Trans>NEW ARRIVALS</Trans>
+      </div>
+      {products.map((product, index) =>
         <Col xs={4} md={3} key={index}>
-          <Image src={item.src} width="310" height="450" />
+          <Image
+            src={"/static/fashion/newin/" + product.nameOfImg + ".jpg"}
+            width="310"
+            height="450"
+            onClick={() => onSwitchToProductView(product.id)}
+          />
           <div className="line-break"></div>
         </Col>
       )}
-   </div>
+    </div>
   </Panel>
 );
 

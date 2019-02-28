@@ -42,4 +42,8 @@ class ShoppingController @Inject() (
       Ok(ApiResponse("shopping.products", Messages("request.ok"), Json.toJson(products)))
     }
   }
+
+  def passProductID(productID: reactivemongo.bson.BSONObjectID): Action[AnyContent] = Action.async { implicit request =>
+    Future.successful(Ok(ApiResponse("shopping.products", Messages("request.ok"))))
+  }
 }

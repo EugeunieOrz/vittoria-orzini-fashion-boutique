@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 import lifecycle from 'components/Lifecycle';
+import { getUserID } from 'selectors/UserIDSelector';
 import PasswordSurvey from 'bundles/Auth/components/PasswordSurvey';
 import { submitPasswordSurvey, togglePasswdRadioBtn } from 'bundles/Auth/modules/PasswordSurveyModule';
 
@@ -14,7 +15,7 @@ import { submitPasswordSurvey, togglePasswdRadioBtn } from 'bundles/Auth/modules
     console.log('STATE', state);
     return {
       passwordSurvey: state.auth.togglePasswdRadioBtn.ps.passwordSurvey,
-      userID: state.auth.getID.idContent.userID,
+      userID: getUserID(state),
     }
   }
 /*const mapStateToProps = state => ({

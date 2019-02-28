@@ -24,6 +24,7 @@ export default ({ children }: Props) => (
     <Switch>
       <Route exact path='/home' component={HomeHeaderContainer} />
       <Route path='/home/new-in' component={HomeHeaderContainer} />
+      <Route path='/home/product' component={HomeHeaderContainer} />
       <Route path="/auth" component={UnauthenticatedContainer} />
       <Route path="/admin" component={AuthenticatedContainer} />
     </Switch>

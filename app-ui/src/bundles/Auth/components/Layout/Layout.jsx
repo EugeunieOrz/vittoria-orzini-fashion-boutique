@@ -28,18 +28,18 @@ export default () => (
   <CoreLayout>
     <div className="authentication-container">
       <Switch>
-      <Redirect exact from={config.route.auth.index} to={config.route.auth.signIn} />
-      <Route exact path={config.route.auth.signIn} component={SignInContainer} />
-      <Route exact path={config.route.auth.signUp} component={SignUpContainer} />
-      <Route exact path={config.route.auth.passwordRecovery} component={RecoverPasswordContainer} />
-      <Route exact path={config.route.auth.emailSent} component={RecoverPasswordEmailSentContainer} />
-      <Route exact path={`${config.route.auth.passwordRecovery}/:token`} component={ResetPasswordContainer} />
-      <Route exact path={config.route.auth.signOut} component={SignOutContainer} />
-      <Route exact path={config.route.auth.alreadyInUse} component={AlreadyRegisteredContainer} />
-      <Route exact path={config.route.auth.passwordSurvey} component={PasswordSurveyContainer} />
-      <Route exact path={config.route.auth.changedPassword} component={ChangedPassword} />
-      <Route exact path={config.route.auth.errorPage} component={ErrorPage} />
-      <NotFoundRoute />
+        <Redirect exact from={config.route.auth.index} to={config.route.auth.signIn} />
+        <Route exact path={config.route.auth.signIn} component={SignInContainer} />
+        <Route exact path={config.route.auth.signUp} component={SignUpContainer} />
+        <Route exact path={config.route.auth.passwordRecovery} component={RecoverPasswordContainer} />
+        <Route exact path={config.route.auth.emailSent} component={RecoverPasswordEmailSentContainer} />
+        <Route exact path={`${config.route.auth.passwordRecovery}/:token`} component={ResetPasswordContainer} />
+        <Route exact path={config.route.auth.signOut} component={SignOutContainer} />
+        <Route exact path={config.route.auth.alreadyInUse} component={AlreadyRegisteredContainer} />
+        <Route exact path={config.route.auth.passwordSurvey} component={PasswordSurveyContainer} />
+        <Route exact path={config.route.auth.changedPassword} component={ChangedPassword} />
+        <Route exact path={config.route.auth.errorPage} component={ErrorPage} />
+        <NotFoundRoute />
       </Switch>
     </div>
   </CoreLayout>

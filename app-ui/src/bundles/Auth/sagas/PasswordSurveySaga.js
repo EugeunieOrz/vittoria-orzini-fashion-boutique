@@ -13,7 +13,7 @@ export function* submitPasswordSurveyWorker(api: AuthAPI): Generator<*, *, *> {
     const { payload } = yield take(submitPasswordSurvey().type);
     try {
       const response = yield call([api, api.submitPasswordSurvey], payload);
-      yield call(history.push, config.route.index);
+      yield call(history.push, config.route.auth.changedPassword);
     } catch (e) {
       yield call(handleError, e, {
         'auth.password.survey.info.invalid': (error: APIError) => ([

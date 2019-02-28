@@ -3,6 +3,7 @@ import { actions } from 'react-redux-form';
 import { createStore } from 'redux';
 import lifecycle from 'components/Lifecycle';
 import { getProducts } from 'selectors/ProductsSelector';
+import { switchToProductView } from 'bundles/Home/modules/ProductViewModule';
 import NewIn from 'bundles/Home/components/NewIn';
 
 /**
@@ -28,7 +29,7 @@ const mapStateToProps = (state) => {
  * @returns {Object} The props passed to the react component.
  */
 const mapDispatchToProps = dispatch => ({
-
+  onSwitchToProductView: productID => dispatch(switchToProductView(productID)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(lifecycle(NewIn));

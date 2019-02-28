@@ -1,7 +1,9 @@
-.admin-container {
+.home-container {
   height: 100%;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   padding: 15px 15px 0 15px;
+  overflow: hidden;
+  background-color: #fff
 }

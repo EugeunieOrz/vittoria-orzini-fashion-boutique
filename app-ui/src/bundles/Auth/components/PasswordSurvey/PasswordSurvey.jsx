@@ -41,9 +41,8 @@ export const PasswordSurveyComponent = ({
              onChange={(v) => onToggleBtn(v.target.value)}
       /><label>Another reason</label>
     <Button id="submit-btn" onClick={() => onSubmit({
-        userID : userID.replace("BSONObjectID(\"", "").replace("\")", ""), psInfo : passwordSurvey 
-      })}
-             block>
+        userID : userID.replace("BSONObjectID(\"", "").replace("\")", ""), psInfo : passwordSurvey
+      })}>
       <Trans>SUBMIT</Trans>
     </Button>
   </Grid>

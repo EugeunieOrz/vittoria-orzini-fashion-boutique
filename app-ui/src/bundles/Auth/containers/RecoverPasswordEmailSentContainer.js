@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 import lifecycle from 'components/Lifecycle';
+import { getEmail } from 'selectors/EmailSelector';
 import RecoverPasswordEmailSent from 'bundles/Auth/components/RecoverPasswordEmailSent';
 
 /**
@@ -10,8 +11,9 @@ import RecoverPasswordEmailSent from 'bundles/Auth/components/RecoverPasswordEma
  * @returns {Object} The props passed to the react component.
  */
 const mapStateToProps = state => ({
-  email: state.auth.getEmail.emailContent.email,
+  email: getEmail(state),
 });
+
 
 /**
  * Maps the store `dispatch` function to the React component `props`.

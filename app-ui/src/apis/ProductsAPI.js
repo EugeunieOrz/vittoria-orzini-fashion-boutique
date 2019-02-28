@@ -11,7 +11,7 @@ export default class ProductsAPI extends API {
    * @returns An object indicating if the process was successful or not.
    */
   async get(): Promise<APIResponse> {
-    const response = await this.request('api/shopping/products');
+    const response = await this.request('api/shopping');
 
     return response.json();
   }

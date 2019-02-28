@@ -34,6 +34,7 @@ const config = {
     home: {
       index: '/home',
       newIn: '/home/new-in',
+      product: '/home/product'
     },
   },
 };

@@ -10,26 +10,22 @@
  display:flex;
  border:none;
  overflow:hidden!important;
+ margin-top: 100px
 }
-.newin .panel-body {
- height:inherit;
- width:100%;
-}
-.newin .grid {
-  margin-top: 120px;
+.newin .new-title {
+  font-size: 2em;
+  font-family: AudreyMedium;
+  border-top: .1em solid #000;
+  border-bottom: .1em solid #000;
+  border-image: linear-gradient(to right, transparent, #000, transparent);
+  border-image-slice: 1;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 105%;
+  margin-left: -26px;
+  padding-top: 4px
 }
 .newin .line-break {
   height: 20px
-}
-.newin a {
- font-size:1.4em!important;
- text-decoration:none;
- color:#000
-}
-#new-arrivals-link {
-  cursor:url(/static/calla-30x39.png),auto!important;
-  font-family: AudreyBoldOblique;
-  font-size: 1.4em;
-  margin-top: 200px;
-  margin-left: 200px
 }

@@ -1,38 +1,20 @@
 [
   {
-    "src": "/static/fashion/01.jpg"
+    "item": "01.jpg"
   },
   {
-    "src": "/static/fashion/02.jpg"
+    "item": "02.jpg"
   },
   {
-    "src": "/static/fashion/03.jpg"
+    "item": "03.jpg"
   },
   {
-    "src": "/static/fashion/04.jpg"
+    "item": "04.jpg"
   },
   {
-    "src": "/static/fashion/05.jpg"
+    "item": "05.jpg"
   },
   {
-    "src": "/static/fashion/06.jpg"
-  },
-  {
-    "src": "/static/fashion/07.jpg"
-  },
-  {
-    "src": "/static/fashion/08.jpg"
-  },
-  {
-    "src": "/static/fashion/09.jpg"
-  },
-  {
-    "src": "/static/fashion/10.jpg"
-  },
-  {
-    "src": "/static/fashion/11.jpg"
-  },
-  {
-    "src": "/static/fashion/12.jpg"
+    "item": "06.jpg"
   }
 ]

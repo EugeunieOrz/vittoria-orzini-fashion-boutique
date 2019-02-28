@@ -11,7 +11,7 @@ import {
   recoverPasswordFulfilled,
   recoverPasswordRejected,
 } from 'bundles/Auth/modules/RecoverPasswordModule';
-import { passEmailToTheNextPage } from 'bundles/Auth/modules/EmailModule';
+import { passEmail } from 'bundles/Auth/modules/EmailModule';
 import AuthAPI from 'bundles/Auth/apis/AuthAPI';
 import config from 'config/index';
 
@@ -22,7 +22,9 @@ export function* recoverPasswordSaga(api: AuthAPI): Generator<*, *, *> {
       yield put(recoverPasswordPending());
       const response = yield call([api, api.recoverPassword], payload);
       yield put(recoverPasswordFulfilled(response));
-      yield put(passEmailToTheNextPage(response.details));
+      const email = response.details;
+      sessionStorage.setItem('email', email);
+      yield put(passEmail(email));
       yield put(actions.reset(modelPath));
       yield call(history.push, config.route.auth.emailSent);
     } catch (e) {

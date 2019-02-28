@@ -14,8 +14,6 @@ import config from 'config/index';
 export function* removeAddressSaga(api: AdminAPI): Generator<*, *, *> {
   while (true) {
     const { payload: { userID, indexToRemoveAddress } } = yield take(removeAddress().type);
-    console.log("userID: ", userID);
-    console.log("index: ", indexToRemoveAddress);
     try {
       const response = yield call([api, api.removeAddress], userID, indexToRemoveAddress);
       yield put(fetchUserFulfilled(response.details));

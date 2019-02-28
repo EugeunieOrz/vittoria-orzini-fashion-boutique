@@ -17,14 +17,16 @@ import reactivemongo.bson.BSONObjectID
 case class Item(
   id: BSONObjectID,
   name: String,
-  description: Option[String],
-  details: Option[Seq[String]],
-  composition: Option[Seq[String]],
-  color: Option[String],
+  description: String,
+  details: Seq[String],
+  composition: Seq[String],
+  color: String,
   size: Seq[Size],
   inventory: Double,
   price: Double,
-  currency: String
+  currency: String,
+  nameOfImg: Int,
+  stateOfProduct: String
 )
 
 case class Size(

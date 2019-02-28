@@ -18,7 +18,7 @@ export const ChangedPasswordComponent = ({
     <Row className="changedpasswd-title">{i18n.t`Congratulations!`}</Row>
     <Row className="changedpasswd-txt"><Trans>You've successfully changed your password</Trans></Row>
     <Row className="home-link">
-      <Link to={config.route.auth.passwordSurvey}>
+      <Link to={config.route.index}>
         <Trans>Continue to V.O. Fashion Boutique</Trans>
       </Link>
     </Row>

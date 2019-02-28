@@ -36,10 +36,12 @@ export function* resetPasswordWorker(api: AuthAPI): Generator<*, *, *> {
     try {
       yield put(resetPasswordPending());
       const response = yield call([api, api.resetPassword], token, data);
-      yield put(passIDToTheNextPage(response.details));
+      const userID = response.details;
+      sessionStorage.setItem('userID', userID);
+      yield put(passIDToTheNextPage(userID));
       yield put(resetPasswordFulfilled(response));
       yield put(actions.reset(modelPath));
-      yield call(history.push, config.route.auth.changedPassword);
+      yield call(history.push, config.route.auth.passwordSurvey);
     } catch (e) {
       yield put(resetPasswordRejected(e));
       yield call(handleError, e, {

@@ -72,7 +72,10 @@ class PasswordController @Inject() (
       )),
       email => {
         val loginInfo = LoginInfo(CredentialsProvider.ID, email)
-        val result = Ok(ApiResponse("auth.password.recover.successful", Messages("auth.reset.email.sent"), email))
+        val result = Ok(
+          ApiResponse(
+            "auth.password.recover.successful",
+            Messages("auth.reset.email.sent"), Json.toJson(email)))
         userService.retrieve(loginInfo).flatMap {
           case Some(user) =>
             val c = configuration.underlying
