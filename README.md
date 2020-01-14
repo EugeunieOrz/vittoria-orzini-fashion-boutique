@@ -23,7 +23,9 @@ Promo:
 Website is divided into backend written in Scala using Play framework and MongoDB persistence layer
 and frontend written in React.js using Redux for managing state.
 
-This repository is only a part of the online boutique.
+This repository is only a part of the online boutique. It includes such functionalities as 
+* Register / Create account, reset password.
+* Edit and save your personal details, update your newsletter preferences in My Account.
 
 #### Installation
 
