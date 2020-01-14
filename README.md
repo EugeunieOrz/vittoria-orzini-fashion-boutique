@@ -1,8 +1,8 @@
 Vittoria Orzini Fashion Boutique and Online Store
 ==================================================
 
-Online shopping store: https://vittoria-orzini-boutique.herokuapp.com
-Administration panel: https://vittoria-orzini-boutique-admin.herokuapp.com
+* Online shopping store: https://vittoria-orzini-boutique.herokuapp.com
+* Administration panel: https://vittoria-orzini-boutique-admin.herokuapp.com
 
 #### Features
 
@@ -16,7 +16,6 @@ Administration panel: https://vittoria-orzini-boutique-admin.herokuapp.com
 * Create account, edit and save your personal details in My Account
 * Credit card details are encrypted with libsodium
 * Admin panel: view products, customers, orders, transactions
-
 
 Website is divided into backend written in Scala using Play framework and MongoDB persistence layer
 and frontend written in React.js using Redux for managing state.
