@@ -6,8 +6,8 @@ Promo:
 * Online shopping store: https://vittoria-orzini-boutique.herokuapp.com
 * Administration panel: https://vittoria-orzini-boutique-admin.herokuapp.com
 
-Development mode forked from: https://github.com/setusoft/silhouette-play-react-seed
-Production mode forked from: https://github.com/yohangz/scala-play-react-seed
+* Development mode forked from: https://github.com/setusoft/silhouette-play-react-seed
+* Production mode forked from: https://github.com/yohangz/scala-play-react-seed
 
 #### Features
 
