@@ -6,6 +6,9 @@ Promo:
 * Online shopping store: https://vittoria-orzini-boutique.herokuapp.com
 * Administration panel: https://vittoria-orzini-boutique-admin.herokuapp.com
 
+Development mode forked from: https://github.com/setusoft/silhouette-play-react-seed
+Production mode forked from: https://github.com/yohangz/scala-play-react-seed
+
 #### Features
 
 * Add item to shopping bag and edit item quantity / sizes.
@@ -23,7 +26,7 @@ Promo:
 Website is divided into backend written in Scala using Play framework and MongoDB persistence layer
 and frontend written in React.js using Redux for managing state.
 
-This repository is only a part of the online boutique. It includes such functionalities as 
+This repository is only a part of the online boutique. It includes such functionalities as
 * Register / Create account, reset password.
 * Edit and save your personal details, update your newsletter preferences in My Account.
 

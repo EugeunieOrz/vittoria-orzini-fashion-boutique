@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Row } from 'react-bootstrap';
-import { withI18n, Trans } from 'lingui-react';
+import { withI18n, Trans } from '@lingui/react';
 import config from 'config/index';
 
 import './ErrorPage.scss';

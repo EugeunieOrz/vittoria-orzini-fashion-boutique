@@ -1,6 +1,6 @@
-libraryDependencies += "org.vafer" % "jdeb" % "1.6" artifacts Artifact("jdeb", "jar", "jar")
+libraryDependencies += "org.vafer" % "jdeb" % "1.5" artifacts Artifact("jdeb", "jar", "jar")
 
-addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.6.13")
+addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.6.15")
 
 addSbtPlugin("org.scalariform" % "sbt-scalariform" % "1.8.2")
 

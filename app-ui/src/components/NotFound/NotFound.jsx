@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Trans } from 'lingui-react';
+import { Trans } from '@lingui/react';
 import { Redirect, Link, withRouter } from 'react-router-dom';
 import CoreLayout from 'components/CoreLayout';
 import config from 'config/index';

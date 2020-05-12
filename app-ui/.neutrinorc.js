@@ -11,7 +11,7 @@ module.exports = {
       },
       babel: {
         presets: [
-          'lingui-react',
+          '@lingui/babel-preset-react',
         ],
       },
     }],
@@ -31,6 +31,11 @@ module.exports = {
           href: '/static/fonts/Audrey-MediumOblique.woff',
           href: '/static/fonts/Audrey-Normal.woff',
           href: '/static/fonts/Audrey-NormalOblique.woff',
+        },
+        {
+          href: '/static/favicon.ico',
+          rel: 'shortcut icon',
+          type: 'image/x-icon'
         },
       ],
     }],

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button, Grid, Row } from 'react-bootstrap';
 import { Control, Field, Form } from 'react-redux-form';
-import { withI18n, Trans } from 'lingui-react';
+import { withI18n, Trans } from '@lingui/react';
 import Spinner from 'components/Spinner';
 import config from 'config/index';
 import type { FormProps } from 'util/Form';

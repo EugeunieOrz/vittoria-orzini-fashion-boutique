@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Trans } from 'lingui-react';
+import { Trans } from '@lingui/react';
 
 import type { Node } from 'react';
 

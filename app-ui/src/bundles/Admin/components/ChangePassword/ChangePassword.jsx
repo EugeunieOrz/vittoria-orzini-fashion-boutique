@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button, Glyphicon, Grid, Row } from 'react-bootstrap';
 import { Form } from 'react-redux-form';
-import { withI18n, Trans } from 'lingui-react';
+import { withI18n, Trans } from '@lingui/react';
 import { isRequired } from 'util/Validator';
 import { modelPath } from 'bundles/Admin/modules/ChangePasswordModule';
 import FormControl from 'components/FormControl';

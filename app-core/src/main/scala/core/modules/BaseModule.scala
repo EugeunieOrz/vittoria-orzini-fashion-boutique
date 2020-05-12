@@ -16,10 +16,11 @@ import core.models.services._
 import core.utils.{ CustomerExecutionContext, CustomerExecutionContextImpl, CustomSecuredErrorHandler, CustomUnsecuredErrorHandler, DefaultEnv }
 import net.ceedubs.ficus.Ficus._
 import net.ceedubs.ficus.readers.ArbitraryTypeReader._
+import net.ceedubs.ficus.readers.ValueReader
 import net.codingwell.scalaguice.ScalaModule
 import play.api.Configuration
 import play.api.libs.ws.WSClient
-import play.api.mvc.CookieHeaderEncoding
+import play.api.mvc.{ Cookie, CookieHeaderEncoding }
 import reactivemongo.play.json._
 
 import scala.concurrent.ExecutionContext.Implicits.global
@@ -48,6 +49,14 @@ class BaseModule extends ScalaModule {
     bind[HealthService].to[HealthServiceImpl]
     bind[ConfigService].to[ConfigServiceImpl]
   }
+
+  implicit val sameSiteReader: ValueReader[Option[Cookie.SameSite]] =
+    ValueReader.relative { cfg =>
+      if (cfg.getIsNull(".")) None
+      else Some(
+        Cookie.SameSite.parse(cfg.as[String]).getOrElse(throw new RuntimeException("Invalid SameSite value"))
+      )
+    }
 
   /**
    * Provides the HTTP layer implementation.

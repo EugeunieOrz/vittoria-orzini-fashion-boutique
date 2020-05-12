@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button, FormControl, MenuItem, Nav, Navbar, NavDropdown, NavItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { withI18n, Trans } from 'lingui-react';
+import { withI18n, Trans } from '@lingui/react';
 import config from 'config/index';
 import MenuContainer from 'containers/MenuContainer';
 

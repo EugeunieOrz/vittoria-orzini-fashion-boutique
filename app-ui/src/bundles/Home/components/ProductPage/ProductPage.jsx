@@ -2,14 +2,14 @@
 import React from 'react';
 import { Button, Col, Grid, Image, Nav, NavItem, Panel, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { withI18n, Trans } from 'lingui-react';
+import { withI18n, Trans } from '@lingui/react';
 import config from 'config/index';
 
 import './ProductPage.scss';
 
 type Props = {
   i18n: Object,
-  
+
 }
 
 export const ProductPageComponent = ({ i18n,  }: Props) => (

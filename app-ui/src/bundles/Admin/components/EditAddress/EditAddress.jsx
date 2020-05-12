@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Checkbox, Col, Grid, Row } from 'react-bootstrap';
 import { actions, Errors, Form, Control } from 'react-redux-form';
-import { withI18n, Trans } from 'lingui-react';
+import { withI18n, Trans } from '@lingui/react';
 import { isLatin, isRequired, required } from 'util/Validator';
 import { modelPath } from 'bundles/Admin/modules/EditAddressFormModule';
 import FormControl from 'components/FormControl';

@@ -1,7 +1,7 @@
 // @flow
 import omit from 'lodash/omit';
 import React from 'react';
-import { withI18n } from 'lingui-react';
+import { withI18n } from '@lingui/react';
 import { Control, Errors } from 'react-redux-form';
 import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import { showErrors as defaultShowErrors, ErrorWrapper } from 'util/Form';
@@ -32,11 +32,6 @@ type Props = {
 export const defaultMessages: (i18n: Object) => { [string]: string } = i18n => ({
   isRequired: i18n.t`This field is required`,
   isEmail: i18n.t`Valid email required`,
-  required: i18n.t`Please confirm that you are over 13 years of age.`,
-  passwordsMatch: i18n.t`Passwords do not match!`,
-  titleRequired: i18n.t`Please enter your title`,
-  isAlpha: i18n.t`Please check the Address. You can use only latin characters.`,
-  isLatin: i18n.t`Please check the Last Name. You can use only latin characters.`,
 });
 
 /**
@@ -86,9 +81,21 @@ export const FormControlComponent = ({
   const ControlComponent: ComponentType<*> = control || FormControlComponent.defaultProps.control;
   const hasErrors = (showErrors || defaultShowErrors)(formProps);
 
-  const labelComponent = !label || <ControlLabel>{label}</ControlLabel>;
-  const optionalComponent = !optional || <span className="optional">{`(${i18n.t`Optional`})`}</span>;
-  const helpComponent = !help || <p className="help">{help}</p>;
+  const labelComponent = !label || (
+    <ControlLabel>
+      {label}
+    </ControlLabel>
+  );
+  const optionalComponent = !optional || (
+    <span className="optional">
+      {`(${i18n.t`Optional`})`}
+    </span>
+  );
+  const helpComponent = !help || (
+    <p className="help">
+      {help}
+    </p>
+  );
   const feedbackComponent = !feedback || <FormControl.Feedback />;
 
   return (
@@ -97,7 +104,9 @@ export const FormControlComponent = ({
       className={`custom-form-control ${id}`}
       validationState={hasErrors ? 'error' : null}
     >
-      {labelComponent} {optionalComponent}
+      {labelComponent}
+      {' '}
+      {optionalComponent}
       {helpComponent}
       <div className="control">
         <ControlComponent
@@ -110,6 +119,7 @@ export const FormControlComponent = ({
         >
           {children}
         </ControlComponent>
+        {feedbackComponent}
       </div>
       <Errors
         model={`.${id}`}

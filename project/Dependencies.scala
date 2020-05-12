@@ -4,7 +4,7 @@ object Dependencies {
 
   object Version {
     val specs2 = "4.2.1-ca75f1d09-20180530093100"
-    val silhouette = "5.0.4"
+    val silhouette = "5.0.5"
     val akka = "2.5.13"
   }
 

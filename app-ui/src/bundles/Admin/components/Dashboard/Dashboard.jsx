@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { Button, Checkbox, Col, Grid, Image, Modal, Row, Nav, NavItem } from 'react-bootstrap';
-import { withI18n, Trans } from 'lingui-react';
+import { withI18n, Trans } from '@lingui/react';
 import { Form, Control, Errors } from 'react-redux-form';
 import FormControl from 'components/FormControl';
 import Spinner from 'components/Spinner';

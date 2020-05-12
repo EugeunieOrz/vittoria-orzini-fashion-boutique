@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import AuthenticatedContainer from 'containers/Header/AuthenticatedContainer';
 import UnauthenticatedContainer from 'containers/Header/UnauthenticatedContainer';
 import HomeHeaderContainer from 'containers/Header/HomeHeaderContainer';
-import { withI18n, Trans } from 'lingui-react';
+import { withI18n, Trans } from '@lingui/react';
 import config from 'config/index';
 
 import type { Node } from 'react';

@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Checkbox, Col, Grid, Panel, Row } from 'react-bootstrap';
 import { Form, Control } from 'react-redux-form';
-import { withI18n, Trans } from 'lingui-react';
+import { withI18n, Trans } from '@lingui/react';
 import { isRequired } from 'util/Validator';
 import { modelPath } from 'bundles/Auth/modules/SignInModule';
 import FormControl from 'components/FormControl';
