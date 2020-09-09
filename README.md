@@ -21,7 +21,7 @@ Promo:
 * Create account, edit and save your personal details in My Account.
 * Transactions are done through sandbox account of Authorize.Net.
 * Responsive with Bootstrap.
-* English and Italian versions.
+* English, Italian, Arabic versions.
 
 Website is divided into backend written in Scala using Play framework and MongoDB persistence layer
 and frontend written in React.js using Redux for managing state.
