@@ -3,7 +3,7 @@ Vittoria Orzini Fashion Boutique and Online Store
 
 Promo:
 
-* Online shopping store: https://vittoria-orzini-boutique.herokuapp.com
+* Online shopping store: https://vittoria-orzini-boutique.herokuapp.com (PostgreSQL)
 
 * Development mode forked from: https://github.com/setusoft/silhouette-play-react-seed
 * Production mode forked from: https://github.com/yohangz/scala-play-react-seed
