@@ -1,0 +1,92 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/Philosopher.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+#shipping-countries-container {
+  position:fixed;
+  overflow:hidden;
+  top:0;
+  left:0;
+  height:100vh;
+  width:100vw;
+  display:block;
+  background-image: $backgroundImage;
+  -webkit-animation:fadeInFromNone .5s ease-out;
+          animation:fadeInFromNone .5s ease-out;
+  -webkit-transform:none;
+          transform:none;
+  -webkit-transition:-webkit-transform .3s ease-out;
+  transition:-webkit-transform .3s ease-out;
+  transition:transform .3s ease-out;
+  transition:transform .3s ease-out, -webkit-transform .3s ease-out;
+  z-index:3;
+  overflow-y: auto;
+   height: 100vh;
+   scrollbar-width: thin;
+}
+@-webkit-keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+@keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+.region-card-header,
+.country-link-sm,
+#close-menu-btn {
+  cursor: pointer;
+}
+#countries-accordion {
+  width: 100%;
+}
+.region-card,
+.region-card .card-header {
+  background: inherit;
+  border: 0
+}
+.region-link,
+#shipping-countries-title {
+  font-family: $fontAdamCGPro;
+}
+.country-link-sm {
+  font-family: $fontPhilosopher
+}
+.region-link-ar,
+#shipping-countries-title-ar {
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1.2em
+}
+.country-link-sm-ar {
+  font-family: $fontJannaLTBold;
+  font-size: 1.1em
+}
+.country-link-sm,
+.country-link-sm-ar {
+  cursor: pointer
+}

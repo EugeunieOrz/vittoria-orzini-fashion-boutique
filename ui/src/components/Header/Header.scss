@@ -1,0 +1,116 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/ArslanWessam.scss';
+@import 'styles/AudreyMedium.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+.navbar-toggler {
+  outline: none !important; }
+
+input::-webkit-input-placeholder {
+  color: $text-color !important; }
+
+input:focus::-webkit-input-placeholder {
+  color: $search-focus-color !important; }
+
+/* Firefox < 19 */
+input:-moz-placeholder {
+  color: $text-color !important; }
+
+input:focus:-moz-placeholder {
+  color: $search-focus-color !important; }
+
+/* Firefox > 19 */
+input::-moz-placeholder {
+  color: $text-color !important; }
+
+input:focus::-moz-placeholder {
+  color: $search-focus-color !important; }
+
+/* Internet Explorer 10 */
+input:-ms-input-placeholder {
+  color: $text-color !important; }
+
+input:focus:-ms-input-placeholder {
+  color: $search-focus-color !important; }
+#searchbar input,
+#nav-other-links .nav-link,
+#nav-categories .nav-link,
+#lang-dropdown span {
+  color: $navlink-grey-color !important;
+  font-family: $fontAudreyMedium
+}
+.home-menu-active #home-menu-link,
+.home-menu-link-active,
+.jewelry-menu-active #jewelry-menu-link,
+.jewelry-menu-link-active,
+.fashion-menu-active #fashion-menu-link,
+.fashion-menu-link-active {
+  color: $gradient-border-color !important
+}
+#fashion-menu-link:hover,
+#jewelry-menu-link:hover,
+#home-menu-link:hover,
+#nav-other-links .nav-link:hover {
+  color: $gradient-border-color !important
+}
+#nav-other-links .nav-link {
+  font-size: .75em;
+}
+#nav-categories .nav-link {
+  font-size: .95em
+}
+#lang-dropdown-ar span,
+#nav-other-links-ar .nav-link {
+  color: $navlink-grey-color !important;
+  font-size: 1.1em;
+  font-family: $fontJannaLTBold
+}
+#nav-categories-ar .nav-link {
+  color: $navlink-grey-color !important;
+  font-size: 1.3em;
+  font-family: $fontKhebratMusamimRegular
+}
+#lang-dropdown-ar span,
+#lang-dropdown span {
+  cursor: pointer;
+}
+@media only screen and (max-width: 319px) {
+  /* PORTRAIT:
+     LG Viewty KU990
+     Nokia 700
+     Nokia 2700
+     Nokia N95
+     Samsung Galaxy S3 Mini
+     Nokia 300
+  */
+  #vo-brand-sm {
+    width: 70px;
+    height: 46.5px
+  }
+  #menu-icon,
+  #search-icon,
+  #bag-icon {
+    width: 16px;
+    height: 16px
+  }
+}
+@media only screen and (min-width: 992px) {
+  #lang-dropdown span {
+    font-size: .65em;
+  }
+}
+@media only screen and (max-width: 1140px) {
+  #nav-categories .nav-link,
+  #nav-other-links .nav-link{
+    font-size: x-small
+  }
+}
+@media only screen and (min-width: 1141px) {
+  #lang-dropdown span {
+    font-size: .75em;
+  }
+}

@@ -1,0 +1,172 @@
+[ {
+  "Category": {
+    "name": "Shop By",
+    "link": "new-arrivals",
+    "categories": [
+      {
+        "category": "NEW - SS20 COLLECTION",
+        "link": "new-arrivals"
+      },
+      {
+        "category": "PRE - SS20 COLLECTION",
+        "link": "new-arrivals"
+      },
+      {
+        "category": "NEW ARRIVALS",
+        "link": "new-arrivals"
+      },
+      {
+        "category": {
+          "name": "Stories",
+          "link": "new-arrivals",
+          "innerCategory": [
+            {
+              "name": "INSPIRED BY IRELAND",
+              "link": "new-arrivals"
+            },
+            {
+              "name": "BEETLED LINEN",
+              "link": "new-arrivals"
+            },
+            {
+              "name": "SIGNATURE TAILORING",
+              "link": "new-arrivals"
+            }
+          ]
+        }
+      },
+      {
+        "category": {
+          "name": "Collections",
+          "link": "new-arrivals",
+          "innerCategory": [
+            {
+              "name": "SPRING/SUMMER 2020 LOOKS",
+              "link": "new-arrivals"
+            },
+            {
+              "name": "PRE SPRING/SUMMER 2020 LOOKS",
+              "link": "new-arrivals"
+            }
+          ]
+        }
+      }
+    ]
+  }},
+  {
+  "Category": {
+    "name": "All Ready-To-Wear",
+    "link": "ready-to-wear",
+    "categories": [
+      {
+        "category": "DRESSES",
+        "link": "dresses"
+      },
+      {
+        "category": "JACKETS",
+        "link": "jackets"
+      },
+      {
+        "category": "OUTERWEAR",
+        "link": "ready-to-wear"
+      },
+      {
+        "category": "KNITWEAR",
+        "link": "ready-to-wear"
+      },
+      {
+        "category": "TOPS AND SHIRTS",
+        "link": "ready-to-wear"
+      },
+      {
+        "category": "SKIRTS",
+        "link": "ready-to-wear"
+      },
+      {
+        "category": "TROUSERS",
+        "link": "ready-to-wear"
+      },
+      {
+        "category": "EVENING",
+        "link": "evening"
+      }
+    ]
+  }},
+  {
+  "Category": {
+    "name": "All Bags",
+    "link": "ready-to-wear",
+    "categories": [
+      {
+        "category": "SHOULDER BAGS",
+        "link": "ready-to-wear"
+      },
+      {
+        "category": "CROSSBODY BAGS",
+        "link": "ready-to-wear"
+      },
+      {
+        "category": "TOP HANDLES",
+        "link": "ready-to-wear"
+      },
+      {
+        "category": "MINI BAGS",
+        "link": "ready-to-wear"
+      },
+      {
+        "category": "CLUTCHES",
+        "link": "ready-to-wear"
+      },
+      {
+        "category": "SHOPPERS",
+        "link": "ready-to-wear"
+      }
+    ]
+  }},
+  {
+  "Category": {
+    "name": "All Shoes",
+    "link": "ready-to-wear",
+    "categories": [
+      {
+        "category": "BOOTS",
+        "link": "ready-to-wear"
+      },
+      {
+        "category": "PUMPS",
+        "link": "ready-to-wear"
+      },
+      {
+        "category": "SANDALS",
+        "link": "ready-to-wear"
+      },
+      {
+        "category": "FLATS",
+        "link": "ready-to-wear"
+      }
+    ]
+  }},
+  {
+  "Category": {
+    "name": "All Accessories",
+    "link": "accessories",
+    "categories": [
+      {
+        "category": "WALLETS",
+        "link": "ready-to-wear"
+      },
+      {
+        "category": "SCARVES",
+        "link": "ready-to-wear"
+      },
+      {
+        "category": "BELTS",
+        "link": "ready-to-wear"
+      },
+      {
+        "category": "OTHER ACCESSORIES",
+        "link": "ready-to-wear"
+      }
+    ]
+  }}
+]

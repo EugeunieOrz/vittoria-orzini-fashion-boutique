@@ -1,0 +1,53 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/Acme.scss';
+.custom-form-control input{
+  border:none;
+ font-family:$fontAcme;
+ font-size:1.1em;
+ box-shadow:none;
+ box-sizing:border-box;
+ padding:7px;
+ background-color:inherit;
+ border-bottom:2px solid $text-color!important;
+ border-radius: 0;
+ color: $text-color
+}
+.custom-form-control .control {
+  position:relative;
+}
+select {
+  border: none;
+  border-bottom: .15em solid $text-color;
+ box-shadow: none;
+  box-sizing: content-box;
+ background-color:transparent;
+  padding:4px;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  background:url('../../static/icons/arrow_down.svg') 100%/6% no-repeat;
+}
+@media only screen and (max-width: 319px) {
+  .custom-form-control input {
+    width: 210px;
+  }
+}
+@media only screen and (min-width: 320px) {
+  .custom-form-control input {
+    width: 270px;
+  }
+}
+@media only screen and (min-width: 576px) {
+  .custom-form-control input {
+    width: 320px
+  }
+}
+@media only screen and (min-width: 992px) {
+  .custom-form-control input {
+    width: 350px
+  }
+}

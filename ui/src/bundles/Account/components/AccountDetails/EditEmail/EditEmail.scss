@@ -1,0 +1,272 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/Acme.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+@media only screen and (min-width:240px) {
+  #editemail-inner {
+    background-image:$backgroundImage;
+    background-image:$backgroundImage1;
+  }
+  #editemail-inner-ar {
+    background-image:$backgroundImageReverse;
+    background-image:$backgroundImageReverse1;
+  }
+  .editemail-password-group {
+  width: 200px
+}
+.editemail-password-form,
+.editemail-password-error-form,
+.editemail-password-form-ar,
+.editemail-password-error-form-ar {
+  width: 130px !important;
+}
+}
+@media only screen and (max-width: 319px) {
+  .editemail-password-group {
+  width: 210px
+}
+.editemail-password-form,
+.editemail-password-error-form,
+.editemail-password-form-ar,
+.editemail-password-error-form-ar {
+  width: 130px !important;
+}
+}
+@media only screen and (min-width: 320px) {
+  .editemail-password-group {
+  width: 270px
+}
+.editemail-password-form,
+.editemail-password-error-form,
+.editemail-password-form-ar,
+.editemail-password-error-form-ar {
+  width: 190px !important;
+}
+}
+@media only screen and (min-width: 576px) {
+  .editemail-password-group {
+  width: 320px
+}
+.editemail-password-form,
+.editemail-password-error-form,
+.editemail-password-form-ar,
+.editemail-password-error-form-ar {
+  width: 230px !important;
+}
+}
+@media only screen and (min-width: 768px) {
+  #editemail-inner {
+    background-image: linear-gradient(to right, transparent, #ffd8cc, #fdefc4 65%);
+    background-image: -webkit-gradient(linear, left right, from(transparent), colorstop(#ffd8cc) to(#fdefc4 65%));
+  }
+  #editemail-inner-ar {
+    background-image: linear-gradient(to left, transparent, #ffd8cc, #fdefc4 65%);
+    background-image: -webkit-gradient(linear, right left, from(transparent), colorstop(#ffd8cc) to(#fdefc4 65%));
+  }
+  .editemail-password-group {
+   width: 320px
+  }
+.editemail-password-form,
+.editemail-password-error-form,
+.editemail-password-form-ar,
+.editemail-password-error-form-ar {
+   width: 250px !important;
+  }
+}
+@media only screen and (min-width:992px) {
+  #editemail-inner {
+    background-image:$backgroundImage2;
+    background-image:$backgroundImage3;
+  }
+  #editemail-inner-ar {
+    background-image:$backgroundImageReverse2;
+    background-image:$backgroundImageReverse3;
+  }
+  .editemail-password-group {
+  width: 350px
+}
+.editemail-password-form,
+.editemail-password-error-form,
+.editemail-password-form-ar,
+.editemail-password-error-form-ar {
+  width: 270px !important;
+}
+}
+#editemail-close-btn {
+  cursor: pointer;
+}
+#editemail-container {
+ position:fixed;
+ overflow-y:scroll;
+ overflow-x:hidden;
+ scrollbar-width:thin;
+ top:0;
+ left:0;
+ height:100vh;
+ width:100vw;
+ display:block;
+ -webkit-animation:fadeInFromNone .5s ease-out;
+         animation:fadeInFromNone .5s ease-out;
+ z-index:10
+}
+@-webkit-keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+@keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+#editemail-title,
+#editemail-title-ar {
+  color:$text-color;
+  border-bottom:.1em solid $text-color;
+  -webkit-border-image:$centerBorderImage1;
+       -o-border-image:$centerBorderImage2;
+          border-image:$centerBorderImage2;
+  border-image-slice:1;
+}
+#editemail-title {
+ font-family:$fontAdamCGPro;
+ font-size:1em;
+}
+#editemail-title-ar {
+ font-family:$fontKhebratMusamimRegular;
+ font-size:1.1em;
+}
+.editemail-email-error,
+.editemail-password-error,
+.editemail-email-error-ar,
+.editemail-password-error-ar {
+  color: $vo-color;
+}
+.editemail-email-error,
+.editemail-password-error {
+  font-family: $fontAcme;
+}
+.editemail-email-error-ar,
+.editemail-password-error-ar {
+  font-family: $fontJannaLTBold;
+}
+.editemail-email-error-form,
+.editemail-email-form,
+.editemail-password-error-form,
+.editemail-password-form,
+.editemail-email-error-form-ar,
+.editemail-email-form-ar,
+.editemail-password-error-form-ar,
+.editemail-password-form-ar {
+  box-shadow: none !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  color: $text-color !important
+}
+.editemail-email-error-form-ar,
+.editemail-email-form-ar,
+.editemail-password-error-form-ar,
+.editemail-password-form-ar {
+  font-family: $fontJannaLTBold !important
+}
+#editemail-pending-it-btn {
+  width: 250px
+}
+#editemail-pending-ar-btn {
+  width: 200px
+}
+#editemail-pending-btn,
+#editemail-btn,
+#editemail-btn-ar {
+  width: 170px
+}
+#editemail-pending-ar-btn,
+#editemail-pending-it-btn,
+#editemail-pending-btn,
+#editemail-btn,
+#editemail-btn-ar {
+  background: $gradient-border-color;
+  border-radius: 0;
+  box-shadow: none !important;
+  border: 0.15em solid $gradient-border-color;
+  color: $text-color;
+}
+#editemail-pending-ar-btn:enabled,
+#editemail-pending-it-btn:enabled,
+#editemail-pending-btn:enabled,
+#editemail-btn:enabled,
+#editemail-btn-ar:enabled {
+  cursor: $cursorRose5
+}
+#editemail-pending-ar-btn:disabled,
+#editemail-pending-it-btn:disabled,
+#editemail-pending-btn:disabled,
+#editemail-btn:disabled,
+#editemail-btn-ar:disabled {
+  cursor: url('../../../../../static/icons/close.svg'), auto!important;
+}
+#editemail-pending-it-btn,
+#editemail-pending-btn,
+#editemail-btn {
+  font-family: $fontAcme
+}
+#editemail-pending-ar-btn,
+#editemail-btn-ar {
+  font-family: $fontKhebratMusamimRegular
+}
+#editemail-btn:active,
+#editemail-btn:focus,
+#editemail-btn:hover,
+#editemail-btn-ar:active,
+#editemail-btn-ar:focus,
+#editemail-btn-ar:hover {
+  background: transparent;
+  border-color: $gradient-border-color !important;
+  color: $text-color !important;
+}
+#editemail-toggle-btn span,
+#editemail-toggle-btn,
+#editemail-toggle-btn-ar,
+#editemail-toggle-btn-ar span  {
+  background: transparent;
+  border: none;
+  padding: 0px 4px;
+  box-shadow: none
+}
+#editemail-toggle-btn span {
+  font-family: $fontAcme;
+  height: 34px
+}
+#editemail-toggle-btn-ar span {
+  font-family: $fontJannaLTBold;
+  height: 34px
+}
+#current-email {
+  font-family: $fontAcme
+}
+#current-email-ar {
+  font-family: $fontJannaLTBold
+}

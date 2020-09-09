@@ -1,0 +1,75 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/Acme.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+#add-item-to-bag-alert-container div {
+  border-radius: 0;
+}
+#add-item-to-bag-alert-container .modal-body {
+  background-image: $backgroundImage;
+  background-image: $backgroundImage1
+}
+.shopping-modal .modal-dialog {
+  margin-top: 0px;
+  margin-left: 0px;
+  width: 100vw
+}
+#add-item-to-bag-alert-container .modal-content {
+  width: 100vw;
+}
+#add-item-msg {
+  font-family: $fontAcme;
+  color: $text-color
+}
+#add-item-msg-ar {
+  font-family: $fontJannaLTBold;
+  color: $text-color
+}
+.close-alert-btn {
+  cursor: pointer;
+}
+#view-bag,
+#view-bag-ar {
+  width: 170px;
+  border-radius: 0;
+  color: $vo-color;
+  border: .15em solid $text-color;
+  width: 200px;
+  box-shadow: none;
+  background: transparent;
+}
+#view-bag {
+  font-family: $fontAdamCGPro;
+  font-size: .9em
+}
+#view-bag:focus,
+#view-bag:active,
+#view-bag-ar:focus,
+#view-bag-ar:active {
+  box-shadow: none
+}
+#view-bag-ar {
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1.1em
+}
+@media only screen and (max-width: 600px) {
+  #item-image {
+    width: 80px;
+    height: 120px
+  }
+  #view-bag {
+    font-size: .75em;
+    border: 0.2em solid $text-color;
+    width: 170px
+  }
+  #view-bag-ar {
+    font-size: .95em;
+    border: 0.2em solid $text-color;
+    width: 170px
+  }
+}

@@ -1,0 +1,6 @@
+@font-face {
+ font-family:Philosopher;
+ src:local("Philosopher"),
+ url(../static/fonts/Philosopher.woff2) format("woff2")
+}
+$fontPhilosopher: Philosopher;

@@ -1,0 +1,56 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/Philosopher.scss';
+@import 'styles/Unique.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+#myaccount-birthdate,
+#myaccount-email,
+#myaccount-name,
+#myaccount-passwd {
+  font-family: $fontPhilosopher;
+  font-size: 1.2em
+}
+#myaccount-birthdate-ar,
+#myaccount-email-ar,
+#myaccount-name-ar,
+#myaccount-passwd-ar {
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1.2em
+}
+#personal-details button,
+#personal-details-ar button {
+  background-color: transparent !important;
+  color: $text-color;
+  border: none;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+#personal-details button {
+  font-family: $fontUnique;
+}
+#personal-details-ar button {
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1.1em
+}
+#personal-details button:hover,
+#personal-details-ar button:hover {
+  color:$gradient-border-color
+}
+@media only screen and (max-width: 600px) {
+  #myaccount-birthdate,
+#myaccount-email,
+#myaccount-name,
+  #myaccount-passwd {
+    font-size: 1em
+  }
+  #personal-details button {
+    font-size: .8em
+  }
+  #personal-details-ar button {
+    font-size: 1.1em
+  }
+}

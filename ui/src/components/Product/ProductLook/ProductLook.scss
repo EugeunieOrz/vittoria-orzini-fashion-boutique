@@ -1,0 +1,106 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+#product-look-container {
+ position:fixed;
+ overflow:hidden;
+ top:0;
+ left:0;
+ height:100vh;
+ width:100vw;
+ display:block;
+ background-image: $backgroundImage;
+ background-image: $backgroundImage1;
+ -webkit-animation:fadeInFromNone .5s ease-out;
+         animation:fadeInFromNone .5s ease-out;
+ -webkit-transform:none;
+         transform:none;
+ -webkit-transition:-webkit-transform .3s ease-out;
+ transition:-webkit-transform .3s ease-out;
+ transition:transform .3s ease-out;
+ transition:transform .3s ease-out, -webkit-transform .3s ease-out;
+ z-index:2;
+ overflow-y: auto;
+  height: 100vh;
+  scrollbar-width: thin;
+}
+@-webkit-keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+@keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+#close-productlook-btn {
+  background-image: $closeIconHoverForHome;
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer
+}
+#close-productlook-btn:hover {
+  background-image: $closeIconForHome;
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer
+}
+#product-images-1 {
+  overflow-y: scroll;
+  height: 100vh;
+  scrollbar-width: thin
+}
+#product-images-1 .list-group-item {
+  background: inherit;
+  border: none
+}
+#product-images-1 .list-group-item img {
+  cursor: $cursorRose3
+}
+.product-figure {
+  width:100%;
+  background-repeat:no-repeat
+}
+.product-figure img {
+  width:100%;
+}
+#product-figure-plus {
+  cursor: url('../../../static/icons/plus.svg'),auto;
+}
+#product-figure-minus {
+  cursor: url('../../../static/icons/minus.svg'), auto;
+}
+#product-figure-plus:hover .product-image {
+ opacity:1
+}
+#product-figure-minus:hover .product-image {
+ opacity:0;
+ pointer-events:none
+}

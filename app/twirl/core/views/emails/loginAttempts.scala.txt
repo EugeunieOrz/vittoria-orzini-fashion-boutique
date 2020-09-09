@@ -1,0 +1,3 @@
+@(user: _root_.models.core.User, email: String, count: Long)(implicit messages: MessagesApi, lang: Lang)
+@messages("auth.email.sign.up.hello", user.title.getOrElse("") + " " + user.firstName.getOrElse("Customer"))(lang)
+@messages("auth.email.login.attempts.txt.text")(lang)

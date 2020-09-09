@@ -1,0 +1,29 @@
+[
+  {
+    "country": "Italy",
+    "addresses": [
+      { "address": "Via degli Strozzi, 12/18 R, 50123 Florence FI, Italy" },
+      { "address": "Via degli Strozzi, 55 R, 50123 Florence FI, Italy" },
+      { "address": "Via degli Strozzi, 49 R, 50123 Florence FI, Italy" },
+      { "address": "Via degli Strozzi, 93 R, 50123 Florence FI, Italy" }
+    ]
+  },
+  {
+    "country": "France",
+    "addresses": [
+      { "address": "48 Avenue Montaigne, 75008 Paris, France" },
+      { "address": "49 Avenue Montaigne, 75008 Paris, France" },
+      { "address": "67 Avenue Montaigne, 75008 Paris, France" },
+      { "address": "53 Avenue Montaigne, 75008 Paris, France" }
+    ]
+  },
+  {
+    "country": "Lebanon",
+    "addresses": [
+      { "address": "23, Melrose Bldg, Omar Daouk Street, Beirut, Lebanon" },
+      { "address": "27, Melrose Bldg, Omar Daouk Street, Beirut, Lebanon" },
+      { "address": "29, Melrose Bldg, Omar Daouk Street, Beirut, Lebanon" },
+      { "address": "32, Melrose Bldg, Omar Daouk Street, Beirut, Lebanon" }
+    ]
+  }
+]

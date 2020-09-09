@@ -1,0 +1,8 @@
+{
+  "short_name": "VO Boutique",
+  "name": "Vittoria Orzini Fashion Boutique",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffd8cc",
+  "background_color": "#ffd8cc"
+}

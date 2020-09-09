@@ -1,0 +1,179 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/Acme.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+@media only screen and (min-width:240px) {
+  #editbdate-inner {
+    background-image:$backgroundImage;
+    background-image:$backgroundImage1;
+  }
+  #editbdate-inner-ar {
+    background-image:$backgroundImageReverse;
+    background-image:$backgroundImageReverse1;
+  }
+}
+@media only screen and (max-width: 319px) {
+  #editbdate-container select {
+    width: 100px;
+  }
+  #editbdate-container-ar select {
+    width: 100px;
+  }
+}
+@media only screen and (min-width: 320px) {
+  #editbdate-container select {
+    width: 100px;
+  }
+  #editbdate-container-ar select {
+    width: 100px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #editbdate-inner {
+    background-image: linear-gradient(to right, transparent, #ffd8cc, #fdefc4 65%);
+    background-image: -webkit-gradient(linear, left right, from(transparent), colorstop(#ffd8cc) to(#fdefc4 65%));
+  }
+  #editbdate-inner-ar {
+    background-image: linear-gradient(to left, transparent, #ffd8cc, #fdefc4 65%);
+    background-image: -webkit-gradient(linear, right left, from(transparent), colorstop(#ffd8cc) to(#fdefc4 65%));
+  }
+}
+@media only screen and (min-width:992px) {
+  #editbdate-inner {
+    background-image:$backgroundImage2;
+    background-image:$backgroundImage3;
+  }
+  #editbdate-inner-ar {
+    background-image:$backgroundImageReverse2;
+    background-image:$backgroundImageReverse3;
+  }
+}
+#editbdate-close-btn {
+  cursor: pointer;
+}
+#editbdate-container,
+#editbdate-container-ar {
+ position:fixed;
+ overflow-y:scroll;
+ overflow-x:hidden;
+ scrollbar-width:thin;
+ top:0;
+ left:0;
+ height:100vh;
+ width:100vw;
+ display:block;
+ -webkit-animation:fadeInFromNone .5s ease-out;
+         animation:fadeInFromNone .5s ease-out;
+ z-index:10
+}
+@-webkit-keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+@keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+#editbdate-title,
+#editbdate-title-ar {
+ color:$text-color;
+ border-bottom:.1em solid $text-color;
+ -webkit-border-image:$centerBorderImage1;
+      -o-border-image:$centerBorderImage2;
+         border-image:$centerBorderImage2;
+ border-image-slice:1;
+}
+#editbdate-title {
+ font-family:$fontAdamCGPro;
+ font-size:1em;
+}
+#editbdate-title-ar {
+ font-family:$fontJannaLTBold;
+ font-size:1.1em;
+}
+#editbdate-pending-it-btn {
+  width: 250px
+}
+#editbdate-pending-ar-btn {
+  width: 200px
+}
+#editbdate-pending-btn,
+#editbdate-btn,
+#editbdate-ar-btn {
+  width: 170px
+}
+#editbdate-pending-it-btn,
+#editbdate-pending-btn,
+#editbdate-btn,
+#editbdate-pending-ar-btn,
+#editbdate-ar-btn {
+  background: $gradient-border-color !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  border: 0.15em solid $gradient-border-color;
+  color: $text-color;
+}
+#editbdate-pending-it-btn:enabled,
+#editbdate-pending-btn:enabled,
+#editbdate-btn:enabled,
+#editbdate-pending-ar-btn:enabled,
+#editbdate-ar-btn:enabled {
+  cursor: $cursorRose5
+}
+#editbdate-pending-it-btn:disabled,
+#editbdate-pending-btn:disabled,
+#editbdate-btn:disabled,
+#editbdate-pending-ar-btn:disabled,
+#editbdate-ar-btn:disabled {
+  cursor: url('../../../../../static/icons/close.svg'), auto!important;
+}
+#editbdate-pending-it-btn,
+#editbdate-pending-btn,
+#editbdate-btn {
+  font-family: $fontAcme;
+}
+#editbdate-pending-ar-btn,
+#editbdate-ar-btn {
+  font-family: $fontKhebratMusamimRegular
+}
+#editbdate-btn:active,
+#editbdate-btn:focus,
+#editbdate-btn:hover,
+#editbdate-ar-btn:active,
+#editbdate-ar-btn:focus,
+#editbdate-ar-btn:hover {
+  background: transparent !important;
+  border-color: $gradient-border-color !important;
+  color: $text-color !important;
+}
+#editbdate-container select {
+  font-family: $fontAcme;
+}
+#editbdate-container-ar select {
+  font-family: $fontJannaLTBold;
+}

@@ -1,0 +1,330 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/AudreyMedium.scss';
+@import 'styles/Acme.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+#sign-up-header {
+  font-family: $fontAdamCGPro;
+  color: $text-color;
+  font-size: 1.1em
+}
+#sign-up-header-ar {
+  font-family: $fontKhebratMusamimRegular;
+  color: $text-color;
+  font-size: 1.2em
+}
+#sign-up-form-ar select {
+  font-family: $fontJannaLTBold;
+}
+#sign-up-form-ar select,
+#sign-up-form select {
+  border: none;
+  border-bottom: 2px solid $text-color;
+ box-shadow: none;
+  box-sizing: content-box;
+ background-color:transparent;
+  padding:4px;
+}
+.signup-title-error,
+.signup-fname-error,
+.signup-lname-error,
+.signup-email-error,
+.signup-age-error,
+.password-strength-txt {
+  font-family: $fontAcme;
+  color: $vo-color;
+}
+.signup-title-error-ar,
+.signup-fname-error-ar,
+.signup-lname-error-ar,
+.signup-email-error-ar,
+.signup-age-error-ar,
+.password-strength-txt-ar {
+  font-family: $fontJannaLTBold;
+  color: $vo-color;
+}
+.password-strength {
+  height:.5em;
+  border-radius:0px;
+  background:transparent;
+  transition:all .3s ease-in-out
+}
+.password-strength-txt[data-score="0"],.password-strength-txt[data-score="1"],.password-strength-txt[data-score=""] {
+ color:$vo-color
+}
+.password-strength-txt[data-score="2"] {
+ color:$data-score-2
+}
+.password-strength-txt[data-score="3"] {
+ color:$data-score-3
+}
+.password-strength-txt[data-score="4"] {
+ color:$data-score-4
+}
+#sign-up-toggle-btn span,
+#sign-up-toggle-btn-ar span,
+#sign-up-toggle-btn,
+#sign-up-toggle-btn-ar  {
+  background: transparent;
+  border: none;
+  padding: 0px 4px;
+  box-shadow: none
+}
+#sign-up-toggle-btn span {
+  font-family: $fontAcme;
+  height: 34px;
+  color: $text-color
+}
+#sign-up-toggle-btn-ar span {
+  font-family: $fontJannaLTBold;
+  height: 34px;
+  color: $text-color
+}
+#sign-up-newsl {
+  font-family: $fontAudreyMedium;
+}
+#sign-up-newsl-ar {
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1.2em
+}
+#newslFashion-checkbox label,
+#newslFJ-checkbox label,
+#newslHC-checkbox label,
+#ageLimit-checkbox label{
+  font-family: $fontAcme
+}
+#newslFashion-checkbox-ar label,
+#newslFJ-checkbox-ar label,
+#newslHC-checkbox-ar label,
+#ageLimit-checkbox-ar label{
+  font-family: $fontJannaLTBold
+}
+#sign-up-btn,
+#sign-up-btn-ar {
+  width: 250px;
+}
+#sign-up-pending-btn-ar,
+#sign-up-pending-btn {
+  width: 300px;
+}
+#sign-up-pending-btn,
+#sign-up-btn {
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0;
+  color: $gradient-border-color;
+  border: .15em solid $text-color;
+  font-family: $fontAcme;
+  font-size: 1.1em;
+}
+#sign-up-pending-btn-ar,
+#sign-up-btn-ar {
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0;
+  color: $gradient-border-color;
+  border: .15em solid $text-color;
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1.1em;
+}
+#sign-up-pending-btn:disabled,
+#sign-up-btn:disabled,
+#sign-up-pending-btn-ar:disabled,
+#sign-up-btn-ar:disabled {
+  cursor: $cursorClose4
+}
+#sign-up-pending-btn:enabled,
+#sign-up-btn:enabled,
+#sign-up-pending-btn-ar:enabled,
+#sign-up-btn-ar:enabled {
+  cursor: $cursorRose4
+}
+.signup-firstName-form,
+.signup-firstName-error-form,
+.signup-lastName-form,
+.signup-lastName-error-form,
+.signup-email-form,
+.signup-email-error-form,
+.signup-password-form,
+.signup-password-error-form,
+.signup-firstName-form-ar,
+.signup-firstName-error-form-ar,
+.signup-lastName-form-ar,
+.signup-lastName-error-form-ar,
+.signup-email-form-ar,
+.signup-email-error-form-ar,
+.signup-password-form-ar,
+.signup-password-error-form-ar {
+  box-shadow: none !important;
+ background: transparent !important;
+}
+.signup-firstName-form-ar,
+.signup-firstName-error-form-ar,
+.signup-lastName-form-ar,
+.signup-lastName-error-form-ar,
+.signup-email-form-ar,
+.signup-email-error-form-ar,
+.signup-password-form-ar,
+.signup-password-error-form-ar {
+  font-family: $fontJannaLTBold !important
+}
+@media only screen and (max-width: 319px) {
+  .signup-password-form,
+  .signup-password-error-form {
+    max-width: 140px !important;
+  }
+  #ageLimit-checkbox label,
+  #ageLimit-checkbox-ar label {
+    width: 180px
+  }
+  #sign-up-form select,
+  #sign-up-form-ar select {
+    max-width: 210px !important;
+  }
+  .password-strength {
+    max-width:180px;
+  }
+  .password-strength[data-score="0"] {
+   width:0;
+   background:$vo-color
+  }
+  .password-strength[data-score="1"] {
+   width:60px;
+   background:$vo-color
+  }
+  .password-strength[data-score="2"] {
+   width:100px;
+   background:$data-score-2
+  }
+  .password-strength[data-score="3"] {
+   width:140px;
+   background:$data-score-3
+  }
+  .password-strength[data-score="4"] {
+   width:180px;
+   background:$data-score-4
+  }
+}
+@media only screen and (min-width: 320px) {
+  #ageLimit-checkbox label,
+  #ageLimit-checkbox-ar label {
+    width: 230px
+  }
+  .signup-password-form,
+  .signup-password-error-form,
+  .signup-password-form-ar,
+  .signup-password-error-form-ar {
+    max-width: 200px !important;
+  }
+  #sign-up-form select,
+  #sign-up-form-ar select {
+    max-width: 260px;
+  }
+}
+@media only screen and (min-width: 360px) {
+  #ageLimit-checkbox label,
+  #ageLimit-checkbox-ar label  {
+    width: 280px
+  }
+  .signup-password-form,
+  .signup-password-error-form,
+  .signup-password-form-ar,
+  .signup-password-error-form-ar {
+    max-width: 220px !important;
+  }
+}
+@media only screen and (min-width: 400px) {
+  #ageLimit-checkbox label,
+  #ageLimit-checkbox-ar label  {
+    width: 320px
+  }
+}
+@media only screen and (min-width: 576px) {
+  .signup-password-form,
+  .signup-password-error-form,
+  .signup-password-form-ar,
+  .signup-password-error-form-ar {
+    max-width: 260px !important;
+  }
+  #sign-up-form select,
+  #sign-up-form-ar select {
+    max-width: 320px
+  }
+  .password-strength {
+    max-width:200px;
+  }
+  .password-strength[data-score="0"] {
+   width:0;
+   background:$vo-color
+  }
+  .password-strength[data-score="1"] {
+   width:50px;
+   background:$vo-color
+  }
+  .password-strength[data-score="2"] {
+   width:100px;
+   background:$data-score-2
+  }
+  .password-strength[data-score="3"] {
+   width:150px;
+   background:$data-score-3
+  }
+  .password-strength[data-score="4"] {
+   width:200px;
+   background:$data-score-4
+  }
+}
+@media only screen and (min-width: 992px) {
+  .signup-firstName-form,
+  .signup-firstName-error-form,
+  .signup-lastName-form,
+  .signup-lastName-error-form,
+  .signup-email-form,
+  .signup-email-error-form,
+  .signup-firstName-form-ar,
+  .signup-firstName-error-form-ar,
+  .signup-lastName-form-ar,
+  .signup-lastName-error-form-ar,
+  .signup-email-form-ar,
+  .signup-email-error-form-ar {
+    width: 330px !important;
+  }
+  .signup-password-error-form,
+  .signup-password-form,
+  .signup-password-error-form-ar,
+  .signup-password-form-ar {
+    min-width: 280px !important;
+  }
+  #sign-up-form select,
+  #sign-up-form-ar select {
+    max-width: 320px
+  }
+  .password-strength {
+    max-width:240px;
+  }
+  .password-strength[data-score="0"] {
+   width:0;
+   background:$vo-color
+  }
+  .password-strength[data-score="1"] {
+   width:60px;
+   background:$vo-color
+  }
+  .password-strength[data-score="2"] {
+   width:130px;
+   background:$data-score-2
+  }
+  .password-strength[data-score="3"] {
+   width:200px;
+   background:$data-score-3
+  }
+  .password-strength[data-score="4"] {
+   width:240px;
+   background:$data-score-4
+  }
+}

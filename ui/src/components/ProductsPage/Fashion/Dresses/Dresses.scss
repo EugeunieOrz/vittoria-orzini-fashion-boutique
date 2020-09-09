@@ -1,0 +1,20 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+#fashion-titles .fashion-title {
+  font-family: $fontAdamCGPro;
+  color: $text-color;
+  border-color: $text-color;
+  cursor: pointer
+}
+#fashion-titles-ar .fashion-title {
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1.1em;
+  color: $text-color;
+  border-color: $text-color;
+  cursor: pointer
+}

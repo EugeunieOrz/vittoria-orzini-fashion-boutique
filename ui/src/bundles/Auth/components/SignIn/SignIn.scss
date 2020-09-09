@@ -1,0 +1,146 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/AudreyMedium.scss';
+@import 'styles/Acme.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+#signin-header,
+#register-header {
+  font-family: $fontAdamCGPro;
+  color: $text-color;
+  font-size: 1.1em
+}
+#signin-header-ar,
+#register-header-ar {
+  font-family: $fontKhebratMusamimRegular;
+  color: $text-color;
+  font-size: 1.2em
+}
+#create-account-link,
+#create-account-link-ar {
+  color: $navlink-grey-color;
+  font-size: 1.1em;
+  border: .15em solid $gradient-border-color;
+  box-shadow: none;
+  background: transparent;
+  width: 210px;
+  border-radius: 0;
+}
+#create-account-link {
+  font-family: $fontAcme;
+}
+#create-account-link-ar {
+  font-family: $fontKhebratMusamimRegular;
+}
+#register-txt-header {
+  font-family: $fontAudreyMedium;
+}
+#register-txt-header-ar {
+  font-family: $fontJannaLTBold;
+}
+#register-txt .list-group-item,
+#register-txt-ar .list-group-item {
+  color: $text-color;
+  border: none;
+  background: transparent;
+  font-size: 1.1em
+}
+#register-txt .list-group-item {
+  font-family: $fontAudreyMedium;
+}
+#register-txt-ar .list-group-item {
+  font-family: $fontJannaLTBold;
+}
+#rememberMe-checkbox label,
+#password-recovery-link {
+  font-family: $fontAcme;
+  color: $text-color
+}
+#rememberMe-checkbox-ar label,
+#password-recovery-link-ar {
+  font-family: $fontJannaLTBold;
+  color: $text-color
+}
+.register-email-error-form,
+.register-email,
+.register-password-error-form,
+.register-password,
+.register-email-error-form-ar,
+.register-email-ar,
+.register-password-error-form-ar,
+.register-password-ar {
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.register-email-error-form-ar,
+.register-email-ar,
+.register-password-error-form-ar,
+.register-password-ar {
+  font-family: $fontJannaLTBold !important
+}
+#register-password-error,
+.password span,
+.email span,
+.register-password-error,
+.register-email-error {
+  font-family: $fontAcme;
+  color: $vo-color;
+}
+#register-password-error-ar,
+.register-password-error-ar,
+.register-email-error-ar {
+  font-family: $fontJannaLTBold;
+  color: $vo-color;
+}
+#sign-in-pending-btn,
+#sign-in-btn {
+  width: 150px;
+}
+#sign-in-pending-ar-btn,
+#sign-in-btn-ar {
+  width: 200px;
+}
+#sign-in-pending-it-btn {
+  width: 300px;
+}
+#sign-in-pending-ar-btn,
+#sign-in-pending-it-btn,
+#sign-in-pending-btn,
+#sign-in-btn,
+#sign-in-btn-ar {
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0;
+  color: $gradient-border-color;
+  border: .15em solid $text-color;
+}
+#sign-in-pending-ar-btn,
+#sign-in-btn-ar {
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1.1em;
+}
+#sign-in-pending-it-btn,
+#sign-in-pending-btn,
+#sign-in-btn {
+  font-family: $fontAcme;
+  font-size: 1.1em;
+}
+#create-account-link,
+#sign-in-btn:enabled,
+#sign-in-pending-ar-btn:enabled,
+#sign-in-pending-it-btn:enabled,
+#sign-in-pending-btn:enabled,
+#sign-in-btn-ar:enabled {
+  cursor: $cursorCalla4
+}
+#sign-in-pending-ar-btn:disabled,
+#sign-in-pending-it-btn:disabled,
+#sign-in-pending-btn:disabled,
+#sign-in-btn:disabled,
+#sign-in-btn-ar:disabled {
+  cursor: $cursorClose4
+}

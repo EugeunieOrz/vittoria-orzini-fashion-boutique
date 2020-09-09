@@ -1,0 +1,110 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/Acme.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+#return-form-header,
+#return-form-msg,
+#return-form-header-ar,
+#return-form-msg-ar {
+  color: $text-color
+}
+#return-form-header,
+#return-form-msg {
+  font-family: $fontAcme;
+}
+#return-form-header-ar {
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1.2em
+}
+#return-form-msg-ar {
+  font-family: $fontJannaLTBold;
+}
+#return-ordernum-noerror {
+  color: transparent
+}
+.returnform-num-error-form,
+.returnform-num-form,
+.returnform-num-error-form-ar,
+.returnform-num-form-ar {
+  color: $text-color;
+  box-shadow: none !important;
+  background: transparent !important
+}
+.returnform-num-error-form-ar,
+.returnform-num-form-ar {
+  font-family: $fontJannaLTBold !important
+}
+#return-order-num-error,
+.return-ordernum-error,
+#return-order-num-error-ar,
+.return-ordernum-error-ar {
+  color: $vo-color
+}
+#return-order-num-error,
+.return-ordernum-error {
+  font-family: $fontAcme;
+}
+#return-order-num-error-ar,
+.return-ordernum-error-ar {
+  font-family: $fontJannaLTBold;
+}
+#fill-return-form-pending-it-btn {
+  width: 250px
+}
+#fill-return-form-pending-ar-btn {
+  width: 200px
+}
+#fill-return-form-btn,
+#fill-return-form-ar-btn {
+  width: 170px
+}
+#fill-return-form-pending-it-btn,
+#fill-return-form-btn,
+#fill-return-form-pending-ar-btn,
+#fill-return-form-ar-btn {
+  background: $gradient-border-color !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  border: 0.15em solid $gradient-border-color !important;
+  color: $text-color !important;
+}
+#fill-return-form-pending-it-btn,
+#fill-return-form-btn {
+  font-family: $fontAcme
+}
+#fill-return-form-pending-ar-btn,
+#fill-return-form-ar-btn {
+  font-family: $fontKhebratMusamimRegular
+}
+.fill-return-form-pending-ar-btn:hover,
+.fill-return-form-pending-ar-btn:focus,
+.fill-return-form-pending-ar-btn:active,
+.fill-return-form-pending-it-btn:hover,
+.fill-return-form-pending-it-btn:focus,
+.fill-return-form-pending-it-btn:active,
+.fill-return-form-btn:hover,
+.fill-return-form-btn:focus,
+.fill-return-form-btn:active,
+.fill-return-form-ar-btn:hover,
+.fill-return-form-ar-btn:focus,
+.fill-return-form-ar-btn:active {
+  background: transparent !important;
+  border-color: $gradient-border-color !important;
+  color: $text-color !important;
+}
+#fill-return-form-pending-ar-btn:enabled,
+#fill-return-form-pending-it-btn:enabled,
+#fill-return-form-btn:enabled,
+#fill-return-form-ar-btn:enabled {
+  cursor: $cursorRose3
+}
+#fill-return-form-pending-ar-btn:disabled,
+#fill-return-form-pending-it-btn:disabled,
+#fill-return-form-btn:disabled,
+#fill-return-form-ar-btn:disabled {
+  cursor: $cursorClose3
+}

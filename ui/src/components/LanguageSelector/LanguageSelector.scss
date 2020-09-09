@@ -1,0 +1,82 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AudreyMedium.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+.lang {
+  font-size: .7em;
+  margin: 8px 0px
+}
+.lang-title {
+  font-size: .6em;
+  margin: 0px
+}
+.lang,
+.lang-title {
+  font-family: $fontAudreyMedium;
+  color: $navlink-grey-color
+}
+.lang-ar {
+  font-size: 1em;
+  margin: 8px 0px
+}
+.lang-title-ar {
+  font-size: 1.1em;
+  margin: 0px
+}
+.lang-ar {
+  font-family: $fontJannaLTBold;
+  color: $navlink-grey-color
+}
+.lang-title-ar {
+  font-family: $fontKhebratMusamimRegular;
+  color: $navlink-grey-color
+}
+.lang-ar:hover,
+.lang:hover {
+  color: $gradient-border-color;
+  cursor: pointer;
+}
+.lang-dropdown-content {
+  position: absolute;
+  background-color: inherit;
+  width: 70px;
+  text-align: center;
+  border-bottom: .1em solid #fff;
+  padding: 12px 12px 0px 6px;
+  opacity: 0;
+  backface-visibility: hidden;
+  transform: rotateX(-90deg);
+  transform-style: preserve-3d;
+  transform-origin: top center;
+  transition: transform .4s cubic-bezier(.17,.67,.59,1.21), opacity .1s .1s;
+  z-index: 10
+}
+.lang-dropdown-content-ar {
+  position: absolute;
+  background-color: #ffd8cc;
+  width: 70px;
+  text-align: center;
+  border-bottom: .1em solid #fff;
+  padding: 12px 12px 0px 6px;
+  opacity: 0;
+  backface-visibility: hidden;
+  transform: rotateX(-90deg);
+  transform-style: preserve-3d;
+  transform-origin: top center;
+  transition: transform .4s cubic-bezier(.17,.67,.59,1.21), opacity .1s .1s;
+  z-index: 10
+}
+#lang-dropdown-ar .lang-list-is-shown {
+  border-bottom: .1em solid $text-color;
+  opacity: 1;
+	transform: rotateX(0) translateZ(0);
+}
+#lang-dropdown .lang-list-is-shown {
+  border-bottom: .1em solid $text-color;
+  opacity: 1;
+	transform: rotateX(0) translateZ(0);
+}

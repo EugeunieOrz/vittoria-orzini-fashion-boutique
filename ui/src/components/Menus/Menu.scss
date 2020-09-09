@@ -1,0 +1,55 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AudreyMediumOblique.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+.fashion-menu-dropdown {
+  position: absolute;
+  background-image: $backgroundImage;
+  width: 100vw;
+  padding: 12px 12px 0px 6px;
+  opacity: 0;
+  z-index: 5;
+  left: 0;
+  backface-visibility: hidden;
+  transform: rotateX(-90deg);
+  transform-style: preserve-3d;
+  transform-origin: top center;
+  transition: transform .4s cubic-bezier(.17,.67,.59,1.21), opacity .1s .1s;
+}
+.fashion-menu-opened {
+  opacity: .9 !important;
+	transform: rotateX(0) translateZ(0);
+}
+.fashion-menu-dropdown .fashion-menu-item:hover {
+  color: $gradient-border-color
+}
+#fashion-menu-message-row {
+  background-image: linear-gradient(to right, transparent, $background-right-color 10%, transparent);
+  width: 100vw
+}
+.fashion-menu-list-title-ar,
+.fashion-menu-list-title {
+  text-decoration: underline;
+}
+.fashion-menu-list-title-ar,
+.fashion-menu-list-inner-title-ar {
+  font-family: $fontKhebratMusamimRegular;
+  font-size: .95em
+}
+.fashion-menu-list-title,
+.fashion-menu-list-inner-title {
+  font-family: $fontAudreyMediumOblique
+}
+.fashion-menu-item-ar {
+  font-size: .8em;
+  font-family: $fontJannaLTBold
+}
+@media only screen and (max-width: 1140px) {
+  .fashion-menu-item {
+    font-size: x-small
+  }
+}

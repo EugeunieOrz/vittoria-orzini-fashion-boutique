@@ -1,0 +1,207 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/Acme.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+#signinw-container-ar,
+#signinw-container {
+  position:fixed;
+  overflow-y:scroll;
+  overflow-x:hidden;
+  scrollbar-width:thin;
+  top:0;
+  left:0;
+  height:100vh;
+  width:100vw;
+  display:block;
+  -webkit-animation:fadeInFromNone .5s ease-out;
+          animation:fadeInFromNone .5s ease-out;
+  z-index:10
+}
+@-webkit-keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+@keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+#signinw-title {
+ font-family:$fontAdamCGPro;
+ font-size:1em;
+ color:$text-color;
+ border-bottom:.15em solid $text-color;
+ -webkit-border-image:$borderImage2;
+      -o-border-image:$borderImage3;
+         border-image:$borderImage4;
+ border-image-slice:1;
+}
+#signinw-title-ar {
+ font-family:$fontKhebratMusamimRegular;
+ font-size:1.1em;
+ color:$text-color;
+ border-bottom:.15em solid $text-color;
+ -webkit-border-image:$borderImage2;
+      -o-border-image:$borderImage3;
+         border-image:$borderImage4;
+ border-image-slice:1;
+}
+#signinw-close-btn {
+  cursor: pointer;
+}
+.signin-wishlist-email-error-form,
+.signin-wishlist-email-form,
+.signin-wishlist-password-error-form,
+.signin-wishlist-password-form,
+.signin-wishlist-email-error-form-ar,
+.signin-wishlist-email-form-ar,
+.signin-wishlist-password-error-form-ar,
+.signin-wishlist-password-form-ar {
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.signin-wishlist-email-error-form-ar,
+.signin-wishlist-email-form-ar,
+.signin-wishlist-password-error-form-ar,
+.signin-wishlist-password-form-ar {
+  font-family: $fontJannaLTBold !important
+}
+.signin-wishlist-email-error,
+#signin-wlist-error,
+.signin-wishlist-password-error{
+  font-family: $fontAcme;
+  color: $vo-color;
+}
+.signin-wishlist-email-error-ar,
+.signin-wishlist-password-error-ar,
+#signin-wlist-error-ar {
+  font-family: $fontJannaLTBold;
+  color: $vo-color;
+}
+#signinw-rememberme-checkbox label {
+  font-family: $fontAcme;
+  color: $text-color
+}
+#signinw-rememberme-checkbox-ar label {
+  font-family: $fontJannaLTBold;
+  color: $text-color
+}
+#signin-wishlist-pending-btn,
+#signin-wishlist-btn,
+#signin-wishlist-pending-btn-ar,
+#signin-wishlist-btn-ar {
+  width: 150px;
+}
+#signin-wishlist-pending-it-btn {
+  width: 300px;
+}
+#signin-wishlist-pending-it-btn,
+#signin-wishlist-pending-btn,
+#signin-wishlist-btn {
+  box-shadow: none !important;
+  border-radius: 0;
+  color: $navlink-grey-color;
+  border: .15em solid $gradient-border-color;
+  font-family: $fontAcme;
+  font-size: 1.1em;
+  background-color: $gradient-border-color
+}
+#signin-wishlist-pending-btn-ar,
+#signin-wishlist-btn-ar {
+  box-shadow: none !important;
+  border-radius: 0;
+  color: $navlink-grey-color;
+  border: .15em solid $gradient-border-color;
+  font-family: $fontJannaLTBold;
+  font-size: 1.1em;
+  background-color: $gradient-border-color
+}
+#signinw-passwd-recovery-btn,
+#signinw-passwd-recovery-btn-ar {
+  text-decoration: underline;
+  color: $text-color
+}
+#signinw-signup-btn,
+#signinw-signup-btn-ar {
+  color: $vo-color
+}
+#signinw-passwd-recovery-btn,
+#signinw-signup-btn {
+  box-shadow: none !important;
+  background: transparent !important;
+  font-family: $fontAcme;
+  border: none !important;
+}
+#signinw-passwd-recovery-btn-ar,
+#signinw-signup-btn-ar {
+  box-shadow: none !important;
+  background: transparent !important;
+  font-family: $fontJannaLTBold;
+  border: none !important;
+}
+#signinw-passwd-recovery-btn,
+#signinw-signup-btn,
+#signin-wishlist-btn:enabled,
+#signinw-passwd-recovery-btn-ar,
+#signinw-signup-btn-ar,
+#signin-wishlist-btn-ar:enabled {
+  cursor: $cursorCalla2
+}
+#signin-wishlist-btn:disabled,
+#signin-wishlist-btn-ar:disabled {
+  cursor: $cursorClose2
+}
+@media only screen and (min-width:240px) {
+  #signinw-container {
+    background-image:$backgroundImage;
+    background-image:$backgroundImage1;
+  }
+  #signinw-container-ar {
+    background-image:$backgroundImageReverse;
+    background-image:$backgroundImageReverse1;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #signinw-container {
+    background-image: $backgroundImage4;
+    background-image: $backgroundImage5;
+  }
+  #signinw-container-ar {
+    background-image: $backgroundImageReverse4;
+    background-image: $backgroundImageReverse5;
+  }
+}
+@media only screen and (min-width:992px) {
+  #signinw-container {
+    background-image:$backgroundImage2;
+    background-image:$backgroundImage3;
+  }
+  #signinw-container-ar {
+    background-image:$backgroundImageReverse2;
+    background-image:$backgroundImageReverse3;
+  }
+}

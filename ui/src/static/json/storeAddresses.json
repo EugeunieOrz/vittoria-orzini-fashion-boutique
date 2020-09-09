@@ -1,0 +1,194 @@
+[
+  {
+    "address": "Via degli Strozzi, 12/18 R, 50123 Florence FI, Italy",
+    "title": "Florence - Via degli Strozzi",
+    "street": "Via degli Strozzi, 12/18 R",
+    "zipcode": "50123",
+    "city": "Florence",
+    "country": "Italy",
+    "hours": [
+      { "content": "Monday - Saturday: 10am - 6.30pm" },
+      { "content": "Thursday: 10am - 7pm" },
+      { "content": "Sunday: 12pm - 6pm" }
+    ],
+    "telephone": "+0123456789",
+    "email": "firenze.store@vittoriaorzini.com",
+    "categories": "Fashion / Fine Jewelry / Home Collection"
+  },
+  {
+    "address": "Via degli Strozzi, 55 R, 50123 Florence FI, Italy",
+    "title": "Florence - Via degli Strozzi",
+    "street": "Via degli Strozzi, 55 R",
+    "zipcode": "50123",
+    "city": "Florence",
+    "country": "Italy",
+    "hours": [
+      { "content": "Monday - Saturday: 10am - 6.30pm" },
+      { "content": "Thursday: 10am - 7pm" },
+      { "content": "Sunday: 12pm - 6pm" }
+    ],
+    "telephone": "+0123456789",
+    "email": "firenze.store@vittoriaorzini.com",
+    "categories": "Fashion / Fine Jewelry / Home Collection"
+  },
+  {
+    "address": "Via degli Strozzi, 49 R, 50123 Florence FI, Italy",
+    "title": "Florence - Via degli Strozzi",
+    "street": "Via degli Strozzi, 49 R",
+    "zipcode": "50123",
+    "city": "Florence",
+    "country": "Italy",
+    "hours": [
+      { "content": "Monday - Saturday: 10am - 6.30pm" },
+      { "content": "Thursday: 10am - 7pm" },
+      { "content": "Sunday: 12pm - 6pm" }
+    ],
+    "telephone": "+0123456789",
+    "email": "firenze.store@vittoriaorzini.com",
+    "categories": "Fashion / Fine Jewelry / Home Collection"
+  },
+  {
+    "address": "Via degli Strozzi, 93 R, 50123 Florence FI, Italy",
+    "title": "Florence - Via degli Strozzi",
+    "street": "Via degli Strozzi, 93 R",
+    "zipcode": "50123",
+    "city": "Florence",
+    "country": "Italy",
+    "hours": [
+      { "content": "Monday - Saturday: 10am - 6.30pm" },
+      { "content": "Thursday: 10am - 7pm" },
+      { "content": "Sunday: 12pm - 6pm" }
+    ],
+    "telephone": "+0123456789",
+    "email": "firenze.store@vittoriaorzini.com",
+    "categories": "Fashion / Fine Jewelry / Home Collection"
+  },
+  {
+    "address": "48 Avenue Montaigne, 75008 Paris, France",
+    "title": "Paris - Avenue Montaigne",
+    "street": "48 Avenue Montaigne",
+    "zipcode": "75008",
+    "city": "Paris",
+    "country": "France",
+    "hours": [
+      { "content": "Monday - Saturday: 10am - 6.30pm" },
+      { "content": "Thursday: 10am - 7pm" },
+      { "content": "Sunday: 12pm - 6pm" }
+    ],
+    "telephone": "+0123456789",
+    "email": "avenuemontaigne.store@vittoriaorzini.com",
+    "categories": "Fashion / Fine Jewelry / Home Collection"
+  },
+  {
+    "address": "49 Avenue Montaigne, 75008 Paris, France",
+    "title": "Paris - Avenue Montaigne",
+    "street": "49 Avenue Montaigne",
+    "zipcode": "75008",
+    "city": "Paris",
+    "country": "France",
+    "hours": [
+      { "content": "Monday - Saturday: 10am - 6.30pm" },
+      { "content": "Thursday: 10am - 7pm" },
+      { "content": "Sunday: 12pm - 6pm" }
+    ],
+    "telephone": "+0123456789",
+    "email": "avenuemontaigne.store@vittoriaorzini.com",
+    "categories": "Fashion / Fine Jewelry / Home Collection"
+  },
+  {
+    "address": "67 Avenue Montaigne, 75008 Paris, France",
+    "title": "Paris - Avenue Montaigne",
+    "street": "67 Avenue Montaigne",
+    "zipcode": "75008",
+    "city": "Paris",
+    "country": "France",
+    "hours": [
+      { "content": "Monday - Saturday: 10am - 6.30pm" },
+      { "content": "Thursday: 10am - 7pm" },
+      { "content": "Sunday: 12pm - 6pm" }
+    ],
+    "telephone": "+0123456789",
+    "email": "avenuemontaigne.store@vittoriaorzini.com",
+    "categories": "Fashion / Fine Jewelry / Home Collection"
+  },
+  {
+    "address": "53 Avenue Montaigne, 75008 Paris, France",
+    "title": "Paris - Avenue Montaigne",
+    "street": "53 Avenue Montaigne",
+    "zipcode": "75008",
+    "city": "Paris",
+    "country": "France",
+    "hours": [
+      { "content": "Monday - Saturday: 10am - 6.30pm" },
+      { "content": "Thursday: 10am - 7pm" },
+      { "content": "Sunday: 12pm - 6pm" }
+    ],
+    "telephone": "+0123456789",
+    "email": "avenuemontaigne.store@vittoriaorzini.com",
+    "categories": "Fashion / Fine Jewelry / Home Collection"
+  },
+  {
+    "address": "23, Melrose Bldg, Omar Daouk Street, Beirut, Lebanon",
+    "title": "Beirut - Omar Daouk Street",
+    "street": "23, Melrose Bldg, Omar Daouk Street",
+    "zipcode": "",
+    "city": "Beirut",
+    "country": "Lebanon",
+    "hours": [
+      { "content": "Monday - Saturday: 10am - 6.30pm" },
+      { "content": "Thursday: 10am - 7pm" },
+      { "content": "Sunday: 12pm - 6pm" }
+    ],
+    "telephone": "+0123456789",
+    "email": "omardaouk.store@vittoriaorzini.com",
+    "categories": "Fashion / Fine Jewelry / Home Collection"
+  },
+  {
+    "address": "27, Melrose Bldg, Omar Daouk Street, Beirut, Lebanon",
+    "title": "Beirut - Omar Daouk Street",
+    "street": "27, Melrose Bldg, Omar Daouk Street",
+    "zipcode": "",
+    "city": "Beirut",
+    "country": "Lebanon",
+    "hours": [
+      { "content": "Monday - Saturday: 10am - 6.30pm" },
+      { "content": "Thursday: 10am - 7pm" },
+      { "content": "Sunday: 12pm - 6pm" }
+    ],
+    "telephone": "+0123456789",
+    "email": "omardaouk.store@vittoriaorzini.com",
+    "categories": "Fashion / Fine Jewelry / Home Collection"
+  },
+  {
+    "address": "29, Melrose Bldg, Omar Daouk Street, Beirut, Lebanon",
+    "title": "Beirut - Omar Daouk Street",
+    "street": "29, Melrose Bldg, Omar Daouk Street",
+    "zipcode": "",
+    "city": "Beirut",
+    "country": "Lebanon",
+    "hours": [
+      { "content": "Monday - Saturday: 10am - 6.30pm" },
+      { "content": "Thursday: 10am - 7pm" },
+      { "content": "Sunday: 12pm - 6pm" }
+    ],
+    "telephone": "+0123456789",
+    "email": "omardaouk.store@vittoriaorzini.com",
+    "categories": "Fashion / Fine Jewelry / Home Collection"
+  },
+  {
+    "address": "32, Melrose Bldg, Omar Daouk Street, Beirut, Lebanon",
+    "title": "Beirut - Omar Daouk Street",
+    "street": "32, Melrose Bldg, Omar Daouk Street",
+    "zipcode": "",
+    "city": "Beirut",
+    "country": "Lebanon",
+    "hours": [
+      { "content": "Monday - Saturday: 10am - 6.30pm" },
+      { "content": "Thursday: 10am - 7pm" },
+      { "content": "Sunday: 12pm - 6pm" }
+    ],
+    "telephone": "+0123456789",
+    "email": "omardaouk.store@vittoriaorzini.com",
+    "categories": "Fashion / Fine Jewelry / Home Collection"
+  }
+]

@@ -1,0 +1,310 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/Acme.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+@media only screen and (min-width:240px) {
+  .address-container {
+    background-image:$backgroundImage;
+    background-image:$backgroundImage1;
+  }
+  .address-container-ar {
+    background-image:$backgroundImageReverse;
+    background-image:$backgroundImageReverse1;
+  }
+}
+@media only screen and (min-width: 576px) {
+  .address-container {
+    background-image: $backgroundImage4;
+    background-image: $backgroundImage5;
+  }
+  .address-container-ar {
+    background-image: $backgroundImageReverse4;
+    background-image: $backgroundImageReverse5;
+  }
+}
+@media only screen and (min-width:992px) {
+  .address-container {
+    background-image:$backgroundImage2;
+    background-image:$backgroundImage3;
+  }
+  .address-container-ar {
+    background-image:$backgroundImageReverse2;
+    background-image:$backgroundImageReverse3;
+  }
+}
+.address-close-btn {
+  cursor: pointer;
+}
+.address-container,
+.address-container-ar {
+ position:fixed;
+ overflow-y:scroll;
+ overflow-x:hidden;
+ scrollbar-width:thin;
+ top:0;
+ left:0;
+ height:100vh;
+ width:100vw;
+ display:block;
+ -webkit-animation:fadeInFromNone .5s ease-out;
+         animation:fadeInFromNone .5s ease-out;
+ z-index:10
+}
+@-webkit-keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+@keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+.address-title {
+  color:$text-color;
+  border-bottom:.1em solid $text-color;
+  -webkit-border-image:$borderImage1;
+  -webkit-border-image:$borderImage2;
+       -o-border-image:$borderImage3;
+          border-image:$borderImage4;
+          border-image:$borderImage5;
+  border-image-slice:1;
+}
+.address-title-ar {
+  color:$text-color;
+  border-bottom:.1em solid $text-color;
+  -webkit-border-image:$borderImageReverse1;
+  -webkit-border-image:$borderImageReverse2;
+       -o-border-image:$borderImageReverse3;
+          border-image:$borderImageReverse4;
+          border-image:$borderImageReverse5;
+  border-image-slice:1;
+}
+.address-title {
+ font-family:$fontAdamCGPro;
+ font-size:1em;
+}
+.address-title-ar {
+ font-family:$fontKhebratMusamimRegular;
+ font-size:1.1em;
+}
+.address-pending-it-btn {
+  width: 250px;
+}
+.address-pending-ar-btn {
+  width: 200px;
+}
+.address-pending-btn,
+.address-btn,
+.address-ar-btn {
+  width: 170px;
+}
+.address-pending-it-btn,
+.address-pending-btn,
+.address-btn,
+.address-pending-ar-btn,
+.address-ar-btn {
+  background: $gradient-border-color !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  border: 0.15em solid $gradient-border-color !important;
+  color: $text-color !important;
+}
+.address-pending-it-btn:enabled,
+.address-pending-btn:enabled,
+.address-btn:enabled,
+.address-pending-ar-btn:enabled,
+.address-ar-btn:enabled {
+  cursor: $cursorRose3
+}
+.address-pending-it-btn:disabled,
+.address-pending-btn:disabled,
+.address-btn:disabled,
+.address-pending-ar-btn:disabled,
+.address-ar-btn:disabled {
+  cursor: $cursorClose3
+}
+.address-pending-it-btn,
+.address-pending-btn,
+.address-btn {
+  font-family: $fontAcme;
+}
+.address-pending-ar-btn,
+.address-ar-btn {
+  font-family: $fontKhebratMusamimRegular;
+}
+.address-btn:active,
+.address-btn:focus,
+.address-btn:hover,
+.address-ar-btn:active,
+.address-ar-btn:focus,
+.address-ar-btn:hover {
+  background: transparent !important;
+  border-color: $gradient-border-color !important;
+  color: $text-color !important;
+}
+.address-required-fields-msg,
+.address-country-tip,
+.defShipAddr-checkbox label,
+.prefBillingAddr-checkbox label,
+.address-msg1,
+.address-msg2,
+.card-exp-date-title,
+.card-billing-addr-title,
+.card-billing-addr-msg1,
+.prefCrdCard-checkbox label {
+  font-family: $fontAcme;
+  color: $text-color
+}
+.address-required-fields-msg-ar,
+.address-country-tip-ar,
+.defShipAddr-checkbox-ar label,
+.prefBillingAddr-checkbox-ar label,
+.address-msg1-ar,
+.address-msg2-ar,
+.card-exp-date-title-ar,
+.card-billing-addr-title-ar,
+.card-billing-addr-msg1-ar,
+.prefCrdCard-checkbox-ar label {
+  font-family: $fontJannaLTBold;
+  color: $text-color
+}
+  .address-additional-form,
+  .address-address-form,
+  .address-city-form,
+  .address-country-form,
+  .address-dayTelephone-form,
+  .address-email-form,
+  .address-eveningTelephone-form,
+  .address-firstName-form,
+  .address-lastName-form,
+  .address-province-form,
+  .address-zipCode-form,
+  .address-firstName-error-form,
+  .address-lastName-error-form,
+  .address-address-error-form,
+  .address-city-error-form,
+  .address-country-error-form,
+  .address-dayTelephone-error-form,
+  .address-province-error-form,
+  .address-zipCode-error-form,
+  .address-email-error-form,
+  .address-additional-form-ar,
+  .address-address-form-ar,
+  .address-city-form-ar,
+  .address-country-form-ar,
+  .address-dayTelephone-form-ar,
+  .address-email-form-ar,
+  .address-eveningTelephone-form-ar,
+  .address-firstName-form-ar,
+  .address-lastName-form-ar,
+  .address-province-form-ar,
+  .address-zipCode-form-ar,
+  .address-firstName-error-form-ar,
+  .address-lastName-error-form-ar,
+  .address-address-error-form-ar,
+  .address-city-error-form-ar,
+  .address-country-error-form-ar,
+  .address-dayTelephone-error-form-ar,
+  .address-province-error-form-ar,
+  .address-zipCode-error-form-ar,
+  .address-email-error-form-ar,
+  .card-cardNumber-error-form,
+  .card-cardNumber-form,
+  .card-cardNumber-error-form-ar,
+  .card-cardNumber-form-ar {
+    box-shadow: none !important;
+ background-color: transparent !important;
+ background: transparent !important;
+ color: $text-color !important
+  }
+  .card-cardNumber-error-form-ar,
+  .card-cardNumber-form-ar,
+  .address-additional-form-ar,
+  .address-address-form-ar,
+  .address-city-form-ar,
+  .address-country-form-ar,
+  .address-dayTelephone-form-ar,
+  .address-email-form-ar,
+  .address-eveningTelephone-form-ar,
+  .address-firstName-form-ar,
+  .address-lastName-form-ar,
+  .address-province-form-ar,
+  .address-zipCode-form-ar,
+  .address-firstName-error-form-ar,
+  .address-lastName-error-form-ar,
+  .address-address-error-form-ar,
+  .address-city-error-form-ar,
+  .address-country-error-form-ar,
+  .address-dayTelephone-error-form-ar,
+  .address-province-error-form-ar,
+  .address-zipCode-error-form-ar,
+  .address-email-error-form-ar {
+    font-family: $fontJannaLTBold !important
+  }
+  .address-firstName-error,
+  .address-lastName-error,
+  .address-zipCode-error,
+  .address-address-error,
+  .address-city-error,
+  .address-country-error,
+  .address-province-error,
+  .address-email-error,
+  .address-dayTelephone-error,
+  .card-cardnum-error,
+  .card-month-error,
+  .card-year-error {
+    font-family: $fontAcme;
+    color: $vo-color;
+  }
+  .address-firstName-error-ar,
+  .address-lastName-error-ar,
+  .address-zipCode-error-ar,
+  .address-address-error-ar,
+  .address-city-error-ar,
+  .address-country-error-ar,
+  .address-province-error-ar,
+  .address-email-error-ar,
+  .address-dayTelephone-error-ar,
+  .card-cardnum-error-ar,
+  .card-month-error-ar,
+  .card-year-error-ar {
+    font-family: $fontJannaLTBold;
+    color: $vo-color;
+  }
+  .address-container select,
+  .address-container-ar select {
+    width: 100px;
+  }
+  #month-year-select {
+    width: 250px
+  }
+  .address-container select {
+    font-family: $fontAcme
+  }
+  .address-container-ar select {
+    font-family: $fontJannaLTBold
+  }

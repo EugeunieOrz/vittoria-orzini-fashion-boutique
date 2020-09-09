@@ -1,0 +1,127 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AudreyMedium.scss';
+@import 'styles/Philosopher.scss';
+@import 'styles/JannaLTBold.scss';
+#client-service-header,
+#client-service-faq p {
+  font-family: $fontAudreyMedium !important;
+  font-size: 1.1em;
+  color: $text-color
+}
+#client-service-welcome-txt p {
+  font-family: $fontPhilosopher;
+  font-size: 1.1em;
+  color: $text-color
+}
+#client-service-header-ar,
+#client-service-welcome-txt-ar p,
+#client-service-faq-ar p {
+  color: $text-color;
+  font-family: $fontJannaLTBold !important;
+  font-size: 1.1em;
+}
+#client-service-contacts-ar .list-group-item,
+#client-service-contacts .list-group-item {
+  background: inherit;
+  border: none
+}
+#returns-form-link,
+#returns-form-link-ar {
+  text-decoration: underline;
+}
+#returns-form-link {
+  cursor: pointer;
+  color: $text-color;
+  font-family: $fontPhilosopher;
+  font-size: 1.1em
+}
+#returns-form-link-ar {
+  cursor: pointer;
+  color: $text-color;
+  font-family: $fontJannaLTBold;
+  font-size: 1em
+}
+#client-service-contacts-ar .list-group-item a {
+  color: $navlink-grey-color;
+  text-decoration: none;
+  font-family: $fontJannaLTBold;
+  font-size: 1.1em
+}
+#client-service-contacts .list-group-item a {
+  color: $navlink-grey-color;
+  text-decoration: none;
+  font-family: $fontPhilosopher;
+  font-size: 1.1em
+}
+.client-service-tabs .nav-link {
+  text-decoration: underline;
+  color: $navlink-grey-color;
+  font-family: $fontAudreyMedium
+}
+.client-service-tabs-ar .nav-link {
+  text-decoration: underline;
+  color: $navlink-grey-color;
+  font-family: $fontJannaLTBold
+}
+.client-service-tabs-ar .nav-link.active,
+.client-service-tabs .nav-link.active {
+  background: inherit;
+  text-decoration: none;
+  color: $text-color !important;
+}
+.client-service-tabs .nav-link.active,
+.client-service-tabs .nav-link:hover,
+.client-service-tabs-ar .nav-link.active,
+.client-service-tabs-ar .nav-link:hover {
+  border-color: transparent;
+}
+.q-section-title,
+.q-section-title-ar {
+  text-transform: uppercase;
+  font-size: 1.1em;
+  color: $text-color
+}
+.q-section-title {
+  font-family: $fontAudreyMedium;
+}
+.q-section-title-ar {
+  font-family: $fontJannaLTBold;
+}
+.client-service-card,
+.cs-card-header {
+  background-color: inherit
+}
+.cs-card-header {
+  cursor: pointer
+}
+.q-link,
+.q-link-ar {
+  color: $text-color;
+  text-transform: uppercase;
+}
+.q-link {
+  font-family: $fontAudreyMedium;
+  font-size: .9em;
+}
+.q-link-ar {
+  font-family: $fontJannaLTBold;
+  font-size: 1.1em;
+}
+.cs-card-content {
+  font-family: $fontPhilosopher;
+  color: $navlink-grey-color;
+  font-size: 1.1em
+}
+.cs-card-content-ar {
+  font-family: $fontJannaLTBold;
+  color: $navlink-grey-color;
+  font-size: 1em
+}
+.cs-card-content a,
+.cs-card-content-ar a {
+  color: $text-color
+}

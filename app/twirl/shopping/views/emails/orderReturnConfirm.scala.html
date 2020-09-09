@@ -1,0 +1,30 @@
+@import models.core.User
+@import models.core.Order
+@(user: User, order: Order)(implicit messages: MessagesApi, lang: Lang)
+
+<html>
+    <body>
+      <div style="font-family:Arial;color:#565d47;font-size:1.1em;font-weight:700">
+        <p>@messages(
+          "return.order.confirmation.msg1",
+          user.title.getOrElse(""),
+          user.firstName.getOrElse("Customer"))(lang)</p>
+        <p>@messages("return.order.confirmation.msg2")(lang)</p>
+        <p>@messages("return.order.confirmation.msg3")(lang)</p>
+        <p>@messages("checkout.email.order.confirmation.msg4", order.id.stringify)(lang)</p>
+        <p>@messages("checkout.email.order.confirmation.msg5", order.dateTime)(lang)</p>
+        <ul>
+          @for(item <- order.shoppingBag.addedItems) {
+            <li>@messages("checkout.email.order.confirmation.msg8", item.id.stringify)(lang)</li>
+            <li>@messages("checkout.email.order.confirmation.msg9", item.name)(lang)</li>
+            <li>@messages("checkout.email.order.confirmation.msg10", item.description)(lang)</li>
+            @for(s <- item.size) {
+              <p>@messages("checkout.email.order.confirmation.msg11", s.quantity, s.number)(lang)</p>
+            }
+            <li>@messages("checkout.email.order.confirmation.msg12", item.price)(lang)</li>
+            <p>@messages("checkout.email.order.confirmation.msg13", item.total)(lang)</p>
+          }
+        </ul>
+      </div>
+    </body>
+</html>

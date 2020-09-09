@@ -1,0 +1,169 @@
+##########
+# Emails
+##########
+
+email.from = Vittoria Orzini <vittoriaorzini@gmail.com>
+
+##########
+# DEFAULT
+##########
+
+error.email = Valid email required
+error.required = This field is required
+error.boolean = Must be true or false
+
+request.ok = The request was successfully processed
+request.not.found = The data couldn''t be found
+request.service.unavailable = The service is temporary unavailable
+invalid.form = The form contains invalid data
+director.not.found = Director for the given ID could not be found.
+customer.not.found = Customer for the given ID could not be found.
+user.not.found = User for the given ID could not be found.
+
+##########
+# AUTH
+##########
+
+auth.signed.in = Successfully signed in!
+auth.signed.out = Successfully signed out!
+auth.invalid.credentials = Invalid credentials!
+auth.forbidden = You don''t have permission to access this endpoint!
+auth.unauthorized = You don''t have permission to access this endpoint!
+auth.email.not.found = We didn''t found your email in our records.
+
+auth.sign.up.email.sent = You''re almost done! We sent an activation mail to {0}. Please follow the instructions in the email to activate your account. If it doesn''t arrive, check your spam folder, or try to log in again to send another activation mail.
+auth.invalid.reset.link = The link isn''t valid anymore! Please request a new link to reset your password.
+auth.valid.reset.link = The link is valid! You are now able to reset the password.
+auth.reset.email.sent = We've sent an email. Click the link in the email to reset your password. If you don''t see the email, check other places it might be, like your junk, spam, social, or other folders.
+auth.password.reset = We have reset your password. You can now sign in with your credentials.
+auth.email.account.locked = We''ve locked your Account for security reasons.
+auth.email.login.attempt.failed = Login to your Account failed. Please try again.
+
+##########
+# AUTH/Emails
+##########
+
+# Sign Up
+auth.email.sign.up.subject = Benvenuto
+auth.email.sign.up.hello = Gentile {0},
+auth.email.sign.up.html.text = Grazie per esservi registrati presso la Boutique Vittoria Orzini.
+auth.email.sign.up.txt.text = Grazie per esservi registrati presso la Boutique Vittoria Orzini.
+
+# Already Signed Up
+auth.email.already.in.use = You are already registered.
+auth.email.already.in.use.of.customer.account = You have a customer account with this email.
+auth.email.already.in.use.of.admin.account = You have an administrator account with this email.
+auth.email.already.signed.up.subject = Benvenuto
+auth.email.already.signed.up.hello = Gentile {0} {1},
+auth.email.already.signed.up.html.text = Avete già un account registrato. Seguite <a href="{0}" style="color:#c08e92">questo link</a> per accedere al vostro account.
+auth.email.already.signed.up.txt.text = Avete già un account registrato. Seguite il link per accedere al vostro account: {0}
+
+# Reset Password
+auth.email.reset.password.subject = Resetta la password
+auth.email.reset.password.hello = Buongiorno {0},
+auth.email.reset.password.html.text = Si prega di seguire <a href="{0}" style="color:#c08e92">questo link</a> per resettare la password.
+auth.email.reset.password.txt.text = Segui il link per resettare la tua password: {0}
+
+# Login Attempts
+auth.email.login.attempts.subject = Tentativo di accesso
+auth.email.login.attempt.failed = If you fail to login, please reset your password.
+auth.email.login.attempts.html.text = We''ve noticed a suspicious activity on your Account.
+auth.email.login.attempts.txt.text = We''ve noticed a suspicious activity on your Account.
+auth.email.account.locked.html.text = We''ve locked your Account for security reasons.
+auth.email.account.locked.txt.text = We''ve locked your Account for security reasons.
+
+##########
+# ACCOUNT
+##########
+
+account.address.deleted = The address has been deleted from your address book.
+account.address.index.invalid = The address for the given index has not been found.
+account.card.deleted = The card was deleted successfully from your cardwallet.
+account.cardwallet.updated = Your cardwallet has been updated successfully.
+account.details.updated = Your details have been successfully updated.
+account.address.saved = The address was successfully saved to your address book.
+account.card.index.invalid = The card for the given index was not found.
+account.details.invalid = The form contains invalid data.
+account.invalid.password = The passwords do not match.
+account.deleted.successfully = Your account was removed from our records.
+account.notifications.updated = Your notifications have been updated successfully.
+account.email.newsletter.subject = Your Weekly Style News
+account.email.newsletter.unsubscribe = Unsubscribe
+
+############
+# SHOPPING
+############
+
+shopping.bag.edited = Some items in your shopping bag are not available.
+shopping.item.removed = The item was successfully removed from shopping bag.
+shopping.items.removed = The items were successfully removed from shopping bag
+shopping.item.out.of.stock = This item is sold out.
+shopping.item.not.available = This item isn''t available.
+shopping.bag.not.available = This shopping bag isn''t available.
+shopping.last.item.in.stock = This is the last item in stock.
+shopping.item.added.successfully = The item was successfully added to your shopping bag.
+shopping.item.saved = The item was successfully changed in your shopping bag.
+shopping.order.not.found = Order not found.
+shopping.order.returned = Order has already been returned to the customer.
+shopping.order.status.updated = The Order Status was updated.
+shopping.checkout.failed = The transaction was declined.
+
+# WISHLIST
+wishlist.item.added.successfully = The item was successfully added to your wishlist.
+wishlist.item.already.added = This item had already been added to your wishlist.
+wishlist.item.could.not.be.added = You can add no more than 50 items to your wishlist.
+wishlist.not.found = The wishlist for the given ID could not be found.
+wishlist.last.item.remained = The item in your wishlist is the last item remained in stock.
+wishlist.one.more.item.in.stock = One more item of the selected size remained in stock.
+wishlist.item.available = The selected item is available for purchase.
+wishlist.item.removed = The item was successfully removed from your Wish List.
+
+# CHECKOUT
+checkout.card.decryption.failed = Please update your credit card details.
+checkout.items.purchased = The purchased items were successfully added to your orders.
+checkout.email.order.confirmation.subject = Confirmation of Your Order
+checkout.email.order.confirmation.subject = Conferma del vostro ordine
+checkout.email.order.confirmation.msg1 = Gentile {0},
+checkout.email.order.confirmation.msg2 = Grazie per aver fatto acquisti presso la Boutique e l''Online Store Vittoria Orzini.
+checkout.email.order.confirmation.msg3 = Abbiamo ricevuto il seguente ordine:
+checkout.email.order.confirmation.msg4 = Numero d''ordine: {0}
+checkout.email.order.confirmation.msg5 = Data dell''ordine: {0}
+checkout.email.order.confirmation.msg6 = Spedire a:\n {0}\n {1}\n {2}\n {3}\n {4}\n {5}\n
+checkout.email.order.confirmation.msg7 = Avete acquistato:
+checkout.email.order.confirmation.msg8 = ID prodotto: {0}
+checkout.email.order.confirmation.msg9 = Nome: {0}
+checkout.email.order.confirmation.msg10 = Descrizione: {0}
+checkout.email.order.confirmation.msg11 = Quantità: {0} of {1}
+checkout.email.order.confirmation.msg12 = Prezzo Unitario: {0}
+checkout.email.order.confirmation.msg13 = Totale: {0}
+
+# Transactions
+transaction.not.found = Transaction could not be found by the given order id.
+refund.transaction.approved = Refund Transaction was approved.
+refund.transaction.declined = Refund Transaction was declined. Please try again later.
+void.transaction.approved = Void transaction was approved.
+void.transaction.declined = Void transaction was declined. Please try again later.
+transaction.was.settled = The transaction has been successfully settled.
+transaction.not.settled = The transaction has not been settled yet.
+
+# Newsletter Preferences
+newsletter.updated = Your newsletter preferences were successfully updated.
+newsletter.unsubscribed = Your newsletter subscription was cancelled.
+newsletter.id.not.valid = The unsubscribe link is not valid anymore.
+newsletter.unsubscribe.valid.link = The unsubscribe link is valid.
+newsletter.unsubscribe.link.html.text = <a href="{0}" style="color:#c08e92">Cancella l''iscrizione</a>
+newsletter.unsubscribe.link.txt.text = Cancella l''iscrizione: {0}
+
+# Return Order Emails
+return.order.confirmation.subject = Conferma dell''Ordine di Reso
+return.order.confirmation.msg1 = Gentile {0} {1},
+return.order.confirmation.msg2 = La vostra transazione di rimborso è stata elaborata con successo.
+return.order.confirmation.msg3 = Avete richiesto la restituzione del seguente ordine:
+return.order.confirmation.msg4 = Avete richiesto il rimborso parziale del seguente ordine:
+return.order.confirmation.msg5 =  L'importo del rimborso richiesto è {0}
+return.order.confirmation.subject = Confirmation of Return Order
+
+# Newsletter Subscription Emails
+newsletter.fashion = Highlights della moda della sfilata di moda di Vittoria Orzini
+newsletter.fineJewelry = Gioielli di alta gioielleria Highlights dalla Boutique Vittoria Orzini
+newsletter.homeCollection = Scopri la nostra collezione Home

@@ -1,0 +1,6 @@
+@font-face {
+ font-family:Acme;
+ src:local("Acme"),
+ url(../static/fonts/Acme.woff2) format("woff2")
+}
+$fontAcme: Acme;

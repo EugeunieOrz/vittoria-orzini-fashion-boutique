@@ -1,0 +1,351 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/Acme.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/AudreyMedium.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+#checkout-empty-btn,
+#checkout-empty-btn-ar {
+  background: transparent!important;
+  border: .15em solid $navlink-grey-color !important;
+  border-radius: 0;
+  color: $gradient-border-color;
+  box-shadow: none !important;
+  width: 200px
+}
+#checkout-empty-btn {
+  font-family: $fontAdamCGPro;
+}
+#checkout-empty-btn-ar {
+  font-family: $fontKhebratMusamimRegular;
+}
+#checkout-empty p {
+  font-family: $fontAudreyMedium;
+  font-size: 1.1em
+}
+#checkout-empty-ar p {
+  font-family: $fontJannaLTBold;
+  font-size: 1.1em
+}
+.checkout-name,
+.checkout-address,
+.checkout-name-on-card,
+.payment-details-title,
+.country-tip,
+.shipping-address-title,
+.required-fields-msg,
+#checkout-title-name,
+#checkout-title-email,
+#checkout-pref-card,
+#checkout-card-name,
+#checkout-card-num,
+#checkout-exp-date {
+  font-family: $fontAcme;
+  color: $text-color
+}
+.checkout-name-ar,
+.checkout-address-ar,
+.checkout-name-on-card-ar,
+.payment-details-title-ar,
+.country-tip-ar,
+.shipping-address-title-ar,
+.required-fields-msg-ar,
+#checkout-title-name-ar,
+#checkout-title-email-ar,
+#checkout-pref-card-ar,
+#checkout-exp-date-ar {
+  font-family: $fontJannaLTBold;
+  color: $text-color
+}
+.payment-details-title,
+.payment-details-title-ar,
+.shipping-address-title-ar,
+.shipping-address-title {
+  border-top: .1em solid $navlink-grey-color;
+  border-bottom: .1em solid $navlink-grey-color;
+  border-image: linear-gradient(90deg, transparent, $navlink-grey-color, transparent);
+  border-image-slice: 1
+}
+.checkout-edit-card-btn,
+.checkout-edit-address-btn,
+.checkout-edit-card-btn-ar,
+.checkout-edit-address-btn-ar  {
+  height: 40px;
+  width: 120px;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0;
+  border: .15em solid $gradient-border-color !important;
+  color: $navlink-grey-color!important;
+}
+.checkout-edit-card-btn,
+.checkout-edit-address-btn {
+  font-family: $fontAdamCGPro
+}
+.checkout-edit-card-btn-ar,
+.checkout-edit-address-btn-ar {
+  font-family: $fontKhebratMusamimRegular
+}
+.checkout-add-new-card-btn,
+.checkout-add-new-address-btn,
+.checkout-add-new-card-btn-ar,
+.checkout-add-new-address-btn-ar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0;
+  background-color: $gradient-border-color !important;
+  color: $navlink-grey-color !important;
+  border: none;
+}
+.checkout-add-new-card-btn,
+.checkout-add-new-address-btn {
+  font-family: $fontAdamCGPro
+}
+.checkout-add-new-card-btn-ar,
+.checkout-add-new-address-btn-ar {
+  font-family: $fontKhebratMusamimRegular
+}
+.checkout-firstName-error,
+.checkout-lastName-error,
+.checkout-email-error,
+.checkout-address-error,
+.checkout-zipCode-error,
+.checkout-city-error,
+.checkout-country-error,
+.checkout-province-error,
+.checkout-cardNumber-error,
+.checkout-month-error,
+.checkout-year-error,
+.checkout-code-error,
+.checkout-name-error {
+  font-family: $fontAcme;
+  color: $vo-color;
+}
+.checkout-firstName-error-ar,
+.checkout-lastName-error-ar,
+.checkout-email-error-ar,
+.checkout-address-error-ar,
+.checkout-zipCode-error-ar,
+.checkout-city-error-ar,
+.checkout-country-error-ar,
+.checkout-province-error-ar,
+.checkout-cardNumber-error-ar,
+.checkout-month-error-ar,
+.checkout-year-error-ar,
+.checkout-code-error-ar,
+.checkout-name-error-ar {
+  font-family: $fontJannaLTBold;
+  color: $vo-color;
+}
+.checkout-firstName-error-form,
+.checkout-firstName-form,
+.checkout-lastName-error-form,
+.checkout-lastName-form,
+.checkout-email-error-form,
+.checkout-email-form,
+.checkout-additional-form,
+.checkout-address-error-form,
+.checkout-address-form,
+.checkout-zipCode-error-form,
+.checkout-zipCode-form,
+.checkout-city-error-form,
+.checkout-city-form,
+.checkout-country-error-form,
+.checkout-country-form,
+.checkout-province-error-form,
+.checkout-province-form,
+.checkout-telephone-form,
+.checkout-cardNumber-error-form,
+.checkout-cardNumber-form,
+.checkout-code-error-form,
+.checkout-code-form,
+.checkout-name-error-form,
+.checkout-name-form,
+.checkout-firstName-error-form-ar,
+.checkout-firstName-form-ar,
+.checkout-lastName-error-form-ar,
+.checkout-lastName-form-ar,
+.checkout-email-error-form-ar,
+.checkout-email-form-ar,
+.checkout-additional-form-ar,
+.checkout-address-error-form-ar,
+.checkout-address-form-ar,
+.checkout-zipCode-error-form-ar,
+.checkout-zipCode-form-ar,
+.checkout-city-error-form-ar,
+.checkout-city-form-ar,
+.checkout-country-error-form-ar,
+.checkout-country-form-ar,
+.checkout-province-error-form-ar,
+.checkout-province-form-ar,
+.checkout-telephone-form-ar,
+.checkout-cardNumber-error-form-ar,
+.checkout-cardNumber-form-ar,
+.checkout-code-error-form-ar,
+.checkout-code-form-ar,
+.checkout-name-error-form-ar,
+.checkout-name-form-ar {
+  box-shadow: none !important;
+  background: transparent !important;
+  color: $text-color !important
+}
+.checkout-firstName-error-form-ar,
+.checkout-firstName-form-ar,
+.checkout-lastName-error-form-ar,
+.checkout-lastName-form-ar,
+.checkout-email-error-form-ar,
+.checkout-email-form-ar,
+.checkout-additional-form-ar,
+.checkout-address-error-form-ar,
+.checkout-address-form-ar,
+.checkout-zipCode-error-form-ar,
+.checkout-zipCode-form-ar,
+.checkout-city-error-form-ar,
+.checkout-city-form-ar,
+.checkout-country-error-form-ar,
+.checkout-country-form-ar,
+.checkout-province-error-form-ar,
+.checkout-province-form-ar,
+.checkout-telephone-form-ar,
+.checkout-cardNumber-error-form-ar,
+.checkout-cardNumber-form-ar,
+.checkout-code-error-form-ar,
+.checkout-code-form-ar,
+.checkout-name-error-form-ar,
+.checkout-name-form-ar {
+  font-family: $fontJannaLTBold !important
+}
+#checkout-month-year-form,
+#checkout-month-year-form-ar {
+  width: 250px
+}
+#checkout-month-year-form select ,
+#checkout-month-year-form-ar select {
+  width: 100px;
+}
+#checkout-month-year-form select {
+  font-family: $fontAcme;
+}
+#checkout-month-year-form-ar select {
+  font-family: $fontJannaLTBold;
+}
+.checkout-pending-it-btn {
+  width: 250px
+}
+.checkout-ar-btn,
+.checkout-pending-ar-btn {
+  width: 200px
+}
+.checkout-pending-btn,
+.checkout-btn {
+  width: 170px
+}
+.checkout-pending-it-btn,
+.checkout-pending-btn,
+.checkout-btn,
+.checkout-ar-btn,
+.checkout-pending-ar-btn {
+  background: $gradient-border-color !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  border: 0.15em solid $gradient-border-color !important;
+  color: $text-color !important
+}
+.checkout-pending-it-btn,
+.checkout-pending-btn,
+.checkout-btn {
+  font-family: $fontAcme;
+}
+.checkout-ar-btn,
+.checkout-pending-ar-btn {
+  font-family: $fontKhebratMusamimRegular
+}
+.checkout-btn:enabled,
+.checkout-pending-btn:enabled,
+.checkout-pending-it-btn:enabled,
+.checkout-ar-btn:enabled,
+.checkout-pending-ar-btn:enabled {
+  cursor: $cursorRose3
+}
+.checkout-btn:disabled,
+.checkout-pending-btn:disabled,
+.checkout-pending-it-btn:disabled,
+.checkout-ar-btn:disabled,
+.checkout-pending-ar-btn:disabled {
+  cursor: $cursorClose3
+}
+.checkout-pending-it-btn:hover,
+.checkout-pending-it-btn:focus,
+.checkout-pending-it-btn:active,
+.checkout-pending-btn:hover,
+.checkout-pending-btn:focus,
+.checkout-pending-btn:active,
+.checkout-btn:hover,
+.checkout-btn:focus,
+.checkout-btn:active,
+.checkout-ar-btn:hover,
+.checkout-pending-ar-btn:hover,
+.checkout-ar-btn:focus,
+.checkout-pending-ar-btn:focus,
+.checkout-ar-btn:active,
+.checkout-pending-ar-btn:active {
+  background: transparent !important;
+  border-color: $gradient-border-color !important;
+  color: $text-color !important;
+}
+@media only screen and (min-width: 992px) {
+  .checkout-firstName-error-form,
+  .checkout-firstName-form,
+  .checkout-lastName-error-form,
+  .checkout-lastName-form,
+  .checkout-email-error-form,
+  .checkout-email-form,
+  .checkout-additional-form,
+  .checkout-address-error-form,
+  .checkout-address-form,
+  .checkout-zipCode-error-form,
+  .checkout-zipCode-form,
+  .checkout-city-error-form,
+  .checkout-city-form,
+  .checkout-country-error-form,
+  .checkout-country-form,
+  .checkout-province-error-form,
+  .checkout-province-form,
+  .checkout-telephone-form,
+  .checkout-cardNumber-error-form,
+  .checkout-cardNumber-form,
+  .checkout-code-error-form,
+  .checkout-code-form,
+  .checkout-name-error-form,
+  .checkout-name-form,
+  .checkout-firstName-error-form-ar,
+  .checkout-firstName-form-ar,
+  .checkout-lastName-error-form-ar,
+  .checkout-lastName-form-ar,
+  .checkout-email-error-form-ar,
+  .checkout-email-form-ar,
+  .checkout-additional-form-ar,
+  .checkout-address-error-form-ar,
+  .checkout-address-form-ar,
+  .checkout-zipCode-error-form-ar,
+  .checkout-zipCode-form-ar,
+  .checkout-city-error-form-ar,
+  .checkout-city-form-ar,
+  .checkout-country-error-form-ar,
+  .checkout-country-form-ar,
+  .checkout-province-error-form-ar,
+  .checkout-province-form-ar,
+  .checkout-telephone-form-ar,
+  .checkout-cardNumber-error-form-ar,
+  .checkout-cardNumber-form-ar,
+  .checkout-code-error-form-ar,
+  .checkout-code-form-ar,
+  .checkout-name-error-form-ar,
+  .checkout-name-form-ar {
+    width: 320px !important;
+  }
+}

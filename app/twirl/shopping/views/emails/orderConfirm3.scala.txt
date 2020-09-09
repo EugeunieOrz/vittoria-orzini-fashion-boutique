@@ -1,0 +1,31 @@
+@(
+user: _root_.models.core.User,
+order: _root_.models.core.Order,
+data: _root_.models.core.ShippingAddressAndPaymentDetails)(implicit messages: MessagesApi, lang: Lang)
+@messages(
+"checkout.email.order.confirmation.msg1",
+user.title.getOrElse(""),
+user.firstName.getOrElse("Customer"))(lang)
+
+@messages("checkout.email.order.confirmation.msg2")(lang)
+@messages("checkout.email.order.confirmation.msg3")(lang)
+@messages("checkout.email.order.confirmation.msg4", order.id.stringify)(lang)
+@messages("checkout.email.order.confirmation.msg5", order.dateTime)(lang)
+@messages(
+  "checkout.email.order.confirmation.msg6",
+  data.firstName + " " + data.lastName,
+  data.address, data.zipCode, data.city + ", " + data.country + ", " + data.province,
+  data.telephone, data.email)(lang)
+
+@messages("checkout.email.order.confirmation.msg7")(lang)<ul>
+  @for(item <- order.shoppingBag.addedItems) {
+    <li>@messages("checkout.email.order.confirmation.msg8", item.id.stringify)(lang)</li>
+    <li>@messages("checkout.email.order.confirmation.msg9", item.name)(lang)</li>
+    <li>@messages("checkout.email.order.confirmation.msg10", item.description)(lang)</li>
+    @for(s <- item.size) {
+      <p>@messages("checkout.email.order.confirmation.msg11", s.quantity, s.number)(lang)</p>
+    }
+    <li>@messages("checkout.email.order.confirmation.msg12", item.price)(lang)</li>
+    <p>@messages("checkout.email.order.confirmation.msg13", item.total)(lang)</p>
+  }
+</ul>

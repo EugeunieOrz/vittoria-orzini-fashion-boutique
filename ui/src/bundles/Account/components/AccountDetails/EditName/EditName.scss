@@ -1,0 +1,222 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/Acme.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+@media only screen and (min-width:240px) {
+  #editname-inner {
+    background-image:$backgroundImage;
+    background-image:$backgroundImage1;
+  }
+  #editname-inner-ar {
+    background-image:$backgroundImageReverse;
+    background-image:$backgroundImageReverse1;
+  }
+}
+@media only screen and (max-width: 319px) {
+  #editname-container select,
+  #editname-container-ar select {
+    width: 190px;
+  }
+}
+@media only screen and (min-width: 320px) {
+  #editname-container select,
+  #editname-container-ar select {
+    width: 250px;
+  }
+}
+@media only screen and (min-width: 576px) {
+  #editname-container select,
+  #editname-container-ar select {
+    width: 300px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #editname-inner {
+    background-image: linear-gradient(to right, transparent, #ffd8cc, #fdefc4 65%);
+    background-image: -webkit-gradient(linear, left right, from(transparent), colorstop(#ffd8cc) to(#fdefc4 65%));
+  }
+  #editname-inner-ar {
+    background-image: linear-gradient(to left, transparent, #ffd8cc, #fdefc4 65%);
+    background-image: -webkit-gradient(linear, right left, from(transparent), colorstop(#ffd8cc) to(#fdefc4 65%));
+  }
+}
+@media only screen and (min-width:992px) {
+  #editname-inner {
+    background-image:$backgroundImage2;
+    background-image:$backgroundImage3;
+  }
+  #editname-inner-ar {
+    background-image:$backgroundImageReverse2;
+    background-image:$backgroundImageReverse3;
+  }
+  #editname-container select,
+  #editname-container-ar select {
+    width: 340px;
+  }
+}
+#editname-close-btn {
+  cursor: pointer;
+}
+#editname-container,
+#editname-container-ar {
+ position:fixed;
+ overflow-y:scroll;
+ overflow-x:hidden;
+ scrollbar-width:thin;
+ top:0;
+ left:0;
+ height:100vh;
+ width:100vw;
+ display:block;
+ -webkit-animation:fadeInFromNone .5s ease-out;
+         animation:fadeInFromNone .5s ease-out;
+ z-index:10
+}
+@-webkit-keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+@keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+#editname-title,
+#editname-title-ar {
+  color:$text-color;
+  border-bottom:.1em solid $text-color;
+  -webkit-border-image:$centerBorderImage1;
+       -o-border-image:$centerBorderImage2;
+          border-image:$centerBorderImage2;
+  border-image-slice:1;
+}
+#editname-title {
+ font-family:$fontAdamCGPro;
+ font-size:1em;
+}
+#editname-title-ar {
+ font-family:$fontKhebratMusamimRegular;
+ font-size:1.1em;
+}
+.editname-title-error,
+.editname-fname-error,
+.editname-lname-error,
+.editname-title-error-ar,
+.editname-fname-error-ar,
+.editname-lname-error-ar {
+  color: $vo-color;
+}
+.editname-title-error,
+.editname-fname-error,
+.editname-lname-error {
+  font-family: $fontAcme;
+}
+.editname-title-error-ar,
+.editname-fname-error-ar,
+.editname-lname-error-ar {
+  font-family: $fontJannaLTBold;
+}
+.editname-firstName-error-form,
+.editname-firstName-form,
+.editname-lastName-error-form,
+.editname-lastName-form,
+.editname-firstName-error-form-ar,
+.editname-firstName-form-ar,
+.editname-lastName-error-form-ar,
+.editname-lastName-form-ar {
+  box-shadow: none !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  color: $text-color !important
+}
+.editname-firstName-error-form-ar,
+.editname-firstName-form-ar,
+.editname-lastName-error-form-ar,
+.editname-lastName-form-ar {
+  font-family: $fontJannaLTBold !important
+}
+#editname-pending-it-btn {
+  width: 250px
+}
+#editname-pending-ar-btn {
+  width: 200px
+}
+#editname-pending-btn,
+#editname-btn,
+#editname-btn-ar {
+  width: 170px
+}
+#editname-pending-ar-btn,
+#editname-pending-it-btn,
+#editname-pending-btn,
+#editname-btn,
+#editname-btn-ar {
+  background: $gradient-border-color !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  border: 0.15em solid $gradient-border-color;
+  color: $text-color;
+}
+#editname-pending-it-btn,
+#editname-pending-btn,
+#editname-btn {
+  font-family: $fontAcme
+}
+#editname-pending-ar-btn,
+#editname-btn-ar {
+  font-family: $fontKhebratMusamimRegular
+}
+#editname-btn:active,
+#editname-btn:focus,
+#editname-btn:hover,
+#editname-btn-ar:active,
+#editname-btn-ar:focus,
+#editname-btn-ar:hover {
+  background: transparent;
+  border-color: $gradient-border-color !important;
+  color: $text-color !important;
+}
+#editname-pending-ar-btn:enabled,
+#editname-pending-it-btn:enabled,
+#editname-pending-btn:enabled,
+#editname-btn:enabled,
+#editname-btn-ar:enabled {
+  cursor: $cursorRose5
+}
+#editname-pending-ar-btn:disabled,
+#editname-pending-it-btn:disabled,
+#editname-pending-btn:disabled,
+#editname-btn:disabled,
+#editname-btn-ar:disabled {
+  cursor: url('../../../../../static/icons/close.svg'), auto!important;
+}
+#editname-container select {
+  font-family: $fontAcme;
+}
+#editname-container-ar select {
+  font-family: $fontJannaLTBold;
+}

@@ -1,0 +1,76 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Serve index page from public directory
+GET     /                           controllers.FrontendController.index()
+
+# An example route (Prefix all API routes with apiPrefix defined in application.conf)
+
+# Account routes
+POST    /api/account/edit-birthdate/:userID           controllers.account.DetailsController.updateDetails(userID: reactivemongo.bson.BSONObjectID)
+POST    /api/account/edit-name/:userID                controllers.account.DetailsController.editName(userID: reactivemongo.bson.BSONObjectID)
+POST    /api/account/edit-email/:userID               controllers.account.DetailsController.editEmail(userID: reactivemongo.bson.BSONObjectID)
+POST    /api/account/change-password/:userID          controllers.account.DetailsController.changePassword(userID: reactivemongo.bson.BSONObjectID)
+POST    /api/account/update-newsletter/:userID        controllers.account.DetailsController.updateNewsletter(userID: reactivemongo.bson.BSONObjectID)
+POST    /api/account/add-new-address/:userID          controllers.account.DetailsController.addNewAddress(userID: reactivemongo.bson.BSONObjectID)
+POST    /api/account/edit-address/:userID/:index      controllers.account.DetailsController.editAddress(userID: reactivemongo.bson.BSONObjectID, index: Int)
+POST    /api/account/remove-address/:userID/:indexToRemoveAddress  controllers.account.DetailsController.removeAddress(userID: reactivemongo.bson.BSONObjectID, indexToRemoveAddress: Int)
+POST    /api/account/add-new-card/:userID/:cardType                controllers.account.CardWalletController.addNewCard(userID: reactivemongo.bson.BSONObjectID, cardType: String)
+POST    /api/account/edit-card/:userID/:index/:cardType            controllers.account.CardWalletController.editCard(userID: reactivemongo.bson.BSONObjectID, index: Int, cardType: String)
+POST    /api/account/remove-card/:userID/:indexToRemoveCard        controllers.account.CardWalletController.removeCard(userID: reactivemongo.bson.BSONObjectID, indexToRemoveCard: Int)
+POST    /api/account/wishlist/product/added     controllers.account.WishlistController.addProductToWishList
+POST    /api/account/wishlist/check-last-item   controllers.account.WishlistController.checkForLastItem
+POST    /api/account/wishlist/last-item-alert   controllers.account.WishlistController.setLastItemAlert
+POST    /api/account/wishlist/product/removed   controllers.account.WishlistController.removeItemFromWishList
+POST    /api/account/wishlist/receive-last-item-alert controllers.account.WishlistController.receiveLastItemAlert
+POST    /api/account/remove-account/:userID           controllers.account.MyAccountController.removeAccount(userID: reactivemongo.bson.BSONObjectID)
+
+# Auth routes
+POST        /api/auth/sign-up                    controllers.auth.SignUpController.signUp
+POST        /api/auth/sign-in                    controllers.auth.SignInController.signIn
+POST        /api/auth/sign-up/shopping           controllers.auth.SignUpController.signUpToShop
+POST        /api/auth/sign-in/shopping           controllers.auth.SignInController.signInToShop
+POST        /api/auth/complete-signin            controllers.auth.SignInController.completeSignIn
+POST        /api/auth/check-email                controllers.auth.SignInController.checkEmail
+POST        /api/auth/create-account             controllers.auth.SignUpController.createAccount
+GET         /api/auth/sign-out                   controllers.auth.SignOutController.signOut
+GET         /api/auth/user                       controllers.auth.UserController.get
+POST        /api/auth/password/recovery          controllers.auth.PasswordController.recover
+GET         /api/auth/password/recovery/:token   controllers.auth.PasswordController.validate(token: java.util.UUID)
+POST        /api/auth/password/recovery/:token   controllers.auth.PasswordController.reset(token: java.util.UUID)
+POST        /api/auth/password/survey            controllers.auth.PasswordController.submitPasswordSurvey
+
+# Home page
+GET     /api/core/health                    controllers.core.HealthController.get
+
+# Newsletter
+GET     /api/newsletter                  controllers.newsletter.NewsletterController.sendNewsletter
+POST    /api/newsletter/subscription     controllers.newsletter.NewsletterController.subscribeToNewsletter
+GET     /api/newsletter/unsubscribe/:id  controllers.newsletter.NewsletterController.validate(id: java.util.UUID)
+POST    /api/newsletter/unsubscribe/:id  controllers.newsletter.NewsletterController.unsubscribeFromNewsletter(id: java.util.UUID)
+
+# Shopping
+GET     /api/shopping/products1                     controllers.shopping.ItemsController.get
+GET     /api/shopping/products2            controllers.shopping.ItemsController.getProducts
+POST    /api/shopping/product/added       controllers.shopping.ShoppingController.addProductToShoppingBag
+POST    /api/shopping/product/edit        controllers.shopping.ShoppingController.editProductInShoppingBag
+POST    /api/shopping/product/edit/qty    controllers.shopping.ShoppingController.editProductQtyInShoppingBag
+POST    /api/shopping/product/removed     controllers.shopping.ShoppingController.removeItemFromShoppingBag
+POST    /api/shopping/guest/product/added       controllers.shopping.GuestShoppingController.addProductToGuestShoppingBag
+# POST    /api/shopping/guest/first/product/added controllers.shopping.GuestShoppingController.addFirstProductToGuestShoppingBag
+POST    /api/shopping/guest/product/edit        controllers.shopping.GuestShoppingController.editProductInGuestShoppingBag
+POST    /api/shopping/guest/product/edit/qty    controllers.shopping.GuestShoppingController.editProductQtyInGuestShoppingBag
+POST    /api/shopping/guest/product/removed     controllers.shopping.GuestShoppingController.removeItemFromGuestShoppingBag
+POST    /api/shopping/product/checkout    controllers.shopping.CheckoutController.fillCheckoutData
+POST    /api/shopping/product/checkout-2  controllers.shopping.CheckoutController.fillCheckoutData2
+POST    /api/shopping/product/checkout-3  controllers.shopping.CheckoutController.fillCheckoutData3
+POST    /api/shopping/product/checkout-4  controllers.shopping.CheckoutController.fillCheckoutData4
+POST    /api/shopping/order-number        controllers.shopping.OrderController.followOrder
+POST    /api/shopping/return-form         controllers.shopping.OrderController.fillReturnForm
+POST    /api/shopping/return-product      controllers.shopping.OrderController.fillReturnProduct
+POST    /api/shopping/secured/return-form         controllers.shopping.OrderController.fillReturnForm2
+POST    /api/shopping/secured/return-product      controllers.shopping.OrderController.fillReturnProduct2
+
+# Serve static assets under public directory
+GET     /*file                      controllers.FrontendController.assetOrDefault(file)

@@ -1,0 +1,68 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/Acme.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+#add-item-to-wishlist-alert-container div {
+  border-radius: 0;
+}
+#add-item-to-wishlist-alert-container .modal-body {
+  background-image: $backgroundImage;
+  background-image: $backgroundImage1
+}
+.wishlist-modal .modal-dialog {
+  margin-top: 0px;
+  margin-left: 0px;
+  width: 100vw
+}
+#add-item-to-wishlist-alert-container .modal-content {
+  width: 100vw;
+}
+#add-item-to-w-msg {
+  font-family: $fontAcme
+}
+#add-item-to-w-msg-ar {
+  font-family: $fontJannaLTBold
+}
+.close-alert-btn {
+  cursor: pointer;
+}
+#view-wishlist-btn {
+  font-family: $fontAdamCGPro;
+  width: 200px
+}
+#view-wishlist-btn-ar {
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1.1em;
+  width: 150px
+}
+#view-wishlist-btn,
+#view-wishlist-btn-ar {
+  color: $gradient-border-color;
+  border: .15em solid $text-color;
+  border-radius: 0;
+  font-size: .9em;
+  box-shadow: none !important;
+  background: transparent !important
+}
+#view-wishlist-btn:focus,
+#view-wishlist-btn:active,
+#view-wishlist-btn-ar:focus,
+#view-wishlist-btn-ar:active {
+  box-shadow: none
+}
+@media only screen and (max-width: 600px) {
+  #item-image {
+    width: 80px;
+    height: 120px
+  }
+  #view-wishlist-btn {
+    font-size: .75em;
+    border: 0.2em solid $text-color;
+    width: 170px
+  }
+}

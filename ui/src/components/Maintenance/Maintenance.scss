@@ -1,0 +1,26 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/AudreyMedium.scss';
+@import 'styles/JannaLTBold.scss';
+#maintenance-container {
+  background-image:$backgroundImage;
+}
+#maintenance-title {
+  font-family: $fontAdamCGPro;
+  font-size: 1.4em;
+  color: $navlink-grey-color
+}
+#maintenance-txt {
+  font-family: $fontAudreyMedium;
+  font-size: 1.3em;
+  color: $navlink-grey-color
+}
+#maintenance-txt-ar {
+  font-family: $fontJannaLTBold;
+  font-size: 1.3em;
+  color: $navlink-grey-color
+}

@@ -1,0 +1,256 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/Acme.scss';
+@import 'styles/AudreyMedium.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+@import 'styles/Philosopher.scss';
+@media only screen and (min-width:240px) {
+  #minishoppingbag-container {
+    background-image:$backgroundImage;
+    background-image:$backgroundImage1;
+  }
+  #minishoppingbag-container-ar {
+    background-image:$backgroundImageReverse;
+    background-image:$backgroundImageReverse1;
+  }
+}
+@media only screen and (min-width: 576px) {
+  #minishoppingbag-container {
+    background-image: $backgroundImage4;
+    background-image: $backgroundImage5;
+  }
+  #minishoppingbag-container-ar {
+    background-image: $backgroundImageReverse4;
+    background-image: $backgroundImageReverse5;
+  }
+}
+@media only screen and (min-width:992px) {
+  #minishoppingbag-container {
+    background-image:$backgroundImage2;
+    background-image:$backgroundImage3;
+  }
+  #minishoppingbag-container-ar {
+    background-image:$backgroundImageReverse2;
+    background-image:$backgroundImageReverse3;
+  }
+}
+#minishoppingbag-container-ar,
+#minishoppingbag-container {
+ position:fixed;
+ overflow-y:scroll;
+ overflow-x:hidden;
+ scrollbar-width:thin;
+ top:0;
+ left:0;
+ height:100vh;
+ width:100vw;
+ display:block;
+ -webkit-animation:fadeInFromNone .5s ease-out;
+         animation:fadeInFromNone .5s ease-out;
+ z-index:10
+}
+@-webkit-keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+@keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+#close-btn {
+  background-image: $closeIconForHome;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer
+}
+#close-btn:hover {
+  background-image: $closeIconHoverForHome;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer
+}
+#minishoppingbag-title {
+ font-family:$fontAdamCGPro;
+ font-size:1em;
+ color:$text-color;
+ border-bottom:.1em solid $text-color;
+ -webkit-border-image:$borderImage1;
+ -webkit-border-image:$borderImage2;
+      -o-border-image:$borderImage3;
+         border-image:$borderImage4;
+         border-image:$borderImage5;
+ border-image-slice:1;
+}
+#minishoppingbag-title-ar {
+ font-family:$fontKhebratMusamimRegular;
+ font-size:1.1em;
+ color:$text-color;
+ border-bottom:.1em solid $text-color;
+ -webkit-border-image:$borderImageReverse1;
+ -webkit-border-image:$borderImageReverse2;
+      -o-border-image:$borderImageReverse3;
+         border-image:$borderImageReverse4;
+         border-image:$borderImageReverse5;
+ border-image-slice:1;
+}
+#remove-item-btn {
+  background-image: $closeIconForHome;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer
+}
+#remove-item-btn:hover {
+  background-image: $closeIconHoverForHome;
+  width: 24px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer
+}
+#minibag-empty-btn {
+  background: transparent;
+  color: $text-color;
+  border-radius: 0;
+  padding: 6px 20px;
+  font-family: $fontAdamCGPro;
+  border-color: $gradient-border-color;
+  border-width: .15em
+}
+#minibag-empty-btn-ar {
+  background: transparent;
+  color: $text-color;
+  border-radius: 0;
+  padding: 6px 20px;
+  font-family: $fontKhebratMusamimRegular;
+  border-color: $gradient-border-color;
+  border-width: .15em
+}
+#minibag-empty-btn:focus {
+  box-shadow: none
+}
+#minibag-empty-btn-ar:focus {
+  box-shadow: none
+}
+#minibag-empty p {
+  font-family: $fontAcme;
+  color: $text-color
+}
+#minibag-empty-ar p {
+  font-family: $fontJannaLTBold;
+  color: $text-color
+}
+#item-attributes p {
+  font-family: $fontPhilosopher;
+  color: $text-color
+}
+#item-attributes-ar p {
+  font-family: $fontJannaLTBold;
+  color: $text-color
+}
+.item-price {
+  color: $navlink-grey-color;
+  font-family: $fontAudreyMedium;
+}
+.item-price-ar {
+  color: $navlink-grey-color;
+  font-family: $fontKhebratMusamimRegular;
+}
+#item-subtotal {
+  font-family: $fontAudreyMedium;
+  color: $text-color
+}
+#item-subtotal-ar {
+  font-family: $fontJannaLTBold;
+  color: $text-color
+}
+.viewbag-btn {
+  background: transparent !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  width: 210px;
+  border: 0.15em solid $text-color;
+  color: $gradient-border-color;
+  font-family: $fontAcme;
+}
+.viewbag-btn-ar {
+  background: transparent !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  width: 210px;
+  border: 0.15em solid $text-color;
+  color: $gradient-border-color;
+  font-family: $fontJannaLTBold;
+}
+.checkout-btn {
+  background: transparent !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  width: 170px;
+  border: 0.15em solid $gradient-border-color;
+  color: $text-color;
+  font-family: $fontAcme;
+}
+.checkout-btn-ar {
+  background: transparent !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  width: 170px;
+  border: 0.15em solid $gradient-border-color;
+  color: $text-color;
+  font-family: $fontJannaLTBold;
+}
+.checkout-btn-ar:active,
+.checkout-btn-ar:focus,
+.checkout-btn-ar:hover,
+.checkout-btn:active,
+.checkout-btn:focus,
+.checkout-btn:hover {
+  background: transparent;
+  border-color: $gradient-border-color !important;
+  color: $text-color !important;
+}
+.viewbag-btn-ar:active,
+.viewbag-btn-ar:focus,
+.viewbag-btn-ar:hover,
+.viewbag-btn:active,
+.viewbag-btn:focus,
+.viewbag-btn:hover {
+  background: transparent;
+  border-color: $text-color !important;
+  color: $gradient-border-color !important;
+}

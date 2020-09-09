@@ -1,0 +1,106 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AudreyMedium.scss';
+.flex-fill {
+  flex:1;
+}
+.category {
+  border-color: $text-color !important
+}
+.category-title {
+  color: $text-color;
+  font-family: $fontAudreyMedium;
+  text-transform: uppercase;
+}
+.category-title:hover {
+  cursor: $cursorCalla2
+}
+.navbar a {
+	color: #000
+}
+@media only screen and (min-width: 240px) {
+  /* PORTRAIT:
+     LG Viewty KU990
+     Nokia 700
+     Nokia 2700
+     Nokia N95
+     Samsung Galaxy S3 Mini
+     Nokia 300
+  */
+  .category-title {
+    font-size: .6em;
+  }
+	.navbar-brand {
+	font-size: 2.7em !important;
+}
+}
+@media only screen and (min-width: 320px) {
+	/* PORTRAIT:
+	Apple iPhone 3, 4, 5
+	HTC Nexus One, Evo
+	LG Optimus
+	Nokia N900
+	Nokia Lumia 1020
+	Samsung Galaxy S, S2
+  LANDSCAPE:
+	Samsung Galaxy S3 Mini */
+  .category-title {
+    font-size: .85em;
+  }
+}
+@media only screen and (min-width: 400px) {
+	/* PORTRAIT:
+	Samsung Galaxy Note
+	Nexus 4
+	HTC One S
+	HTC One XL
+	HTC Sensation XL
+	HTC Velocity 4G
+	Motorola Droid3
+	Motorola Droid Razr
+	Motorola Razr HD 4G
+	Motorola Razr M 4G
+	Nokia 500
+	Samsung Galaxy Note 2
+	Samsung Galaxy S3
+	BlackBerry Bold 9900
+	BlackBerry 9520
+	BlackBerry Z10*/
+  .category-title {
+    font-size: 1em;
+  }
+}
+@media only screen and (min-width: 540px) {
+	/* LANDSCAPE:
+	HTC Desire
+	HTC Desire HD
+	HTC One V
+	LG Optimus 2X
+	Nexus S
+	Samsung Galaxy Ace 2
+	Samsung Galaxy S2
+	BlackBerry Z10*/
+	/* PORTRAIT:
+	HTC Evo 3D
+	Kindle Fire HD 7
+	Kindle Fire HD 8.9
+	Ainol Novo 7 Elf 2*/
+  .category-title {
+    font-size: 1.1em;
+  }
+}
+@media only screen and (min-width: 992px) {
+	.category-title {
+    font-size: 1.4em;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  /* Kindle Fire HD 8.9 - Portrait */
+	#searchbar input,
+.nav-link {
+	font-size: 1.1em
+}
+}

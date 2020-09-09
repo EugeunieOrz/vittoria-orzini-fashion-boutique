@@ -1,0 +1,118 @@
+[ {
+    "name": "Returns",
+    "questions": [
+      {
+        "name": "I lost my return label. How can I get a new one?",
+        "content": "someInfo"
+      },
+      {
+        "name": "Refunds",
+        "content": "someInfo"
+      },
+      {
+        "name": "Return Policy",
+        "content": "returnsPolicy"
+      },
+      {
+        "name": "Exchanges",
+        "content": "someInfo"
+      },
+      {
+        "name": "Where is my return?",
+        "content": "whereIsMyReturn"
+      }
+    ]
+  },
+  {
+    "name": "Payment",
+    "questions": [
+      {
+        "name": "Payment Method",
+        "content": "someInfo"
+      },
+      {
+        "name": "Payment Security",
+        "content": "someInfo"
+      },
+      {
+        "name": "Tax Information and Invoices",
+        "content": "someInfo"
+      }
+    ]
+  },
+  {
+    "name": "Shipping",
+    "questions": [
+      {
+        "name": "Pick up in Boutique",
+        "content": "someInfo"
+      },
+      {
+        "name": "Can I choose a delivery date/hour?",
+        "content": "someInfo"
+      },
+      {
+        "name": "Shipping restrictions",
+        "content": "someInfo"
+      },
+      {
+        "name": "Shipping times and costs",
+        "content": "someInfo"
+      },
+      {
+        "name": "Where is my order?",
+        "content": "whereIsMyOrder"
+      }
+    ]
+  },
+  {
+    "name": "Shopping",
+    "questions": [
+      {
+        "name": "How do promotional codes work?",
+        "content": "someInfo"
+      },
+      {
+        "name": "Order Status",
+        "content": "orderStatusQ"
+      },
+      {
+        "name": "Ordering on Vittoria Orzini Boutique",
+        "content": "someInfo"
+      },
+      {
+        "name": "Can I cancel my order?",
+        "content": "someInfo"
+      },
+      {
+        "name": "Client Service Opening Hours",
+        "content": "someInfo"
+      }
+    ]
+  },
+  {
+    "name": "My Account",
+    "questions": [
+      {
+        "name": "I cannot log into My Account. What should I do?",
+        "content": "logIntoMyAccount"
+      },
+      {
+        "name": "Newsletter",
+        "content": "someInfo"
+      },
+      {
+        "name": "Benefits of registering",
+        "content": "someInfo"
+      },
+      {
+        "name": "How can I delete or change the country of My Account?",
+        "content": "someInfo"
+      },
+      {
+        "name": "How can I unsubscribe from my newsletter?",
+        "content": "someInfo"
+      }
+    ]
+  }
+]

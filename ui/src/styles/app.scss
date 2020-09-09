@@ -1,0 +1,64 @@
+$text-color: #3c352f;
+$vo-color: #dc1331;
+$search-focus-color: #ec9163;
+$gradient-border-color: #f1976f;
+$background-right-color: #fdefc4;
+$logo-shadow-color: #bb8e86;
+$data-score-4: #02973b;
+$data-score-3: #0ba864;
+$data-score-2: #dbe247;
+$cursorCalla2: url('../../static/calla-30x39.png'),auto!important;
+$cursorCalla4: url('../../../../static/calla-30x39.png'),auto!important;
+$cursorRose2: url('../../static/rose-33.png'),auto!important;
+$cursorRose3: url('../../../static/rose-33.png'),auto!important;
+$cursorRose4: url('../../../../static/rose-33.png'),auto!important;
+$cursorRose5: url('../../../../../static/rose-33.png'),auto!important;
+$cursorClose2: url('../../static/icons/close.svg'), auto!important;
+$cursorClose3: url('../../../static/icons/close.svg'), auto!important;
+$cursorClose4: url('../../../../static/icons/close.svg'), auto!important;
+$backgroundImage: linear-gradient(to right, #ffd8cc 15%, #fdefc4);
+$backgroundImage1: -webkit-gradient(linear,left right, from(#ffd8cc 15%), to(#fdefc4));
+$backgroundImageReverse: linear-gradient(to left, #ffd8cc 15%, #fdefc4);
+$backgroundImageReverse1: -webkit-gradient(linear,right left, from(#ffd8cc 15%), to(#fdefc4));
+$backgroundImage2: linear-gradient(to right, transparent, #ffd8cc, #fdefc4);
+$backgroundImage3: -webkit-gradient(linear,left right,from(transparent), colorstop(#ffd8cc) to(#fdefc4));
+$backgroundImageReverse2: linear-gradient(to left, transparent, #ffd8cc, #fdefc4);
+$backgroundImageReverse3: -webkit-gradient(linear,right left,from(transparent), colorstop(#ffd8cc) to(#fdefc4));
+$backgroundImage4: linear-gradient(to right, transparent, #ffd8cc, #fdefc4 85%);
+$backgroundImage5:  -webkit-gradient(linear, left right, from(transparent), colorstop(#ffd8cc) to(#fdefc4 85%));
+$backgroundImageReverse4: linear-gradient(to left, transparent, #ffd8cc, #fdefc4 85%);
+$backgroundImageReverse5:  -webkit-gradient(linear, right left, from(transparent), colorstop(#ffd8cc) to(#fdefc4 85%));
+$backgroundImageDivider1: linear-gradient(to right, grey 15%, transparent);
+$backgroundImageDivider2: -webkit-gradient(linear, to right, from(#7f6f65 15%), to(transparent));
+$navlink-grey-color: #7f6f65;
+$searchIcon: url('../../static/icons/search.svg');
+$searchIconHover: url('../../static/icons/search_hover.svg');
+$closeIcon: url('../../static/icons/close.svg');
+$closeIconHover: url('../../static/icons/close_hover.svg');
+$closeIconForHome: url('../../../static/icons/close.svg');
+$closeIconHoverForHome: url('../../../static/icons/close_hover.svg');
+$closeNewslIcon: url('../../../static/icons/close.svg');
+$closeNewslIconHover: url('../../../static/icons/close_hover.svg');
+$borderImage1:-webkit-gradient(linear,left top, right top,from(#3c352f),to(transparent));
+$borderImage2: linear-gradient(90deg,#3c352f,transparent);
+$borderImage3: linear-gradient(90deg,#3c352f,transparent);
+$borderImage4: -webkit-gradient(linear,left top, right top,from(#3c352f),to(transparent));
+$borderImage5: linear-gradient(90deg,#3c352f,transparent);
+$borderImageReverse1:-webkit-gradient(linear,right top, left top,from(transparent),to(#3c352f));
+$borderImageReverse2: linear-gradient(90deg,transparent, #3c352f);
+$borderImageReverse3: linear-gradient(90deg,transparent, #3c352f);
+$borderImageReverse4: -webkit-gradient(linear,left top, right top,from(transparent),to(#3c352f));
+$borderImageReverse5: linear-gradient(90deg,transparent, #3c352f);
+$centerBorderImage1:-webkit-gradient(linear,left top, right top,from(transparent), colorstop(#3c352f) to(transparent));
+$centerBorderImage2: linear-gradient(90deg,transparent, #3c352f,transparent);
+
+body, html {
+  height: 100vh;
+  scrollbar-color:$gradient-border-color transparent;
+  scrollbar-width:thin;
+  overflow-x:hidden
+}
+::-moz-selection,
+::selection {
+  background: $gradient-border-color
+}

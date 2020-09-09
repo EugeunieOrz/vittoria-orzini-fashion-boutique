@@ -1,6 +1,0 @@
-# Routes
-# This file defines all module routes (Higher priority routes first)
-# ~~~~
-GET     /                      shopping.controllers.ShoppingController.get
-POST    /product/:productID    shopping.controllers.ShoppingController.passProductID(productID: reactivemongo.bson.BSONObjectID)
-GET     /product/selected      shopping.controllers.ProductController.get

@@ -1,0 +1,106 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/Acme.scss';
+@import 'styles/AudreyMedium.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+.product-filters .filter-btn,
+.product-filters .reset-btn,
+.product-filters .items-found {
+  font-family: $fontAudreyMedium;
+  font-size: 1.1em;
+  color: $text-color
+}
+.product-filters-ar .filter-btn,
+.product-filters-ar .reset-btn,
+.product-filters-ar .items-found {
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1.1em;
+  color: $text-color
+}
+.size-category,
+.dress-category,
+.order-category {
+  font-family: $fontAcme;
+  border-left: .15em solid transparent
+}
+.color-category {
+  font-family: $fontAcme;
+  border-right: .15em solid transparent
+}
+.size-category-ar,
+.dress-category-ar,
+.order-category-ar {
+  font-family: $fontJannaLTBold;
+  border-left: .15em solid transparent
+}
+.color-category-ar {
+  font-family: $fontJannaLTBold;
+  border-right: .15em solid transparent
+}
+.selected {
+  border-color: $text-color;
+  color: $gradient-border-color
+}
+.product-filters .filter-btn,
+.product-filters-ar .filter-btn,
+.product-filters .reset-btn,
+.product-filters-ar .reset-btn,
+.dress-category,
+.dress-category-ar,
+.size-category,
+.size-category-ar,
+.color-category,
+.color-category-ar,
+.order-category,
+.order-category-ar {
+  cursor: pointer;
+}
+.sizes-dropdown-content,
+.sizes-dropdown-content-ar {
+  width: 100px !important;
+}
+.category-dropdown-content,
+.category-dropdown-content-ar,
+.colors-dropdown-content,
+.colors-dropdown-content-ar {
+  width: 150px !important
+}
+.order-dropdown-content,
+.order-dropdown-content-ar {
+  width: 170px !important;
+}
+.category-dropdown-content,
+.category-dropdown-content-ar,
+.sizes-dropdown-content,
+.sizes-dropdown-content-ar,
+.colors-dropdown-content,
+.colors-dropdown-content-ar,
+.order-dropdown-content,
+.order-dropdown-content-ar {
+  position: absolute;
+  background-image: linear-gradient(to top, rgba(255, 216, 204, .9) 95%, transparent) !important;
+  border-bottom: .15em solid $text-color !important;
+  opacity: 0;
+  z-index: 4;
+  backface-visibility: hidden;
+  transform: rotateX(-90deg);
+  transform-style: preserve-3d;
+  transform-origin: top center;
+  transition: transform .4s cubic-bezier(.17,.67,.59,1.21), opacity .1s .1s;
+}
+
+#categories-filter .categories-shown,
+#sizes-filter .sizes-shown,
+#colors-filter .colors-shown,
+#order-filter .order-shown {
+  border-bottom: .1em solid $text-color;
+  opacity: 1;
+	transform: rotateX(0) translateZ(0);
+}
+.filter-inner-btn {
+  width: 130px
+}

@@ -1,0 +1,3 @@
+@(url: String)(implicit messages: MessagesApi, lang: Lang)
+@messages("newsletter.homeCollection")(lang)
+@messages("newsletter.unsubscribe.link.txt.text", url)(lang)

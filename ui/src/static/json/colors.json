@@ -1,0 +1,41 @@
+[ {
+    "name": "Beige",
+    "color": "beige.jpg"
+  },
+  {
+    "name": "Black",
+    "color": "black.jpg"
+  },
+  {
+    "name": "Brown",
+    "color": "brown.jpg"
+  },
+  {
+    "name": "Dark Blue",
+    "color": "dark-blue.jpg"
+  },
+  {
+    "name": "Floral",
+    "color": "floral.jpg"
+  },
+  {
+    "name": "Khaki Green",
+    "color": "khaki-green.jpg"
+  },
+  {
+    "name": "Metallic",
+    "color": "metallic.jpg"
+  },
+  {
+    "name": "Navy Blue",
+    "color": "navy-blue.jpg"
+  },
+  {
+    "name": "Purple",
+    "color": "purple.jpg"
+  },
+  {
+    "name": "White",
+    "color": "white.jpg"
+  }
+]

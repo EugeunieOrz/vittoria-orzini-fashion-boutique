@@ -1,0 +1,88 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/Acme.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+#completesignin-titles .list-group-item {
+  border: none;
+  background: transparent;
+  font-family: $fontAcme
+}
+#completesignin-titles-ar .list-group-item {
+  border: none;
+  background: transparent;
+  font-family: $fontJannaLTBold
+}
+.completesignin-password-error-form,
+.completesignin-password-form,
+.completesignin-password-error-form-ar,
+.completesignin-password-form-ar {
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.completesignin-password-error-form-ar,
+.completesignin-password-form-ar {
+  font-family: $fontJannaLTBold
+}
+.completesignin-password-error {
+  font-family: $fontAcme;
+  color: $vo-color;
+}
+.completesignin-password-error-ar {
+  font-family: $fontJannaLTBold;
+  color: $vo-color;
+}
+#completesignin-pending-it-btn,
+#completesignin-btn {
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0;
+  color: $gradient-border-color;
+  border: .15em solid $text-color;
+  font-family: $fontAcme;
+  font-size: 1.1em;
+}
+#completesignin-pending-it-btn {
+  width: 300px
+}
+#completesignin-ar-btn,
+#completesignin-pending-ar-btn {
+  width: 200px;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0;
+  color: $gradient-border-color;
+  border: .15em solid $text-color;
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1.1em;
+}
+#completesignin-btn {
+  width: 150px
+}
+#completesignin-pending-it-btn:enabled,
+#completesignin-btn:enabled,
+#completesignin-ar-btn:enabled,
+#completesignin-pending-ar-btn:enabled {
+  cursor: $cursorCalla4
+}
+#completesignin-btn:disabled,
+#completesignin-ar-btn:disabled,
+#completesignin-pending-ar-btn:disabled,
+#completesignin-pending-it-btn:disabled {
+  cursor: $cursorClose4
+}
+#completesignin-titles a,
+#completesignin-password-recovery-link a,
+#completesignin-titles-ar a,
+#completesignin-password-recovery-link-ar a {
+  color: $text-color
+}
+#completesignin-password-recovery-link a {
+  font-family: $fontAcme
+}
+#completesignin-password-recovery-link-ar a {
+  font-family: $fontKhebratMusamimRegular
+}

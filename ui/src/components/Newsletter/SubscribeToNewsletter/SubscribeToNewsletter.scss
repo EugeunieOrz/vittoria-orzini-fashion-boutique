@@ -1,0 +1,196 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/Acme.scss';
+@import 'styles/AudreyMedium.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/Philosopher.scss';
+@import 'styles/JannaLTBold.scss';
+#subscribe-newsl-container {
+  position:fixed;
+  overflow:hidden;
+  top:0;
+  left:0;
+  height:100vh;
+  width:100vw;
+  display:block;
+  background-image: $backgroundImage;
+  -webkit-animation:fadeInFromNone .5s ease-out;
+          animation:fadeInFromNone .5s ease-out;
+  -webkit-transform:none;
+          transform:none;
+  -webkit-transition:-webkit-transform .3s ease-out;
+  transition:-webkit-transform .3s ease-out;
+  transition:transform .3s ease-out;
+  transition:transform .3s ease-out, -webkit-transform .3s ease-out;
+  z-index:2;
+  overflow-y: auto;
+   height: 100vh;
+   scrollbar-width: thin;
+  }
+  @-webkit-keyframes fadeInFromNone {
+  0% {
+   display:none;
+   opacity:0
+  }
+  1% {
+   display:block;
+   opacity:0
+  }
+  to {
+   display:block;
+   opacity:1
+  }
+}
+  @keyframes fadeInFromNone {
+  0% {
+   display:none;
+   opacity:0
+  }
+  1% {
+   display:block;
+   opacity:0
+  }
+  to {
+   display:block;
+   opacity:1
+  }
+}
+#close-newsl-btn {
+  background-image: $closeNewslIcon;
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer
+}
+#close-newsl-btn:hover {
+  background-image: $closeNewslIconHover;
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer
+}
+#subscribe-newsl-header,
+#subscribe-newsl-msg,
+.newsl-checkbox {
+  font-family: $fontAudreyMedium;
+  color: $text-color
+}
+#subscribe-newsl-header-ar,
+#subscribe-newsl-msg-ar {
+  font-size: 1.2em
+}
+#subscribe-newsl-header-ar,
+#subscribe-newsl-msg-ar,
+.newsl-checkbox-ar {
+  font-family: $fontJannaLTBold;
+  color: $text-color
+}
+#subscribe-newsl-header {
+  font-size: 1.2em
+}
+#subscribe-newsl-header-msg {
+  font-family: $fontPhilosopher;
+  color: $text-color;
+  font-size: 1.1em
+}
+#subscribe-newsl-header-msg-ar {
+  font-family: $fontJannaLTBold;
+  color: $text-color;
+  font-size: 1em
+}
+.email span,
+.newsl-email-error {
+  font-family: $fontAcme;
+  color: $vo-color;
+}
+.newsl-email-error-ar {
+  font-family: $fontJannaLTBold;
+  color: $vo-color;
+  text-align: right;
+}
+.newsl-email-form:focus,
+.newsl-email-error-form:focus,
+.newsl-email-form-ar:focus,
+.newsl-email-error-form-ar:focus {
+  box-shadow: none;
+  background: inherit;
+}
+.newsl-email-error-form-ar,
+.newsl-email-form-ar {
+  font-family: $fontJannaLTBold !important
+}
+.subscribe-newsletter-btn,
+.subscribe-newsletter-btn-ar {
+  background-color:transparent !important;
+  color: $text-color !important;
+  font-family: $fontAdamCGPro;
+  border: .15em solid $gradient-border-color !important;
+  border-radius: 0
+}
+.subscribe-newsletter-btn {
+  font-family: $fontAdamCGPro;
+}
+.subscribe-newsletter-btn-ar {
+  font-family: $fontJannaLTBold;
+}
+.subscribe-newsletter-btn:disabled,
+.subscribe-newsletter-btn-ar:disabled {
+  cursor: $cursorClose3
+}
+.subscribe-newsletter-btn:enabled,
+.subscribe-newsletter-btn-ar:enabled {
+  cursor: $cursorRose3
+}
+.subscribe-newsletter-btn-ar:focus,
+.subscribe-newsletter-btn-ar.active,
+.subscribe-newsletter-btn:focus,
+.subscribe-newsletter-btn.active {
+  box-shadow: none !important
+}
+@media only screen and (min-width: 480px) {
+	/* PORTRAIT:
+	Arnova 7 G2
+	BlackBerry Bold 9780
+	HTC Desire Z
+	Nokia N900
+	Samsung Galaxy Grand
+  LANDSCAPE:
+	Apple iPhone 3G
+	Apple iPhone 3GS
+	Apple iPhone 4
+	Apple iPhone 4S
+	Apple iPod Touch
+	BlackBerry Torch 9800
+	BlackBerry Torch 9810
+	HTC 7 Mozart
+	HTC 7 Trophy
+	HTC Desire C
+	HTC Legend
+	HTC Titan 4G
+	HTC Wildfire S
+	HTC Windows Phone 8X
+	Huawei U8650
+	Nokia Lumia 610
+	Nokia Lumia 710
+	Nokia Lumia 800
+	Nokia Lumia 820
+	Nokia Lumia 900
+	Nokia Lumia 920
+	Samsung Galaxy Ace
+	Sony Xperia E Dual*/
+  #subscribe-newsl-msg,
+  .newsl-email-form,
+  .newsl-email-error-form,
+  #subscribe-newsl-msg-ar,
+  .newsl-email-form-ar,
+  .newsl-email-error-form-ar {
+    width: 390px
+  }
+}

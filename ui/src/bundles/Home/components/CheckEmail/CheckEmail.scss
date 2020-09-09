@@ -1,0 +1,80 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/Acme.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+#beforecheckout-titles .list-group-item,
+#beforecheckout-titles-ar .list-group-item {
+  border: none;
+  background: transparent;
+}
+#beforecheckout-titles .list-group-item {
+  font-family: $fontAcme
+}
+#beforecheckout-titles-ar .list-group-item {
+  font-family: $fontJannaLTBold
+}
+.check-email-email-error-form,
+.check-email-email-form,
+.check-email-email-error-form-ar,
+.check-email-email-form-ar {
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.check-email-email-error-form-ar,
+.check-email-email-form-ar {
+  font-family: $fontJannaLTBold !important
+}
+.check-email-email-error {
+  font-family: $fontAcme;
+  color: $vo-color;
+}
+.check-email-email-error-ar {
+  font-family: $fontJannaLTBold;
+  color: $vo-color;
+}
+#check-email-pending-it-btn,
+#check-email-btn {
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0;
+  color: $gradient-border-color;
+  border: .15em solid $text-color;
+  font-family: $fontAcme;
+  font-size: 1.1em;
+}
+#check-email-pending-ar-btn,
+#check-email-ar-btn {
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0;
+  color: $gradient-border-color;
+  border: .15em solid $text-color;
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1.1em;
+}
+#check-email-pending-it-btn, {
+  width: 300px
+}
+#check-email-pending-ar-btn,
+#check-email-ar-btn {
+  width: 200px
+}
+#check-email-btn {
+  width: 150px
+}
+#check-email-pending-ar-btn:enabled,
+#check-email-pending-it-btn:enabled,
+#check-email-btn:enabled,
+#check-email-ar-btn:enabled {
+  cursor: $cursorCalla4
+}
+#check-email-pending-ar-btn:disabled,
+#check-email-pending-it-btn:disabled,
+#check-email-btn:disabled,
+#check-email-ar-btn:disabled {
+  cursor: $cursorClose4
+}

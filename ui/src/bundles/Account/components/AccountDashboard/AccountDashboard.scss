@@ -1,0 +1,178 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/Acme.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/AudreyMedium.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+#myaccount-welcome-msg,
+#myaccount-welcome-msg-ar {
+  font-size: 1.4em;
+  color: $text-color
+}
+#myaccount-welcome-msg {
+  font-family: $fontAudreyMedium;
+}
+#myaccount-welcome-msg-ar {
+  font-family: $fontKhebratMusamimRegular;
+}
+.my-account-tabs #my-account-tabs-tab-profile,
+.my-account-tabs-ar #my-account-tabs-tab-profile,
+.my-account-tabs #my-account-tabs-tab-addressBook,
+.my-account-tabs-ar #my-account-tabs-tab-addressBook,
+.my-account-tabs #my-account-tabs-tab-cardWallet,
+.my-account-tabs-ar #my-account-tabs-tab-cardWallet,
+.my-account-tabs #my-account-tabs-tab-orderHistory,
+.my-account-tabs-ar #my-account-tabs-tab-orderHistory,
+.my-account-tabs #my-account-tabs-tab-wishlist,
+.my-account-tabs-ar #my-account-tabs-tab-wishlist {
+  background-color: transparent;
+  border: 0;
+  -webkit-transform:translateZ(0);
+         transform:translateZ(0);
+ -webkit-backface-visibility:hidden;
+ backface-visibility:hidden;
+ -moz-osx-font-smoothing:grayscale;
+ position:relative
+}
+.my-account-tabs #my-account-tabs-tab-profile:before,
+.my-account-tabs-ar #my-account-tabs-tab-profile:before,
+.my-account-tabs #my-account-tabs-tab-addressBook:before,
+.my-account-tabs-ar #my-account-tabs-tab-addressBook:before,
+.my-account-tabs #my-account-tabs-tab-cardWallet:before,
+.my-account-tabs-ar #my-account-tabs-tab-cardWallet:before,
+.my-account-tabs #my-account-tabs-tab-orderHistory:before,
+.my-account-tabs-ar #my-account-tabs-tab-orderHistory:before,
+.my-account-tabs #my-account-tabs-tab-wishlist:before,
+.my-account-tabs-ar #my-account-tabs-tab-wishlist:before {
+  content:"";
+ position:absolute;
+ z-index:-1;
+ left:0;
+ right:100%;
+ bottom:-3px;
+ background:$gradient-border-color;
+ height:3px;
+ -webkit-transition-property:right;
+ transition-property:right;
+ -webkit-transition-duration:.3s;
+         transition-duration:.3s;
+ -webkit-transition-timing-function:ease-out;
+         transition-timing-function:ease-out
+}
+.my-account-tabs #my-account-tabs-tab-profile:hover:before,
+.my-account-tabs #my-account-tabs-tab-addressBook:hover:before,
+.my-account-tabs #my-account-tabs-tab-cardWallet:hover:before,
+.my-account-tabs #my-account-tabs-tab-orderHistory:hover:before,
+.my-account-tabs #my-account-tabs-tab-wishlist:hover:before,
+.my-account-tabs-ar #my-account-tabs-tab-profile:hover:before,
+.my-account-tabs-ar #my-account-tabs-tab-addressBook:hover:before,
+.my-account-tabs-ar #my-account-tabs-tab-cardWallet:hover:before,
+.my-account-tabs-ar #my-account-tabs-tab-orderHistory:hover:before,
+.my-account-tabs-ar #my-account-tabs-tab-wishlist:hover:before {
+  right:0
+}
+.my-account-tabs .nav-link,
+.my-account-tabs-ar .nav-link {
+  font-size: 1.2em;
+  color: $navlink-grey-color
+}
+.my-account-tabs .nav-link {
+  font-family: $fontAudreyMedium;
+}
+.my-account-tabs-ar .nav-link {
+  font-family: $fontKhebratMusamimRegular;
+}
+.my-account-tabs .nav-link.active,
+.my-account-tabs-ar .nav-link.active {
+  background: inherit;
+  text-decoration: none;
+  color: $text-color !important;
+  border-bottom: .2em solid $gradient-border-color !important;
+}
+#edit-newsl-container label {
+  font-family: $fontAudreyMedium;
+  font-size: .9em;
+}
+#edit-newsl-container-ar label {
+  font-family: $fontJannaLTBold;
+  font-size: 1em;
+}
+#newsletter-title,
+#newsletter-title-ar {
+  border-image: linear-gradient(90deg, transparent, $gradient-border-color, transparent);
+  border-top: .1em solid $gradient-border-color;
+  border-bottom: .1em solid $gradient-border-color;
+  border-image-slice: 1
+}
+#newsletter-title,
+#newsletter-txt {
+  font-family: $fontAudreyMedium;
+  font-size: 1.4em
+}
+#newsletter-title-ar {
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1.3em;
+  color: $navlink-grey-color
+}
+#newsletter-txt-ar {
+  font-family: $fontJannaLTBold;
+  font-size: 1.2em
+}
+#edit-newsletter-pending-btn,
+#edit-newsletter-pending-btn-ar {
+  width: 200px
+}
+#edit-newsletter-btn-ar,
+#edit-newsletter-btn {
+  width: 150px
+}
+#edit-newsletter-pending-btn,
+#edit-newsletter-btn,
+#edit-newsletter-pending-btn-ar,
+#edit-newsletter-btn-ar {
+  box-shadow: none !important;
+  background-color: transparent !important;
+  border-radius: 0;
+  background-color: $gradient-border-color !important;
+  color: $navlink-grey-color !important;
+  border: none;
+}
+#edit-newsletter-pending-btn,
+#edit-newsletter-btn {
+  font-family: $fontAdamCGPro
+}
+#edit-newsletter-pending-btn-ar,
+#edit-newsletter-btn-ar {
+  font-family: $fontJannaLTBold
+}
+#edit-newsletter-pending-btn:hover,
+#edit-newsletter-btn:hover,
+#edit-newsletter-pending-btn-ar:hover,
+#edit-newsletter-btn-ar:hover {
+  background-color: $gradient-border-color !important;
+  color: $navlink-grey-color
+}
+#remove-account-btn,
+#remove-account-btn-ar {
+  box-shadow: none !important;
+  background-color: transparent !important;
+  border-radius: 0;
+  border: none;
+  color: $navlink-grey-color
+}
+#remove-account-btn-ar {
+  font-family: $fontKhebratMusamimRegular;
+}
+#remove-account-btn {
+  font-family: $fontAcme;
+}
+#remove-account {
+  border-image: linear-gradient(90deg, transparent, $gradient-border-color, transparent);
+  border-top: 0.1em solid $gradient-border-color;
+  border-bottom: 0.1em solid $gradient-border-color;
+  border-image-slice: 1;
+}

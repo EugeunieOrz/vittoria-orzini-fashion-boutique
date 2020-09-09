@@ -1,0 +1,28 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/Philosopher.scss';
+#fashion-titles {
+  color: $text-color;
+}
+#fashion-category-title {
+  font-family: $fontAdamCGPro;
+  font-size: 1.2em
+}
+#fashion-category-subtitle {
+  font-family: $fontPhilosopher;
+  font-size: 1.1em
+}
+#fashion-category-title-ar {
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1.2em
+}
+#fashion-category-subtitle-ar {
+  font-family: $fontJannaLTBold;
+  font-size: 1.1em
+}

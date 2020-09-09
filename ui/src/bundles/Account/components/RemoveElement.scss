@@ -1,0 +1,67 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/Acme.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+#remove-container div {
+  border-radius: 0;
+}
+#remove-container .modal-body {
+  background-image: $backgroundImage;
+  background-image: $backgroundImage1
+}
+#remove-msg {
+  font-family: $fontAcme
+}
+#remove-msg-ar {
+  font-family: $fontJannaLTBold
+}
+#remove-close-img {
+  cursor: pointer;
+}
+#rm-confirm-btn,
+#rm-confirm-btn-ar {
+  box-shadow: none !important;
+  background: transparent !important;
+  color: $gradient-border-color;
+  border: .15em solid $text-color;
+  width: 200px;
+  border-radius: 0;
+}
+#rm-confirm-btn {
+  font-family: $fontAdamCGPro;
+  font-size: .9em
+}
+#rm-confirm-btn-ar {
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1em
+}
+#rm-cancel-btn,
+#rm-cancel-btn-ar {
+  box-shadow: none !important;
+  background: transparent !important;
+  color: $text-color;
+  border: .15em solid $gradient-border-color;
+  width: 200px;
+  border-radius: 0;
+}
+#rm-cancel-btn {
+  font-family: $fontAdamCGPro;
+  font-size: .9em
+}
+#rm-cancel-btn-ar {
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1em
+}
+@media only screen and (max-width: 600px) {
+  #rm-confirm-btn,
+  #rm-cancel-btn {
+    font-size: .75em;
+    width: 170px;
+    border-width: .2em
+  }
+}

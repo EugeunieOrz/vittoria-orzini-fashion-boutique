@@ -1,0 +1,313 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/AdamCGPro.scss';
+@import 'styles/AudreyMedium.scss';
+@import 'styles/Acme.scss';
+@import 'styles/JannaLTBold.scss';
+@import 'styles/KhebratMusamimRegular.scss';
+#createAccount-link-email {
+  color: $text-color;
+  font-family: $fontAcme
+}
+#createAccount-link-email-ar {
+  color: $text-color;
+  font-family: $fontJannaLTBold
+}
+#createAccount-form select,
+#createAccount-form-ar select {
+  border: none;
+  border-bottom: 2px solid $text-color;
+ box-shadow: none;
+  box-sizing: content-box;
+ background-color:transparent;
+  padding:4px;
+}
+#createAccount-form select {
+  font-family: $fontAcme;
+  font-size:1.1em;
+}
+#createAccount-form-ar select {
+  font-family: $fontJannaLTBold;
+  font-size:1.1em;
+}
+.createAccount-title-error,
+.createAccount-fname-error,
+.createAccount-lname-error,
+.createAccount-email-error,
+.createAccount-age-error,
+.password-strength-txt {
+  font-family: $fontAcme;
+  color: $vo-color;
+}
+.createAccount-title-error-ar,
+.createAccount-fname-error-ar,
+.createAccount-lname-error-ar,
+.createAccount-email-error-ar,
+.createAccount-age-error-ar,
+.password-strength-txt-ar {
+  font-family: $fontJannaLTBold;
+  color: $vo-color;
+}
+.password-strength {
+  height:.5em;
+  border-radius:0px;
+  background:transparent;
+  transition:all .3s ease-in-out
+}
+.password-strength-txt[data-score="0"],.password-strength-txt[data-score="1"],.password-strength-txt[data-score=""] {
+ color:$vo-color
+}
+.password-strength-txt[data-score="2"] {
+ color:$data-score-2
+}
+.password-strength-txt[data-score="3"] {
+ color:$data-score-3
+}
+.password-strength-txt[data-score="4"] {
+ color:$data-score-4
+}
+#createAccount-toggle-btn span,
+#createAccount-toggle-btn-ar span,
+#createAccount-toggle-btn,
+#createAccount-toggle-btn-ar  {
+  background: transparent;
+  border: none;
+  padding: 0px 4px;
+  box-shadow: none
+}
+#createAccount-toggle-btn span {
+  font-family: $fontAcme;
+  height: 34px;
+  color: $text-color
+}
+#createAccount-toggle-btn-ar span, {
+  font-family: $fontJannaLTBold;
+  height: 34px;
+  color: $text-color
+}
+#createAccount-newsl {
+  font-family: $fontAudreyMedium;
+}
+#ageLimit-checkbox label{
+  font-family: $fontAcme
+}
+#ageLimit-checkbox-ar label{
+  font-family: $fontJannaLTBold
+}
+#createAccount-pending-btn,
+#createAccount-btn {
+  width: 250px;
+}
+#createAccount-ar-btn,
+#createAccount-ar-pending-btn {
+  width: 200px
+}
+#createAccount-it-pending-btn {
+  width: 300px;
+}
+#createAccount-ar-btn,
+#createAccount-ar-pending-btn {
+  font-family: $fontKhebratMusamimRegular;
+  font-size: 1.1em;
+}
+#createAccount-it-pending-btn,
+#createAccount-pending-btn,
+#createAccount-btn,
+#createAccount-ar-btn,
+#createAccount-ar-pending-btn {
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0;
+  color: $gradient-border-color;
+  border: .15em solid $text-color;
+}
+#createAccount-it-pending-btn,
+#createAccount-pending-btn,
+#createAccount-btn {
+  font-family: $fontAcme;
+  font-size: 1.1em;
+}
+.createAccount-firstName-form,
+.createAccount-firstName-error-form,
+.createAccount-lastName-form,
+.createAccount-lastName-error-form,
+.createAccount-firstName-form-ar,
+.createAccount-firstName-error-form-ar,
+.createAccount-lastName-form-ar,
+.createAccount-lastName-error-form-ar,
+.createAccount-email-form,
+.createAccount-email-error,
+.createAccount-password-form,
+.createAccount-password-error-form,
+.createAccount-password-form-ar,
+.createAccount-password-error-form-ar {
+  box-shadow: none !important;
+ background: transparent !important;
+}
+.createAccount-firstName-form-ar,
+.createAccount-firstName-error-form-ar,
+.createAccount-lastName-form-ar,
+.createAccount-lastName-error-form-ar,
+.createAccount-password-form-ar,
+.createAccount-password-error-form-ar {
+  color: $text-color;
+  font-family: $fontJannaLTBold !important
+}
+@media only screen and (max-width: 319px) {
+  .createAccount-password-form,
+  .createAccount-password-error-form,
+  .createAccount-password-form-ar,
+  .createAccount-password-error-form-ar {
+    max-width: 140px !important;
+  }
+  #ageLimit-checkbox label,
+  #ageLimit-checkbox-ar label {
+    width: 180px
+  }
+  #createAccount-form select,
+  #createAccount-form-ar select {
+    max-width: 210px !important;
+  }
+  .password-strength {
+    max-width:180px;
+  }
+  .password-strength[data-score="0"] {
+   width:0;
+   background:$vo-color
+  }
+  .password-strength[data-score="1"] {
+   width:60px;
+   background:$vo-color
+  }
+  .password-strength[data-score="2"] {
+   width:100px;
+   background:$data-score-2
+  }
+  .password-strength[data-score="3"] {
+   width:140px;
+   background:$data-score-3
+  }
+  .password-strength[data-score="4"] {
+   width:180px;
+   background:$data-score-4
+  }
+}
+@media only screen and (min-width: 320px) {
+  #ageLimit-checkbox label,
+  #ageLimit-checkbox-ar label {
+    width: 230px
+  }
+  .createAccount-password-form,
+  .createAccount-password-error-form,
+  .createAccount-password-form-ar,
+  .createAccount-password-error-form-ar {
+    max-width: 200px !important;
+  }
+  #createAccount-form select,
+  #createAccount-form-ar select {
+    max-width: 260px;
+  }
+}
+@media only screen and (min-width: 360px) {
+  #ageLimit-checkbox label,
+  #ageLimit-checkbox-ar label {
+    width: 280px
+  }
+  .createAccount-password-form,
+  .createAccount-password-error-form,
+  .createAccount-password-form-ar,
+  .createAccount-password-error-form-ar {
+    max-width: 220px !important;
+  }
+}
+@media only screen and (min-width: 400px) {
+  #ageLimit-checkbox label,
+  #ageLimit-checkbox-ar label {
+    width: 320px
+  }
+}
+@media only screen and (min-width: 576px) {
+  .createAccount-password-form,
+  .createAccount-password-error-form,
+  .createAccount-password-form-ar,
+  .createAccount-password-error-form-ar {
+    max-width: 260px !important;
+  }
+  #createAccount-form select,
+  #createAccount-form-ar select {
+    max-width: 320px
+  }
+  .password-strength {
+    max-width:200px;
+  }
+  .password-strength[data-score="0"] {
+   width:0;
+   background:$vo-color
+  }
+  .password-strength[data-score="1"] {
+   width:50px;
+   background:$vo-color
+  }
+  .password-strength[data-score="2"] {
+   width:100px;
+   background:$data-score-2
+  }
+  .password-strength[data-score="3"] {
+   width:150px;
+   background:$data-score-3
+  }
+  .password-strength[data-score="4"] {
+   width:200px;
+   background:$data-score-4
+  }
+}
+@media only screen and (min-width: 992px) {
+  .createAccount-firstName-form,
+  .createAccount-firstName-error-form,
+  .createAccount-lastName-form,
+  .createAccount-lastName-error-form,
+  .createAccount-firstName-form-ar,
+  .createAccount-firstName-error-form-ar,
+  .createAccount-lastName-form-ar,
+  .createAccount-lastName-error-form-ar,
+  .createAccount-email-form,
+  .createAccount-email-error {
+    width: 330px !important;
+  }
+  .createAccount-password-error-form,
+  .createAccount-password-form,
+  .createAccount-password-error-form-ar,
+  .createAccount-password-form-ar {
+    min-width: 280px !important;
+  }
+  #createAccount-form select,
+  #createAccount-form-ar select {
+    max-width: 320px
+  }
+  .password-strength {
+    max-width:240px;
+  }
+  .password-strength[data-score="0"] {
+   width:0;
+   background:$vo-color
+  }
+  .password-strength[data-score="1"] {
+   width:60px;
+   background:$vo-color
+  }
+  .password-strength[data-score="2"] {
+   width:130px;
+   background:$data-score-2
+  }
+  .password-strength[data-score="3"] {
+   width:200px;
+   background:$data-score-3
+  }
+  .password-strength[data-score="4"] {
+   width:240px;
+   background:$data-score-4
+  }
+}

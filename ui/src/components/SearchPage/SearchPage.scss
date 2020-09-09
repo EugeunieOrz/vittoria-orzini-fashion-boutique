@@ -1,0 +1,132 @@
+/*
+Author: Ievgeniia Ozirna
+Licensed under the CC BY-NC-ND 3.0: http://creativecommons.org/licenses/by-nc-nd/3.0/
+*/
+@import 'styles/app.scss';
+@import 'styles/Acme.scss';
+@import 'styles/AudreyMedium.scss';
+@import 'styles/JannaLTBold.scss';
+#search-page-container {
+ position:fixed;
+ overflow:hidden;
+ top:0;
+ left:0;
+ height:100vh;
+ width:100vw;
+ display:block;
+ background-image: $backgroundImage;
+ background-image: $backgroundImage1;
+ -webkit-animation:fadeInFromNone .5s ease-out;
+         animation:fadeInFromNone .5s ease-out;
+ -webkit-transform:none;
+         transform:none;
+ -webkit-transition:-webkit-transform .3s ease-out;
+ transition:-webkit-transform .3s ease-out;
+ transition:transform .3s ease-out;
+ transition:transform .3s ease-out, -webkit-transform .3s ease-out;
+ z-index:10;
+ overflow-y: auto;
+  height: 100vh;
+  scrollbar-width: thin;
+}
+@-webkit-keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+@keyframes fadeInFromNone {
+ 0% {
+  display:none;
+  opacity:0
+ }
+ 1% {
+  display:block;
+  opacity:0
+ }
+ to {
+  display:block;
+  opacity:1
+ }
+}
+#close-search-btn {
+  background-image: $closeIconHover;
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer
+}
+#close-search-btn:hover {
+  background-image: $closeIcon;
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer
+}
+#searchbar-ar .form-control,
+#searchbar .form-control {
+  border-radius: 0 !important;
+  border-color: $gradient-border-color !important
+}
+#searchbar-ar input:focus,
+#searchbar input:focus {
+	box-shadow: none;
+}
+#search-results-title,
+#filtered-length {
+  font-family: $fontAudreyMedium;
+}
+#search-results-title-ar,
+#filtered-length-ar {
+  font-family: $fontJannaLTBold;
+  font-size: 1.3em
+}
+#search-results-title {
+  color: $navlink-grey-color
+}
+#searchbar-ar input {
+  font-family: $fontJannaLTBold;
+  font-size: 1.7em !important;
+  text-transform: uppercase;
+  background-color: inherit;
+}
+#searchbar input {
+  font-size: 1.5em !important;
+  text-transform: uppercase;
+  background-color: inherit;
+}
+#filtered-length {
+  font-size: 1.3em
+}
+.img-figure img {
+  cursor: $cursorRose2
+}
+#search-results-row {
+  margin-top: 200px !important;
+}
+#search-form-row {
+  position: fixed;
+  width: 100%;
+  background: inherit;
+  z-index: 3
+}
+#item-name {
+  font-family: $fontAcme;
+  color: $text-color
+}
+#item-price {
+  font-family: $fontAudreyMedium;
+  color: $navlink-grey-color
+}

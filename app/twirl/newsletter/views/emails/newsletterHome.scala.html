@@ -1,0 +1,10 @@
+@(url: String)(implicit messages: MessagesApi, lang: Lang)
+
+<html>
+    <body>
+      <div style="font-family:Arial;color:#565d47;font-size:1.1em;font-weight:700">
+        <p>@messages("newsletter.homeCollection")(lang)</p>
+        <p>@Html(messages("newsletter.unsubscribe.link.html.text", url)(lang))</p>
+      </div>
+    </body>
+</html>

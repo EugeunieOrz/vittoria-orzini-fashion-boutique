@@ -1,0 +1,13 @@
+[ {
+    "name": "Bed & Bath",
+    "link": "bed-and-bath"
+  },
+  {
+    "name": "Dining",
+    "link": "dining"
+  },
+  {
+    "name": "Living",
+    "link": "living"
+  }
+]
