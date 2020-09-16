@@ -25,8 +25,7 @@ type Props = {
 }
 
 export const ReturnFormComponent = ({
-  i18n, t, form, isPending, fillReturnForm,
-  userID,
+  i18n, t, form, isPending, fillReturnForm, userID,
 }: Props) => (
   <Row className="flex-grow-1 mt-5">
     <Col md={2} xl={3} className="d-none d-md-flex"></Col>
@@ -126,8 +125,7 @@ export const ReturnFormComponent = ({
             "fill-return-form-btn"
           )
         }
-        className={i18n.translator.language === "ar" ? "ml-auto" : ""}
-        className="mt-3"
+        className={i18n.translator.language === "ar" ? "mt-3 ml-auto" : "mt-3"}
         type="submit"
         disabled={!form.$form.valid || isPending}>
           {isPending ? <Trans>LOADING</Trans> : <div>{t('searchOrderNum-2')}</div>}

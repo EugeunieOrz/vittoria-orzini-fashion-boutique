@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { history } from 'modules/LocationModule';
 import lifecycle from 'components/Lifecycle';
 import {
-  proceedToShoppingBagFromAlert,
   toggleAddItemToBagAlert
 } from 'modules/Shopping/AddItemToBagAlertModule';
 import {
@@ -39,7 +38,6 @@ const mapStateToProps = state => ({
  */
 const mapDispatchToProps = dispatch => ({
   route: route => history.push(route),
-  proceedToShoppingBag: userID => dispatch(proceedToShoppingBagFromAlert(userID)),
   toggleAddItemToBagAlert: () => dispatch(toggleAddItemToBagAlert()),
 });
 

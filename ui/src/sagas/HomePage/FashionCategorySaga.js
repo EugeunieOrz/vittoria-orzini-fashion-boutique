@@ -1,6 +1,6 @@
 // @flow
 import { call, put, take } from 'redux-saga/effects';
-import { selectFashionCategory } from 'modules/ItemCategories/CategoryModule';
+import { selectFashionCategory } from 'modules/ItemCategories/CategoriesModule';
 import { closeFashionMenu } from 'modules/Menu/FashionMenuModule';
 import { closeFineJewelryMenu } from 'modules/Menu/FineJewelryMenuModule';
 import { closeHomeCollectionMenu } from 'modules/Menu/HomeCollectionMenuModule';

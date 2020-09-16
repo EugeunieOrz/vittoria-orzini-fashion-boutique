@@ -1,11 +1,10 @@
 import { connect } from 'react-redux';
+import { history } from 'modules/LocationModule';
 import lifecycle from 'components/Lifecycle';
 import { actions } from 'react-redux-form';
 import { getShoppingBag } from 'selectors/ShoppingSelector';
 import { modelPath, signInW } from 'modules/Wishlist/SignInWModule';
 import {
-  proceedToRecoverPasswordPage,
-  proceedToSignUpPage,
   toggleSignInW,
   toggleSignInWToFalse
 } from 'modules/Wishlist/SignInWPageModule';
@@ -33,8 +32,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   componentWillUnmount: () => dispatch(actions.reset(modelPath)),
   onSignInW: data => dispatch(signInW(data)),
-  proceedToRecoverPasswordPage: () => dispatch(proceedToRecoverPasswordPage()),
-  proceedToSignUpPage: () => dispatch(proceedToSignUpPage()),
+  route: route => history.push(route),
   toggleSignInW: () => dispatch(toggleSignInW()),
   toggleSignInWToFalse: () => dispatch(toggleSignInWToFalse()),
 });

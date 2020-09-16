@@ -1,6 +1,5 @@
 // @flow
 import { call, put, take, race, all, fork, cancel, delay } from 'redux-saga/effects';
-import { history } from 'modules/LocationModule';
 import { resetState } from 'modules/StateModule';
 import { initApp, setUserInitialized } from 'modules/InitModule';
 import { changeToHealthy, changeToUnhealthy } from 'modules/HealthModule';
@@ -17,7 +16,7 @@ import { getLastItem } from 'bundles/Account/modules/Wishlist/LastItemAlertModul
 import { showMsg, toggleMsg } from 'modules/MsgModule';
 import AccountAPI from 'apis/AccountAPI';
 import UserAPI from 'apis/UserAPI';
-import config, { USER_DURATION } from 'config/index';
+import { USER_DURATION } from 'config/index';
 
 /**
  * Worker which sets the initialized state for the user.
@@ -166,13 +165,11 @@ export function* signOutUserWorker(api: UserAPI): Generator<*, *, *> {
     try {
       yield call([api, api.signOut]);
       yield put(resetUserState());
-      yield call(history.push, config.route.auth.signOut);
     } catch (e) {
       console.log(e);
       yield call(handleError, e, {
         'auth.unauthorized': () => ([
-          put(resetUserState()),
-          call(history.push, config.route.auth.signOut)
+          put(resetUserState())
         ]),
       });
     }

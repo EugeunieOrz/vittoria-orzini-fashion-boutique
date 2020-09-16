@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import lifecycle from 'components/Lifecycle';
 import { history } from 'modules/LocationModule';
+import { closeMiniBagEtc } from 'modules/Shopping/MiniBagModule';
 import {
   changeSizeInGuestShoppingBag,
   changeQtyInGuestShoppingBag,
@@ -41,6 +42,7 @@ const mapDispatchToProps = dispatch => ({
   changeQtyInGuestShoppingBag: (data) => dispatch(changeQtyInGuestShoppingBag(data)),
   removeItemFromGuestShoppingBag: (data) => dispatch(removeItemFromGuestShoppingBag(data)),
   route: route => history.push(route),
+  componentDidMount: () => dispatch(closeMiniBagEtc()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(lifecycle(ShoppingBag));

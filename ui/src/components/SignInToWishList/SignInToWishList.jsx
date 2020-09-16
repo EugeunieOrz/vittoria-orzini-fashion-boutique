@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import config from 'config/index';
 import { withTranslation, Trans } from "react-i18next";
 import { Form, Control, Errors } from 'react-redux-form';
 import { isRequired } from 'util/Validator';
@@ -30,14 +31,13 @@ type Props = {
   form: {[string]: FormProps},
   isPendingSignInW: boolean,
   onSignInW: (data: Object, shoppingBag: Object) => any,
-  proceedToSignUpPage: () => any,
-  proceedToRecoverPasswordPage: () => any,
+  route: (value: string) => any,
 }
 
 export const SignInToWishListComponent = ({
   i18n, t, shoppingBag, signInWIsShown, toggleSignInW,
   toggleSignInWToFalse, form, isPendingSignInW, onSignInW,
-  proceedToSignUpPage, proceedToRecoverPasswordPage,
+  route,
 }: Props) => (
   <Container
     id={
@@ -213,7 +213,7 @@ export const SignInToWishListComponent = ({
                  "signinw-passwd-recovery-btn-ar" :
                  "signinw-passwd-recovery-btn"
                }
-               onClick={() => proceedToRecoverPasswordPage()}>
+               onClick={() => route(config.route.auth.passwordRecovery)}>
               {t('forgotPasswd')}
             </Button>
           </Col>
@@ -225,7 +225,7 @@ export const SignInToWishListComponent = ({
                  "signinw-signup-btn-ar" :
                  "signinw-signup-btn"
                }
-               onClick={() => proceedToSignUpPage()}>
+               onClick={() => route(config.route.auth.signUp)}>
               <Trans>Sign Up</Trans>
             </Button>
           </Col>

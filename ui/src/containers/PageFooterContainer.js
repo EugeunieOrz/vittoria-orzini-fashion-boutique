@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import lifecycle from 'components/Lifecycle';
-import { getCountryByIP } from 'selectors/GeolocationSelector';
+import { getCountry } from 'selectors/LocationSelector';
 import { toggleShippingCountryList } from 'modules/LanguageCountry/ShippingToModule';
 import { toggleSubscribeToNewsletter } from 'modules/Newsletter/ToggleSubscribeToNewsletterModule';
 import PageFooter from 'components/PageFooter';
@@ -13,7 +13,7 @@ import PageFooter from 'components/PageFooter';
  */
 
 const mapStateToProps = state => ({
-  country: getCountryByIP(state),
+  country: getCountry(),
 });
 
 /**

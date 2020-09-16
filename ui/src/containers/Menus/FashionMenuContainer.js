@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import lifecycle from 'components/Lifecycle';
 import { closeFashionMenu, toggleFashionMenu } from 'modules/Menu/FashionMenuModule';
-import { selectFashionCategory } from 'modules/ItemCategories/CategoryModule';
+import { selectFashionCategory } from 'modules/ItemCategories/CategoriesModule';
 import FashionMenu from 'components/Menus/FashionMenu';
 
 /**

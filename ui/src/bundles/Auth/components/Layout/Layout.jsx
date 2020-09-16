@@ -11,7 +11,6 @@ import SignUpContainer from 'bundles/Auth/containers/SignUpContainer';
 import RecoverPasswordContainer from 'bundles/Auth/containers/RecoverPasswordContainer';
 import ResetPasswordContainer from 'bundles/Auth/containers/ResetPasswordContainer';
 import AlreadyRegistered from 'bundles/Auth/components/AlreadyRegistered';
-import SignOutContainer from 'bundles/Auth/containers/SignOutContainer';
 import RecoverPasswordEmailSentContainer from 'bundles/Auth/containers/RecoverPasswordEmailSentContainer';
 import PasswordSurveyContainer from 'bundles/Auth/containers/PasswordSurveyContainer';
 import ChangedPassword from 'bundles/Auth/components/ChangedPassword';
@@ -27,7 +26,6 @@ export default () => (
       <Route exact path={config.route.auth.passwordRecovery} component={RecoverPasswordContainer} />
       <Route exact path={config.route.auth.emailSent} component={RecoverPasswordEmailSentContainer} />
       <Route exact path={`${config.route.auth.passwordRecovery}/:token`} component={ResetPasswordContainer} />
-      <Route exact path={config.route.auth.signOut} component={SignOutContainer} />
       <Route exact path={config.route.auth.alreadyInUse} component={AlreadyRegistered} />
       <Route exact path={config.route.auth.passwordSurvey} component={PasswordSurveyContainer} />
       <Route exact path={config.route.auth.changedPassword} component={ChangedPassword} />

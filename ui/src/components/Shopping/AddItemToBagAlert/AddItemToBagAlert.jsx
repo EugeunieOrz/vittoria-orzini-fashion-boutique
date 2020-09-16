@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import config from 'config/index';
 import { withTranslation } from "react-i18next";
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -20,7 +21,6 @@ type Props = {
   imgIndex: string,
   itemName: string,
   isShown: boolean,
-  proceedToShoppingBag: (userID: string) => any,
   toggleAddItemToBagAlert: () => any,
   route: (value: string) => any,
   userID: string,
@@ -35,7 +35,6 @@ export const AddItemToBagAlertComponent = ({
   i18n, t,
   imgIndex, itemName, department, collection, category, userID,
   toggleAddItemToBagAlert, isShown, route,
-  proceedToShoppingBag,
 }: Props) => (
   <Modal
     className="shopping-modal"
@@ -73,7 +72,11 @@ export const AddItemToBagAlertComponent = ({
           <Button
             className="mt-0 mt-sm-2 mb-2 align-self-start"
             id={i18n.translator.language === "ar" ? "view-bag-ar" : "view-bag"}
-            onClick={() => proceedToShoppingBag(userID)}>
+            onClick={
+              userID !== undefined ?
+              () => route(config.route.account.shopping) :
+              () => route(config.route.home.shopping)
+            }>
             {t('VIEW SHOPPING BAG')}
           </Button>
         </Col>

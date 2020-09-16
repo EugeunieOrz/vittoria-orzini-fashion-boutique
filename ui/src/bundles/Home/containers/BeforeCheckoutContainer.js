@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import lifecycle from 'components/Lifecycle';
 import { history } from 'modules/LocationModule';
+import { closeMiniBag } from 'modules/Shopping/MiniBagModule';
 import { getShoppingBag } from 'selectors/ShoppingSelector';
 import BeforeCheckout from 'bundles/Home/components/BeforeCheckout';
 
@@ -22,6 +23,7 @@ const mapStateToProps = state => ({
  */
 
 const mapDispatchToProps = dispatch => ({
+  componentDidMount: () => dispatch(closeMiniBag()),
   route: route => history.push(route),
 });
 

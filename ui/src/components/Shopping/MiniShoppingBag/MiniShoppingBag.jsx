@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import config from 'config/index';
 import { withTranslation, Trans } from "react-i18next";
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -33,8 +34,7 @@ type Props = {
   ) => any,
   toggleMiniBag: () => any,
   shoppingBag: Object,
-  proceedToCheckout: (userID: string) => any,
-  proceedToShoppingBag: (userID: string) => any,
+  route: (string) => any,
   userID: string,
 }
 
@@ -44,8 +44,7 @@ export const loadImage = (item: Object) => {
 
 export const MiniShoppingBagComponent = ({
   i18n, t, removeItemFromGuestBag, toggleMiniBag, shoppingBag,
-  addedItems, userID, removeItemFromShoppingBag,
-  proceedToShoppingBag, proceedToCheckout,
+  addedItems, userID, removeItemFromShoppingBag, route,
 }: Props) => (
   <Container
     id={
@@ -178,7 +177,11 @@ export const MiniShoppingBagComponent = ({
                           i18n.translator.language === "ar" ?
                           "viewbag-btn-ar" : "viewbag-btn"
                         }
-                        onClick={() => proceedToShoppingBag(userID)}>
+                        onClick={
+                          userID !== undefined ?
+                          () => route(config.route.account.shopping) :
+                          () => route(config.route.home.shopping)
+                        }>
                         {t('VIEW SHOPPING BAG')}
                       </Button>
                     </Col>
@@ -188,7 +191,11 @@ export const MiniShoppingBagComponent = ({
                           i18n.translator.language === "ar" ?
                           "checkout-btn-ar" : "checkout-btn"
                         }
-                        onClick={() => proceedToCheckout(userID)}>
+                        onClick={
+                          userID !== undefined ?
+                          () => route(config.route.account.checkout) :
+                          () => route(config.route.home.checkout)
+                        }>
                           <Trans>CHECKOUT</Trans>
                       </Button>
                     </Col>
@@ -328,7 +335,11 @@ export const MiniShoppingBagComponent = ({
                           i18n.translator.language === "ar" ?
                           "viewbag-btn-ar" : "viewbag-btn"
                         }
-                        onClick={() => proceedToShoppingBag(userID)}>
+                        onClick={
+                          userID !== undefined ?
+                          () => route(config.route.account.shopping) :
+                          () => route(config.route.home.shopping)
+                        }>
                         {t('VIEW SHOPPING BAG')}
                       </Button>
                     </Col>
@@ -338,7 +349,11 @@ export const MiniShoppingBagComponent = ({
                           i18n.translator.language === "ar" ?
                           "checkout-btn-ar" : "checkout-btn"
                         }
-                        onClick={() => proceedToCheckout(userID)}>
+                        onClick={
+                          userID !== undefined ?
+                          () => route(config.route.account.checkout) :
+                          () => route(config.route.home.checkout)
+                        }>
                         <Trans>CHECKOUT</Trans>
                       </Button>
                     </Col>

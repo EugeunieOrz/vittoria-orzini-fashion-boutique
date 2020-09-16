@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import { connect } from 'react-redux';
 import lifecycle from 'components/Lifecycle';
-import { switchToProductView } from 'modules/ItemCategories/CategoryModule';
+import { switchToProductView } from 'modules/ItemCategories/CategoriesModule';
 import { getEvening } from 'selectors/ProductsSelector';
 import { getUserID } from 'selectors/UserSelector';
 import Evening from 'components/ProductsPage/Fashion/Evening';

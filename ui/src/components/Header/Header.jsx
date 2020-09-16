@@ -24,7 +24,6 @@ import searchIcon from '../../static/icons/search.svg';
 import menuIcon from '../../static/icons/menu.svg';
 import bagIcon from '../../static/icons/bag.svg';
 
-import logo from '../../static/logo/vo_logo.jpg';
 import logoTransparent from '../../static/logo/vo_logo_transparent.png';
 
 type Props = {
@@ -63,8 +62,6 @@ type Props = {
   openSignInW: (menuIsShown: boolean) => any,
   menuIsShown: boolean,
 };
-
-const isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
 
 export const HeaderComponent = ({
   children, i18n, t, language, isHidden, userID,
@@ -187,7 +184,7 @@ export const HeaderComponent = ({
               "lang-dropdown-ar" :
               "lang-dropdown"
             }
-            className="ml-2" 
+            className="ml-2"
             onClick={() => showLanguages()}>
             <span>
               {

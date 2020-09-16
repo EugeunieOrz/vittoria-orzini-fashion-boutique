@@ -1,6 +1,7 @@
 // @flow
-import { call, take } from 'redux-saga/effects';
-import { switchToProductView } from 'modules/ItemCategories/CategoryModule';
+import { call, put, take } from 'redux-saga/effects';
+import { switchToProductView } from 'modules/ItemCategories/CategoriesModule';
+import { closeSearchPage } from 'modules/Search/SearchPageModule';
 import { handleError } from 'util/Saga';
 import { history } from 'modules/LocationModule';
 import config from 'config/index';
@@ -26,6 +27,7 @@ export function* productViewSaga(): Generator<*, *, *> {
       const src = department + collection + link;
       localStorage.setItem('src', src);
       sessionStorage.setItem('productID', id);
+      yield put(closeSearchPage());
       if(userID !== undefined) {
         yield call(history.push, `${config.route.account.product}/${id}`);
       } else {

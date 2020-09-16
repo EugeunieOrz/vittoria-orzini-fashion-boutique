@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import lifecycle from 'components/Lifecycle';
-import { switchToProductViewFromSearch } from 'modules/ItemCategories/CategoryModule';
+import { switchToProductView } from 'modules/ItemCategories/CategoriesModule';
 import { closeSearchPage } from 'modules/Search/SearchPageModule';
 import { handleSearchResult } from 'modules/Search/SearchResultsModule';
 import { filterProducts } from 'modules/Search/FilterProductsModule';
@@ -30,7 +30,7 @@ const mapDispatchToProps = dispatch => ({
   closeSearchPage: () => dispatch(closeSearchPage()),
   filterProducts: (ev, products) => dispatch(filterProducts(ev, products)),
   handleSearchResult: (products, userID) => dispatch(handleSearchResult(products, userID)),
-  switchToProductViewFromSearch: product => dispatch(switchToProductViewFromSearch(product)),
+  switchToProductView: product => dispatch(switchToProductView(product)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(lifecycle(SearchPage));

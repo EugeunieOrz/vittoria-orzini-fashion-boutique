@@ -2,15 +2,14 @@ import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 import lifecycle from 'components/Lifecycle';
 import { modelPath4, fillCheckoutData4 } from 'bundles/Account/modules/Checkout4/CheckoutForm4Module';
-import { getUserCountryByIPforHome } from 'selectors/GeolocationSelector';
 import { toggleAddNewAddress } from 'bundles/Account/modules/Addresses/AddNewAddressModule';
 import { toggleAddNewCard } from 'bundles/Account/modules/CreditCards/AddNewCardModule';
 import { toggleShippingAddress } from 'bundles/Account/modules/Addresses/ShippingAddressModule';
 import { toggleEditAddress } from 'bundles/Account/modules/Addresses/EditAddressModule';
 import { toggleEditCard } from 'bundles/Account/modules/CreditCards/EditCardModule';
 import { chooseCreditCard } from 'bundles/Account/modules/CreditCards/CreditCardModule';
+import { getCountry } from 'selectors/LocationSelector';
 import { getUserID, getUserAddresses, getCardWallet } from 'selectors/UserSelector';
-import { countryByIP } from 'selectors/GeolocationSelector';
 import Checkout4 from 'bundles/Account/components/Checkout4';
 
 /**
@@ -22,8 +21,7 @@ import Checkout4 from 'bundles/Account/components/Checkout4';
  const mapStateToProps = state => ({
    index: state.account.toggleEditAddress.index,
    userID: getUserID(state),
-   countryByIP: getUserCountryByIPforHome(state),
-   countryByIP2: countryByIP(state),
+   countryByIP: getCountry(),
    addresses: getUserAddresses(state),
    cards: getCardWallet(state),
    creditCard: state.account.chooseCreditCard.index,

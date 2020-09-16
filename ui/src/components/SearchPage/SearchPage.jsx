@@ -22,7 +22,7 @@ type Props = {
   filterProducts: () => any,
   handleSearchResult: () => any,
   products: Array,
-  switchToProductViewFromSearch: (product: Object, userID: string) => any,
+  switchToProductView: (product: Object, userID: string) => any,
   userID: string,
 }
 
@@ -32,7 +32,7 @@ const formatNum = (num: number) => {
 
 export const SearchPageComponent = ({
   i18n, t, closeSearchPage, filtered, filterProducts, handleSearchResult, products,
-  switchToProductViewFromSearch, userID,
+  switchToProductView, userID,
 }: Props) => (
   <Container id="search-page-container" fluid>
     <Row id="search-form-row">
@@ -113,7 +113,7 @@ export const SearchPageComponent = ({
                         alt="Fashion"
                         width={500}
                         height={600}
-                        onClick={() => switchToProductViewFromSearch({
+                        onClick={() => switchToProductView({
                           product: product,
                           userID: userID
                         })}

@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { history } from 'modules/LocationModule';
 import lifecycle from 'components/Lifecycle';
 import {
   openClientServicePage,
@@ -17,13 +18,13 @@ import { decorateOnToggle } from 'modules/Menu/DecorateOnToggleModule';
 import { innerDecorateOnToggle } from 'modules/Menu/InnerDecorateOnToggleModule';
 import { innerDecorateOnToggle2 } from 'modules/Menu/InnerDecorateOnToggle2Module';
 import { changeLanguage } from 'modules/LanguageCountry/LanguageModule';
-import { selectFashionCategory } from 'modules/ItemCategories/CategoryModule';
+import { selectFashionCategory } from 'modules/ItemCategories/CategoriesModule';
 import { proceedToMyAccount } from 'modules/UserModule';
 import {
   openMyWishlist,
   openSignInW
 } from 'modules/Wishlist/SignInWPageModule';
-import { getCountryByIP } from 'selectors/GeolocationSelector';
+import { getCountry } from 'selectors/LocationSelector';
 import { getUserID } from 'selectors/UserSelector';
 import i18n from 'util/i18n';
 import Menu from 'components/Menu';
@@ -35,7 +36,7 @@ import Menu from 'components/Menu';
  * @returns {Object} The props passed to the react component.
  */
 const mapStateToProps = state => ({
-  country: getCountryByIP(state),
+  country: getCountry(),
   language: i18n.language,
   langListIsShown: state.showLanguages.langListIsShown,
   fashionMenuIsShown: state.toggleFashionMenuSM.isShown,
@@ -75,6 +76,7 @@ const mapDispatchToProps = dispatch => ({
   proceedToMyAccount: userID => dispatch(proceedToMyAccount(userID)),
   openMyWishlist: menuIsShown => dispatch(openMyWishlist(menuIsShown)),
   openSignInW: data => dispatch(openSignInW(data)),
+  route: route => history.push(route),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(lifecycle(Menu));

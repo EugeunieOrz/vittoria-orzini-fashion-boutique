@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import lifecycle from 'components/Lifecycle';
 import { closeHomeCollectionMenu, toggleHomeCollectionMenu } from 'modules/Menu/HomeCollectionMenuModule';
-import { selectFashionCategory } from 'modules/ItemCategories/CategoryModule';
+import { selectFashionCategory } from 'modules/ItemCategories/CategoriesModule';
 import HomeCollectionMenu from 'components/Menus/HomeCollectionMenu';
 
 /**

@@ -3,10 +3,6 @@ import lifecycle from 'components/Lifecycle';
 import { toggleMiniBag } from 'modules/Shopping/MiniBagModule';
 import { removeItemFromGuestBag } from 'modules/Shopping/RemoveItemGuestModule';
 import { removeItemFromShoppingBag } from 'bundles/Account/modules/Shopping/RemoveItemModule';
-import {
-  proceedToCheckoutFromMiniBag,
-  proceedToShoppingBagFromMiniBag
-} from 'modules/Shopping/MiniBagModule';
 import { getShoppingBag } from 'selectors/ShoppingSelector';
 import { getUserAddedItems, getUserID } from 'selectors/UserSelector';
 import MiniShoppingBag from 'components/Shopping/MiniShoppingBag';
@@ -30,8 +26,6 @@ const mapStateToProps = state => ({
  * @returns {Object} The props passed to the react component.
  */
 const mapDispatchToProps = dispatch => ({
-  proceedToCheckout: userID => dispatch(proceedToCheckoutFromMiniBag(userID)),
-  proceedToShoppingBag: userID => dispatch(proceedToShoppingBagFromMiniBag(userID)),
   removeItemFromGuestBag: data => dispatch(removeItemFromGuestBag(data)),
   removeItemFromShoppingBag: data => dispatch(removeItemFromShoppingBag(data)),
   toggleMiniBag: () => dispatch(toggleMiniBag()),

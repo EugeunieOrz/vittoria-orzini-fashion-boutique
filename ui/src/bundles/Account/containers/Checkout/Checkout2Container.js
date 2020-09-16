@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 import lifecycle from 'components/Lifecycle';
 import { modelPath2, fillCheckoutData2 } from 'bundles/Account/modules/Checkout2/CheckoutForm2Module';
-import { getUserCountryByIPforHome } from 'selectors/GeolocationSelector';
+import { getCountry } from 'selectors/LocationSelector';
 import { toggleAddNewAddress } from 'bundles/Account/modules/Addresses/AddNewAddressModule';
 import { toggleShippingAddress } from 'bundles/Account/modules/Addresses/ShippingAddressModule';
 import { toggleEditAddress } from 'bundles/Account/modules/Addresses/EditAddressModule';
@@ -10,7 +10,6 @@ import { toggleCreditCardType } from 'bundles/Account/modules/CreditCards/CardTy
 import { selectExpMonth5 } from 'bundles/Account/modules/Checkout2/ExpMonth5Module';
 import { selectExpYear5 } from 'bundles/Account/modules/Checkout2/ExpYear5Module';
 import { getUserID, getUserAddresses } from 'selectors/UserSelector';
-import { countryByIP } from 'selectors/GeolocationSelector';
 import Checkout2 from 'bundles/Account/components/Checkout2';
 
 /**
@@ -23,8 +22,7 @@ const mapStateToProps = state => ({
   cardType: state.account.toggleCreditCardType.cardType,
   index: state.account.toggleEditAddress.index,
   userID: getUserID(state),
-  countryByIP: getUserCountryByIPforHome(state),
-  countryByIP2: countryByIP(state),
+  countryByIP: getCountry(),
   addresses: getUserAddresses(state),
   shippingAddress: state.account.toggleShippingAddress.index,
   month: state.account.selectExpMonth5.month,

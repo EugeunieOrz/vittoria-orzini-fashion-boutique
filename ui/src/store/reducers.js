@@ -5,7 +5,6 @@ import healthReducer from 'modules/HealthModule';
 import stateReducer from 'modules/StateModule';
 import userReducer from 'modules/UserModule';
 import changeCSQKeyReducer from 'modules/CSQHeaderModule';
-import fetchGeolocationReducer from 'modules/GeolocationModule';
 import findStoreReducer from 'modules/StoreLocatorModule';
 import selectCountryReducer from 'modules/CountryModule';
 import selectStoreReducer from 'modules/StoreModule';
@@ -78,7 +77,6 @@ export const makeRootReducer = (asyncReducers) => {
     health: healthReducer,
     user: userReducer,
     changeCSQKey: changeCSQKeyReducer,
-    geolocation: fetchGeolocationReducer,
     findStore: findStoreReducer,
     selectCountry: selectCountryReducer,
     selectStore: selectStoreReducer,

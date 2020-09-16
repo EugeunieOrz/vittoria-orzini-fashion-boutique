@@ -4,7 +4,7 @@ import lifecycle from 'components/Lifecycle';
 import { modelPath, fillCheckoutData } from 'bundles/Account/modules/Checkout1/CheckoutFormModule';
 import { selectExpMonth1 } from 'bundles/Account/modules/Checkout1/ExpMonth1Module';
 import { selectExpYear1 } from 'bundles/Account/modules/Checkout1/ExpYear1Module';
-import { countryByIP, getUserCountryByIPforHome } from 'selectors/GeolocationSelector';
+import { getCountry } from 'selectors/LocationSelector';
 import { getUserID } from 'selectors/UserSelector';
 import Checkout1 from 'bundles/Account/components/Checkout1';
 
@@ -16,8 +16,7 @@ import Checkout1 from 'bundles/Account/components/Checkout1';
  */
  const mapStateToProps = state => ({
    userID: getUserID(state),
-   countryByIP: getUserCountryByIPforHome(state),
-   countryByIP2: countryByIP(state),
+   countryByIP: getCountry(),
    month: state.account.selectExpMonth1.month,
    year: state.account.selectExpYear1.year,
    form: state.account.fillCheckoutData.form,
@@ -29,7 +28,7 @@ import Checkout1 from 'bundles/Account/components/Checkout1';
      address: '',
      zipCode: '',
      city: '',
-     country: countryByIP(state),
+     country: getCountry(),
      province: '',
      email: '',
      telephone: '',

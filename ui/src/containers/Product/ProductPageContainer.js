@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import lifecycle from 'components/Lifecycle';
 import { addProductToWishlist } from 'bundles/Account/modules/Wishlist/AddItemToWishlistAlertModule';
-import { selectFashionCategory } from 'modules/ItemCategories/CategoryModule';
+import { selectFashionCategory } from 'modules/ItemCategories/CategoriesModule';
 import {
   addProductToShoppingBag,
   addProductToGuestShoppingBag

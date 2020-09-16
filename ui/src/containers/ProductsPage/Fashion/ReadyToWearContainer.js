@@ -1,8 +1,10 @@
 import $ from 'jquery';
 import { connect } from 'react-redux';
 import lifecycle from 'components/Lifecycle';
-import { switchToProductView } from 'modules/ItemCategories/CategoryModule';
-import { selectFashionCategory } from 'modules/ItemCategories/CategoryModule';
+import {
+  selectFashionCategory,
+  switchToProductView
+} from 'modules/ItemCategories/CategoriesModule';
 import { getReadyToWearProducts } from 'selectors/ProductsSelector';
 import { getUserID } from 'selectors/UserSelector';
 import ReadyToWear from 'components/ProductsPage/Fashion/ReadyToWear';

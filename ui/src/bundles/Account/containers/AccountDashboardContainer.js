@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import lifecycle from 'components/Lifecycle';
 import { getUserFirstName } from 'selectors/UserSelector';
 import { toggleClosingAccount } from 'bundles/Account/modules/AccountDetails/ClosingAccountModule';
+import { closeMenu } from 'modules/Menu/MenuModule';
 import AccountDashboard from 'bundles/Account/components/AccountDashboard';
 
 /**
@@ -34,6 +35,7 @@ const mapStateToProps = state => ({
  */
 const mapDispatchToProps = (dispatch) => ({
   toggleClosingAccount: () => dispatch(toggleClosingAccount()),
+  componentDidMount: () => dispatch(closeMenu()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(lifecycle(AccountDashboard));

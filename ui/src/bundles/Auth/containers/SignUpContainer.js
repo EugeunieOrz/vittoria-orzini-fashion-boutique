@@ -4,6 +4,7 @@ import lifecycle from 'components/Lifecycle';
 import { modelPath, signUp } from 'bundles/Auth/modules/SignUpModule';
 import { toggleMask } from 'bundles/Auth/modules/MaskModule';
 import { checkPasswordStrength } from 'bundles/Auth/modules/PasswordModule';
+import { toggleSignInWToFalse } from 'modules/Wishlist/SignInWPageModule';
 import { getShoppingBag } from 'selectors/ShoppingSelector';
 import SignUp from 'bundles/Auth/components/SignUp';
 
@@ -32,6 +33,7 @@ const mapDispatchToProps = dispatch => ({
   onCheckPasswordStrength: password => dispatch(checkPasswordStrength(password)),
   onToggleMask: isHidden => dispatch(toggleMask(isHidden)),
   onSignUp: data => dispatch(signUp(data)),
+  componentDidMount: () => dispatch(toggleSignInWToFalse()),
   componentWillUnmount: () => dispatch(actions.reset(modelPath)),
 });
 

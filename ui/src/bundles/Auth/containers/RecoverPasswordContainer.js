@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { actions } from 'react-redux-form';
 import lifecycle from 'components/Lifecycle';
 import { modelPath, recoverPassword } from 'bundles/Auth/modules/RecoverPasswordModule';
+import { toggleSignInWToFalse } from 'modules/Wishlist/SignInWPageModule';
 import RecoverPassword from 'bundles/Auth/components/RecoverPassword';
 
 /**
@@ -23,6 +24,7 @@ const mapStateToProps = state => ({
  */
 const mapDispatchToProps = dispatch => ({
   onSend: data => dispatch(recoverPassword(data)),
+  componentDidMount: () => dispatch(toggleSignInWToFalse()),
   componentWillUnmount: () => dispatch(actions.reset(modelPath)),
 });
 
